@@ -14,7 +14,7 @@
     "majorTechnology" : "ApolloGraphQL",
     "supportsDocker": "true",
     "supportsKubernetes": "true",
-    "published": "false",
+    "published": "true",
     "category": "integration",
     "designPattern": "Facade",
     "architectureStyle": "APIFirst",
@@ -25,7 +25,11 @@
     "languages": {
       "language": [
         {
-        "name": "javascript"
+          "name": "nodejs",
+          "version": "22.22.3"
+        },
+        {
+          "name": "javascript"
         },
         {
           "name": "typescript"

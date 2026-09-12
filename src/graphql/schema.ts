@@ -168,473 +168,473 @@ type Query {
 type Mutation {
 
 addBank(
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        legalName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        swiftBic: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        headquartersCountry: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        website: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        name: String!
+        legalName: String!
+        swiftBic: String!
+        headquartersCountry: String!
+        website: String!
 ): Bank
 
 updateBank(
 id: ID!
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        legalName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        swiftBic: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        headquartersCountry: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        website: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        name: String!
+        legalName: String!
+        swiftBic: String!
+        headquartersCountry: String!
+        website: String!
 ): Bank
 removeBank(id: ID!): Boolean
 addBranch(
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        branchCode: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        address: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        phone: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        openingHours: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        name: String!
+        branchCode: String!
+        address: String!
+        phone: String!
+        openingHours: String!
 ): Branch
 
 updateBranch(
 id: ID!
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        branchCode: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        address: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        phone: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        openingHours: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        name: String!
+        branchCode: String!
+        address: String!
+        phone: String!
+        openingHours: String!
 ): Branch
 removeBranch(id: ID!): Boolean
 addATM(
-        terminalId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        location: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        terminalId: String!
+        location: String!
+        Status:  ATMStatus
 ): ATM
 
 updateATM(
 id: ID!
-        terminalId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        location: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        terminalId: String!
+        location: String!
+        Status:  ATMStatus
 ): ATM
 removeATM(id: ID!): Boolean
 addCustomer(
-        firstName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        lastName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        legalName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        dateOfBirth: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        taxId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        email: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        phone: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        address: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        CustomerType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        RiskRating: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        KycStatus: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        firstName: String!
+        lastName: String!
+        legalName: String!
+        dateOfBirth: String!
+        taxId: String!
+        email: String!
+        phone: String!
+        address: String!
+        CustomerType:  CustomerType
+        RiskRating:  RiskRating
+        KycStatus:  KycStatus
 ): Customer
 
 updateCustomer(
 id: ID!
-        firstName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        lastName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        legalName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        dateOfBirth: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        taxId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        email: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        phone: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        address: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        CustomerType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        RiskRating: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        KycStatus: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        firstName: String!
+        lastName: String!
+        legalName: String!
+        dateOfBirth: String!
+        taxId: String!
+        email: String!
+        phone: String!
+        address: String!
+        CustomerType:  CustomerType
+        RiskRating:  RiskRating
+        KycStatus:  KycStatus
 ): Customer
 removeCustomer(id: ID!): Boolean
 addKycProfile(
-        profileId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        lastReviewedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        profileId: String!
+        lastReviewedOn: String!
+        Status:  KycStatus
 ): KycProfile
 
 updateKycProfile(
 id: ID!
-        profileId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        lastReviewedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        profileId: String!
+        lastReviewedOn: String!
+        Status:  KycStatus
 ): KycProfile
 removeKycProfile(id: ID!): Boolean
 addIdentityDocument(
-        documentNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        issuingCountry: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        expirationDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        DocumentType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        documentNumber: String!
+        issuingCountry: String!
+        expirationDate: String!
+        DocumentType:  IdentityDocumentType
 ): IdentityDocument
 
 updateIdentityDocument(
 id: ID!
-        documentNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        issuingCountry: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        expirationDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        DocumentType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        documentNumber: String!
+        issuingCountry: String!
+        expirationDate: String!
+        DocumentType:  IdentityDocumentType
 ): IdentityDocument
 removeIdentityDocument(id: ID!): Boolean
 addRiskAssessment(
-        score: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        assessedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Rating: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        score: Int!
+        assessedOn: String!
+        Rating:  RiskRating
 ): RiskAssessment
 
 updateRiskAssessment(
 id: ID!
-        score: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        assessedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Rating: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        score: Int!
+        assessedOn: String!
+        Rating:  RiskRating
 ): RiskAssessment
 removeRiskAssessment(id: ID!): Boolean
 addScreeningResult(
-        screeningDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        provider: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Outcome: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        screeningDate: String!
+        provider: String!
+        Outcome:  ScreeningOutcome
 ): ScreeningResult
 
 updateScreeningResult(
 id: ID!
-        screeningDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        provider: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Outcome: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        screeningDate: String!
+        provider: String!
+        Outcome:  ScreeningOutcome
 ): ScreeningResult
 removeScreeningResult(id: ID!): Boolean
 addBankingProduct(
-        productCode: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        description: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        ProductCategory: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        productCode: String!
+        name: String!
+        description: String!
+        ProductCategory:  ProductCategory
 ): BankingProduct
 
 updateBankingProduct(
 id: ID!
-        productCode: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        description: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        ProductCategory: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        productCode: String!
+        name: String!
+        description: String!
+        ProductCategory:  ProductCategory
 ): BankingProduct
 removeBankingProduct(id: ID!): Boolean
 addAccount(
-        accountNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        iban: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        accountName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        currency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        openedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        closedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        AccountType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        OwnershipType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        accountNumber: String!
+        iban: String!
+        accountName: String!
+        currency: String!
+        openedOn: String!
+        closedOn: String!
+        AccountType:  AccountType
+        OwnershipType:  AccountOwnershipType
+        Status:  AccountStatus
 ): Account
 
 updateAccount(
 id: ID!
-        accountNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        iban: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        accountName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        currency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        openedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        closedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        AccountType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        OwnershipType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        accountNumber: String!
+        iban: String!
+        accountName: String!
+        currency: String!
+        openedOn: String!
+        closedOn: String!
+        AccountType:  AccountType
+        OwnershipType:  AccountOwnershipType
+        Status:  AccountStatus
 ): Account
 removeAccount(id: ID!): Boolean
 addAccountStatement(
-        statementNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        periodStart: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        periodEnd: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        openingBalance: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        closingBalance: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        DeliveryMethod: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        statementNumber: String!
+        periodStart: String!
+        periodEnd: String!
+        openingBalance: String!
+        closingBalance: String!
+        DeliveryMethod:  StatementDeliveryMethod
 ): AccountStatement
 
 updateAccountStatement(
 id: ID!
-        statementNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        periodStart: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        periodEnd: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        openingBalance: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        closingBalance: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        DeliveryMethod: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        statementNumber: String!
+        periodStart: String!
+        periodEnd: String!
+        openingBalance: String!
+        closingBalance: String!
+        DeliveryMethod:  StatementDeliveryMethod
 ): AccountStatement
 removeAccountStatement(id: ID!): Boolean
 addTransaction(
-        bookingDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        valueDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        description: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Direction: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        TransactionType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Channel: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        bookingDate: String!
+        valueDate: String!
+        amount: String!
+        description: String!
+        Direction:  TransactionDirection
+        TransactionType:  TransactionType
+        Status:  TransactionStatus
+        Channel:  ChannelType
 ): Transaction
 
 updateTransaction(
 id: ID!
-        bookingDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        valueDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        description: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Direction: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        TransactionType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Channel: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        bookingDate: String!
+        valueDate: String!
+        amount: String!
+        description: String!
+        Direction:  TransactionDirection
+        TransactionType:  TransactionType
+        Status:  TransactionStatus
+        Channel:  ChannelType
 ): Transaction
 removeTransaction(id: ID!): Boolean
 addExternalAccount(
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        iban: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        accountNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bic: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bankName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        country: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        name: String!
+        iban: String!
+        accountNumber: String!
+        bic: String!
+        bankName: String!
+        country: String!
 ): ExternalAccount
 
 updateExternalAccount(
 id: ID!
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        iban: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        accountNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bic: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bankName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        country: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        name: String!
+        iban: String!
+        accountNumber: String!
+        bic: String!
+        bankName: String!
+        country: String!
 ): ExternalAccount
 removeExternalAccount(id: ID!): Boolean
 addFundsTransfer(
-        transferReference: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        requestedDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        executionDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        purpose: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        feeAmount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Method: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        transferReference: String!
+        amount: String!
+        requestedDate: String!
+        executionDate: String!
+        purpose: String!
+        feeAmount: String!
+        Method:  PaymentMethod
+        Status:  PaymentStatus
 ): FundsTransfer
 
 updateFundsTransfer(
 id: ID!
-        transferReference: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        requestedDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        executionDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        purpose: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        feeAmount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Method: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        transferReference: String!
+        amount: String!
+        requestedDate: String!
+        executionDate: String!
+        purpose: String!
+        feeAmount: String!
+        Method:  PaymentMethod
+        Status:  PaymentStatus
 ): FundsTransfer
 removeFundsTransfer(id: ID!): Boolean
 addStandingInstruction(
-        instructionId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        nextExecutionDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Frequency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        instructionId: String!
+        amount: String!
+        nextExecutionDate: String!
+        Frequency:  StandingInstructionFrequency
+        Status:  StandingInstructionStatus
 ): StandingInstruction
 
 updateStandingInstruction(
 id: ID!
-        instructionId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        nextExecutionDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Frequency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        instructionId: String!
+        amount: String!
+        nextExecutionDate: String!
+        Frequency:  StandingInstructionFrequency
+        Status:  StandingInstructionStatus
 ): StandingInstruction
 removeStandingInstruction(id: ID!): Boolean
 addPaymentCard(
-        cardNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        embossedName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        expiryMonth: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        expiryYear: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        CardType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        CardStatus: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Network: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        cardNumber: String!
+        embossedName: String!
+        expiryMonth: Int!
+        expiryYear: Int!
+        CardType:  CardType
+        CardStatus:  CardStatus
+        Network:  CardNetwork
 ): PaymentCard
 
 updatePaymentCard(
 id: ID!
-        cardNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        embossedName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        expiryMonth: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        expiryYear: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        CardType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        CardStatus: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Network: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        cardNumber: String!
+        embossedName: String!
+        expiryMonth: Int!
+        expiryYear: Int!
+        CardType:  CardType
+        CardStatus:  CardStatus
+        Network:  CardNetwork
 ): PaymentCard
 removePaymentCard(id: ID!): Boolean
 addLoanAccount(
-        loanNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        principalAmount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        outstandingPrincipal: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        interestRate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        originationDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        maturityDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        paymentDayOfMonth: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        currency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        LoanType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        RateType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Compounding: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        loanNumber: String!
+        principalAmount: String!
+        outstandingPrincipal: String!
+        interestRate: String!
+        originationDate: String!
+        maturityDate: String!
+        paymentDayOfMonth: Int!
+        currency: String!
+        LoanType:  LoanType
+        RateType:  RateType
+        Compounding:  InterestCompounding
+        Status:  LoanStatus
 ): LoanAccount
 
 updateLoanAccount(
 id: ID!
-        loanNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        principalAmount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        outstandingPrincipal: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        interestRate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        originationDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        maturityDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        paymentDayOfMonth: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        currency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        LoanType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        RateType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Compounding: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        loanNumber: String!
+        principalAmount: String!
+        outstandingPrincipal: String!
+        interestRate: String!
+        originationDate: String!
+        maturityDate: String!
+        paymentDayOfMonth: Int!
+        currency: String!
+        LoanType:  LoanType
+        RateType:  RateType
+        Compounding:  InterestCompounding
+        Status:  LoanStatus
 ): LoanAccount
 removeLoanAccount(id: ID!): Boolean
 addRepaymentSchedule(
-        installmentNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        dueDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        principalDue: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        interestDue: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        totalDue: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        installmentNumber: Int!
+        dueDate: String!
+        principalDue: String!
+        interestDue: String!
+        totalDue: String!
+        Status:  InstallmentStatus
 ): RepaymentSchedule
 
 updateRepaymentSchedule(
 id: ID!
-        installmentNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        dueDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        principalDue: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        interestDue: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        totalDue: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        installmentNumber: Int!
+        dueDate: String!
+        principalDue: String!
+        interestDue: String!
+        totalDue: String!
+        Status:  InstallmentStatus
 ): RepaymentSchedule
 removeRepaymentSchedule(id: ID!): Boolean
 addLoanPayment(
-        paymentReference: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        paymentDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Method: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        paymentReference: String!
+        amount: String!
+        paymentDate: String!
+        Method:  PaymentMethod
+        Status:  PaymentStatus
 ): LoanPayment
 
 updateLoanPayment(
 id: ID!
-        paymentReference: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        paymentDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Method: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        paymentReference: String!
+        amount: String!
+        paymentDate: String!
+        Method:  PaymentMethod
+        Status:  PaymentStatus
 ): LoanPayment
 removeLoanPayment(id: ID!): Boolean
 addCollateral(
-        appraisedValue: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        description: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        location: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        CollateralType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        appraisedValue: String!
+        description: String!
+        location: String!
+        CollateralType:  CollateralType
 ): Collateral
 
 updateCollateral(
 id: ID!
-        appraisedValue: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        description: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        location: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        CollateralType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        appraisedValue: String!
+        description: String!
+        location: String!
+        CollateralType:  CollateralType
 ): Collateral
 removeCollateral(id: ID!): Boolean
 addFeeCharge(
-        feeCode: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        appliedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        FeeType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        feeCode: String!
+        amount: String!
+        appliedOn: String!
+        FeeType:  FeeType
 ): FeeCharge
 
 updateFeeCharge(
 id: ID!
-        feeCode: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        appliedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        FeeType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        feeCode: String!
+        amount: String!
+        appliedOn: String!
+        FeeType:  FeeType
 ): FeeCharge
 removeFeeCharge(id: ID!): Boolean
 addExchangeRate(
-        baseCurrency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        counterCurrency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        rate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        asOf: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        source: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        baseCurrency: String!
+        counterCurrency: String!
+        rate: String!
+        asOf: String!
+        source: String!
 ): ExchangeRate
 
 updateExchangeRate(
 id: ID!
-        baseCurrency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        counterCurrency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        rate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        asOf: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        source: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        baseCurrency: String!
+        counterCurrency: String!
+        rate: String!
+        asOf: String!
+        source: String!
 ): ExchangeRate
 removeExchangeRate(id: ID!): Boolean
 addFXTrade(
-        tradeReference: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        tradeDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        settlementDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amountSold: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amountBought: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        rate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        tradeReference: String!
+        tradeDate: String!
+        settlementDate: String!
+        amountSold: String!
+        amountBought: String!
+        rate: String!
+        Status:  TradeStatus
 ): FXTrade
 
 updateFXTrade(
 id: ID!
-        tradeReference: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        tradeDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        settlementDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amountSold: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amountBought: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        rate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        tradeReference: String!
+        tradeDate: String!
+        settlementDate: String!
+        amountSold: String!
+        amountBought: String!
+        rate: String!
+        Status:  TradeStatus
 ): FXTrade
 removeFXTrade(id: ID!): Boolean
 addDispute(
-        disputeReference: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        raisedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        reason: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        disputeReference: String!
+        raisedOn: String!
+        reason: String!
+        Status:  DisputeStatus
 ): Dispute
 
 updateDispute(
 id: ID!
-        disputeReference: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        raisedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        reason: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        disputeReference: String!
+        raisedOn: String!
+        reason: String!
+        Status:  DisputeStatus
 ): Dispute
 removeDispute(id: ID!): Boolean
 addConsent(
-        grantedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        expiresOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        ConsentType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        grantedOn: String!
+        expiresOn: String!
+        ConsentType:  ConsentType
+        Status:  ConsentStatus
 ): Consent
 
 updateConsent(
 id: ID!
-        grantedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        expiresOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        ConsentType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        Status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        grantedOn: String!
+        expiresOn: String!
+        ConsentType:  ConsentType
+        Status:  ConsentStatus
 ): Consent
 removeConsent(id: ID!): Boolean
 addThirdPartyProvider(
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        registrationId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        website: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        name: String!
+        registrationId: String!
+        website: String!
 ): ThirdPartyProvider
 
 updateThirdPartyProvider(
 id: ID!
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        registrationId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        website: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        name: String!
+        registrationId: String!
+        website: String!
 ): ThirdPartyProvider
 removeThirdPartyProvider(id: ID!): Boolean
 }
@@ -644,105 +644,105 @@ removeThirdPartyProvider(id: ID!): Boolean
 """
 type Bank {
 id: ID!
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        legalName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        swiftBic: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        headquartersCountry: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        website: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        branches: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        products: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        customers: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        accounts: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        paymentCards: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        loanAccounts: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        exchangeRates: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        consents: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        thirdPartyProviders: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        name: String!
+        legalName: String!
+        swiftBic: String!
+        headquartersCountry: String!
+        website: String!
+        branches:  [Branch]
+        products:  [BankingProduct]
+        customers:  [Customer]
+        accounts:  [Account]
+        paymentCards:  [PaymentCard]
+        loanAccounts:  [LoanAccount]
+        exchangeRates:  [ExchangeRate]
+        consents:  [Consent]
+        thirdPartyProviders:  [ThirdPartyProvider]
     addToBranches(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            branchCode: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openingHours: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            branchCode: String!
+            address: String!
+            phone: String!
+            openingHours: String!
     ): Bank
     assignToBranches( branchesIds: [ID]! ): Bank
     addToProducts(
-            productCode: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            description: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            ProductCategory: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            productCode: String!
+            name: String!
+            description: String!
+            ProductCategory:  ProductCategory
     ): Bank
     assignToProducts( productsIds: [ID]! ): Bank
     addToCustomers(
-            firstName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            dateOfBirth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            taxId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            email: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CustomerType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RiskRating: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            KycStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            firstName: String!
+            lastName: String!
+            legalName: String!
+            dateOfBirth: String!
+            taxId: String!
+            email: String!
+            phone: String!
+            address: String!
+            CustomerType:  CustomerType
+            RiskRating:  RiskRating
+            KycStatus:  KycStatus
     ): Bank
     assignToCustomers( customersIds: [ID]! ): Bank
     addToAccounts(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): Bank
     assignToAccounts( accountsIds: [ID]! ): Bank
     addToPaymentCards(
-            cardNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            embossedName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiryMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiryYear: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CardType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CardStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Network: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            cardNumber: String!
+            embossedName: String!
+            expiryMonth: Int!
+            expiryYear: Int!
+            CardType:  CardType
+            CardStatus:  CardStatus
+            Network:  CardNetwork
     ): Bank
     assignToPaymentCards( paymentCardsIds: [ID]! ): Bank
     addToLoanAccounts(
-            loanNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            principalAmount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            outstandingPrincipal: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            interestRate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            originationDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            maturityDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            paymentDayOfMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            LoanType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RateType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Compounding: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            loanNumber: String!
+            principalAmount: String!
+            outstandingPrincipal: String!
+            interestRate: String!
+            originationDate: String!
+            maturityDate: String!
+            paymentDayOfMonth: Int!
+            currency: String!
+            LoanType:  LoanType
+            RateType:  RateType
+            Compounding:  InterestCompounding
+            Status:  LoanStatus
     ): Bank
     assignToLoanAccounts( loanAccountsIds: [ID]! ): Bank
     addToExchangeRates(
-            baseCurrency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            counterCurrency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            rate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            asOf: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            source: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            baseCurrency: String!
+            counterCurrency: String!
+            rate: String!
+            asOf: String!
+            source: String!
     ): Bank
     assignToExchangeRates( exchangeRatesIds: [ID]! ): Bank
     addToConsents(
-            grantedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiresOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            ConsentType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            grantedOn: String!
+            expiresOn: String!
+            ConsentType:  ConsentType
+            Status:  ConsentStatus
     ): Bank
     assignToConsents( consentsIds: [ID]! ): Bank
     addToThirdPartyProviders(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            registrationId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            website: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            registrationId: String!
+            website: String!
     ): Bank
     assignToThirdPartyProviders( thirdPartyProvidersIds: [ID]! ): Bank
 
@@ -759,55 +759,55 @@ hasMore: Boolean!
 """
 type Branch {
 id: ID!
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        branchCode: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        address: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        phone: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        openingHours: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bank: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        accounts: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        loanAccounts: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        atms: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        name: String!
+        branchCode: String!
+        address: String!
+        phone: String!
+        openingHours: String!
+        bank: Bank
+        accounts:  [Account]
+        loanAccounts:  [LoanAccount]
+        atms:  [ATM]
     addBank(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            swiftBic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            headquartersCountry: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            website: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            legalName: String!
+            swiftBic: String!
+            headquartersCountry: String!
+            website: String!
     ): Branch
     assignBank(  bankId: [ID]! ): Branch
     unassignBank( branchId: ID! ): Branch
     addToAccounts(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): Branch
     assignToAccounts( accountsIds: [ID]! ): Branch
     addToLoanAccounts(
-            loanNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            principalAmount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            outstandingPrincipal: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            interestRate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            originationDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            maturityDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            paymentDayOfMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            LoanType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RateType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Compounding: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            loanNumber: String!
+            principalAmount: String!
+            outstandingPrincipal: String!
+            interestRate: String!
+            originationDate: String!
+            maturityDate: String!
+            paymentDayOfMonth: Int!
+            currency: String!
+            LoanType:  LoanType
+            RateType:  RateType
+            Compounding:  InterestCompounding
+            Status:  LoanStatus
     ): Branch
     assignToLoanAccounts( loanAccountsIds: [ID]! ): Branch
     addToAtms(
-            terminalId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            location: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            terminalId: String!
+            location: String!
+            Status:  ATMStatus
     ): Branch
     assignToAtms( atmsIds: [ID]! ): Branch
 
@@ -824,16 +824,16 @@ hasMore: Boolean!
 """
 type ATM {
 id: ID!
-        terminalId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        location: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        branch: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        terminalId: String!
+        location: String!
+        branch: Branch
+        status:  ATMStatus
     addBranch(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            branchCode: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openingHours: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            branchCode: String!
+            address: String!
+            phone: String!
+            openingHours: String!
     ): ATM
     assignBranch(  branchId: [ID]! ): ATM
     unassignBranch( aTMId: ID! ): ATM
@@ -851,110 +851,110 @@ hasMore: Boolean!
 """
 type Customer {
 id: ID!
-        firstName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        lastName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        legalName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        dateOfBirth: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        taxId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        email: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        phone: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        address: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bank: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        accounts: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        loanAccounts: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        paymentCards: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        externalAccounts: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        fundsTransfers: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        disputes: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        kycProfiles: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        consents: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        customerType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        riskRating: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        kycStatus: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        firstName: String!
+        lastName: String!
+        legalName: String!
+        dateOfBirth: String!
+        taxId: String!
+        email: String!
+        phone: String!
+        address: String!
+        bank: Bank
+        accounts:  [Account]
+        loanAccounts:  [LoanAccount]
+        paymentCards:  [PaymentCard]
+        externalAccounts:  [ExternalAccount]
+        fundsTransfers:  [FundsTransfer]
+        disputes:  [Dispute]
+        kycProfiles:  [KycProfile]
+        consents:  [Consent]
+        customerType:  CustomerType
+        riskRating:  RiskRating
+        kycStatus:  KycStatus
     addBank(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            swiftBic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            headquartersCountry: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            website: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            legalName: String!
+            swiftBic: String!
+            headquartersCountry: String!
+            website: String!
     ): Customer
     assignBank(  bankId: [ID]! ): Customer
     unassignBank( customerId: ID! ): Customer
     addToAccounts(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): Customer
     assignToAccounts( accountsIds: [ID]! ): Customer
     addToLoanAccounts(
-            loanNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            principalAmount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            outstandingPrincipal: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            interestRate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            originationDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            maturityDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            paymentDayOfMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            LoanType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RateType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Compounding: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            loanNumber: String!
+            principalAmount: String!
+            outstandingPrincipal: String!
+            interestRate: String!
+            originationDate: String!
+            maturityDate: String!
+            paymentDayOfMonth: Int!
+            currency: String!
+            LoanType:  LoanType
+            RateType:  RateType
+            Compounding:  InterestCompounding
+            Status:  LoanStatus
     ): Customer
     assignToLoanAccounts( loanAccountsIds: [ID]! ): Customer
     addToPaymentCards(
-            cardNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            embossedName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiryMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiryYear: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CardType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CardStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Network: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            cardNumber: String!
+            embossedName: String!
+            expiryMonth: Int!
+            expiryYear: Int!
+            CardType:  CardType
+            CardStatus:  CardStatus
+            Network:  CardNetwork
     ): Customer
     assignToPaymentCards( paymentCardsIds: [ID]! ): Customer
     addToExternalAccounts(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            bic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            bankName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            country: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            iban: String!
+            accountNumber: String!
+            bic: String!
+            bankName: String!
+            country: String!
     ): Customer
     assignToExternalAccounts( externalAccountsIds: [ID]! ): Customer
     addToFundsTransfers(
-            transferReference: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            requestedDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            executionDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            purpose: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            feeAmount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Method: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            transferReference: String!
+            amount: String!
+            requestedDate: String!
+            executionDate: String!
+            purpose: String!
+            feeAmount: String!
+            Method:  PaymentMethod
+            Status:  PaymentStatus
     ): Customer
     assignToFundsTransfers( fundsTransfersIds: [ID]! ): Customer
     addToDisputes(
-            disputeReference: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            raisedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            reason: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            disputeReference: String!
+            raisedOn: String!
+            reason: String!
+            Status:  DisputeStatus
     ): Customer
     assignToDisputes( disputesIds: [ID]! ): Customer
     addToKycProfiles(
-            profileId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastReviewedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            profileId: String!
+            lastReviewedOn: String!
+            Status:  KycStatus
     ): Customer
     assignToKycProfiles( kycProfilesIds: [ID]! ): Customer
     addToConsents(
-            grantedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiresOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            ConsentType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            grantedOn: String!
+            expiresOn: String!
+            ConsentType:  ConsentType
+            Status:  ConsentStatus
     ): Customer
     assignToConsents( consentsIds: [ID]! ): Customer
 
@@ -971,45 +971,45 @@ hasMore: Boolean!
 """
 type KycProfile {
 id: ID!
-        profileId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        lastReviewedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        customer: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        identityDocuments: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        riskAssessments: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        screenings: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        profileId: String!
+        lastReviewedOn: String!
+        customer: Customer
+        identityDocuments:  [IdentityDocument]
+        riskAssessments:  [RiskAssessment]
+        screenings:  [ScreeningResult]
+        status:  KycStatus
     addCustomer(
-            firstName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            dateOfBirth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            taxId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            email: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CustomerType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RiskRating: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            KycStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            firstName: String!
+            lastName: String!
+            legalName: String!
+            dateOfBirth: String!
+            taxId: String!
+            email: String!
+            phone: String!
+            address: String!
+            CustomerType:  CustomerType
+            RiskRating:  RiskRating
+            KycStatus:  KycStatus
     ): KycProfile
     assignCustomer(  customerId: [ID]! ): KycProfile
     unassignCustomer( kycProfileId: ID! ): KycProfile
     addToIdentityDocuments(
-            documentNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            issuingCountry: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expirationDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            DocumentType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            documentNumber: String!
+            issuingCountry: String!
+            expirationDate: String!
+            DocumentType:  IdentityDocumentType
     ): KycProfile
     assignToIdentityDocuments( identityDocumentsIds: [ID]! ): KycProfile
     addToRiskAssessments(
-            score: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            assessedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Rating: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            score: Int!
+            assessedOn: String!
+            Rating:  RiskRating
     ): KycProfile
     assignToRiskAssessments( riskAssessmentsIds: [ID]! ): KycProfile
     addToScreenings(
-            screeningDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            provider: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Outcome: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            screeningDate: String!
+            provider: String!
+            Outcome:  ScreeningOutcome
     ): KycProfile
     assignToScreenings( screeningsIds: [ID]! ): KycProfile
 
@@ -1026,15 +1026,15 @@ hasMore: Boolean!
 """
 type IdentityDocument {
 id: ID!
-        documentNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        issuingCountry: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        expirationDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        kycProfile: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        documentType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        documentNumber: String!
+        issuingCountry: String!
+        expirationDate: String!
+        kycProfile: KycProfile
+        documentType:  IdentityDocumentType
     addKycProfile(
-            profileId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastReviewedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            profileId: String!
+            lastReviewedOn: String!
+            Status:  KycStatus
     ): IdentityDocument
     assignKycProfile(  kycProfileId: [ID]! ): IdentityDocument
     unassignKycProfile( identityDocumentId: ID! ): IdentityDocument
@@ -1052,14 +1052,14 @@ hasMore: Boolean!
 """
 type RiskAssessment {
 id: ID!
-        score: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        assessedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        kycProfile: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        rating: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        score: Int!
+        assessedOn: String!
+        kycProfile: KycProfile
+        rating:  RiskRating
     addKycProfile(
-            profileId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastReviewedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            profileId: String!
+            lastReviewedOn: String!
+            Status:  KycStatus
     ): RiskAssessment
     assignKycProfile(  kycProfileId: [ID]! ): RiskAssessment
     unassignKycProfile( riskAssessmentId: ID! ): RiskAssessment
@@ -1077,14 +1077,14 @@ hasMore: Boolean!
 """
 type ScreeningResult {
 id: ID!
-        screeningDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        provider: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        kycProfile: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        outcome: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        screeningDate: String!
+        provider: String!
+        kycProfile: KycProfile
+        outcome:  ScreeningOutcome
     addKycProfile(
-            profileId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastReviewedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            profileId: String!
+            lastReviewedOn: String!
+            Status:  KycStatus
     ): ScreeningResult
     assignKycProfile(  kycProfileId: [ID]! ): ScreeningResult
     unassignKycProfile( screeningResultId: ID! ): ScreeningResult
@@ -1102,58 +1102,58 @@ hasMore: Boolean!
 """
 type BankingProduct {
 id: ID!
-        productCode: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        description: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bank: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        accounts: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        loanAccounts: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        paymentCards: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        productCategory: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        productCode: String!
+        name: String!
+        description: String!
+        bank: Bank
+        accounts:  [Account]
+        loanAccounts:  [LoanAccount]
+        paymentCards:  [PaymentCard]
+        productCategory:  ProductCategory
     addBank(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            swiftBic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            headquartersCountry: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            website: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            legalName: String!
+            swiftBic: String!
+            headquartersCountry: String!
+            website: String!
     ): BankingProduct
     assignBank(  bankId: [ID]! ): BankingProduct
     unassignBank( bankingProductId: ID! ): BankingProduct
     addToAccounts(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): BankingProduct
     assignToAccounts( accountsIds: [ID]! ): BankingProduct
     addToLoanAccounts(
-            loanNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            principalAmount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            outstandingPrincipal: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            interestRate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            originationDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            maturityDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            paymentDayOfMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            LoanType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RateType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Compounding: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            loanNumber: String!
+            principalAmount: String!
+            outstandingPrincipal: String!
+            interestRate: String!
+            originationDate: String!
+            maturityDate: String!
+            paymentDayOfMonth: Int!
+            currency: String!
+            LoanType:  LoanType
+            RateType:  RateType
+            Compounding:  InterestCompounding
+            Status:  LoanStatus
     ): BankingProduct
     assignToLoanAccounts( loanAccountsIds: [ID]! ): BankingProduct
     addToPaymentCards(
-            cardNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            embossedName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiryMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiryYear: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CardType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CardStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Network: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            cardNumber: String!
+            embossedName: String!
+            expiryMonth: Int!
+            expiryYear: Int!
+            CardType:  CardType
+            CardStatus:  CardStatus
+            Network:  CardNetwork
     ): BankingProduct
     assignToPaymentCards( paymentCardsIds: [ID]! ): BankingProduct
 
@@ -1170,96 +1170,96 @@ hasMore: Boolean!
 """
 type Account {
 id: ID!
-        accountNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        iban: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        accountName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        currency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        openedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        closedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bank: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        branch: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        product: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        owners: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        transactions: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        statements: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        standingInstructions: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        feeCharges: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        accountType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        ownershipType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        accountNumber: String!
+        iban: String!
+        accountName: String!
+        currency: String!
+        openedOn: String!
+        closedOn: String!
+        bank: Bank
+        branch: Branch
+        product: BankingProduct
+        owners:  [Customer]
+        transactions:  [Transaction]
+        statements:  [AccountStatement]
+        standingInstructions:  [StandingInstruction]
+        feeCharges:  [FeeCharge]
+        accountType:  AccountType
+        ownershipType:  AccountOwnershipType
+        status:  AccountStatus
     addBank(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            swiftBic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            headquartersCountry: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            website: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            legalName: String!
+            swiftBic: String!
+            headquartersCountry: String!
+            website: String!
     ): Account
     assignBank(  bankId: [ID]! ): Account
     unassignBank( accountId: ID! ): Account
     addBranch(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            branchCode: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openingHours: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            branchCode: String!
+            address: String!
+            phone: String!
+            openingHours: String!
     ): Account
     assignBranch(  branchId: [ID]! ): Account
     unassignBranch( accountId: ID! ): Account
     addProduct(
-            productCode: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            description: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            ProductCategory: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            productCode: String!
+            name: String!
+            description: String!
+            ProductCategory:  ProductCategory
     ): Account
     assignProduct(  productId: [ID]! ): Account
     unassignProduct( accountId: ID! ): Account
     addToOwners(
-            firstName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            dateOfBirth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            taxId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            email: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CustomerType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RiskRating: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            KycStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            firstName: String!
+            lastName: String!
+            legalName: String!
+            dateOfBirth: String!
+            taxId: String!
+            email: String!
+            phone: String!
+            address: String!
+            CustomerType:  CustomerType
+            RiskRating:  RiskRating
+            KycStatus:  KycStatus
     ): Account
     assignToOwners( ownersIds: [ID]! ): Account
     addToTransactions(
-            bookingDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            valueDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            description: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Direction: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            TransactionType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Channel: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            bookingDate: String!
+            valueDate: String!
+            amount: String!
+            description: String!
+            Direction:  TransactionDirection
+            TransactionType:  TransactionType
+            Status:  TransactionStatus
+            Channel:  ChannelType
     ): Account
     assignToTransactions( transactionsIds: [ID]! ): Account
     addToStatements(
-            statementNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            periodStart: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            periodEnd: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openingBalance: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closingBalance: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            DeliveryMethod: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            statementNumber: String!
+            periodStart: String!
+            periodEnd: String!
+            openingBalance: String!
+            closingBalance: String!
+            DeliveryMethod:  StatementDeliveryMethod
     ): Account
     assignToStatements( statementsIds: [ID]! ): Account
     addToStandingInstructions(
-            instructionId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            nextExecutionDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Frequency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            instructionId: String!
+            amount: String!
+            nextExecutionDate: String!
+            Frequency:  StandingInstructionFrequency
+            Status:  StandingInstructionStatus
     ): Account
     assignToStandingInstructions( standingInstructionsIds: [ID]! ): Account
     addToFeeCharges(
-            feeCode: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            appliedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            FeeType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            feeCode: String!
+            amount: String!
+            appliedOn: String!
+            FeeType:  FeeType
     ): Account
     assignToFeeCharges( feeChargesIds: [ID]! ): Account
 
@@ -1276,23 +1276,23 @@ hasMore: Boolean!
 """
 type AccountStatement {
 id: ID!
-        statementNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        periodStart: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        periodEnd: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        openingBalance: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        closingBalance: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        account: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        deliveryMethod: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        statementNumber: String!
+        periodStart: String!
+        periodEnd: String!
+        openingBalance: String!
+        closingBalance: String!
+        account: Account
+        deliveryMethod:  StatementDeliveryMethod
     addAccount(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): AccountStatement
     assignAccount(  accountId: [ID]! ): AccountStatement
     unassignAccount( accountStatementId: ID! ): AccountStatement
@@ -1310,82 +1310,82 @@ hasMore: Boolean!
 """
 type Transaction {
 id: ID!
-        bookingDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        valueDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        description: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        account: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        externalCounterparty: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        paymentCard: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        fundsTransfer: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        fxTrade: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        dispute: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        direction: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        transactionType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        channel: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        bookingDate: String!
+        valueDate: String!
+        amount: String!
+        description: String!
+        account: Account
+        externalCounterparty: ExternalAccount
+        paymentCard: PaymentCard
+        fundsTransfer: FundsTransfer
+        fxTrade: FXTrade
+        dispute: Dispute
+        direction:  TransactionDirection
+        transactionType:  TransactionType
+        status:  TransactionStatus
+        channel:  ChannelType
     addAccount(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): Transaction
     assignAccount(  accountId: [ID]! ): Transaction
     unassignAccount( transactionId: ID! ): Transaction
     addExternalCounterparty(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            bic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            bankName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            country: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            iban: String!
+            accountNumber: String!
+            bic: String!
+            bankName: String!
+            country: String!
     ): Transaction
     assignExternalCounterparty(  externalCounterpartyId: [ID]! ): Transaction
     unassignExternalCounterparty( transactionId: ID! ): Transaction
     addPaymentCard(
-            cardNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            embossedName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiryMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiryYear: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CardType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CardStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Network: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            cardNumber: String!
+            embossedName: String!
+            expiryMonth: Int!
+            expiryYear: Int!
+            CardType:  CardType
+            CardStatus:  CardStatus
+            Network:  CardNetwork
     ): Transaction
     assignPaymentCard(  paymentCardId: [ID]! ): Transaction
     unassignPaymentCard( transactionId: ID! ): Transaction
     addFundsTransfer(
-            transferReference: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            requestedDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            executionDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            purpose: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            feeAmount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Method: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            transferReference: String!
+            amount: String!
+            requestedDate: String!
+            executionDate: String!
+            purpose: String!
+            feeAmount: String!
+            Method:  PaymentMethod
+            Status:  PaymentStatus
     ): Transaction
     assignFundsTransfer(  fundsTransferId: [ID]! ): Transaction
     unassignFundsTransfer( transactionId: ID! ): Transaction
     addFxTrade(
-            tradeReference: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            tradeDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            settlementDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amountSold: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amountBought: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            rate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            tradeReference: String!
+            tradeDate: String!
+            settlementDate: String!
+            amountSold: String!
+            amountBought: String!
+            rate: String!
+            Status:  TradeStatus
     ): Transaction
     assignFxTrade(  fxTradeId: [ID]! ): Transaction
     unassignFxTrade( transactionId: ID! ): Transaction
     addDispute(
-            disputeReference: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            raisedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            reason: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            disputeReference: String!
+            raisedOn: String!
+            reason: String!
+            Status:  DisputeStatus
     ): Transaction
     assignDispute(  disputeId: [ID]! ): Transaction
     unassignDispute( transactionId: ID! ): Transaction
@@ -1403,38 +1403,38 @@ hasMore: Boolean!
 """
 type ExternalAccount {
 id: ID!
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        iban: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        accountNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bic: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bankName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        country: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        customer: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        transactions: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        name: String!
+        iban: String!
+        accountNumber: String!
+        bic: String!
+        bankName: String!
+        country: String!
+        customer: Customer
+        transactions:  [Transaction]
     addCustomer(
-            firstName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            dateOfBirth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            taxId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            email: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CustomerType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RiskRating: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            KycStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            firstName: String!
+            lastName: String!
+            legalName: String!
+            dateOfBirth: String!
+            taxId: String!
+            email: String!
+            phone: String!
+            address: String!
+            CustomerType:  CustomerType
+            RiskRating:  RiskRating
+            KycStatus:  KycStatus
     ): ExternalAccount
     assignCustomer(  customerId: [ID]! ): ExternalAccount
     unassignCustomer( externalAccountId: ID! ): ExternalAccount
     addToTransactions(
-            bookingDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            valueDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            description: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Direction: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            TransactionType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Channel: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            bookingDate: String!
+            valueDate: String!
+            amount: String!
+            description: String!
+            Direction:  TransactionDirection
+            TransactionType:  TransactionType
+            Status:  TransactionStatus
+            Channel:  ChannelType
     ): ExternalAccount
     assignToTransactions( transactionsIds: [ID]! ): ExternalAccount
 
@@ -1451,79 +1451,79 @@ hasMore: Boolean!
 """
 type FundsTransfer {
 id: ID!
-        transferReference: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        requestedDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        executionDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        purpose: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        feeAmount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        sourceAccount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        destinationAccount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        externalBeneficiary: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        initiatedBy: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        transactions: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        method: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        transferReference: String!
+        amount: String!
+        requestedDate: String!
+        executionDate: String!
+        purpose: String!
+        feeAmount: String!
+        sourceAccount: Account
+        destinationAccount: Account
+        externalBeneficiary: ExternalAccount
+        initiatedBy: Customer
+        transactions:  [Transaction]
+        method:  PaymentMethod
+        status:  PaymentStatus
     addSourceAccount(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): FundsTransfer
     assignSourceAccount(  sourceAccountId: [ID]! ): FundsTransfer
     unassignSourceAccount( fundsTransferId: ID! ): FundsTransfer
     addDestinationAccount(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): FundsTransfer
     assignDestinationAccount(  destinationAccountId: [ID]! ): FundsTransfer
     unassignDestinationAccount( fundsTransferId: ID! ): FundsTransfer
     addExternalBeneficiary(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            bic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            bankName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            country: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            iban: String!
+            accountNumber: String!
+            bic: String!
+            bankName: String!
+            country: String!
     ): FundsTransfer
     assignExternalBeneficiary(  externalBeneficiaryId: [ID]! ): FundsTransfer
     unassignExternalBeneficiary( fundsTransferId: ID! ): FundsTransfer
     addInitiatedBy(
-            firstName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            dateOfBirth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            taxId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            email: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CustomerType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RiskRating: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            KycStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            firstName: String!
+            lastName: String!
+            legalName: String!
+            dateOfBirth: String!
+            taxId: String!
+            email: String!
+            phone: String!
+            address: String!
+            CustomerType:  CustomerType
+            RiskRating:  RiskRating
+            KycStatus:  KycStatus
     ): FundsTransfer
     assignInitiatedBy(  initiatedById: [ID]! ): FundsTransfer
     unassignInitiatedBy( fundsTransferId: ID! ): FundsTransfer
     addToTransactions(
-            bookingDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            valueDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            description: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Direction: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            TransactionType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Channel: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            bookingDate: String!
+            valueDate: String!
+            amount: String!
+            description: String!
+            Direction:  TransactionDirection
+            TransactionType:  TransactionType
+            Status:  TransactionStatus
+            Channel:  ChannelType
     ): FundsTransfer
     assignToTransactions( transactionsIds: [ID]! ): FundsTransfer
 
@@ -1540,33 +1540,33 @@ hasMore: Boolean!
 """
 type StandingInstruction {
 id: ID!
-        instructionId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        nextExecutionDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        account: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        beneficiary: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        frequency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        instructionId: String!
+        amount: String!
+        nextExecutionDate: String!
+        account: Account
+        beneficiary: ExternalAccount
+        frequency:  StandingInstructionFrequency
+        status:  StandingInstructionStatus
     addAccount(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): StandingInstruction
     assignAccount(  accountId: [ID]! ): StandingInstruction
     unassignAccount( standingInstructionId: ID! ): StandingInstruction
     addBeneficiary(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            bic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            bankName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            country: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            iban: String!
+            accountNumber: String!
+            bic: String!
+            bankName: String!
+            country: String!
     ): StandingInstruction
     assignBeneficiary(  beneficiaryId: [ID]! ): StandingInstruction
     unassignBeneficiary( standingInstructionId: ID! ): StandingInstruction
@@ -1584,63 +1584,63 @@ hasMore: Boolean!
 """
 type PaymentCard {
 id: ID!
-        cardNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        embossedName: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        expiryMonth: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        expiryYear: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bank: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        account: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        customer: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        transactions: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        cardType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        cardStatus: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        network: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        cardNumber: String!
+        embossedName: String!
+        expiryMonth: Int!
+        expiryYear: Int!
+        bank: Bank
+        account: Account
+        customer: Customer
+        transactions:  [Transaction]
+        cardType:  CardType
+        cardStatus:  CardStatus
+        network:  CardNetwork
     addBank(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            swiftBic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            headquartersCountry: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            website: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            legalName: String!
+            swiftBic: String!
+            headquartersCountry: String!
+            website: String!
     ): PaymentCard
     assignBank(  bankId: [ID]! ): PaymentCard
     unassignBank( paymentCardId: ID! ): PaymentCard
     addAccount(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): PaymentCard
     assignAccount(  accountId: [ID]! ): PaymentCard
     unassignAccount( paymentCardId: ID! ): PaymentCard
     addCustomer(
-            firstName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            dateOfBirth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            taxId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            email: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CustomerType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RiskRating: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            KycStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            firstName: String!
+            lastName: String!
+            legalName: String!
+            dateOfBirth: String!
+            taxId: String!
+            email: String!
+            phone: String!
+            address: String!
+            CustomerType:  CustomerType
+            RiskRating:  RiskRating
+            KycStatus:  KycStatus
     ): PaymentCard
     assignCustomer(  customerId: [ID]! ): PaymentCard
     unassignCustomer( paymentCardId: ID! ): PaymentCard
     addToTransactions(
-            bookingDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            valueDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            description: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Direction: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            TransactionType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Channel: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            bookingDate: String!
+            valueDate: String!
+            amount: String!
+            description: String!
+            Direction:  TransactionDirection
+            TransactionType:  TransactionType
+            Status:  TransactionStatus
+            Channel:  ChannelType
     ): PaymentCard
     assignToTransactions( transactionsIds: [ID]! ): PaymentCard
 
@@ -1657,95 +1657,95 @@ hasMore: Boolean!
 """
 type LoanAccount {
 id: ID!
-        loanNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        principalAmount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        outstandingPrincipal: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        interestRate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        originationDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        maturityDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        paymentDayOfMonth: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        currency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bank: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        branch: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        product: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        borrowers: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        repaymentSchedule: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        payments: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        collateral: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        feeCharges: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        loanType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        rateType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        compounding: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        loanNumber: String!
+        principalAmount: String!
+        outstandingPrincipal: String!
+        interestRate: String!
+        originationDate: String!
+        maturityDate: String!
+        paymentDayOfMonth: Int!
+        currency: String!
+        bank: Bank
+        branch: Branch
+        product: BankingProduct
+        borrowers:  [Customer]
+        repaymentSchedule:  [RepaymentSchedule]
+        payments:  [LoanPayment]
+        collateral:  [Collateral]
+        feeCharges:  [FeeCharge]
+        loanType:  LoanType
+        rateType:  RateType
+        compounding:  InterestCompounding
+        status:  LoanStatus
     addBank(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            swiftBic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            headquartersCountry: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            website: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            legalName: String!
+            swiftBic: String!
+            headquartersCountry: String!
+            website: String!
     ): LoanAccount
     assignBank(  bankId: [ID]! ): LoanAccount
     unassignBank( loanAccountId: ID! ): LoanAccount
     addBranch(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            branchCode: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openingHours: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            branchCode: String!
+            address: String!
+            phone: String!
+            openingHours: String!
     ): LoanAccount
     assignBranch(  branchId: [ID]! ): LoanAccount
     unassignBranch( loanAccountId: ID! ): LoanAccount
     addProduct(
-            productCode: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            description: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            ProductCategory: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            productCode: String!
+            name: String!
+            description: String!
+            ProductCategory:  ProductCategory
     ): LoanAccount
     assignProduct(  productId: [ID]! ): LoanAccount
     unassignProduct( loanAccountId: ID! ): LoanAccount
     addToBorrowers(
-            firstName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            dateOfBirth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            taxId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            email: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CustomerType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RiskRating: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            KycStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            firstName: String!
+            lastName: String!
+            legalName: String!
+            dateOfBirth: String!
+            taxId: String!
+            email: String!
+            phone: String!
+            address: String!
+            CustomerType:  CustomerType
+            RiskRating:  RiskRating
+            KycStatus:  KycStatus
     ): LoanAccount
     assignToBorrowers( borrowersIds: [ID]! ): LoanAccount
     addToRepaymentSchedule(
-            installmentNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            dueDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            principalDue: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            interestDue: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            totalDue: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            installmentNumber: Int!
+            dueDate: String!
+            principalDue: String!
+            interestDue: String!
+            totalDue: String!
+            Status:  InstallmentStatus
     ): LoanAccount
     assignToRepaymentSchedule( repaymentScheduleIds: [ID]! ): LoanAccount
     addToPayments(
-            paymentReference: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            paymentDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Method: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            paymentReference: String!
+            amount: String!
+            paymentDate: String!
+            Method:  PaymentMethod
+            Status:  PaymentStatus
     ): LoanAccount
     assignToPayments( paymentsIds: [ID]! ): LoanAccount
     addToCollateral(
-            appraisedValue: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            description: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            location: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CollateralType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            appraisedValue: String!
+            description: String!
+            location: String!
+            CollateralType:  CollateralType
     ): LoanAccount
     assignToCollateral( collateralIds: [ID]! ): LoanAccount
     addToFeeCharges(
-            feeCode: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            appliedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            FeeType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            feeCode: String!
+            amount: String!
+            appliedOn: String!
+            FeeType:  FeeType
     ): LoanAccount
     assignToFeeCharges( feeChargesIds: [ID]! ): LoanAccount
 
@@ -1762,36 +1762,36 @@ hasMore: Boolean!
 """
 type RepaymentSchedule {
 id: ID!
-        installmentNumber: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        dueDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        principalDue: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        interestDue: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        totalDue: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        loanAccount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        payment: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        installmentNumber: Int!
+        dueDate: String!
+        principalDue: String!
+        interestDue: String!
+        totalDue: String!
+        loanAccount: LoanAccount
+        payment: LoanPayment
+        status:  InstallmentStatus
     addLoanAccount(
-            loanNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            principalAmount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            outstandingPrincipal: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            interestRate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            originationDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            maturityDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            paymentDayOfMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            LoanType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RateType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Compounding: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            loanNumber: String!
+            principalAmount: String!
+            outstandingPrincipal: String!
+            interestRate: String!
+            originationDate: String!
+            maturityDate: String!
+            paymentDayOfMonth: Int!
+            currency: String!
+            LoanType:  LoanType
+            RateType:  RateType
+            Compounding:  InterestCompounding
+            Status:  LoanStatus
     ): RepaymentSchedule
     assignLoanAccount(  loanAccountId: [ID]! ): RepaymentSchedule
     unassignLoanAccount( repaymentScheduleId: ID! ): RepaymentSchedule
     addPayment(
-            paymentReference: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            paymentDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Method: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            paymentReference: String!
+            amount: String!
+            paymentDate: String!
+            Method:  PaymentMethod
+            Status:  PaymentStatus
     ): RepaymentSchedule
     assignPayment(  paymentId: [ID]! ): RepaymentSchedule
     unassignPayment( repaymentScheduleId: ID! ): RepaymentSchedule
@@ -1809,38 +1809,38 @@ hasMore: Boolean!
 """
 type LoanPayment {
 id: ID!
-        paymentReference: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        paymentDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        loanAccount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        transaction: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        method: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        paymentReference: String!
+        amount: String!
+        paymentDate: String!
+        loanAccount: LoanAccount
+        transaction: Transaction
+        method:  PaymentMethod
+        status:  PaymentStatus
     addLoanAccount(
-            loanNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            principalAmount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            outstandingPrincipal: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            interestRate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            originationDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            maturityDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            paymentDayOfMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            LoanType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RateType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Compounding: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            loanNumber: String!
+            principalAmount: String!
+            outstandingPrincipal: String!
+            interestRate: String!
+            originationDate: String!
+            maturityDate: String!
+            paymentDayOfMonth: Int!
+            currency: String!
+            LoanType:  LoanType
+            RateType:  RateType
+            Compounding:  InterestCompounding
+            Status:  LoanStatus
     ): LoanPayment
     assignLoanAccount(  loanAccountId: [ID]! ): LoanPayment
     unassignLoanAccount( loanPaymentId: ID! ): LoanPayment
     addTransaction(
-            bookingDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            valueDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            description: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Direction: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            TransactionType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Channel: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            bookingDate: String!
+            valueDate: String!
+            amount: String!
+            description: String!
+            Direction:  TransactionDirection
+            TransactionType:  TransactionType
+            Status:  TransactionStatus
+            Channel:  ChannelType
     ): LoanPayment
     assignTransaction(  transactionId: [ID]! ): LoanPayment
     unassignTransaction( loanPaymentId: ID! ): LoanPayment
@@ -1858,24 +1858,24 @@ hasMore: Boolean!
 """
 type Collateral {
 id: ID!
-        appraisedValue: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        description: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        location: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        loanAccount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        collateralType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        appraisedValue: String!
+        description: String!
+        location: String!
+        loanAccount: LoanAccount
+        collateralType:  CollateralType
     addLoanAccount(
-            loanNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            principalAmount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            outstandingPrincipal: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            interestRate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            originationDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            maturityDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            paymentDayOfMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            LoanType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RateType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Compounding: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            loanNumber: String!
+            principalAmount: String!
+            outstandingPrincipal: String!
+            interestRate: String!
+            originationDate: String!
+            maturityDate: String!
+            paymentDayOfMonth: Int!
+            currency: String!
+            LoanType:  LoanType
+            RateType:  RateType
+            Compounding:  InterestCompounding
+            Status:  LoanStatus
     ): Collateral
     assignLoanAccount(  loanAccountId: [ID]! ): Collateral
     unassignLoanAccount( collateralId: ID! ): Collateral
@@ -1893,38 +1893,38 @@ hasMore: Boolean!
 """
 type FeeCharge {
 id: ID!
-        feeCode: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        appliedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        account: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        loanAccount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        feeType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        feeCode: String!
+        amount: String!
+        appliedOn: String!
+        account: Account
+        loanAccount: LoanAccount
+        feeType:  FeeType
     addAccount(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): FeeCharge
     assignAccount(  accountId: [ID]! ): FeeCharge
     unassignAccount( feeChargeId: ID! ): FeeCharge
     addLoanAccount(
-            loanNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            principalAmount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            outstandingPrincipal: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            interestRate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            originationDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            maturityDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            paymentDayOfMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            LoanType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RateType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Compounding: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            loanNumber: String!
+            principalAmount: String!
+            outstandingPrincipal: String!
+            interestRate: String!
+            originationDate: String!
+            maturityDate: String!
+            paymentDayOfMonth: Int!
+            currency: String!
+            LoanType:  LoanType
+            RateType:  RateType
+            Compounding:  InterestCompounding
+            Status:  LoanStatus
     ): FeeCharge
     assignLoanAccount(  loanAccountId: [ID]! ): FeeCharge
     unassignLoanAccount( feeChargeId: ID! ): FeeCharge
@@ -1942,30 +1942,30 @@ hasMore: Boolean!
 """
 type ExchangeRate {
 id: ID!
-        baseCurrency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        counterCurrency: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        rate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        asOf: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        source: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bank: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        fxTrades: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        baseCurrency: String!
+        counterCurrency: String!
+        rate: String!
+        asOf: String!
+        source: String!
+        bank: Bank
+        fxTrades:  [FXTrade]
     addBank(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            swiftBic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            headquartersCountry: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            website: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            legalName: String!
+            swiftBic: String!
+            headquartersCountry: String!
+            website: String!
     ): ExchangeRate
     assignBank(  bankId: [ID]! ): ExchangeRate
     unassignBank( exchangeRateId: ID! ): ExchangeRate
     addToFxTrades(
-            tradeReference: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            tradeDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            settlementDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amountSold: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amountBought: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            rate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            tradeReference: String!
+            tradeDate: String!
+            settlementDate: String!
+            amountSold: String!
+            amountBought: String!
+            rate: String!
+            Status:  TradeStatus
     ): ExchangeRate
     assignToFxTrades( fxTradesIds: [ID]! ): ExchangeRate
 
@@ -1982,87 +1982,87 @@ hasMore: Boolean!
 """
 type FXTrade {
 id: ID!
-        tradeReference: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        tradeDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        settlementDate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amountSold: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        amountBought: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        rate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        customer: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bank: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        exchangeRate: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        sourceAccount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        destinationAccount: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        transaction: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        tradeReference: String!
+        tradeDate: String!
+        settlementDate: String!
+        amountSold: String!
+        amountBought: String!
+        rate: String!
+        customer: Customer
+        bank: Bank
+        exchangeRate: ExchangeRate
+        sourceAccount: Account
+        destinationAccount: Account
+        transaction: Transaction
+        status:  TradeStatus
     addCustomer(
-            firstName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            dateOfBirth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            taxId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            email: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CustomerType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RiskRating: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            KycStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            firstName: String!
+            lastName: String!
+            legalName: String!
+            dateOfBirth: String!
+            taxId: String!
+            email: String!
+            phone: String!
+            address: String!
+            CustomerType:  CustomerType
+            RiskRating:  RiskRating
+            KycStatus:  KycStatus
     ): FXTrade
     assignCustomer(  customerId: [ID]! ): FXTrade
     unassignCustomer( fXTradeId: ID! ): FXTrade
     addBank(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            swiftBic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            headquartersCountry: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            website: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            legalName: String!
+            swiftBic: String!
+            headquartersCountry: String!
+            website: String!
     ): FXTrade
     assignBank(  bankId: [ID]! ): FXTrade
     unassignBank( fXTradeId: ID! ): FXTrade
     addExchangeRate(
-            baseCurrency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            counterCurrency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            rate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            asOf: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            source: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            baseCurrency: String!
+            counterCurrency: String!
+            rate: String!
+            asOf: String!
+            source: String!
     ): FXTrade
     assignExchangeRate(  exchangeRateId: [ID]! ): FXTrade
     unassignExchangeRate( fXTradeId: ID! ): FXTrade
     addSourceAccount(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): FXTrade
     assignSourceAccount(  sourceAccountId: [ID]! ): FXTrade
     unassignSourceAccount( fXTradeId: ID! ): FXTrade
     addDestinationAccount(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): FXTrade
     assignDestinationAccount(  destinationAccountId: [ID]! ): FXTrade
     unassignDestinationAccount( fXTradeId: ID! ): FXTrade
     addTransaction(
-            bookingDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            valueDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            description: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Direction: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            TransactionType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Channel: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            bookingDate: String!
+            valueDate: String!
+            amount: String!
+            description: String!
+            Direction:  TransactionDirection
+            TransactionType:  TransactionType
+            Status:  TransactionStatus
+            Channel:  ChannelType
     ): FXTrade
     assignTransaction(  transactionId: [ID]! ): FXTrade
     unassignTransaction( fXTradeId: ID! ): FXTrade
@@ -2080,62 +2080,62 @@ hasMore: Boolean!
 """
 type Dispute {
 id: ID!
-        disputeReference: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        raisedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        reason: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        transaction: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        customer: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        account: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        paymentCard: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        disputeReference: String!
+        raisedOn: String!
+        reason: String!
+        transaction: Transaction
+        customer: Customer
+        account: Account
+        paymentCard: PaymentCard
+        status:  DisputeStatus
     addTransaction(
-            bookingDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            valueDate: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            amount: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            description: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Direction: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            TransactionType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Channel: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            bookingDate: String!
+            valueDate: String!
+            amount: String!
+            description: String!
+            Direction:  TransactionDirection
+            TransactionType:  TransactionType
+            Status:  TransactionStatus
+            Channel:  ChannelType
     ): Dispute
     assignTransaction(  transactionId: [ID]! ): Dispute
     unassignTransaction( disputeId: ID! ): Dispute
     addCustomer(
-            firstName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            dateOfBirth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            taxId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            email: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CustomerType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RiskRating: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            KycStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            firstName: String!
+            lastName: String!
+            legalName: String!
+            dateOfBirth: String!
+            taxId: String!
+            email: String!
+            phone: String!
+            address: String!
+            CustomerType:  CustomerType
+            RiskRating:  RiskRating
+            KycStatus:  KycStatus
     ): Dispute
     assignCustomer(  customerId: [ID]! ): Dispute
     unassignCustomer( disputeId: ID! ): Dispute
     addAccount(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): Dispute
     assignAccount(  accountId: [ID]! ): Dispute
     unassignAccount( disputeId: ID! ): Dispute
     addPaymentCard(
-            cardNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            embossedName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiryMonth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiryYear: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CardType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CardStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Network: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            cardNumber: String!
+            embossedName: String!
+            expiryMonth: Int!
+            expiryYear: Int!
+            CardType:  CardType
+            CardStatus:  CardStatus
+            Network:  CardNetwork
     ): Dispute
     assignPaymentCard(  paymentCardId: [ID]! ): Dispute
     unassignPaymentCard( disputeId: ID! ): Dispute
@@ -2153,55 +2153,55 @@ hasMore: Boolean!
 """
 type Consent {
 id: ID!
-        grantedOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        expiresOn: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        customer: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bank: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        authorizedAccounts: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        thirdPartyProvider: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        consentType: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        status: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        grantedOn: String!
+        expiresOn: String!
+        customer: Customer
+        bank: Bank
+        authorizedAccounts:  [Account]
+        thirdPartyProvider: ThirdPartyProvider
+        consentType:  ConsentType
+        status:  ConsentStatus
     addCustomer(
-            firstName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            lastName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            dateOfBirth: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            taxId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            email: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            phone: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            address: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            CustomerType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            RiskRating: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            KycStatus: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            firstName: String!
+            lastName: String!
+            legalName: String!
+            dateOfBirth: String!
+            taxId: String!
+            email: String!
+            phone: String!
+            address: String!
+            CustomerType:  CustomerType
+            RiskRating:  RiskRating
+            KycStatus:  KycStatus
     ): Consent
     assignCustomer(  customerId: [ID]! ): Consent
     unassignCustomer( consentId: ID! ): Consent
     addBank(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            swiftBic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            headquartersCountry: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            website: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            legalName: String!
+            swiftBic: String!
+            headquartersCountry: String!
+            website: String!
     ): Consent
     assignBank(  bankId: [ID]! ): Consent
     unassignBank( consentId: ID! ): Consent
     addThirdPartyProvider(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            registrationId: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            website: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            registrationId: String!
+            website: String!
     ): Consent
     assignThirdPartyProvider(  thirdPartyProviderId: [ID]! ): Consent
     unassignThirdPartyProvider( consentId: ID! ): Consent
     addToAuthorizedAccounts(
-            accountNumber: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            iban: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            accountName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            openedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            closedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            AccountType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            OwnershipType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            accountNumber: String!
+            iban: String!
+            accountName: String!
+            currency: String!
+            openedOn: String!
+            closedOn: String!
+            AccountType:  AccountType
+            OwnershipType:  AccountOwnershipType
+            Status:  AccountStatus
     ): Consent
     assignToAuthorizedAccounts( authorizedAccountsIds: [ID]! ): Consent
 
@@ -2218,25 +2218,25 @@ hasMore: Boolean!
 """
 type ThirdPartyProvider {
 id: ID!
-        name: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        registrationId: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        website: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        bank: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
-        consents: #attributeTypeDeclaration(${attribute}, ${class}, ${outputTheAttributeType})
+        name: String!
+        registrationId: String!
+        website: String!
+        bank: Bank
+        consents:  [Consent]
     addBank(
-            name: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            legalName: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            swiftBic: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            headquartersCountry: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            website: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            name: String!
+            legalName: String!
+            swiftBic: String!
+            headquartersCountry: String!
+            website: String!
     ): ThirdPartyProvider
     assignBank(  bankId: [ID]! ): ThirdPartyProvider
     unassignBank( thirdPartyProviderId: ID! ): ThirdPartyProvider
     addToConsents(
-            grantedOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            expiresOn: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            ConsentType: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
-            Status: #attributeTypeDeclaration(${attribute}, ${childClass}, ${outputTheAttributeType})
+            grantedOn: String!
+            expiresOn: String!
+            ConsentType:  ConsentType
+            Status:  ConsentStatus
     ): ThirdPartyProvider
     assignToConsents( consentsIds: [ID]! ): ThirdPartyProvider
 
@@ -2609,48 +2609,48 @@ enum CollateralType {
     Money
 """
 type Money {
-                amount: #attributeTypeDeclaration(${attribute}, ${valueObject}, ${outputTheAttributeType})
-            currency: #attributeTypeDeclaration(${attribute}, ${valueObject}, ${outputTheAttributeType})
+                amount: String!
+            currency: String!
     }
 """
     Address
 """
 type Address {
-                street: #attributeTypeDeclaration(${attribute}, ${valueObject}, ${outputTheAttributeType})
-            city: #attributeTypeDeclaration(${attribute}, ${valueObject}, ${outputTheAttributeType})
-            state: #attributeTypeDeclaration(${attribute}, ${valueObject}, ${outputTheAttributeType})
-            postalCode: #attributeTypeDeclaration(${attribute}, ${valueObject}, ${outputTheAttributeType})
-            country: #attributeTypeDeclaration(${attribute}, ${valueObject}, ${outputTheAttributeType})
+                street: String!
+            city: String!
+            state: String!
+            postalCode: String!
+            country: String!
     }
 """
     AccountNumber
 """
 type AccountNumber {
-                value: #attributeTypeDeclaration(${attribute}, ${valueObject}, ${outputTheAttributeType})
+                value: String!
     }
 """
     IBAN
 """
 type IBAN {
-                value: #attributeTypeDeclaration(${attribute}, ${valueObject}, ${outputTheAttributeType})
+                value: String!
     }
 """
     BIC
 """
 type BIC {
-                value: #attributeTypeDeclaration(${attribute}, ${valueObject}, ${outputTheAttributeType})
+                value: String!
     }
 """
     CardPAN
 """
 type CardPAN {
-                value: #attributeTypeDeclaration(${attribute}, ${valueObject}, ${outputTheAttributeType})
+                value: String!
     }
 """
     Percentage
 """
 type Percentage {
-                value: #attributeTypeDeclaration(${attribute}, ${valueObject}, ${outputTheAttributeType})
+                value: String!
     }
 `;
 module.exports = typeDefs;

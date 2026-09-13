@@ -62,14 +62,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     bank = {
         find: async (id: string): Promise<Bank | null> => {
-            const response = await this.http.get(`/Bank/get/${id}`);
+            const response = await this.http.get(`/Bank/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<Bank[]> => {
-            const response = await this.http.get(`/Bank/`,
+            const response = await this.http.post(`/Bank/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -82,7 +87,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: Bank ): Promise<Bank> => {
-            const response = await this.http.put(`/Bank/update/`,args );
+            const response = await this.http.put(`/Bank/update/`, args );
             return response.data;
         },
 
@@ -340,14 +345,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     branch = {
         find: async (id: string): Promise<Branch | null> => {
-            const response = await this.http.get(`/Branch/get/${id}`);
+            const response = await this.http.get(`/Branch/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<Branch[]> => {
-            const response = await this.http.get(`/Branch/`,
+            const response = await this.http.post(`/Branch/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -360,7 +370,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: Branch ): Promise<Branch> => {
-            const response = await this.http.put(`/Branch/update/`,args );
+            const response = await this.http.put(`/Branch/update/`, args );
             return response.data;
         },
 
@@ -483,14 +493,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     aTM = {
         find: async (id: string): Promise<ATM | null> => {
-            const response = await this.http.get(`/ATM/get/${id}`);
+            const response = await this.http.get(`/ATM/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<ATM[]> => {
-            const response = await this.http.get(`/ATM/`,
+            const response = await this.http.post(`/ATM/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -503,7 +518,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: ATM ): Promise<ATM> => {
-            const response = await this.http.put(`/ATM/update/`,args );
+            const response = await this.http.put(`/ATM/update/`, args );
             return response.data;
         },
 
@@ -545,14 +560,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     customer = {
         find: async (id: string): Promise<Customer | null> => {
-            const response = await this.http.get(`/Customer/get/${id}`);
+            const response = await this.http.get(`/Customer/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<Customer[]> => {
-            const response = await this.http.get(`/Customer/`,
+            const response = await this.http.post(`/Customer/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -565,7 +585,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: Customer ): Promise<Customer> => {
-            const response = await this.http.put(`/Customer/update/`,args );
+            const response = await this.http.put(`/Customer/update/`, args );
             return response.data;
         },
 
@@ -823,14 +843,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     kycProfile = {
         find: async (id: string): Promise<KycProfile | null> => {
-            const response = await this.http.get(`/KycProfile/get/${id}`);
+            const response = await this.http.get(`/KycProfile/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<KycProfile[]> => {
-            const response = await this.http.get(`/KycProfile/`,
+            const response = await this.http.post(`/KycProfile/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -843,7 +868,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: KycProfile ): Promise<KycProfile> => {
-            const response = await this.http.put(`/KycProfile/update/`,args );
+            const response = await this.http.put(`/KycProfile/update/`, args );
             return response.data;
         },
 
@@ -966,14 +991,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     identityDocument = {
         find: async (id: string): Promise<IdentityDocument | null> => {
-            const response = await this.http.get(`/IdentityDocument/get/${id}`);
+            const response = await this.http.get(`/IdentityDocument/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<IdentityDocument[]> => {
-            const response = await this.http.get(`/IdentityDocument/`,
+            const response = await this.http.post(`/IdentityDocument/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -986,7 +1016,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: IdentityDocument ): Promise<IdentityDocument> => {
-            const response = await this.http.put(`/IdentityDocument/update/`,args );
+            const response = await this.http.put(`/IdentityDocument/update/`, args );
             return response.data;
         },
 
@@ -1028,14 +1058,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     riskAssessment = {
         find: async (id: string): Promise<RiskAssessment | null> => {
-            const response = await this.http.get(`/RiskAssessment/get/${id}`);
+            const response = await this.http.get(`/RiskAssessment/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<RiskAssessment[]> => {
-            const response = await this.http.get(`/RiskAssessment/`,
+            const response = await this.http.post(`/RiskAssessment/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -1048,7 +1083,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: RiskAssessment ): Promise<RiskAssessment> => {
-            const response = await this.http.put(`/RiskAssessment/update/`,args );
+            const response = await this.http.put(`/RiskAssessment/update/`, args );
             return response.data;
         },
 
@@ -1090,14 +1125,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     screeningResult = {
         find: async (id: string): Promise<ScreeningResult | null> => {
-            const response = await this.http.get(`/ScreeningResult/get/${id}`);
+            const response = await this.http.get(`/ScreeningResult/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<ScreeningResult[]> => {
-            const response = await this.http.get(`/ScreeningResult/`,
+            const response = await this.http.post(`/ScreeningResult/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -1110,7 +1150,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: ScreeningResult ): Promise<ScreeningResult> => {
-            const response = await this.http.put(`/ScreeningResult/update/`,args );
+            const response = await this.http.put(`/ScreeningResult/update/`, args );
             return response.data;
         },
 
@@ -1152,14 +1192,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     bankingProduct = {
         find: async (id: string): Promise<BankingProduct | null> => {
-            const response = await this.http.get(`/BankingProduct/get/${id}`);
+            const response = await this.http.get(`/BankingProduct/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<BankingProduct[]> => {
-            const response = await this.http.get(`/BankingProduct/`,
+            const response = await this.http.post(`/BankingProduct/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -1172,7 +1217,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: BankingProduct ): Promise<BankingProduct> => {
-            const response = await this.http.put(`/BankingProduct/update/`,args );
+            const response = await this.http.put(`/BankingProduct/update/`, args );
             return response.data;
         },
 
@@ -1295,14 +1340,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     account = {
         find: async (id: string): Promise<Account | null> => {
-            const response = await this.http.get(`/Account/get/${id}`);
+            const response = await this.http.get(`/Account/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<Account[]> => {
-            const response = await this.http.get(`/Account/`,
+            const response = await this.http.post(`/Account/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -1315,7 +1365,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: Account ): Promise<Account> => {
-            const response = await this.http.put(`/Account/update/`,args );
+            const response = await this.http.put(`/Account/update/`, args );
             return response.data;
         },
 
@@ -1546,14 +1596,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     accountStatement = {
         find: async (id: string): Promise<AccountStatement | null> => {
-            const response = await this.http.get(`/AccountStatement/get/${id}`);
+            const response = await this.http.get(`/AccountStatement/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<AccountStatement[]> => {
-            const response = await this.http.get(`/AccountStatement/`,
+            const response = await this.http.post(`/AccountStatement/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -1566,7 +1621,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: AccountStatement ): Promise<AccountStatement> => {
-            const response = await this.http.put(`/AccountStatement/update/`,args );
+            const response = await this.http.put(`/AccountStatement/update/`, args );
             return response.data;
         },
 
@@ -1608,14 +1663,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     transaction = {
         find: async (id: string): Promise<Transaction | null> => {
-            const response = await this.http.get(`/Transaction/get/${id}`);
+            const response = await this.http.get(`/Transaction/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<Transaction[]> => {
-            const response = await this.http.get(`/Transaction/`,
+            const response = await this.http.post(`/Transaction/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -1628,7 +1688,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: Transaction ): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/update/`,args );
+            const response = await this.http.put(`/Transaction/update/`, args );
             return response.data;
         },
 
@@ -1805,14 +1865,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     externalAccount = {
         find: async (id: string): Promise<ExternalAccount | null> => {
-            const response = await this.http.get(`/ExternalAccount/get/${id}`);
+            const response = await this.http.get(`/ExternalAccount/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<ExternalAccount[]> => {
-            const response = await this.http.get(`/ExternalAccount/`,
+            const response = await this.http.post(`/ExternalAccount/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -1825,7 +1890,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: ExternalAccount ): Promise<ExternalAccount> => {
-            const response = await this.http.put(`/ExternalAccount/update/`,args );
+            const response = await this.http.put(`/ExternalAccount/update/`, args );
             return response.data;
         },
 
@@ -1894,14 +1959,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     fundsTransfer = {
         find: async (id: string): Promise<FundsTransfer | null> => {
-            const response = await this.http.get(`/FundsTransfer/get/${id}`);
+            const response = await this.http.get(`/FundsTransfer/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<FundsTransfer[]> => {
-            const response = await this.http.get(`/FundsTransfer/`,
+            const response = await this.http.post(`/FundsTransfer/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -1914,7 +1984,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: FundsTransfer ): Promise<FundsTransfer> => {
-            const response = await this.http.put(`/FundsTransfer/update/`,args );
+            const response = await this.http.put(`/FundsTransfer/update/`, args );
             return response.data;
         },
 
@@ -2064,14 +2134,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     standingInstruction = {
         find: async (id: string): Promise<StandingInstruction | null> => {
-            const response = await this.http.get(`/StandingInstruction/get/${id}`);
+            const response = await this.http.get(`/StandingInstruction/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<StandingInstruction[]> => {
-            const response = await this.http.get(`/StandingInstruction/`,
+            const response = await this.http.post(`/StandingInstruction/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -2084,7 +2159,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: StandingInstruction ): Promise<StandingInstruction> => {
-            const response = await this.http.put(`/StandingInstruction/update/`,args );
+            const response = await this.http.put(`/StandingInstruction/update/`, args );
             return response.data;
         },
 
@@ -2153,14 +2228,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     paymentCard = {
         find: async (id: string): Promise<PaymentCard | null> => {
-            const response = await this.http.get(`/PaymentCard/get/${id}`);
+            const response = await this.http.get(`/PaymentCard/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<PaymentCard[]> => {
-            const response = await this.http.get(`/PaymentCard/`,
+            const response = await this.http.post(`/PaymentCard/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -2173,7 +2253,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: PaymentCard ): Promise<PaymentCard> => {
-            const response = await this.http.put(`/PaymentCard/update/`,args );
+            const response = await this.http.put(`/PaymentCard/update/`, args );
             return response.data;
         },
 
@@ -2296,14 +2376,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     loanAccount = {
         find: async (id: string): Promise<LoanAccount | null> => {
-            const response = await this.http.get(`/LoanAccount/get/${id}`);
+            const response = await this.http.get(`/LoanAccount/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<LoanAccount[]> => {
-            const response = await this.http.get(`/LoanAccount/`,
+            const response = await this.http.post(`/LoanAccount/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -2316,7 +2401,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: LoanAccount ): Promise<LoanAccount> => {
-            const response = await this.http.put(`/LoanAccount/update/`,args );
+            const response = await this.http.put(`/LoanAccount/update/`, args );
             return response.data;
         },
 
@@ -2547,14 +2632,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     repaymentSchedule = {
         find: async (id: string): Promise<RepaymentSchedule | null> => {
-            const response = await this.http.get(`/RepaymentSchedule/get/${id}`);
+            const response = await this.http.get(`/RepaymentSchedule/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<RepaymentSchedule[]> => {
-            const response = await this.http.get(`/RepaymentSchedule/`,
+            const response = await this.http.post(`/RepaymentSchedule/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -2567,7 +2657,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: RepaymentSchedule ): Promise<RepaymentSchedule> => {
-            const response = await this.http.put(`/RepaymentSchedule/update/`,args );
+            const response = await this.http.put(`/RepaymentSchedule/update/`, args );
             return response.data;
         },
 
@@ -2636,14 +2726,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     loanPayment = {
         find: async (id: string): Promise<LoanPayment | null> => {
-            const response = await this.http.get(`/LoanPayment/get/${id}`);
+            const response = await this.http.get(`/LoanPayment/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<LoanPayment[]> => {
-            const response = await this.http.get(`/LoanPayment/`,
+            const response = await this.http.post(`/LoanPayment/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -2656,7 +2751,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: LoanPayment ): Promise<LoanPayment> => {
-            const response = await this.http.put(`/LoanPayment/update/`,args );
+            const response = await this.http.put(`/LoanPayment/update/`, args );
             return response.data;
         },
 
@@ -2725,14 +2820,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     collateral = {
         find: async (id: string): Promise<Collateral | null> => {
-            const response = await this.http.get(`/Collateral/get/${id}`);
+            const response = await this.http.get(`/Collateral/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<Collateral[]> => {
-            const response = await this.http.get(`/Collateral/`,
+            const response = await this.http.post(`/Collateral/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -2745,7 +2845,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: Collateral ): Promise<Collateral> => {
-            const response = await this.http.put(`/Collateral/update/`,args );
+            const response = await this.http.put(`/Collateral/update/`, args );
             return response.data;
         },
 
@@ -2787,14 +2887,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     feeCharge = {
         find: async (id: string): Promise<FeeCharge | null> => {
-            const response = await this.http.get(`/FeeCharge/get/${id}`);
+            const response = await this.http.get(`/FeeCharge/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<FeeCharge[]> => {
-            const response = await this.http.get(`/FeeCharge/`,
+            const response = await this.http.post(`/FeeCharge/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -2807,7 +2912,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: FeeCharge ): Promise<FeeCharge> => {
-            const response = await this.http.put(`/FeeCharge/update/`,args );
+            const response = await this.http.put(`/FeeCharge/update/`, args );
             return response.data;
         },
 
@@ -2876,14 +2981,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     exchangeRate = {
         find: async (id: string): Promise<ExchangeRate | null> => {
-            const response = await this.http.get(`/ExchangeRate/get/${id}`);
+            const response = await this.http.get(`/ExchangeRate/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<ExchangeRate[]> => {
-            const response = await this.http.get(`/ExchangeRate/`,
+            const response = await this.http.post(`/ExchangeRate/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -2896,7 +3006,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: ExchangeRate ): Promise<ExchangeRate> => {
-            const response = await this.http.put(`/ExchangeRate/update/`,args );
+            const response = await this.http.put(`/ExchangeRate/update/`, args );
             return response.data;
         },
 
@@ -2965,14 +3075,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     fXTrade = {
         find: async (id: string): Promise<FXTrade | null> => {
-            const response = await this.http.get(`/FXTrade/get/${id}`);
+            const response = await this.http.get(`/FXTrade/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<FXTrade[]> => {
-            const response = await this.http.get(`/FXTrade/`,
+            const response = await this.http.post(`/FXTrade/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -2985,7 +3100,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: FXTrade ): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/update/`,args );
+            const response = await this.http.put(`/FXTrade/update/`, args );
             return response.data;
         },
 
@@ -3162,14 +3277,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     dispute = {
         find: async (id: string): Promise<Dispute | null> => {
-            const response = await this.http.get(`/Dispute/get/${id}`);
+            const response = await this.http.get(`/Dispute/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<Dispute[]> => {
-            const response = await this.http.get(`/Dispute/`,
+            const response = await this.http.post(`/Dispute/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -3182,7 +3302,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: Dispute ): Promise<Dispute> => {
-            const response = await this.http.put(`/Dispute/update/`,args );
+            const response = await this.http.put(`/Dispute/update/`, args );
             return response.data;
         },
 
@@ -3305,14 +3425,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     consent = {
         find: async (id: string): Promise<Consent | null> => {
-            const response = await this.http.get(`/Consent/get/${id}`);
+            const response = await this.http.get(`/Consent/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<Consent[]> => {
-            const response = await this.http.get(`/Consent/`,
+            const response = await this.http.post(`/Consent/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -3325,7 +3450,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: Consent ): Promise<Consent> => {
-            const response = await this.http.put(`/Consent/update/`,args );
+            const response = await this.http.put(`/Consent/update/`, args );
             return response.data;
         },
 
@@ -3448,14 +3573,19 @@ export class HttpBackendAPI implements BackendAPI {
 
     thirdPartyProvider = {
         find: async (id: string): Promise<ThirdPartyProvider | null> => {
-            const response = await this.http.get(`/ThirdPartyProvider/get/${id}`);
+            const response = await this.http.get(`/ThirdPartyProvider/get`,
+                {
+                    id
+                }
+            );
             return response.data;
         },
 
         findAll: async (paginationOptions?: PaginationOptions): Promise<ThirdPartyProvider[]> => {
-            const response = await this.http.get(`/ThirdPartyProvider/`,
+            const response = await this.http.post(`/ThirdPartyProvider/`,
                 {
-                    paginationOptions
+                    pageSize: paginationOptions.pageSize,
+                    after: paginationOptions.after
                 }
             );
 
@@ -3468,7 +3598,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         update: async (args: ThirdPartyProvider ): Promise<ThirdPartyProvider> => {
-            const response = await this.http.put(`/ThirdPartyProvider/update/`,args );
+            const response = await this.http.put(`/ThirdPartyProvider/update/`, args );
             return response.data;
         },
 

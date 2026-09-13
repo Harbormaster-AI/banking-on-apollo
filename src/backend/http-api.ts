@@ -62,7 +62,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     bank = {
         find: async (id: string): Promise<Bank | null> => {
-            const response = await this.http.get(`/Bank/get`,
+            const response = await this.http.get(`/Bank/post`,
                 {
                     id
                 }
@@ -92,12 +92,12 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/Bank/delete/${id}`);
+            await this.http.delete( `/Bank/delete/`,  { id } );
             return response.data;
         },
 
         getBranches: async (parentId: string): Promise<Branch[]> => {
-            const response = await this.http.get(`/Bank/getBranches/`,
+            const response = await this.http.put(`/Bank/getBranches/`,
                 {
                     parentId
                 }
@@ -124,7 +124,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getProducts: async (parentId: string): Promise<BankingProduct[]> => {
-            const response = await this.http.get(`/Bank/getProducts/`,
+            const response = await this.http.put(`/Bank/getProducts/`,
                 {
                     parentId
                 }
@@ -151,7 +151,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getCustomers: async (parentId: string): Promise<Customer[]> => {
-            const response = await this.http.get(`/Bank/getCustomers/`,
+            const response = await this.http.put(`/Bank/getCustomers/`,
                 {
                     parentId
                 }
@@ -178,7 +178,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getAccounts: async (parentId: string): Promise<Account[]> => {
-            const response = await this.http.get(`/Bank/getAccounts/`,
+            const response = await this.http.put(`/Bank/getAccounts/`,
                 {
                     parentId
                 }
@@ -205,7 +205,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getPaymentCards: async (parentId: string): Promise<PaymentCard[]> => {
-            const response = await this.http.get(`/Bank/getPaymentCards/`,
+            const response = await this.http.put(`/Bank/getPaymentCards/`,
                 {
                     parentId
                 }
@@ -232,7 +232,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getLoanAccounts: async (parentId: string): Promise<LoanAccount[]> => {
-            const response = await this.http.get(`/Bank/getLoanAccounts/`,
+            const response = await this.http.put(`/Bank/getLoanAccounts/`,
                 {
                     parentId
                 }
@@ -259,7 +259,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getExchangeRates: async (parentId: string): Promise<ExchangeRate[]> => {
-            const response = await this.http.get(`/Bank/getExchangeRates/`,
+            const response = await this.http.put(`/Bank/getExchangeRates/`,
                 {
                     parentId
                 }
@@ -286,7 +286,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getConsents: async (parentId: string): Promise<Consent[]> => {
-            const response = await this.http.get(`/Bank/getConsents/`,
+            const response = await this.http.put(`/Bank/getConsents/`,
                 {
                     parentId
                 }
@@ -313,7 +313,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getThirdPartyProviders: async (parentId: string): Promise<ThirdPartyProvider[]> => {
-            const response = await this.http.get(`/Bank/getThirdPartyProviders/`,
+            const response = await this.http.put(`/Bank/getThirdPartyProviders/`,
                 {
                     parentId
                 }
@@ -345,7 +345,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     branch = {
         find: async (id: string): Promise<Branch | null> => {
-            const response = await this.http.get(`/Branch/get`,
+            const response = await this.http.get(`/Branch/post`,
                 {
                     id
                 }
@@ -375,7 +375,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/Branch/delete/${id}`);
+            await this.http.delete( `/Branch/delete/`,  { id } );
             return response.data;
         },
 
@@ -407,7 +407,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getAccounts: async (parentId: string): Promise<Account[]> => {
-            const response = await this.http.get(`/Branch/getAccounts/`,
+            const response = await this.http.put(`/Branch/getAccounts/`,
                 {
                     parentId
                 }
@@ -434,7 +434,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getLoanAccounts: async (parentId: string): Promise<LoanAccount[]> => {
-            const response = await this.http.get(`/Branch/getLoanAccounts/`,
+            const response = await this.http.put(`/Branch/getLoanAccounts/`,
                 {
                     parentId
                 }
@@ -461,7 +461,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getAtms: async (parentId: string): Promise<ATM[]> => {
-            const response = await this.http.get(`/Branch/getAtms/`,
+            const response = await this.http.put(`/Branch/getAtms/`,
                 {
                     parentId
                 }
@@ -493,7 +493,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     aTM = {
         find: async (id: string): Promise<ATM | null> => {
-            const response = await this.http.get(`/ATM/get`,
+            const response = await this.http.get(`/ATM/post`,
                 {
                     id
                 }
@@ -523,7 +523,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/ATM/delete/${id}`);
+            await this.http.delete( `/ATM/delete/`,  { id } );
             return response.data;
         },
 
@@ -560,7 +560,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     customer = {
         find: async (id: string): Promise<Customer | null> => {
-            const response = await this.http.get(`/Customer/get`,
+            const response = await this.http.get(`/Customer/post`,
                 {
                     id
                 }
@@ -590,7 +590,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/Customer/delete/${id}`);
+            await this.http.delete( `/Customer/delete/`,  { id } );
             return response.data;
         },
 
@@ -622,7 +622,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getAccounts: async (parentId: string): Promise<Account[]> => {
-            const response = await this.http.get(`/Customer/getAccounts/`,
+            const response = await this.http.put(`/Customer/getAccounts/`,
                 {
                     parentId
                 }
@@ -649,7 +649,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getLoanAccounts: async (parentId: string): Promise<LoanAccount[]> => {
-            const response = await this.http.get(`/Customer/getLoanAccounts/`,
+            const response = await this.http.put(`/Customer/getLoanAccounts/`,
                 {
                     parentId
                 }
@@ -676,7 +676,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getPaymentCards: async (parentId: string): Promise<PaymentCard[]> => {
-            const response = await this.http.get(`/Customer/getPaymentCards/`,
+            const response = await this.http.put(`/Customer/getPaymentCards/`,
                 {
                     parentId
                 }
@@ -703,7 +703,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getExternalAccounts: async (parentId: string): Promise<ExternalAccount[]> => {
-            const response = await this.http.get(`/Customer/getExternalAccounts/`,
+            const response = await this.http.put(`/Customer/getExternalAccounts/`,
                 {
                     parentId
                 }
@@ -730,7 +730,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getFundsTransfers: async (parentId: string): Promise<FundsTransfer[]> => {
-            const response = await this.http.get(`/Customer/getFundsTransfers/`,
+            const response = await this.http.put(`/Customer/getFundsTransfers/`,
                 {
                     parentId
                 }
@@ -757,7 +757,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getDisputes: async (parentId: string): Promise<Dispute[]> => {
-            const response = await this.http.get(`/Customer/getDisputes/`,
+            const response = await this.http.put(`/Customer/getDisputes/`,
                 {
                     parentId
                 }
@@ -784,7 +784,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getKycProfiles: async (parentId: string): Promise<KycProfile[]> => {
-            const response = await this.http.get(`/Customer/getKycProfiles/`,
+            const response = await this.http.put(`/Customer/getKycProfiles/`,
                 {
                     parentId
                 }
@@ -811,7 +811,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getConsents: async (parentId: string): Promise<Consent[]> => {
-            const response = await this.http.get(`/Customer/getConsents/`,
+            const response = await this.http.put(`/Customer/getConsents/`,
                 {
                     parentId
                 }
@@ -843,7 +843,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     kycProfile = {
         find: async (id: string): Promise<KycProfile | null> => {
-            const response = await this.http.get(`/KycProfile/get`,
+            const response = await this.http.get(`/KycProfile/post`,
                 {
                     id
                 }
@@ -873,7 +873,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/KycProfile/delete/${id}`);
+            await this.http.delete( `/KycProfile/delete/`,  { id } );
             return response.data;
         },
 
@@ -905,7 +905,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getIdentityDocuments: async (parentId: string): Promise<IdentityDocument[]> => {
-            const response = await this.http.get(`/KycProfile/getIdentityDocuments/`,
+            const response = await this.http.put(`/KycProfile/getIdentityDocuments/`,
                 {
                     parentId
                 }
@@ -932,7 +932,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getRiskAssessments: async (parentId: string): Promise<RiskAssessment[]> => {
-            const response = await this.http.get(`/KycProfile/getRiskAssessments/`,
+            const response = await this.http.put(`/KycProfile/getRiskAssessments/`,
                 {
                     parentId
                 }
@@ -959,7 +959,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getScreenings: async (parentId: string): Promise<ScreeningResult[]> => {
-            const response = await this.http.get(`/KycProfile/getScreenings/`,
+            const response = await this.http.put(`/KycProfile/getScreenings/`,
                 {
                     parentId
                 }
@@ -991,7 +991,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     identityDocument = {
         find: async (id: string): Promise<IdentityDocument | null> => {
-            const response = await this.http.get(`/IdentityDocument/get`,
+            const response = await this.http.get(`/IdentityDocument/post`,
                 {
                     id
                 }
@@ -1021,7 +1021,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/IdentityDocument/delete/${id}`);
+            await this.http.delete( `/IdentityDocument/delete/`,  { id } );
             return response.data;
         },
 
@@ -1058,7 +1058,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     riskAssessment = {
         find: async (id: string): Promise<RiskAssessment | null> => {
-            const response = await this.http.get(`/RiskAssessment/get`,
+            const response = await this.http.get(`/RiskAssessment/post`,
                 {
                     id
                 }
@@ -1088,7 +1088,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/RiskAssessment/delete/${id}`);
+            await this.http.delete( `/RiskAssessment/delete/`,  { id } );
             return response.data;
         },
 
@@ -1125,7 +1125,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     screeningResult = {
         find: async (id: string): Promise<ScreeningResult | null> => {
-            const response = await this.http.get(`/ScreeningResult/get`,
+            const response = await this.http.get(`/ScreeningResult/post`,
                 {
                     id
                 }
@@ -1155,7 +1155,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/ScreeningResult/delete/${id}`);
+            await this.http.delete( `/ScreeningResult/delete/`,  { id } );
             return response.data;
         },
 
@@ -1192,7 +1192,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     bankingProduct = {
         find: async (id: string): Promise<BankingProduct | null> => {
-            const response = await this.http.get(`/BankingProduct/get`,
+            const response = await this.http.get(`/BankingProduct/post`,
                 {
                     id
                 }
@@ -1222,7 +1222,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/BankingProduct/delete/${id}`);
+            await this.http.delete( `/BankingProduct/delete/`,  { id } );
             return response.data;
         },
 
@@ -1254,7 +1254,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getAccounts: async (parentId: string): Promise<Account[]> => {
-            const response = await this.http.get(`/BankingProduct/getAccounts/`,
+            const response = await this.http.put(`/BankingProduct/getAccounts/`,
                 {
                     parentId
                 }
@@ -1281,7 +1281,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getLoanAccounts: async (parentId: string): Promise<LoanAccount[]> => {
-            const response = await this.http.get(`/BankingProduct/getLoanAccounts/`,
+            const response = await this.http.put(`/BankingProduct/getLoanAccounts/`,
                 {
                     parentId
                 }
@@ -1308,7 +1308,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getPaymentCards: async (parentId: string): Promise<PaymentCard[]> => {
-            const response = await this.http.get(`/BankingProduct/getPaymentCards/`,
+            const response = await this.http.put(`/BankingProduct/getPaymentCards/`,
                 {
                     parentId
                 }
@@ -1340,7 +1340,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     account = {
         find: async (id: string): Promise<Account | null> => {
-            const response = await this.http.get(`/Account/get`,
+            const response = await this.http.get(`/Account/post`,
                 {
                     id
                 }
@@ -1370,7 +1370,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/Account/delete/${id}`);
+            await this.http.delete( `/Account/delete/`,  { id } );
             return response.data;
         },
 
@@ -1456,7 +1456,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getOwners: async (parentId: string): Promise<Customer[]> => {
-            const response = await this.http.get(`/Account/getOwners/`,
+            const response = await this.http.put(`/Account/getOwners/`,
                 {
                     parentId
                 }
@@ -1483,7 +1483,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getTransactions: async (parentId: string): Promise<Transaction[]> => {
-            const response = await this.http.get(`/Account/getTransactions/`,
+            const response = await this.http.put(`/Account/getTransactions/`,
                 {
                     parentId
                 }
@@ -1510,7 +1510,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getStatements: async (parentId: string): Promise<AccountStatement[]> => {
-            const response = await this.http.get(`/Account/getStatements/`,
+            const response = await this.http.put(`/Account/getStatements/`,
                 {
                     parentId
                 }
@@ -1537,7 +1537,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getStandingInstructions: async (parentId: string): Promise<StandingInstruction[]> => {
-            const response = await this.http.get(`/Account/getStandingInstructions/`,
+            const response = await this.http.put(`/Account/getStandingInstructions/`,
                 {
                     parentId
                 }
@@ -1564,7 +1564,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getFeeCharges: async (parentId: string): Promise<FeeCharge[]> => {
-            const response = await this.http.get(`/Account/getFeeCharges/`,
+            const response = await this.http.put(`/Account/getFeeCharges/`,
                 {
                     parentId
                 }
@@ -1596,7 +1596,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     accountStatement = {
         find: async (id: string): Promise<AccountStatement | null> => {
-            const response = await this.http.get(`/AccountStatement/get`,
+            const response = await this.http.get(`/AccountStatement/post`,
                 {
                     id
                 }
@@ -1626,7 +1626,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/AccountStatement/delete/${id}`);
+            await this.http.delete( `/AccountStatement/delete/`,  { id } );
             return response.data;
         },
 
@@ -1663,7 +1663,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     transaction = {
         find: async (id: string): Promise<Transaction | null> => {
-            const response = await this.http.get(`/Transaction/get`,
+            const response = await this.http.get(`/Transaction/post`,
                 {
                     id
                 }
@@ -1693,7 +1693,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/Transaction/delete/${id}`);
+            await this.http.delete( `/Transaction/delete/`,  { id } );
             return response.data;
         },
 
@@ -1865,7 +1865,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     externalAccount = {
         find: async (id: string): Promise<ExternalAccount | null> => {
-            const response = await this.http.get(`/ExternalAccount/get`,
+            const response = await this.http.get(`/ExternalAccount/post`,
                 {
                     id
                 }
@@ -1895,7 +1895,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/ExternalAccount/delete/${id}`);
+            await this.http.delete( `/ExternalAccount/delete/`,  { id } );
             return response.data;
         },
 
@@ -1927,7 +1927,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getTransactions: async (parentId: string): Promise<Transaction[]> => {
-            const response = await this.http.get(`/ExternalAccount/getTransactions/`,
+            const response = await this.http.put(`/ExternalAccount/getTransactions/`,
                 {
                     parentId
                 }
@@ -1959,7 +1959,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     fundsTransfer = {
         find: async (id: string): Promise<FundsTransfer | null> => {
-            const response = await this.http.get(`/FundsTransfer/get`,
+            const response = await this.http.get(`/FundsTransfer/post`,
                 {
                     id
                 }
@@ -1989,7 +1989,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/FundsTransfer/delete/${id}`);
+            await this.http.delete( `/FundsTransfer/delete/`,  { id } );
             return response.data;
         },
 
@@ -2102,7 +2102,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getTransactions: async (parentId: string): Promise<Transaction[]> => {
-            const response = await this.http.get(`/FundsTransfer/getTransactions/`,
+            const response = await this.http.put(`/FundsTransfer/getTransactions/`,
                 {
                     parentId
                 }
@@ -2134,7 +2134,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     standingInstruction = {
         find: async (id: string): Promise<StandingInstruction | null> => {
-            const response = await this.http.get(`/StandingInstruction/get`,
+            const response = await this.http.get(`/StandingInstruction/post`,
                 {
                     id
                 }
@@ -2164,7 +2164,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/StandingInstruction/delete/${id}`);
+            await this.http.delete( `/StandingInstruction/delete/`,  { id } );
             return response.data;
         },
 
@@ -2228,7 +2228,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     paymentCard = {
         find: async (id: string): Promise<PaymentCard | null> => {
-            const response = await this.http.get(`/PaymentCard/get`,
+            const response = await this.http.get(`/PaymentCard/post`,
                 {
                     id
                 }
@@ -2258,7 +2258,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/PaymentCard/delete/${id}`);
+            await this.http.delete( `/PaymentCard/delete/`,  { id } );
             return response.data;
         },
 
@@ -2344,7 +2344,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getTransactions: async (parentId: string): Promise<Transaction[]> => {
-            const response = await this.http.get(`/PaymentCard/getTransactions/`,
+            const response = await this.http.put(`/PaymentCard/getTransactions/`,
                 {
                     parentId
                 }
@@ -2376,7 +2376,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     loanAccount = {
         find: async (id: string): Promise<LoanAccount | null> => {
-            const response = await this.http.get(`/LoanAccount/get`,
+            const response = await this.http.get(`/LoanAccount/post`,
                 {
                     id
                 }
@@ -2406,7 +2406,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/LoanAccount/delete/${id}`);
+            await this.http.delete( `/LoanAccount/delete/`,  { id } );
             return response.data;
         },
 
@@ -2492,7 +2492,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getBorrowers: async (parentId: string): Promise<Customer[]> => {
-            const response = await this.http.get(`/LoanAccount/getBorrowers/`,
+            const response = await this.http.put(`/LoanAccount/getBorrowers/`,
                 {
                     parentId
                 }
@@ -2519,7 +2519,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getRepaymentSchedule: async (parentId: string): Promise<RepaymentSchedule[]> => {
-            const response = await this.http.get(`/LoanAccount/getRepaymentSchedule/`,
+            const response = await this.http.put(`/LoanAccount/getRepaymentSchedule/`,
                 {
                     parentId
                 }
@@ -2546,7 +2546,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getPayments: async (parentId: string): Promise<LoanPayment[]> => {
-            const response = await this.http.get(`/LoanAccount/getPayments/`,
+            const response = await this.http.put(`/LoanAccount/getPayments/`,
                 {
                     parentId
                 }
@@ -2573,7 +2573,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getCollateral: async (parentId: string): Promise<Collateral[]> => {
-            const response = await this.http.get(`/LoanAccount/getCollateral/`,
+            const response = await this.http.put(`/LoanAccount/getCollateral/`,
                 {
                     parentId
                 }
@@ -2600,7 +2600,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getFeeCharges: async (parentId: string): Promise<FeeCharge[]> => {
-            const response = await this.http.get(`/LoanAccount/getFeeCharges/`,
+            const response = await this.http.put(`/LoanAccount/getFeeCharges/`,
                 {
                     parentId
                 }
@@ -2632,7 +2632,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     repaymentSchedule = {
         find: async (id: string): Promise<RepaymentSchedule | null> => {
-            const response = await this.http.get(`/RepaymentSchedule/get`,
+            const response = await this.http.get(`/RepaymentSchedule/post`,
                 {
                     id
                 }
@@ -2662,7 +2662,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/RepaymentSchedule/delete/${id}`);
+            await this.http.delete( `/RepaymentSchedule/delete/`,  { id } );
             return response.data;
         },
 
@@ -2726,7 +2726,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     loanPayment = {
         find: async (id: string): Promise<LoanPayment | null> => {
-            const response = await this.http.get(`/LoanPayment/get`,
+            const response = await this.http.get(`/LoanPayment/post`,
                 {
                     id
                 }
@@ -2756,7 +2756,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/LoanPayment/delete/${id}`);
+            await this.http.delete( `/LoanPayment/delete/`,  { id } );
             return response.data;
         },
 
@@ -2820,7 +2820,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     collateral = {
         find: async (id: string): Promise<Collateral | null> => {
-            const response = await this.http.get(`/Collateral/get`,
+            const response = await this.http.get(`/Collateral/post`,
                 {
                     id
                 }
@@ -2850,7 +2850,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/Collateral/delete/${id}`);
+            await this.http.delete( `/Collateral/delete/`,  { id } );
             return response.data;
         },
 
@@ -2887,7 +2887,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     feeCharge = {
         find: async (id: string): Promise<FeeCharge | null> => {
-            const response = await this.http.get(`/FeeCharge/get`,
+            const response = await this.http.get(`/FeeCharge/post`,
                 {
                     id
                 }
@@ -2917,7 +2917,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/FeeCharge/delete/${id}`);
+            await this.http.delete( `/FeeCharge/delete/`,  { id } );
             return response.data;
         },
 
@@ -2981,7 +2981,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     exchangeRate = {
         find: async (id: string): Promise<ExchangeRate | null> => {
-            const response = await this.http.get(`/ExchangeRate/get`,
+            const response = await this.http.get(`/ExchangeRate/post`,
                 {
                     id
                 }
@@ -3011,7 +3011,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/ExchangeRate/delete/${id}`);
+            await this.http.delete( `/ExchangeRate/delete/`,  { id } );
             return response.data;
         },
 
@@ -3043,7 +3043,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getFxTrades: async (parentId: string): Promise<FXTrade[]> => {
-            const response = await this.http.get(`/ExchangeRate/getFxTrades/`,
+            const response = await this.http.put(`/ExchangeRate/getFxTrades/`,
                 {
                     parentId
                 }
@@ -3075,7 +3075,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     fXTrade = {
         find: async (id: string): Promise<FXTrade | null> => {
-            const response = await this.http.get(`/FXTrade/get`,
+            const response = await this.http.get(`/FXTrade/post`,
                 {
                     id
                 }
@@ -3105,7 +3105,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/FXTrade/delete/${id}`);
+            await this.http.delete( `/FXTrade/delete/`,  { id } );
             return response.data;
         },
 
@@ -3277,7 +3277,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     dispute = {
         find: async (id: string): Promise<Dispute | null> => {
-            const response = await this.http.get(`/Dispute/get`,
+            const response = await this.http.get(`/Dispute/post`,
                 {
                     id
                 }
@@ -3307,7 +3307,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/Dispute/delete/${id}`);
+            await this.http.delete( `/Dispute/delete/`,  { id } );
             return response.data;
         },
 
@@ -3425,7 +3425,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     consent = {
         find: async (id: string): Promise<Consent | null> => {
-            const response = await this.http.get(`/Consent/get`,
+            const response = await this.http.get(`/Consent/post`,
                 {
                     id
                 }
@@ -3455,7 +3455,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/Consent/delete/${id}`);
+            await this.http.delete( `/Consent/delete/`,  { id } );
             return response.data;
         },
 
@@ -3541,7 +3541,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getAuthorizedAccounts: async (parentId: string): Promise<Account[]> => {
-            const response = await this.http.get(`/Consent/getAuthorizedAccounts/`,
+            const response = await this.http.put(`/Consent/getAuthorizedAccounts/`,
                 {
                     parentId
                 }
@@ -3573,7 +3573,7 @@ export class HttpBackendAPI implements BackendAPI {
 
     thirdPartyProvider = {
         find: async (id: string): Promise<ThirdPartyProvider | null> => {
-            const response = await this.http.get(`/ThirdPartyProvider/get`,
+            const response = await this.http.get(`/ThirdPartyProvider/post`,
                 {
                     id
                 }
@@ -3603,7 +3603,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         remove: async ( id: string ): Promise<boolean> => {
-            await this.http.delete( `/ThirdPartyProvider/delete/${id}`);
+            await this.http.delete( `/ThirdPartyProvider/delete/`,  { id } );
             return response.data;
         },
 
@@ -3635,7 +3635,7 @@ export class HttpBackendAPI implements BackendAPI {
         },
 
         getConsents: async (parentId: string): Promise<Consent[]> => {
-            const response = await this.http.get(`/ThirdPartyProvider/getConsents/`,
+            const response = await this.http.put(`/ThirdPartyProvider/getConsents/`,
                 {
                     parentId
                 }

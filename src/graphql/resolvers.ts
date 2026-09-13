@@ -27,7 +27,7 @@ type ResolverParent = unknown;
 
 module.exports = {
 
-    Query: {
+Query: {
 
     health: () => "OK",
 
@@ -506,7 +506,6 @@ Mutation: {
 //////////////////////////
 // Bank
 //////////////////////////
-Bank: {
     addBank: async (
         _: ResolverParent,
         args : Bank,
@@ -533,7 +532,6 @@ Bank: {
 //////////////////////////
 // Branch
 //////////////////////////
-Branch: {
     addBranch: async (
         _: ResolverParent,
         args : Branch,
@@ -560,7 +558,6 @@ Branch: {
 //////////////////////////
 // ATM
 //////////////////////////
-ATM: {
     addATM: async (
         _: ResolverParent,
         args : ATM,
@@ -587,7 +584,6 @@ ATM: {
 //////////////////////////
 // Customer
 //////////////////////////
-Customer: {
     addCustomer: async (
         _: ResolverParent,
         args : Customer,
@@ -614,7 +610,6 @@ Customer: {
 //////////////////////////
 // KycProfile
 //////////////////////////
-KycProfile: {
     addKycProfile: async (
         _: ResolverParent,
         args : KycProfile,
@@ -641,7 +636,6 @@ KycProfile: {
 //////////////////////////
 // IdentityDocument
 //////////////////////////
-IdentityDocument: {
     addIdentityDocument: async (
         _: ResolverParent,
         args : IdentityDocument,
@@ -668,7 +662,6 @@ IdentityDocument: {
 //////////////////////////
 // RiskAssessment
 //////////////////////////
-RiskAssessment: {
     addRiskAssessment: async (
         _: ResolverParent,
         args : RiskAssessment,
@@ -695,7 +688,6 @@ RiskAssessment: {
 //////////////////////////
 // ScreeningResult
 //////////////////////////
-ScreeningResult: {
     addScreeningResult: async (
         _: ResolverParent,
         args : ScreeningResult,
@@ -722,7 +714,6 @@ ScreeningResult: {
 //////////////////////////
 // BankingProduct
 //////////////////////////
-BankingProduct: {
     addBankingProduct: async (
         _: ResolverParent,
         args : BankingProduct,
@@ -749,7 +740,6 @@ BankingProduct: {
 //////////////////////////
 // Account
 //////////////////////////
-Account: {
     addAccount: async (
         _: ResolverParent,
         args : Account,
@@ -776,7 +766,6 @@ Account: {
 //////////////////////////
 // AccountStatement
 //////////////////////////
-AccountStatement: {
     addAccountStatement: async (
         _: ResolverParent,
         args : AccountStatement,
@@ -803,7 +792,6 @@ AccountStatement: {
 //////////////////////////
 // Transaction
 //////////////////////////
-Transaction: {
     addTransaction: async (
         _: ResolverParent,
         args : Transaction,
@@ -830,7 +818,6 @@ Transaction: {
 //////////////////////////
 // ExternalAccount
 //////////////////////////
-ExternalAccount: {
     addExternalAccount: async (
         _: ResolverParent,
         args : ExternalAccount,
@@ -857,7 +844,6 @@ ExternalAccount: {
 //////////////////////////
 // FundsTransfer
 //////////////////////////
-FundsTransfer: {
     addFundsTransfer: async (
         _: ResolverParent,
         args : FundsTransfer,
@@ -884,7 +870,6 @@ FundsTransfer: {
 //////////////////////////
 // StandingInstruction
 //////////////////////////
-StandingInstruction: {
     addStandingInstruction: async (
         _: ResolverParent,
         args : StandingInstruction,
@@ -911,7 +896,6 @@ StandingInstruction: {
 //////////////////////////
 // PaymentCard
 //////////////////////////
-PaymentCard: {
     addPaymentCard: async (
         _: ResolverParent,
         args : PaymentCard,
@@ -938,7 +922,6 @@ PaymentCard: {
 //////////////////////////
 // LoanAccount
 //////////////////////////
-LoanAccount: {
     addLoanAccount: async (
         _: ResolverParent,
         args : LoanAccount,
@@ -965,7 +948,6 @@ LoanAccount: {
 //////////////////////////
 // RepaymentSchedule
 //////////////////////////
-RepaymentSchedule: {
     addRepaymentSchedule: async (
         _: ResolverParent,
         args : RepaymentSchedule,
@@ -992,7 +974,6 @@ RepaymentSchedule: {
 //////////////////////////
 // LoanPayment
 //////////////////////////
-LoanPayment: {
     addLoanPayment: async (
         _: ResolverParent,
         args : LoanPayment,
@@ -1019,7 +1000,6 @@ LoanPayment: {
 //////////////////////////
 // Collateral
 //////////////////////////
-Collateral: {
     addCollateral: async (
         _: ResolverParent,
         args : Collateral,
@@ -1046,7 +1026,6 @@ Collateral: {
 //////////////////////////
 // FeeCharge
 //////////////////////////
-FeeCharge: {
     addFeeCharge: async (
         _: ResolverParent,
         args : FeeCharge,
@@ -1073,7 +1052,6 @@ FeeCharge: {
 //////////////////////////
 // ExchangeRate
 //////////////////////////
-ExchangeRate: {
     addExchangeRate: async (
         _: ResolverParent,
         args : ExchangeRate,
@@ -1100,7 +1078,6 @@ ExchangeRate: {
 //////////////////////////
 // FXTrade
 //////////////////////////
-FXTrade: {
     addFXTrade: async (
         _: ResolverParent,
         args : FXTrade,
@@ -1127,7 +1104,6 @@ FXTrade: {
 //////////////////////////
 // Dispute
 //////////////////////////
-Dispute: {
     addDispute: async (
         _: ResolverParent,
         args : Dispute,
@@ -1154,7 +1130,6 @@ Dispute: {
 //////////////////////////
 // Consent
 //////////////////////////
-Consent: {
     addConsent: async (
         _: ResolverParent,
         args : Consent,
@@ -1181,7 +1156,6 @@ Consent: {
 //////////////////////////
 // ThirdPartyProvider
 //////////////////////////
-ThirdPartyProvider: {
     addThirdPartyProvider: async (
         _: ResolverParent,
         args : ThirdPartyProvider,
@@ -1422,7 +1396,7 @@ ThirdPartyProvider: {
         return await backend.bank.unassignFromThirdPartyProviders(parentId,childIds);
     },
 
-},
+}
 
     bank: async (
         _: ResolverParent,
@@ -1519,7 +1493,7 @@ ThirdPartyProvider: {
         return await backend.branch.unassignFromAtms(parentId,childIds);
     },
 
-},
+}
 
     branch: async (
         _: ResolverParent,
@@ -1544,7 +1518,7 @@ ThirdPartyProvider: {
     {
         return await backend.aTM.unassignFromBranch(parentId,childId);
     },
-},
+}
 
     bank: async (
         _: ResolverParent,
@@ -1761,7 +1735,7 @@ ThirdPartyProvider: {
         return await backend.customer.unassignFromConsents(parentId,childIds);
     },
 
-},
+}
 
     customer: async (
         _: ResolverParent,
@@ -1858,7 +1832,7 @@ ThirdPartyProvider: {
         return await backend.kycProfile.unassignFromScreenings(parentId,childIds);
     },
 
-},
+}
 
     kycProfile: async (
         _: ResolverParent,
@@ -1883,7 +1857,7 @@ ThirdPartyProvider: {
     {
         return await backend.identityDocument.unassignFromKycProfile(parentId,childId);
     },
-},
+}
 
     kycProfile: async (
         _: ResolverParent,
@@ -1908,7 +1882,7 @@ ThirdPartyProvider: {
     {
         return await backend.riskAssessment.unassignFromKycProfile(parentId,childId);
     },
-},
+}
 
     kycProfile: async (
         _: ResolverParent,
@@ -1933,7 +1907,7 @@ ThirdPartyProvider: {
     {
         return await backend.screeningResult.unassignFromKycProfile(parentId,childId);
     },
-},
+}
 
     bank: async (
         _: ResolverParent,
@@ -2030,7 +2004,7 @@ ThirdPartyProvider: {
         return await backend.bankingProduct.unassignFromPaymentCards(parentId,childIds);
     },
 
-},
+}
 
     bank: async (
         _: ResolverParent,
@@ -2221,7 +2195,7 @@ ThirdPartyProvider: {
         return await backend.account.unassignFromFeeCharges(parentId,childIds);
     },
 
-},
+}
 
     account: async (
         _: ResolverParent,
@@ -2246,7 +2220,7 @@ ThirdPartyProvider: {
     {
         return await backend.accountStatement.unassignFromAccount(parentId,childId);
     },
-},
+}
 
     account: async (
         _: ResolverParent,
@@ -2386,7 +2360,7 @@ ThirdPartyProvider: {
     {
         return await backend.transaction.unassignFromDispute(parentId,childId);
     },
-},
+}
 
     customer: async (
         _: ResolverParent,
@@ -2435,7 +2409,7 @@ ThirdPartyProvider: {
         return await backend.externalAccount.unassignFromTransactions(parentId,childIds);
     },
 
-},
+}
 
     sourceAccount: async (
         _: ResolverParent,
@@ -2553,7 +2527,7 @@ ThirdPartyProvider: {
         return await backend.fundsTransfer.unassignFromTransactions(parentId,childIds);
     },
 
-},
+}
 
     account: async (
         _: ResolverParent,
@@ -2601,7 +2575,7 @@ ThirdPartyProvider: {
     {
         return await backend.standingInstruction.unassignFromBeneficiary(parentId,childId);
     },
-},
+}
 
     bank: async (
         _: ResolverParent,
@@ -2696,7 +2670,7 @@ ThirdPartyProvider: {
         return await backend.paymentCard.unassignFromTransactions(parentId,childIds);
     },
 
-},
+}
 
     bank: async (
         _: ResolverParent,
@@ -2887,7 +2861,7 @@ ThirdPartyProvider: {
         return await backend.loanAccount.unassignFromFeeCharges(parentId,childIds);
     },
 
-},
+}
 
     loanAccount: async (
         _: ResolverParent,
@@ -2935,7 +2909,7 @@ ThirdPartyProvider: {
     {
         return await backend.repaymentSchedule.unassignFromPayment(parentId,childId);
     },
-},
+}
 
     loanAccount: async (
         _: ResolverParent,
@@ -2983,7 +2957,7 @@ ThirdPartyProvider: {
     {
         return await backend.loanPayment.unassignFromTransaction(parentId,childId);
     },
-},
+}
 
     loanAccount: async (
         _: ResolverParent,
@@ -3008,7 +2982,7 @@ ThirdPartyProvider: {
     {
         return await backend.collateral.unassignFromLoanAccount(parentId,childId);
     },
-},
+}
 
     account: async (
         _: ResolverParent,
@@ -3056,7 +3030,7 @@ ThirdPartyProvider: {
     {
         return await backend.feeCharge.unassignFromLoanAccount(parentId,childId);
     },
-},
+}
 
     bank: async (
         _: ResolverParent,
@@ -3105,7 +3079,7 @@ ThirdPartyProvider: {
         return await backend.exchangeRate.unassignFromFxTrades(parentId,childIds);
     },
 
-},
+}
 
     customer: async (
         _: ResolverParent,
@@ -3245,7 +3219,7 @@ ThirdPartyProvider: {
     {
         return await backend.fXTrade.unassignFromTransaction(parentId,childId);
     },
-},
+}
 
     transaction: async (
         _: ResolverParent,
@@ -3339,7 +3313,7 @@ ThirdPartyProvider: {
     {
         return await backend.dispute.unassignFromPaymentCard(parentId,childId);
     },
-},
+}
 
     customer: async (
         _: ResolverParent,
@@ -3434,7 +3408,7 @@ ThirdPartyProvider: {
         return await backend.consent.unassignFromAuthorizedAccounts(parentId,childIds);
     },
 
-},
+}
 
     bank: async (
         _: ResolverParent,
@@ -3483,7 +3457,7 @@ ThirdPartyProvider: {
         return await backend.thirdPartyProvider.unassignFromConsents(parentId,childIds);
     },
 
-},
+}
 
 };
 

@@ -59,39 +59,40 @@ export interface BackendAPI {
         branches(parentId: string,options?: PaginationOptions): Promise<Branch[]>;
         addToBranches(parentId: string,input: Branch): Promise<Bank>;
         removeFromBranches(parentId: string,childIds: string[]): Promise<Bank>;
-    };
+
         products(parentId: string,options?: PaginationOptions): Promise<BankingProduct[]>;
         addToProducts(parentId: string,input: BankingProduct): Promise<Bank>;
         removeFromProducts(parentId: string,childIds: string[]): Promise<Bank>;
-    };
+
         customers(parentId: string,options?: PaginationOptions): Promise<Customer[]>;
         addToCustomers(parentId: string,input: Customer): Promise<Bank>;
         removeFromCustomers(parentId: string,childIds: string[]): Promise<Bank>;
-    };
+
         accounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
         addToAccounts(parentId: string,input: Account): Promise<Bank>;
         removeFromAccounts(parentId: string,childIds: string[]): Promise<Bank>;
-    };
+
         paymentCards(parentId: string,options?: PaginationOptions): Promise<PaymentCard[]>;
         addToPaymentCards(parentId: string,input: PaymentCard): Promise<Bank>;
         removeFromPaymentCards(parentId: string,childIds: string[]): Promise<Bank>;
-    };
+
         loanAccounts(parentId: string,options?: PaginationOptions): Promise<LoanAccount[]>;
         addToLoanAccounts(parentId: string,input: LoanAccount): Promise<Bank>;
         removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<Bank>;
-    };
+
         exchangeRates(parentId: string,options?: PaginationOptions): Promise<ExchangeRate[]>;
         addToExchangeRates(parentId: string,input: ExchangeRate): Promise<Bank>;
         removeFromExchangeRates(parentId: string,childIds: string[]): Promise<Bank>;
-    };
+
         consents(parentId: string,options?: PaginationOptions): Promise<Consent[]>;
         addToConsents(parentId: string,input: Consent): Promise<Bank>;
         removeFromConsents(parentId: string,childIds: string[]): Promise<Bank>;
-    };
+
         thirdPartyProviders(parentId: string,options?: PaginationOptions): Promise<ThirdPartyProvider[]>;
         addToThirdPartyProviders(parentId: string,input: ThirdPartyProvider): Promise<Bank>;
         removeFromThirdPartyProviders(parentId: string,childIds: string[]): Promise<Bank>;
-    };
+
+    }
     // -----------------------------------------
     // Branch interface
     // -----------------------------------------
@@ -121,15 +122,16 @@ export interface BackendAPI {
         accounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
         addToAccounts(parentId: string,input: Account): Promise<Branch>;
         removeFromAccounts(parentId: string,childIds: string[]): Promise<Branch>;
-    };
+
         loanAccounts(parentId: string,options?: PaginationOptions): Promise<LoanAccount[]>;
         addToLoanAccounts(parentId: string,input: LoanAccount): Promise<Branch>;
         removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<Branch>;
-    };
+
         atms(parentId: string,options?: PaginationOptions): Promise<ATM[]>;
         addToAtms(parentId: string,input: ATM): Promise<Branch>;
         removeFromAtms(parentId: string,childIds: string[]): Promise<Branch>;
-    };
+
+    }
     // -----------------------------------------
     // ATM interface
     // -----------------------------------------
@@ -156,6 +158,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // Customer interface
     // -----------------------------------------
@@ -185,35 +188,36 @@ export interface BackendAPI {
         accounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
         addToAccounts(parentId: string,input: Account): Promise<Customer>;
         removeFromAccounts(parentId: string,childIds: string[]): Promise<Customer>;
-    };
+
         loanAccounts(parentId: string,options?: PaginationOptions): Promise<LoanAccount[]>;
         addToLoanAccounts(parentId: string,input: LoanAccount): Promise<Customer>;
         removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<Customer>;
-    };
+
         paymentCards(parentId: string,options?: PaginationOptions): Promise<PaymentCard[]>;
         addToPaymentCards(parentId: string,input: PaymentCard): Promise<Customer>;
         removeFromPaymentCards(parentId: string,childIds: string[]): Promise<Customer>;
-    };
+
         externalAccounts(parentId: string,options?: PaginationOptions): Promise<ExternalAccount[]>;
         addToExternalAccounts(parentId: string,input: ExternalAccount): Promise<Customer>;
         removeFromExternalAccounts(parentId: string,childIds: string[]): Promise<Customer>;
-    };
+
         fundsTransfers(parentId: string,options?: PaginationOptions): Promise<FundsTransfer[]>;
         addToFundsTransfers(parentId: string,input: FundsTransfer): Promise<Customer>;
         removeFromFundsTransfers(parentId: string,childIds: string[]): Promise<Customer>;
-    };
+
         disputes(parentId: string,options?: PaginationOptions): Promise<Dispute[]>;
         addToDisputes(parentId: string,input: Dispute): Promise<Customer>;
         removeFromDisputes(parentId: string,childIds: string[]): Promise<Customer>;
-    };
+
         kycProfiles(parentId: string,options?: PaginationOptions): Promise<KycProfile[]>;
         addToKycProfiles(parentId: string,input: KycProfile): Promise<Customer>;
         removeFromKycProfiles(parentId: string,childIds: string[]): Promise<Customer>;
-    };
+
         consents(parentId: string,options?: PaginationOptions): Promise<Consent[]>;
         addToConsents(parentId: string,input: Consent): Promise<Customer>;
         removeFromConsents(parentId: string,childIds: string[]): Promise<Customer>;
-    };
+
+    }
     // -----------------------------------------
     // KycProfile interface
     // -----------------------------------------
@@ -243,15 +247,16 @@ export interface BackendAPI {
         identityDocuments(parentId: string,options?: PaginationOptions): Promise<IdentityDocument[]>;
         addToIdentityDocuments(parentId: string,input: IdentityDocument): Promise<KycProfile>;
         removeFromIdentityDocuments(parentId: string,childIds: string[]): Promise<KycProfile>;
-    };
+
         riskAssessments(parentId: string,options?: PaginationOptions): Promise<RiskAssessment[]>;
         addToRiskAssessments(parentId: string,input: RiskAssessment): Promise<KycProfile>;
         removeFromRiskAssessments(parentId: string,childIds: string[]): Promise<KycProfile>;
-    };
+
         screenings(parentId: string,options?: PaginationOptions): Promise<ScreeningResult[]>;
         addToScreenings(parentId: string,input: ScreeningResult): Promise<KycProfile>;
         removeFromScreenings(parentId: string,childIds: string[]): Promise<KycProfile>;
-    };
+
+    }
     // -----------------------------------------
     // IdentityDocument interface
     // -----------------------------------------
@@ -278,6 +283,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // RiskAssessment interface
     // -----------------------------------------
@@ -304,6 +310,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // ScreeningResult interface
     // -----------------------------------------
@@ -330,6 +337,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // BankingProduct interface
     // -----------------------------------------
@@ -359,15 +367,16 @@ export interface BackendAPI {
         accounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
         addToAccounts(parentId: string,input: Account): Promise<BankingProduct>;
         removeFromAccounts(parentId: string,childIds: string[]): Promise<BankingProduct>;
-    };
+
         loanAccounts(parentId: string,options?: PaginationOptions): Promise<LoanAccount[]>;
         addToLoanAccounts(parentId: string,input: LoanAccount): Promise<BankingProduct>;
         removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<BankingProduct>;
-    };
+
         paymentCards(parentId: string,options?: PaginationOptions): Promise<PaymentCard[]>;
         addToPaymentCards(parentId: string,input: PaymentCard): Promise<BankingProduct>;
         removeFromPaymentCards(parentId: string,childIds: string[]): Promise<BankingProduct>;
-    };
+
+    }
     // -----------------------------------------
     // Account interface
     // -----------------------------------------
@@ -403,23 +412,24 @@ export interface BackendAPI {
         owners(parentId: string,options?: PaginationOptions): Promise<Customer[]>;
         addToOwners(parentId: string,input: Customer): Promise<Account>;
         removeFromOwners(parentId: string,childIds: string[]): Promise<Account>;
-    };
+
         transactions(parentId: string,options?: PaginationOptions): Promise<Transaction[]>;
         addToTransactions(parentId: string,input: Transaction): Promise<Account>;
         removeFromTransactions(parentId: string,childIds: string[]): Promise<Account>;
-    };
+
         statements(parentId: string,options?: PaginationOptions): Promise<AccountStatement[]>;
         addToStatements(parentId: string,input: AccountStatement): Promise<Account>;
         removeFromStatements(parentId: string,childIds: string[]): Promise<Account>;
-    };
+
         standingInstructions(parentId: string,options?: PaginationOptions): Promise<StandingInstruction[]>;
         addToStandingInstructions(parentId: string,input: StandingInstruction): Promise<Account>;
         removeFromStandingInstructions(parentId: string,childIds: string[]): Promise<Account>;
-    };
+
         feeCharges(parentId: string,options?: PaginationOptions): Promise<FeeCharge[]>;
         addToFeeCharges(parentId: string,input: FeeCharge): Promise<Account>;
         removeFromFeeCharges(parentId: string,childIds: string[]): Promise<Account>;
-    };
+
+    }
     // -----------------------------------------
     // AccountStatement interface
     // -----------------------------------------
@@ -446,6 +456,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // Transaction interface
     // -----------------------------------------
@@ -487,6 +498,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // ExternalAccount interface
     // -----------------------------------------
@@ -516,7 +528,8 @@ export interface BackendAPI {
         transactions(parentId: string,options?: PaginationOptions): Promise<Transaction[]>;
         addToTransactions(parentId: string,input: Transaction): Promise<ExternalAccount>;
         removeFromTransactions(parentId: string,childIds: string[]): Promise<ExternalAccount>;
-    };
+
+    }
     // -----------------------------------------
     // FundsTransfer interface
     // -----------------------------------------
@@ -555,7 +568,8 @@ export interface BackendAPI {
         transactions(parentId: string,options?: PaginationOptions): Promise<Transaction[]>;
         addToTransactions(parentId: string,input: Transaction): Promise<FundsTransfer>;
         removeFromTransactions(parentId: string,childIds: string[]): Promise<FundsTransfer>;
-    };
+
+    }
     // -----------------------------------------
     // StandingInstruction interface
     // -----------------------------------------
@@ -585,6 +599,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // PaymentCard interface
     // -----------------------------------------
@@ -620,7 +635,8 @@ export interface BackendAPI {
         transactions(parentId: string,options?: PaginationOptions): Promise<Transaction[]>;
         addToTransactions(parentId: string,input: Transaction): Promise<PaymentCard>;
         removeFromTransactions(parentId: string,childIds: string[]): Promise<PaymentCard>;
-    };
+
+    }
     // -----------------------------------------
     // LoanAccount interface
     // -----------------------------------------
@@ -656,23 +672,24 @@ export interface BackendAPI {
         borrowers(parentId: string,options?: PaginationOptions): Promise<Customer[]>;
         addToBorrowers(parentId: string,input: Customer): Promise<LoanAccount>;
         removeFromBorrowers(parentId: string,childIds: string[]): Promise<LoanAccount>;
-    };
+
         repaymentSchedule(parentId: string,options?: PaginationOptions): Promise<RepaymentSchedule[]>;
         addToRepaymentSchedule(parentId: string,input: RepaymentSchedule): Promise<LoanAccount>;
         removeFromRepaymentSchedule(parentId: string,childIds: string[]): Promise<LoanAccount>;
-    };
+
         payments(parentId: string,options?: PaginationOptions): Promise<LoanPayment[]>;
         addToPayments(parentId: string,input: LoanPayment): Promise<LoanAccount>;
         removeFromPayments(parentId: string,childIds: string[]): Promise<LoanAccount>;
-    };
+
         collateral(parentId: string,options?: PaginationOptions): Promise<Collateral[]>;
         addToCollateral(parentId: string,input: Collateral): Promise<LoanAccount>;
         removeFromCollateral(parentId: string,childIds: string[]): Promise<LoanAccount>;
-    };
+
         feeCharges(parentId: string,options?: PaginationOptions): Promise<FeeCharge[]>;
         addToFeeCharges(parentId: string,input: FeeCharge): Promise<LoanAccount>;
         removeFromFeeCharges(parentId: string,childIds: string[]): Promise<LoanAccount>;
-    };
+
+    }
     // -----------------------------------------
     // RepaymentSchedule interface
     // -----------------------------------------
@@ -702,6 +719,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // LoanPayment interface
     // -----------------------------------------
@@ -731,6 +749,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // Collateral interface
     // -----------------------------------------
@@ -757,6 +776,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // FeeCharge interface
     // -----------------------------------------
@@ -786,6 +806,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // ExchangeRate interface
     // -----------------------------------------
@@ -815,7 +836,8 @@ export interface BackendAPI {
         fxTrades(parentId: string,options?: PaginationOptions): Promise<FXTrade[]>;
         addToFxTrades(parentId: string,input: FXTrade): Promise<ExchangeRate>;
         removeFromFxTrades(parentId: string,childIds: string[]): Promise<ExchangeRate>;
-    };
+
+    }
     // -----------------------------------------
     // FXTrade interface
     // -----------------------------------------
@@ -857,6 +879,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // Dispute interface
     // -----------------------------------------
@@ -892,6 +915,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
+    }
     // -----------------------------------------
     // Consent interface
     // -----------------------------------------
@@ -927,7 +951,8 @@ export interface BackendAPI {
         authorizedAccounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
         addToAuthorizedAccounts(parentId: string,input: Account): Promise<Consent>;
         removeFromAuthorizedAccounts(parentId: string,childIds: string[]): Promise<Consent>;
-    };
+
+    }
     // -----------------------------------------
     // ThirdPartyProvider interface
     // -----------------------------------------
@@ -957,5 +982,6 @@ export interface BackendAPI {
         consents(parentId: string,options?: PaginationOptions): Promise<Consent[]>;
         addToConsents(parentId: string,input: Consent): Promise<ThirdPartyProvider>;
         removeFromConsents(parentId: string,childIds: string[]): Promise<ThirdPartyProvider>;
-    };
+
+    }
 }

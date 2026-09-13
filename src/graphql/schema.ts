@@ -2278,57 +2278,52 @@ hasMore: Boolean!
 
 
 # -----------------------------------------
-# ThirdPartyProvider
+# CustomerType
 # -----------------------------------------
-export enum CustomerType {
+enum CustomerType {
                 Individual
             Business
             NonProfit
             Government
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# AccountType
 # -----------------------------------------
-export enum AccountType {
+enum AccountType {
                 Checking
             Savings
             MoneyMarket
             TimeDeposit
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# AccountStatus
 # -----------------------------------------
-export enum AccountStatus {
+enum AccountStatus {
                 Open
             Frozen
             Dormant
             Closed
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# AccountOwnershipType
 # -----------------------------------------
-export enum AccountOwnershipType {
+enum AccountOwnershipType {
                 Sole
             Joint
             Corporate
             Trust
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# StatementDeliveryMethod
 # -----------------------------------------
-export enum StatementDeliveryMethod {
+enum StatementDeliveryMethod {
                 Electronic
             Paper
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# TransactionType
 # -----------------------------------------
-export enum TransactionType {
+enum TransactionType {
                 Deposit
             Withdrawal
             Transfer
@@ -2340,30 +2335,27 @@ export enum TransactionType {
             Refund
             FXConversion
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# TransactionStatus
 # -----------------------------------------
-export enum TransactionStatus {
+enum TransactionStatus {
                 Pending
             Posted
             Reversed
             Failed
             Cancelled
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# TransactionDirection
 # -----------------------------------------
-export enum TransactionDirection {
+enum TransactionDirection {
                 Credit
             Debit
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# ChannelType
 # -----------------------------------------
-export enum ChannelType {
+enum ChannelType {
                 Branch
             Online
             Mobile
@@ -2371,11 +2363,10 @@ export enum ChannelType {
             API
             CallCenter
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# PaymentMethod
 # -----------------------------------------
-export enum PaymentMethod {
+enum PaymentMethod {
                 InternalTransfer
             ACH
             Wire
@@ -2386,11 +2377,10 @@ export enum PaymentMethod {
             Check
             MobileWallet
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# PaymentStatus
 # -----------------------------------------
-export enum PaymentStatus {
+enum PaymentStatus {
                 Initiated
             InProcess
             Settled
@@ -2398,11 +2388,10 @@ export enum PaymentStatus {
             Reversed
             Cancelled
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# StandingInstructionFrequency
 # -----------------------------------------
-export enum StandingInstructionFrequency {
+enum StandingInstructionFrequency {
                 OneTime
             Weekly
             BiWeekly
@@ -2410,42 +2399,38 @@ export enum StandingInstructionFrequency {
             Quarterly
             Annually
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# StandingInstructionStatus
 # -----------------------------------------
-export enum StandingInstructionStatus {
+enum StandingInstructionStatus {
                 Active
             Paused
             Cancelled
             Completed
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# CardType
 # -----------------------------------------
-export enum CardType {
+enum CardType {
                 Debit
             Credit
             Prepaid
             Virtual
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# CardStatus
 # -----------------------------------------
-export enum CardStatus {
+enum CardStatus {
                 Active
             Blocked
             LostStolen
             Expired
             Closed
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# CardNetwork
 # -----------------------------------------
-export enum CardNetwork {
+enum CardNetwork {
                 Visa
             Mastercard
             Amex
@@ -2453,11 +2438,10 @@ export enum CardNetwork {
             UnionPay
             Other
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# LoanType
 # -----------------------------------------
-export enum LoanType {
+enum LoanType {
                 Mortgage
             Personal
             Auto
@@ -2465,11 +2449,10 @@ export enum LoanType {
             CreditLine
             Student
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# LoanStatus
 # -----------------------------------------
-export enum LoanStatus {
+enum LoanStatus {
                 Applied
             Approved
             Active
@@ -2477,39 +2460,35 @@ export enum LoanStatus {
             Defaulted
             Closed
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# RateType
 # -----------------------------------------
-export enum RateType {
+enum RateType {
                 Fixed
             Variable
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# InterestCompounding
 # -----------------------------------------
-export enum InterestCompounding {
+enum InterestCompounding {
                 Daily
             Monthly
             Quarterly
             Annually
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# InstallmentStatus
 # -----------------------------------------
-export enum InstallmentStatus {
+enum InstallmentStatus {
                 Due
             Paid
             Overdue
             Deferred
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# FeeType
 # -----------------------------------------
-export enum FeeType {
+enum FeeType {
                 Maintenance
             Overdraft
             Wire
@@ -2519,30 +2498,27 @@ export enum FeeType {
             EarlyWithdrawal
             ReplacementCard
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# RiskRating
 # -----------------------------------------
-export enum RiskRating {
+enum RiskRating {
                 Low
             Medium
             High
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# KycStatus
 # -----------------------------------------
-export enum KycStatus {
+enum KycStatus {
                 Pending
             Verified
             Rejected
             Expired
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# IdentityDocumentType
 # -----------------------------------------
-export enum IdentityDocumentType {
+enum IdentityDocumentType {
                 Passport
             NationalID
             DriverLicense
@@ -2550,80 +2526,72 @@ export enum IdentityDocumentType {
             BusinessRegistration
             TaxCertificate
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# ScreeningOutcome
 # -----------------------------------------
-export enum ScreeningOutcome {
+enum ScreeningOutcome {
                 Clear
             Match
             Review
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# TradeStatus
 # -----------------------------------------
-export enum TradeStatus {
+enum TradeStatus {
                 Booked
             Settled
             Cancelled
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# ATMStatus
 # -----------------------------------------
-export enum ATMStatus {
+enum ATMStatus {
                 InService
             OutOfService
             Maintenance
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# ConsentType
 # -----------------------------------------
-export enum ConsentType {
+enum ConsentType {
                 OpenBanking
             PaymentInitiation
             AccountInformation
             Marketing
             DataSharing
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# ConsentStatus
 # -----------------------------------------
-export enum ConsentStatus {
+enum ConsentStatus {
                 Active
             Revoked
             Expired
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# DisputeStatus
 # -----------------------------------------
-export enum DisputeStatus {
+enum DisputeStatus {
                 Open
             UnderReview
             Resolved
             Rejected
             Withdrawn
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# ProductCategory
 # -----------------------------------------
-export enum ProductCategory {
+enum ProductCategory {
                 Deposit
             Loan
             Card
             PaymentService
             Investment
     }
-
 # -----------------------------------------
-# ThirdPartyProvider
+# CollateralType
 # -----------------------------------------
-export enum CollateralType {
+enum CollateralType {
                 RealEstate
             Vehicle
             Cash
@@ -2631,7 +2599,6 @@ export enum CollateralType {
             Guarantee
             Equipment
     }
-
 
 # -----------------------------------------
 # Money

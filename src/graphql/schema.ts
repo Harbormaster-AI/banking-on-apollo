@@ -28,174 +28,172 @@ import {
 } from "../backend/types";
 
 
-// -----------------------------------------
-// Read Related Functions
-// -----------------------------------------
+export const typeDefs = `
 type Query {
 
     health: String!
 
-// -----------------------------------------
-// Bank
-// -----------------------------------------
+# -----------------------------------------
+# Bank
+# -----------------------------------------
     bank(id: ID!): Bank
     banks: BankQueryResult
 
-// -----------------------------------------
-// Branch
-// -----------------------------------------
+# -----------------------------------------
+# Branch
+# -----------------------------------------
     branch(id: ID!): Branch
     branchs: BranchQueryResult
 
-// -----------------------------------------
-// ATM
-// -----------------------------------------
+# -----------------------------------------
+# ATM
+# -----------------------------------------
     aTM(id: ID!): ATM
     aTMs: ATMQueryResult
 
-// -----------------------------------------
-// Customer
-// -----------------------------------------
+# -----------------------------------------
+# Customer
+# -----------------------------------------
     customer(id: ID!): Customer
     customers: CustomerQueryResult
 
-// -----------------------------------------
-// KycProfile
-// -----------------------------------------
+# -----------------------------------------
+# KycProfile
+# -----------------------------------------
     kycProfile(id: ID!): KycProfile
     kycProfiles: KycProfileQueryResult
 
-// -----------------------------------------
-// IdentityDocument
-// -----------------------------------------
+# -----------------------------------------
+# IdentityDocument
+# -----------------------------------------
     identityDocument(id: ID!): IdentityDocument
     identityDocuments: IdentityDocumentQueryResult
 
-// -----------------------------------------
-// RiskAssessment
-// -----------------------------------------
+# -----------------------------------------
+# RiskAssessment
+# -----------------------------------------
     riskAssessment(id: ID!): RiskAssessment
     riskAssessments: RiskAssessmentQueryResult
 
-// -----------------------------------------
-// ScreeningResult
-// -----------------------------------------
+# -----------------------------------------
+# ScreeningResult
+# -----------------------------------------
     screeningResult(id: ID!): ScreeningResult
     screeningResults: ScreeningResultQueryResult
 
-// -----------------------------------------
-// BankingProduct
-// -----------------------------------------
+# -----------------------------------------
+# BankingProduct
+# -----------------------------------------
     bankingProduct(id: ID!): BankingProduct
     bankingProducts: BankingProductQueryResult
 
-// -----------------------------------------
-// Account
-// -----------------------------------------
+# -----------------------------------------
+# Account
+# -----------------------------------------
     account(id: ID!): Account
     accounts: AccountQueryResult
 
-// -----------------------------------------
-// AccountStatement
-// -----------------------------------------
+# -----------------------------------------
+# AccountStatement
+# -----------------------------------------
     accountStatement(id: ID!): AccountStatement
     accountStatements: AccountStatementQueryResult
 
-// -----------------------------------------
-// Transaction
-// -----------------------------------------
+# -----------------------------------------
+# Transaction
+# -----------------------------------------
     transaction(id: ID!): Transaction
     transactions: TransactionQueryResult
 
-// -----------------------------------------
-// ExternalAccount
-// -----------------------------------------
+# -----------------------------------------
+# ExternalAccount
+# -----------------------------------------
     externalAccount(id: ID!): ExternalAccount
     externalAccounts: ExternalAccountQueryResult
 
-// -----------------------------------------
-// FundsTransfer
-// -----------------------------------------
+# -----------------------------------------
+# FundsTransfer
+# -----------------------------------------
     fundsTransfer(id: ID!): FundsTransfer
     fundsTransfers: FundsTransferQueryResult
 
-// -----------------------------------------
-// StandingInstruction
-// -----------------------------------------
+# -----------------------------------------
+# StandingInstruction
+# -----------------------------------------
     standingInstruction(id: ID!): StandingInstruction
     standingInstructions: StandingInstructionQueryResult
 
-// -----------------------------------------
-// PaymentCard
-// -----------------------------------------
+# -----------------------------------------
+# PaymentCard
+# -----------------------------------------
     paymentCard(id: ID!): PaymentCard
     paymentCards: PaymentCardQueryResult
 
-// -----------------------------------------
-// LoanAccount
-// -----------------------------------------
+# -----------------------------------------
+# LoanAccount
+# -----------------------------------------
     loanAccount(id: ID!): LoanAccount
     loanAccounts: LoanAccountQueryResult
 
-// -----------------------------------------
-// RepaymentSchedule
-// -----------------------------------------
+# -----------------------------------------
+# RepaymentSchedule
+# -----------------------------------------
     repaymentSchedule(id: ID!): RepaymentSchedule
     repaymentSchedules: RepaymentScheduleQueryResult
 
-// -----------------------------------------
-// LoanPayment
-// -----------------------------------------
+# -----------------------------------------
+# LoanPayment
+# -----------------------------------------
     loanPayment(id: ID!): LoanPayment
     loanPayments: LoanPaymentQueryResult
 
-// -----------------------------------------
-// Collateral
-// -----------------------------------------
+# -----------------------------------------
+# Collateral
+# -----------------------------------------
     collateral(id: ID!): Collateral
     collaterals: CollateralQueryResult
 
-// -----------------------------------------
-// FeeCharge
-// -----------------------------------------
+# -----------------------------------------
+# FeeCharge
+# -----------------------------------------
     feeCharge(id: ID!): FeeCharge
     feeCharges: FeeChargeQueryResult
 
-// -----------------------------------------
-// ExchangeRate
-// -----------------------------------------
+# -----------------------------------------
+# ExchangeRate
+# -----------------------------------------
     exchangeRate(id: ID!): ExchangeRate
     exchangeRates: ExchangeRateQueryResult
 
-// -----------------------------------------
-// FXTrade
-// -----------------------------------------
+# -----------------------------------------
+# FXTrade
+# -----------------------------------------
     fXTrade(id: ID!): FXTrade
     fXTrades: FXTradeQueryResult
 
-// -----------------------------------------
-// Dispute
-// -----------------------------------------
+# -----------------------------------------
+# Dispute
+# -----------------------------------------
     dispute(id: ID!): Dispute
     disputes: DisputeQueryResult
 
-// -----------------------------------------
-// Consent
-// -----------------------------------------
+# -----------------------------------------
+# Consent
+# -----------------------------------------
     consent(id: ID!): Consent
     consents: ConsentQueryResult
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
     thirdPartyProvider(id: ID!): ThirdPartyProvider
     thirdPartyProviders: ThirdPartyProviderQueryResult
 
 }
 
-// -----------------------------------------
-// Write Related Functions
-// -----------------------------------------
+# -----------------------------------------
+# Write Related Functions
+# -----------------------------------------
 type Mutation {
 addBank(
         name: String
@@ -669,9 +667,9 @@ id: ID!
 removeThirdPartyProvider(id: ID!): Boolean
 }
 
-// -----------------------------------------
-// Bank
-// -----------------------------------------
+# -----------------------------------------
+# Bank
+# -----------------------------------------
 type Bank {
 id: ID!
         name: String
@@ -784,9 +782,9 @@ hasMore: Boolean!
     bankPage: [Bank]
 }
 
-// -----------------------------------------
-// Branch
-// -----------------------------------------
+# -----------------------------------------
+# Branch
+# -----------------------------------------
 type Branch {
 id: ID!
         name: String
@@ -849,9 +847,9 @@ hasMore: Boolean!
     branchPage: [Branch]
 }
 
-// -----------------------------------------
-// ATM
-// -----------------------------------------
+# -----------------------------------------
+# ATM
+# -----------------------------------------
 type ATM {
 id: ID!
         terminalId: String
@@ -876,9 +874,9 @@ hasMore: Boolean!
     aTMPage: [ATM]
 }
 
-// -----------------------------------------
-// Customer
-// -----------------------------------------
+# -----------------------------------------
+# Customer
+# -----------------------------------------
 type Customer {
 id: ID!
         firstName: String
@@ -996,9 +994,9 @@ hasMore: Boolean!
     customerPage: [Customer]
 }
 
-// -----------------------------------------
-// KycProfile
-// -----------------------------------------
+# -----------------------------------------
+# KycProfile
+# -----------------------------------------
 type KycProfile {
 id: ID!
         profileId: String
@@ -1051,9 +1049,9 @@ hasMore: Boolean!
     kycProfilePage: [KycProfile]
 }
 
-// -----------------------------------------
-// IdentityDocument
-// -----------------------------------------
+# -----------------------------------------
+# IdentityDocument
+# -----------------------------------------
 type IdentityDocument {
 id: ID!
         documentNumber: String
@@ -1077,9 +1075,9 @@ hasMore: Boolean!
     identityDocumentPage: [IdentityDocument]
 }
 
-// -----------------------------------------
-// RiskAssessment
-// -----------------------------------------
+# -----------------------------------------
+# RiskAssessment
+# -----------------------------------------
 type RiskAssessment {
 id: ID!
         score: Int
@@ -1102,9 +1100,9 @@ hasMore: Boolean!
     riskAssessmentPage: [RiskAssessment]
 }
 
-// -----------------------------------------
-// ScreeningResult
-// -----------------------------------------
+# -----------------------------------------
+# ScreeningResult
+# -----------------------------------------
 type ScreeningResult {
 id: ID!
         screeningDate: String
@@ -1127,9 +1125,9 @@ hasMore: Boolean!
     screeningResultPage: [ScreeningResult]
 }
 
-// -----------------------------------------
-// BankingProduct
-// -----------------------------------------
+# -----------------------------------------
+# BankingProduct
+# -----------------------------------------
 type BankingProduct {
 id: ID!
         productCode: String
@@ -1195,9 +1193,9 @@ hasMore: Boolean!
     bankingProductPage: [BankingProduct]
 }
 
-// -----------------------------------------
-// Account
-// -----------------------------------------
+# -----------------------------------------
+# Account
+# -----------------------------------------
 type Account {
 id: ID!
         accountNumber: String
@@ -1301,9 +1299,9 @@ hasMore: Boolean!
     accountPage: [Account]
 }
 
-// -----------------------------------------
-// AccountStatement
-// -----------------------------------------
+# -----------------------------------------
+# AccountStatement
+# -----------------------------------------
 type AccountStatement {
 id: ID!
         statementNumber: String
@@ -1335,9 +1333,9 @@ hasMore: Boolean!
     accountStatementPage: [AccountStatement]
 }
 
-// -----------------------------------------
-// Transaction
-// -----------------------------------------
+# -----------------------------------------
+# Transaction
+# -----------------------------------------
 type Transaction {
 id: ID!
         bookingDate: String
@@ -1428,9 +1426,9 @@ hasMore: Boolean!
     transactionPage: [Transaction]
 }
 
-// -----------------------------------------
-// ExternalAccount
-// -----------------------------------------
+# -----------------------------------------
+# ExternalAccount
+# -----------------------------------------
 type ExternalAccount {
 id: ID!
         name: String
@@ -1476,9 +1474,9 @@ hasMore: Boolean!
     externalAccountPage: [ExternalAccount]
 }
 
-// -----------------------------------------
-// FundsTransfer
-// -----------------------------------------
+# -----------------------------------------
+# FundsTransfer
+# -----------------------------------------
 type FundsTransfer {
 id: ID!
         transferReference: String
@@ -1565,9 +1563,9 @@ hasMore: Boolean!
     fundsTransferPage: [FundsTransfer]
 }
 
-// -----------------------------------------
-// StandingInstruction
-// -----------------------------------------
+# -----------------------------------------
+# StandingInstruction
+# -----------------------------------------
 type StandingInstruction {
 id: ID!
         instructionId: String
@@ -1609,9 +1607,9 @@ hasMore: Boolean!
     standingInstructionPage: [StandingInstruction]
 }
 
-// -----------------------------------------
-// PaymentCard
-// -----------------------------------------
+# -----------------------------------------
+# PaymentCard
+# -----------------------------------------
 type PaymentCard {
 id: ID!
         cardNumber: String
@@ -1682,9 +1680,9 @@ hasMore: Boolean!
     paymentCardPage: [PaymentCard]
 }
 
-// -----------------------------------------
-// LoanAccount
-// -----------------------------------------
+# -----------------------------------------
+# LoanAccount
+# -----------------------------------------
 type LoanAccount {
 id: ID!
         loanNumber: String
@@ -1787,9 +1785,9 @@ hasMore: Boolean!
     loanAccountPage: [LoanAccount]
 }
 
-// -----------------------------------------
-// RepaymentSchedule
-// -----------------------------------------
+# -----------------------------------------
+# RepaymentSchedule
+# -----------------------------------------
 type RepaymentSchedule {
 id: ID!
         installmentNumber: Int
@@ -1834,9 +1832,9 @@ hasMore: Boolean!
     repaymentSchedulePage: [RepaymentSchedule]
 }
 
-// -----------------------------------------
-// LoanPayment
-// -----------------------------------------
+# -----------------------------------------
+# LoanPayment
+# -----------------------------------------
 type LoanPayment {
 id: ID!
         paymentReference: String
@@ -1883,9 +1881,9 @@ hasMore: Boolean!
     loanPaymentPage: [LoanPayment]
 }
 
-// -----------------------------------------
-// Collateral
-// -----------------------------------------
+# -----------------------------------------
+# Collateral
+# -----------------------------------------
 type Collateral {
 id: ID!
         appraisedValue: String
@@ -1918,9 +1916,9 @@ hasMore: Boolean!
     collateralPage: [Collateral]
 }
 
-// -----------------------------------------
-// FeeCharge
-// -----------------------------------------
+# -----------------------------------------
+# FeeCharge
+# -----------------------------------------
 type FeeCharge {
 id: ID!
         feeCode: String
@@ -1967,9 +1965,9 @@ hasMore: Boolean!
     feeChargePage: [FeeCharge]
 }
 
-// -----------------------------------------
-// ExchangeRate
-// -----------------------------------------
+# -----------------------------------------
+# ExchangeRate
+# -----------------------------------------
 type ExchangeRate {
 id: ID!
         baseCurrency: String
@@ -2007,9 +2005,9 @@ hasMore: Boolean!
     exchangeRatePage: [ExchangeRate]
 }
 
-// -----------------------------------------
-// FXTrade
-// -----------------------------------------
+# -----------------------------------------
+# FXTrade
+# -----------------------------------------
 type FXTrade {
 id: ID!
         tradeReference: String
@@ -2105,9 +2103,9 @@ hasMore: Boolean!
     fXTradePage: [FXTrade]
 }
 
-// -----------------------------------------
-// Dispute
-// -----------------------------------------
+# -----------------------------------------
+# Dispute
+# -----------------------------------------
 type Dispute {
 id: ID!
         disputeReference: String
@@ -2178,9 +2176,9 @@ hasMore: Boolean!
     disputePage: [Dispute]
 }
 
-// -----------------------------------------
-// Consent
-// -----------------------------------------
+# -----------------------------------------
+# Consent
+# -----------------------------------------
 type Consent {
 id: ID!
         grantedOn: String
@@ -2243,9 +2241,9 @@ hasMore: Boolean!
     consentPage: [Consent]
 }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 type ThirdPartyProvider {
 id: ID!
         name: String
@@ -2279,9 +2277,9 @@ hasMore: Boolean!
 }
 
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum CustomerType {
                 Individual
             Business
@@ -2289,9 +2287,9 @@ export enum CustomerType {
             Government
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum AccountType {
                 Checking
             Savings
@@ -2299,9 +2297,9 @@ export enum AccountType {
             TimeDeposit
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum AccountStatus {
                 Open
             Frozen
@@ -2309,9 +2307,9 @@ export enum AccountStatus {
             Closed
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum AccountOwnershipType {
                 Sole
             Joint
@@ -2319,17 +2317,17 @@ export enum AccountOwnershipType {
             Trust
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum StatementDeliveryMethod {
                 Electronic
             Paper
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum TransactionType {
                 Deposit
             Withdrawal
@@ -2343,9 +2341,9 @@ export enum TransactionType {
             FXConversion
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum TransactionStatus {
                 Pending
             Posted
@@ -2354,17 +2352,17 @@ export enum TransactionStatus {
             Cancelled
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum TransactionDirection {
                 Credit
             Debit
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum ChannelType {
                 Branch
             Online
@@ -2374,9 +2372,9 @@ export enum ChannelType {
             CallCenter
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum PaymentMethod {
                 InternalTransfer
             ACH
@@ -2389,9 +2387,9 @@ export enum PaymentMethod {
             MobileWallet
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum PaymentStatus {
                 Initiated
             InProcess
@@ -2401,9 +2399,9 @@ export enum PaymentStatus {
             Cancelled
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum StandingInstructionFrequency {
                 OneTime
             Weekly
@@ -2413,9 +2411,9 @@ export enum StandingInstructionFrequency {
             Annually
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum StandingInstructionStatus {
                 Active
             Paused
@@ -2423,9 +2421,9 @@ export enum StandingInstructionStatus {
             Completed
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum CardType {
                 Debit
             Credit
@@ -2433,9 +2431,9 @@ export enum CardType {
             Virtual
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum CardStatus {
                 Active
             Blocked
@@ -2444,9 +2442,9 @@ export enum CardStatus {
             Closed
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum CardNetwork {
                 Visa
             Mastercard
@@ -2456,9 +2454,9 @@ export enum CardNetwork {
             Other
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum LoanType {
                 Mortgage
             Personal
@@ -2468,9 +2466,9 @@ export enum LoanType {
             Student
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum LoanStatus {
                 Applied
             Approved
@@ -2480,17 +2478,17 @@ export enum LoanStatus {
             Closed
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum RateType {
                 Fixed
             Variable
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum InterestCompounding {
                 Daily
             Monthly
@@ -2498,9 +2496,9 @@ export enum InterestCompounding {
             Annually
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum InstallmentStatus {
                 Due
             Paid
@@ -2508,9 +2506,9 @@ export enum InstallmentStatus {
             Deferred
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum FeeType {
                 Maintenance
             Overdraft
@@ -2522,18 +2520,18 @@ export enum FeeType {
             ReplacementCard
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum RiskRating {
                 Low
             Medium
             High
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum KycStatus {
                 Pending
             Verified
@@ -2541,9 +2539,9 @@ export enum KycStatus {
             Expired
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum IdentityDocumentType {
                 Passport
             NationalID
@@ -2553,36 +2551,36 @@ export enum IdentityDocumentType {
             TaxCertificate
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum ScreeningOutcome {
                 Clear
             Match
             Review
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum TradeStatus {
                 Booked
             Settled
             Cancelled
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum ATMStatus {
                 InService
             OutOfService
             Maintenance
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum ConsentType {
                 OpenBanking
             PaymentInitiation
@@ -2591,18 +2589,18 @@ export enum ConsentType {
             DataSharing
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum ConsentStatus {
                 Active
             Revoked
             Expired
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum DisputeStatus {
                 Open
             UnderReview
@@ -2611,9 +2609,9 @@ export enum DisputeStatus {
             Withdrawn
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum ProductCategory {
                 Deposit
             Loan
@@ -2622,9 +2620,9 @@ export enum ProductCategory {
             Investment
     }
 
-// -----------------------------------------
-// ThirdPartyProvider
-// -----------------------------------------
+# -----------------------------------------
+# ThirdPartyProvider
+# -----------------------------------------
 export enum CollateralType {
                 RealEstate
             Vehicle
@@ -2635,16 +2633,16 @@ export enum CollateralType {
     }
 
 
-// -----------------------------------------
-// Money
-// -----------------------------------------
+# -----------------------------------------
+# Money
+# -----------------------------------------
 type Money {
                 amount: String
             currency: String
     }
-// -----------------------------------------
-// Address
-// -----------------------------------------
+# -----------------------------------------
+# Address
+# -----------------------------------------
 type Address {
                 street: String
             city: String
@@ -2652,33 +2650,33 @@ type Address {
             postalCode: String
             country: String
     }
-// -----------------------------------------
-// AccountNumber
-// -----------------------------------------
+# -----------------------------------------
+# AccountNumber
+# -----------------------------------------
 type AccountNumber {
                 value: String
     }
-// -----------------------------------------
-// IBAN
-// -----------------------------------------
+# -----------------------------------------
+# IBAN
+# -----------------------------------------
 type IBAN {
                 value: String
     }
-// -----------------------------------------
-// BIC
-// -----------------------------------------
+# -----------------------------------------
+# BIC
+# -----------------------------------------
 type BIC {
                 value: String
     }
-// -----------------------------------------
-// CardPAN
-// -----------------------------------------
+# -----------------------------------------
+# CardPAN
+# -----------------------------------------
 type CardPAN {
                 value: String
     }
-// -----------------------------------------
-// Percentage
-// -----------------------------------------
+# -----------------------------------------
+# Percentage
+# -----------------------------------------
 type Percentage {
                 value: String
     }

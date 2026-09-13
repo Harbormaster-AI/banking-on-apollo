@@ -2252,7 +2252,7 @@ hasMore: Boolean!
 """
     CustomerType
 """
-enum CustomerType {
+export enum CustomerType {
                 Individual
             Business
             NonProfit
@@ -2262,7 +2262,7 @@ enum CustomerType {
 """
     AccountType
 """
-enum AccountType {
+export enum AccountType {
                 Checking
             Savings
             MoneyMarket
@@ -2272,7 +2272,7 @@ enum AccountType {
 """
     AccountStatus
 """
-enum AccountStatus {
+export enum AccountStatus {
                 Open
             Frozen
             Dormant
@@ -2282,7 +2282,7 @@ enum AccountStatus {
 """
     AccountOwnershipType
 """
-enum AccountOwnershipType {
+export enum AccountOwnershipType {
                 Sole
             Joint
             Corporate
@@ -2292,7 +2292,7 @@ enum AccountOwnershipType {
 """
     StatementDeliveryMethod
 """
-enum StatementDeliveryMethod {
+export enum StatementDeliveryMethod {
                 Electronic
             Paper
     }
@@ -2300,7 +2300,7 @@ enum StatementDeliveryMethod {
 """
     TransactionType
 """
-enum TransactionType {
+export enum TransactionType {
                 Deposit
             Withdrawal
             Transfer
@@ -2316,7 +2316,7 @@ enum TransactionType {
 """
     TransactionStatus
 """
-enum TransactionStatus {
+export enum TransactionStatus {
                 Pending
             Posted
             Reversed
@@ -2327,7 +2327,7 @@ enum TransactionStatus {
 """
     TransactionDirection
 """
-enum TransactionDirection {
+export enum TransactionDirection {
                 Credit
             Debit
     }
@@ -2335,7 +2335,7 @@ enum TransactionDirection {
 """
     ChannelType
 """
-enum ChannelType {
+export enum ChannelType {
                 Branch
             Online
             Mobile
@@ -2347,7 +2347,7 @@ enum ChannelType {
 """
     PaymentMethod
 """
-enum PaymentMethod {
+export enum PaymentMethod {
                 InternalTransfer
             ACH
             Wire
@@ -2362,7 +2362,7 @@ enum PaymentMethod {
 """
     PaymentStatus
 """
-enum PaymentStatus {
+export enum PaymentStatus {
                 Initiated
             InProcess
             Settled
@@ -2374,7 +2374,7 @@ enum PaymentStatus {
 """
     StandingInstructionFrequency
 """
-enum StandingInstructionFrequency {
+export enum StandingInstructionFrequency {
                 OneTime
             Weekly
             BiWeekly
@@ -2386,7 +2386,7 @@ enum StandingInstructionFrequency {
 """
     StandingInstructionStatus
 """
-enum StandingInstructionStatus {
+export enum StandingInstructionStatus {
                 Active
             Paused
             Cancelled
@@ -2396,7 +2396,7 @@ enum StandingInstructionStatus {
 """
     CardType
 """
-enum CardType {
+export enum CardType {
                 Debit
             Credit
             Prepaid
@@ -2406,7 +2406,7 @@ enum CardType {
 """
     CardStatus
 """
-enum CardStatus {
+export enum CardStatus {
                 Active
             Blocked
             LostStolen
@@ -2417,7 +2417,7 @@ enum CardStatus {
 """
     CardNetwork
 """
-enum CardNetwork {
+export enum CardNetwork {
                 Visa
             Mastercard
             Amex
@@ -2429,7 +2429,7 @@ enum CardNetwork {
 """
     LoanType
 """
-enum LoanType {
+export enum LoanType {
                 Mortgage
             Personal
             Auto
@@ -2441,7 +2441,7 @@ enum LoanType {
 """
     LoanStatus
 """
-enum LoanStatus {
+export enum LoanStatus {
                 Applied
             Approved
             Active
@@ -2453,7 +2453,7 @@ enum LoanStatus {
 """
     RateType
 """
-enum RateType {
+export enum RateType {
                 Fixed
             Variable
     }
@@ -2461,7 +2461,7 @@ enum RateType {
 """
     InterestCompounding
 """
-enum InterestCompounding {
+export enum InterestCompounding {
                 Daily
             Monthly
             Quarterly
@@ -2471,7 +2471,7 @@ enum InterestCompounding {
 """
     InstallmentStatus
 """
-enum InstallmentStatus {
+export enum InstallmentStatus {
                 Due
             Paid
             Overdue
@@ -2481,7 +2481,7 @@ enum InstallmentStatus {
 """
     FeeType
 """
-enum FeeType {
+export enum FeeType {
                 Maintenance
             Overdraft
             Wire
@@ -2495,7 +2495,7 @@ enum FeeType {
 """
     RiskRating
 """
-enum RiskRating {
+export enum RiskRating {
                 Low
             Medium
             High
@@ -2504,7 +2504,7 @@ enum RiskRating {
 """
     KycStatus
 """
-enum KycStatus {
+export enum KycStatus {
                 Pending
             Verified
             Rejected
@@ -2514,7 +2514,7 @@ enum KycStatus {
 """
     IdentityDocumentType
 """
-enum IdentityDocumentType {
+export enum IdentityDocumentType {
                 Passport
             NationalID
             DriverLicense
@@ -2526,7 +2526,7 @@ enum IdentityDocumentType {
 """
     ScreeningOutcome
 """
-enum ScreeningOutcome {
+export enum ScreeningOutcome {
                 Clear
             Match
             Review
@@ -2535,7 +2535,7 @@ enum ScreeningOutcome {
 """
     TradeStatus
 """
-enum TradeStatus {
+export enum TradeStatus {
                 Booked
             Settled
             Cancelled
@@ -2544,7 +2544,7 @@ enum TradeStatus {
 """
     ATMStatus
 """
-enum ATMStatus {
+export enum ATMStatus {
                 InService
             OutOfService
             Maintenance
@@ -2553,7 +2553,7 @@ enum ATMStatus {
 """
     ConsentType
 """
-enum ConsentType {
+export enum ConsentType {
                 OpenBanking
             PaymentInitiation
             AccountInformation
@@ -2564,7 +2564,7 @@ enum ConsentType {
 """
     ConsentStatus
 """
-enum ConsentStatus {
+export enum ConsentStatus {
                 Active
             Revoked
             Expired
@@ -2573,7 +2573,7 @@ enum ConsentStatus {
 """
     DisputeStatus
 """
-enum DisputeStatus {
+export enum DisputeStatus {
                 Open
             UnderReview
             Resolved
@@ -2584,7 +2584,7 @@ enum DisputeStatus {
 """
     ProductCategory
 """
-enum ProductCategory {
+export enum ProductCategory {
                 Deposit
             Loan
             Card
@@ -2595,7 +2595,7 @@ enum ProductCategory {
 """
     CollateralType
 """
-enum CollateralType {
+export enum CollateralType {
                 RealEstate
             Vehicle
             Cash

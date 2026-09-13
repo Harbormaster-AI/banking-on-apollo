@@ -1,7 +1,7 @@
 import {
     BackendAPI,
     PaginationOptions
-} from "../backend/api";
+} from "../backend/api.ts";
 
 import {
     Bank,

@@ -3,7 +3,7 @@ import axios, { AxiosInstance } from "axios";
 import {
     BackendAPI,
     PaginationOptions
-} from "./api";
+} from "./api.js";
 
 import {
 Bank,
@@ -32,7 +32,7 @@ FXTrade,
 Dispute,
 Consent,
 ThirdPartyProvider,
-} from "./types";
+} from "./types.js";
 
 export class HttpBackendAPI implements BackendAPI {
 

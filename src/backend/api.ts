@@ -25,7 +25,7 @@ import {
     Dispute,
     Consent,
     ThirdPartyProvider,
-} from "./types";
+} from "./types.js";
 
 export interface PaginationOptions {
     pageSize?: number;

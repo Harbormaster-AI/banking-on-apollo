@@ -28,7 +28,9 @@ import {
 } from "../backend/types";
 
 
-# read related functions
+// -----------------------------------------
+// Read Related Functions
+// -----------------------------------------
 type Query {
 
     health: String!
@@ -191,7 +193,9 @@ type Query {
 
 }
 
-# update related functions
+// -----------------------------------------
+// Write Related Functions
+// -----------------------------------------
 type Mutation {
 addBank(
         name: String

@@ -4,6 +4,7 @@
   "private": true,
   "description": "Generated Apollo GraphQL API",
   "main": "dist/server.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",

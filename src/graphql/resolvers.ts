@@ -54,7 +54,7 @@ interface ParentChildrenIdentifiers {
 
 type ResolverParent = unknown;
 
-module.exports = {
+export const resolvers = {
 
 Query: {
 

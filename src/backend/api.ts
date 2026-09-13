@@ -56,39 +56,39 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        branches(parentId: string,options?: PaginationOptions): Promise<Branch[]>;
+        getBranches(parentId: string,options?: PaginationOptions): Promise<Branch[]>;
         addToBranches(parentId: string,input: Branch): Promise<Bank>;
         removeFromBranches(parentId: string,childIds: string[]): Promise<Bank>;
 
-        products(parentId: string,options?: PaginationOptions): Promise<BankingProduct[]>;
+        getProducts(parentId: string,options?: PaginationOptions): Promise<BankingProduct[]>;
         addToProducts(parentId: string,input: BankingProduct): Promise<Bank>;
         removeFromProducts(parentId: string,childIds: string[]): Promise<Bank>;
 
-        customers(parentId: string,options?: PaginationOptions): Promise<Customer[]>;
+        getCustomers(parentId: string,options?: PaginationOptions): Promise<Customer[]>;
         addToCustomers(parentId: string,input: Customer): Promise<Bank>;
         removeFromCustomers(parentId: string,childIds: string[]): Promise<Bank>;
 
-        accounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
+        getAccounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
         addToAccounts(parentId: string,input: Account): Promise<Bank>;
         removeFromAccounts(parentId: string,childIds: string[]): Promise<Bank>;
 
-        paymentCards(parentId: string,options?: PaginationOptions): Promise<PaymentCard[]>;
+        getPaymentCards(parentId: string,options?: PaginationOptions): Promise<PaymentCard[]>;
         addToPaymentCards(parentId: string,input: PaymentCard): Promise<Bank>;
         removeFromPaymentCards(parentId: string,childIds: string[]): Promise<Bank>;
 
-        loanAccounts(parentId: string,options?: PaginationOptions): Promise<LoanAccount[]>;
+        getLoanAccounts(parentId: string,options?: PaginationOptions): Promise<LoanAccount[]>;
         addToLoanAccounts(parentId: string,input: LoanAccount): Promise<Bank>;
         removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<Bank>;
 
-        exchangeRates(parentId: string,options?: PaginationOptions): Promise<ExchangeRate[]>;
+        getExchangeRates(parentId: string,options?: PaginationOptions): Promise<ExchangeRate[]>;
         addToExchangeRates(parentId: string,input: ExchangeRate): Promise<Bank>;
         removeFromExchangeRates(parentId: string,childIds: string[]): Promise<Bank>;
 
-        consents(parentId: string,options?: PaginationOptions): Promise<Consent[]>;
+        getConsents(parentId: string,options?: PaginationOptions): Promise<Consent[]>;
         addToConsents(parentId: string,input: Consent): Promise<Bank>;
         removeFromConsents(parentId: string,childIds: string[]): Promise<Bank>;
 
-        thirdPartyProviders(parentId: string,options?: PaginationOptions): Promise<ThirdPartyProvider[]>;
+        getThirdPartyProviders(parentId: string,options?: PaginationOptions): Promise<ThirdPartyProvider[]>;
         addToThirdPartyProviders(parentId: string,input: ThirdPartyProvider): Promise<Bank>;
         removeFromThirdPartyProviders(parentId: string,childIds: string[]): Promise<Bank>;
 
@@ -112,22 +112,22 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        bank(parentId: string): Promise<Bank | null>;
+        getBank(parentId: string): Promise<Bank | null>;
         assignBank(parentId: string,childId: string): Promise<Branch>;
         unassignBank(parentId: string,childId: string): Promise<Branch>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        accounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
+        getAccounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
         addToAccounts(parentId: string,input: Account): Promise<Branch>;
         removeFromAccounts(parentId: string,childIds: string[]): Promise<Branch>;
 
-        loanAccounts(parentId: string,options?: PaginationOptions): Promise<LoanAccount[]>;
+        getLoanAccounts(parentId: string,options?: PaginationOptions): Promise<LoanAccount[]>;
         addToLoanAccounts(parentId: string,input: LoanAccount): Promise<Branch>;
         removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<Branch>;
 
-        atms(parentId: string,options?: PaginationOptions): Promise<ATM[]>;
+        getAtms(parentId: string,options?: PaginationOptions): Promise<ATM[]>;
         addToAtms(parentId: string,input: ATM): Promise<Branch>;
         removeFromAtms(parentId: string,childIds: string[]): Promise<Branch>;
 
@@ -151,7 +151,7 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        branch(parentId: string): Promise<Branch | null>;
+        getBranch(parentId: string): Promise<Branch | null>;
         assignBranch(parentId: string,childId: string): Promise<ATM>;
         unassignBranch(parentId: string,childId: string): Promise<ATM>;
 
@@ -178,42 +178,42 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        bank(parentId: string): Promise<Bank | null>;
+        getBank(parentId: string): Promise<Bank | null>;
         assignBank(parentId: string,childId: string): Promise<Customer>;
         unassignBank(parentId: string,childId: string): Promise<Customer>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        accounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
+        getAccounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
         addToAccounts(parentId: string,input: Account): Promise<Customer>;
         removeFromAccounts(parentId: string,childIds: string[]): Promise<Customer>;
 
-        loanAccounts(parentId: string,options?: PaginationOptions): Promise<LoanAccount[]>;
+        getLoanAccounts(parentId: string,options?: PaginationOptions): Promise<LoanAccount[]>;
         addToLoanAccounts(parentId: string,input: LoanAccount): Promise<Customer>;
         removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<Customer>;
 
-        paymentCards(parentId: string,options?: PaginationOptions): Promise<PaymentCard[]>;
+        getPaymentCards(parentId: string,options?: PaginationOptions): Promise<PaymentCard[]>;
         addToPaymentCards(parentId: string,input: PaymentCard): Promise<Customer>;
         removeFromPaymentCards(parentId: string,childIds: string[]): Promise<Customer>;
 
-        externalAccounts(parentId: string,options?: PaginationOptions): Promise<ExternalAccount[]>;
+        getExternalAccounts(parentId: string,options?: PaginationOptions): Promise<ExternalAccount[]>;
         addToExternalAccounts(parentId: string,input: ExternalAccount): Promise<Customer>;
         removeFromExternalAccounts(parentId: string,childIds: string[]): Promise<Customer>;
 
-        fundsTransfers(parentId: string,options?: PaginationOptions): Promise<FundsTransfer[]>;
+        getFundsTransfers(parentId: string,options?: PaginationOptions): Promise<FundsTransfer[]>;
         addToFundsTransfers(parentId: string,input: FundsTransfer): Promise<Customer>;
         removeFromFundsTransfers(parentId: string,childIds: string[]): Promise<Customer>;
 
-        disputes(parentId: string,options?: PaginationOptions): Promise<Dispute[]>;
+        getDisputes(parentId: string,options?: PaginationOptions): Promise<Dispute[]>;
         addToDisputes(parentId: string,input: Dispute): Promise<Customer>;
         removeFromDisputes(parentId: string,childIds: string[]): Promise<Customer>;
 
-        kycProfiles(parentId: string,options?: PaginationOptions): Promise<KycProfile[]>;
+        getKycProfiles(parentId: string,options?: PaginationOptions): Promise<KycProfile[]>;
         addToKycProfiles(parentId: string,input: KycProfile): Promise<Customer>;
         removeFromKycProfiles(parentId: string,childIds: string[]): Promise<Customer>;
 
-        consents(parentId: string,options?: PaginationOptions): Promise<Consent[]>;
+        getConsents(parentId: string,options?: PaginationOptions): Promise<Consent[]>;
         addToConsents(parentId: string,input: Consent): Promise<Customer>;
         removeFromConsents(parentId: string,childIds: string[]): Promise<Customer>;
 
@@ -237,22 +237,22 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        customer(parentId: string): Promise<Customer | null>;
+        getCustomer(parentId: string): Promise<Customer | null>;
         assignCustomer(parentId: string,childId: string): Promise<KycProfile>;
         unassignCustomer(parentId: string,childId: string): Promise<KycProfile>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        identityDocuments(parentId: string,options?: PaginationOptions): Promise<IdentityDocument[]>;
+        getIdentityDocuments(parentId: string,options?: PaginationOptions): Promise<IdentityDocument[]>;
         addToIdentityDocuments(parentId: string,input: IdentityDocument): Promise<KycProfile>;
         removeFromIdentityDocuments(parentId: string,childIds: string[]): Promise<KycProfile>;
 
-        riskAssessments(parentId: string,options?: PaginationOptions): Promise<RiskAssessment[]>;
+        getRiskAssessments(parentId: string,options?: PaginationOptions): Promise<RiskAssessment[]>;
         addToRiskAssessments(parentId: string,input: RiskAssessment): Promise<KycProfile>;
         removeFromRiskAssessments(parentId: string,childIds: string[]): Promise<KycProfile>;
 
-        screenings(parentId: string,options?: PaginationOptions): Promise<ScreeningResult[]>;
+        getScreenings(parentId: string,options?: PaginationOptions): Promise<ScreeningResult[]>;
         addToScreenings(parentId: string,input: ScreeningResult): Promise<KycProfile>;
         removeFromScreenings(parentId: string,childIds: string[]): Promise<KycProfile>;
 
@@ -276,7 +276,7 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        kycProfile(parentId: string): Promise<KycProfile | null>;
+        getKycProfile(parentId: string): Promise<KycProfile | null>;
         assignKycProfile(parentId: string,childId: string): Promise<IdentityDocument>;
         unassignKycProfile(parentId: string,childId: string): Promise<IdentityDocument>;
 
@@ -303,7 +303,7 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        kycProfile(parentId: string): Promise<KycProfile | null>;
+        getKycProfile(parentId: string): Promise<KycProfile | null>;
         assignKycProfile(parentId: string,childId: string): Promise<RiskAssessment>;
         unassignKycProfile(parentId: string,childId: string): Promise<RiskAssessment>;
 
@@ -330,7 +330,7 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        kycProfile(parentId: string): Promise<KycProfile | null>;
+        getKycProfile(parentId: string): Promise<KycProfile | null>;
         assignKycProfile(parentId: string,childId: string): Promise<ScreeningResult>;
         unassignKycProfile(parentId: string,childId: string): Promise<ScreeningResult>;
 
@@ -357,22 +357,22 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        bank(parentId: string): Promise<Bank | null>;
+        getBank(parentId: string): Promise<Bank | null>;
         assignBank(parentId: string,childId: string): Promise<BankingProduct>;
         unassignBank(parentId: string,childId: string): Promise<BankingProduct>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        accounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
+        getAccounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
         addToAccounts(parentId: string,input: Account): Promise<BankingProduct>;
         removeFromAccounts(parentId: string,childIds: string[]): Promise<BankingProduct>;
 
-        loanAccounts(parentId: string,options?: PaginationOptions): Promise<LoanAccount[]>;
+        getLoanAccounts(parentId: string,options?: PaginationOptions): Promise<LoanAccount[]>;
         addToLoanAccounts(parentId: string,input: LoanAccount): Promise<BankingProduct>;
         removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<BankingProduct>;
 
-        paymentCards(parentId: string,options?: PaginationOptions): Promise<PaymentCard[]>;
+        getPaymentCards(parentId: string,options?: PaginationOptions): Promise<PaymentCard[]>;
         addToPaymentCards(parentId: string,input: PaymentCard): Promise<BankingProduct>;
         removeFromPaymentCards(parentId: string,childIds: string[]): Promise<BankingProduct>;
 
@@ -396,36 +396,36 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        bank(parentId: string): Promise<Bank | null>;
+        getBank(parentId: string): Promise<Bank | null>;
         assignBank(parentId: string,childId: string): Promise<Account>;
         unassignBank(parentId: string,childId: string): Promise<Account>;
-        branch(parentId: string): Promise<Branch | null>;
+        getBranch(parentId: string): Promise<Branch | null>;
         assignBranch(parentId: string,childId: string): Promise<Account>;
         unassignBranch(parentId: string,childId: string): Promise<Account>;
-        product(parentId: string): Promise<BankingProduct | null>;
+        getProduct(parentId: string): Promise<BankingProduct | null>;
         assignProduct(parentId: string,childId: string): Promise<Account>;
         unassignProduct(parentId: string,childId: string): Promise<Account>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        owners(parentId: string,options?: PaginationOptions): Promise<Customer[]>;
+        getOwners(parentId: string,options?: PaginationOptions): Promise<Customer[]>;
         addToOwners(parentId: string,input: Customer): Promise<Account>;
         removeFromOwners(parentId: string,childIds: string[]): Promise<Account>;
 
-        transactions(parentId: string,options?: PaginationOptions): Promise<Transaction[]>;
+        getTransactions(parentId: string,options?: PaginationOptions): Promise<Transaction[]>;
         addToTransactions(parentId: string,input: Transaction): Promise<Account>;
         removeFromTransactions(parentId: string,childIds: string[]): Promise<Account>;
 
-        statements(parentId: string,options?: PaginationOptions): Promise<AccountStatement[]>;
+        getStatements(parentId: string,options?: PaginationOptions): Promise<AccountStatement[]>;
         addToStatements(parentId: string,input: AccountStatement): Promise<Account>;
         removeFromStatements(parentId: string,childIds: string[]): Promise<Account>;
 
-        standingInstructions(parentId: string,options?: PaginationOptions): Promise<StandingInstruction[]>;
+        getStandingInstructions(parentId: string,options?: PaginationOptions): Promise<StandingInstruction[]>;
         addToStandingInstructions(parentId: string,input: StandingInstruction): Promise<Account>;
         removeFromStandingInstructions(parentId: string,childIds: string[]): Promise<Account>;
 
-        feeCharges(parentId: string,options?: PaginationOptions): Promise<FeeCharge[]>;
+        getFeeCharges(parentId: string,options?: PaginationOptions): Promise<FeeCharge[]>;
         addToFeeCharges(parentId: string,input: FeeCharge): Promise<Account>;
         removeFromFeeCharges(parentId: string,childIds: string[]): Promise<Account>;
 
@@ -449,7 +449,7 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        account(parentId: string): Promise<Account | null>;
+        getAccount(parentId: string): Promise<Account | null>;
         assignAccount(parentId: string,childId: string): Promise<AccountStatement>;
         unassignAccount(parentId: string,childId: string): Promise<AccountStatement>;
 
@@ -476,22 +476,22 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        account(parentId: string): Promise<Account | null>;
+        getAccount(parentId: string): Promise<Account | null>;
         assignAccount(parentId: string,childId: string): Promise<Transaction>;
         unassignAccount(parentId: string,childId: string): Promise<Transaction>;
-        externalCounterparty(parentId: string): Promise<ExternalAccount | null>;
+        getExternalCounterparty(parentId: string): Promise<ExternalAccount | null>;
         assignExternalCounterparty(parentId: string,childId: string): Promise<Transaction>;
         unassignExternalCounterparty(parentId: string,childId: string): Promise<Transaction>;
-        paymentCard(parentId: string): Promise<PaymentCard | null>;
+        getPaymentCard(parentId: string): Promise<PaymentCard | null>;
         assignPaymentCard(parentId: string,childId: string): Promise<Transaction>;
         unassignPaymentCard(parentId: string,childId: string): Promise<Transaction>;
-        fundsTransfer(parentId: string): Promise<FundsTransfer | null>;
+        getFundsTransfer(parentId: string): Promise<FundsTransfer | null>;
         assignFundsTransfer(parentId: string,childId: string): Promise<Transaction>;
         unassignFundsTransfer(parentId: string,childId: string): Promise<Transaction>;
-        fxTrade(parentId: string): Promise<FXTrade | null>;
+        getFxTrade(parentId: string): Promise<FXTrade | null>;
         assignFxTrade(parentId: string,childId: string): Promise<Transaction>;
         unassignFxTrade(parentId: string,childId: string): Promise<Transaction>;
-        dispute(parentId: string): Promise<Dispute | null>;
+        getDispute(parentId: string): Promise<Dispute | null>;
         assignDispute(parentId: string,childId: string): Promise<Transaction>;
         unassignDispute(parentId: string,childId: string): Promise<Transaction>;
 
@@ -518,14 +518,14 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        customer(parentId: string): Promise<Customer | null>;
+        getCustomer(parentId: string): Promise<Customer | null>;
         assignCustomer(parentId: string,childId: string): Promise<ExternalAccount>;
         unassignCustomer(parentId: string,childId: string): Promise<ExternalAccount>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        transactions(parentId: string,options?: PaginationOptions): Promise<Transaction[]>;
+        getTransactions(parentId: string,options?: PaginationOptions): Promise<Transaction[]>;
         addToTransactions(parentId: string,input: Transaction): Promise<ExternalAccount>;
         removeFromTransactions(parentId: string,childIds: string[]): Promise<ExternalAccount>;
 
@@ -549,23 +549,23 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        sourceAccount(parentId: string): Promise<Account | null>;
+        getSourceAccount(parentId: string): Promise<Account | null>;
         assignSourceAccount(parentId: string,childId: string): Promise<FundsTransfer>;
         unassignSourceAccount(parentId: string,childId: string): Promise<FundsTransfer>;
-        destinationAccount(parentId: string): Promise<Account | null>;
+        getDestinationAccount(parentId: string): Promise<Account | null>;
         assignDestinationAccount(parentId: string,childId: string): Promise<FundsTransfer>;
         unassignDestinationAccount(parentId: string,childId: string): Promise<FundsTransfer>;
-        externalBeneficiary(parentId: string): Promise<ExternalAccount | null>;
+        getExternalBeneficiary(parentId: string): Promise<ExternalAccount | null>;
         assignExternalBeneficiary(parentId: string,childId: string): Promise<FundsTransfer>;
         unassignExternalBeneficiary(parentId: string,childId: string): Promise<FundsTransfer>;
-        initiatedBy(parentId: string): Promise<Customer | null>;
+        getInitiatedBy(parentId: string): Promise<Customer | null>;
         assignInitiatedBy(parentId: string,childId: string): Promise<FundsTransfer>;
         unassignInitiatedBy(parentId: string,childId: string): Promise<FundsTransfer>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        transactions(parentId: string,options?: PaginationOptions): Promise<Transaction[]>;
+        getTransactions(parentId: string,options?: PaginationOptions): Promise<Transaction[]>;
         addToTransactions(parentId: string,input: Transaction): Promise<FundsTransfer>;
         removeFromTransactions(parentId: string,childIds: string[]): Promise<FundsTransfer>;
 
@@ -589,10 +589,10 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        account(parentId: string): Promise<Account | null>;
+        getAccount(parentId: string): Promise<Account | null>;
         assignAccount(parentId: string,childId: string): Promise<StandingInstruction>;
         unassignAccount(parentId: string,childId: string): Promise<StandingInstruction>;
-        beneficiary(parentId: string): Promise<ExternalAccount | null>;
+        getBeneficiary(parentId: string): Promise<ExternalAccount | null>;
         assignBeneficiary(parentId: string,childId: string): Promise<StandingInstruction>;
         unassignBeneficiary(parentId: string,childId: string): Promise<StandingInstruction>;
 
@@ -619,20 +619,20 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        bank(parentId: string): Promise<Bank | null>;
+        getBank(parentId: string): Promise<Bank | null>;
         assignBank(parentId: string,childId: string): Promise<PaymentCard>;
         unassignBank(parentId: string,childId: string): Promise<PaymentCard>;
-        account(parentId: string): Promise<Account | null>;
+        getAccount(parentId: string): Promise<Account | null>;
         assignAccount(parentId: string,childId: string): Promise<PaymentCard>;
         unassignAccount(parentId: string,childId: string): Promise<PaymentCard>;
-        customer(parentId: string): Promise<Customer | null>;
+        getCustomer(parentId: string): Promise<Customer | null>;
         assignCustomer(parentId: string,childId: string): Promise<PaymentCard>;
         unassignCustomer(parentId: string,childId: string): Promise<PaymentCard>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        transactions(parentId: string,options?: PaginationOptions): Promise<Transaction[]>;
+        getTransactions(parentId: string,options?: PaginationOptions): Promise<Transaction[]>;
         addToTransactions(parentId: string,input: Transaction): Promise<PaymentCard>;
         removeFromTransactions(parentId: string,childIds: string[]): Promise<PaymentCard>;
 
@@ -656,36 +656,36 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        bank(parentId: string): Promise<Bank | null>;
+        getBank(parentId: string): Promise<Bank | null>;
         assignBank(parentId: string,childId: string): Promise<LoanAccount>;
         unassignBank(parentId: string,childId: string): Promise<LoanAccount>;
-        branch(parentId: string): Promise<Branch | null>;
+        getBranch(parentId: string): Promise<Branch | null>;
         assignBranch(parentId: string,childId: string): Promise<LoanAccount>;
         unassignBranch(parentId: string,childId: string): Promise<LoanAccount>;
-        product(parentId: string): Promise<BankingProduct | null>;
+        getProduct(parentId: string): Promise<BankingProduct | null>;
         assignProduct(parentId: string,childId: string): Promise<LoanAccount>;
         unassignProduct(parentId: string,childId: string): Promise<LoanAccount>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        borrowers(parentId: string,options?: PaginationOptions): Promise<Customer[]>;
+        getBorrowers(parentId: string,options?: PaginationOptions): Promise<Customer[]>;
         addToBorrowers(parentId: string,input: Customer): Promise<LoanAccount>;
         removeFromBorrowers(parentId: string,childIds: string[]): Promise<LoanAccount>;
 
-        repaymentSchedule(parentId: string,options?: PaginationOptions): Promise<RepaymentSchedule[]>;
+        getRepaymentSchedule(parentId: string,options?: PaginationOptions): Promise<RepaymentSchedule[]>;
         addToRepaymentSchedule(parentId: string,input: RepaymentSchedule): Promise<LoanAccount>;
         removeFromRepaymentSchedule(parentId: string,childIds: string[]): Promise<LoanAccount>;
 
-        payments(parentId: string,options?: PaginationOptions): Promise<LoanPayment[]>;
+        getPayments(parentId: string,options?: PaginationOptions): Promise<LoanPayment[]>;
         addToPayments(parentId: string,input: LoanPayment): Promise<LoanAccount>;
         removeFromPayments(parentId: string,childIds: string[]): Promise<LoanAccount>;
 
-        collateral(parentId: string,options?: PaginationOptions): Promise<Collateral[]>;
+        getCollateral(parentId: string,options?: PaginationOptions): Promise<Collateral[]>;
         addToCollateral(parentId: string,input: Collateral): Promise<LoanAccount>;
         removeFromCollateral(parentId: string,childIds: string[]): Promise<LoanAccount>;
 
-        feeCharges(parentId: string,options?: PaginationOptions): Promise<FeeCharge[]>;
+        getFeeCharges(parentId: string,options?: PaginationOptions): Promise<FeeCharge[]>;
         addToFeeCharges(parentId: string,input: FeeCharge): Promise<LoanAccount>;
         removeFromFeeCharges(parentId: string,childIds: string[]): Promise<LoanAccount>;
 
@@ -709,10 +709,10 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        loanAccount(parentId: string): Promise<LoanAccount | null>;
+        getLoanAccount(parentId: string): Promise<LoanAccount | null>;
         assignLoanAccount(parentId: string,childId: string): Promise<RepaymentSchedule>;
         unassignLoanAccount(parentId: string,childId: string): Promise<RepaymentSchedule>;
-        payment(parentId: string): Promise<LoanPayment | null>;
+        getPayment(parentId: string): Promise<LoanPayment | null>;
         assignPayment(parentId: string,childId: string): Promise<RepaymentSchedule>;
         unassignPayment(parentId: string,childId: string): Promise<RepaymentSchedule>;
 
@@ -739,10 +739,10 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        loanAccount(parentId: string): Promise<LoanAccount | null>;
+        getLoanAccount(parentId: string): Promise<LoanAccount | null>;
         assignLoanAccount(parentId: string,childId: string): Promise<LoanPayment>;
         unassignLoanAccount(parentId: string,childId: string): Promise<LoanPayment>;
-        transaction(parentId: string): Promise<Transaction | null>;
+        getTransaction(parentId: string): Promise<Transaction | null>;
         assignTransaction(parentId: string,childId: string): Promise<LoanPayment>;
         unassignTransaction(parentId: string,childId: string): Promise<LoanPayment>;
 
@@ -769,7 +769,7 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        loanAccount(parentId: string): Promise<LoanAccount | null>;
+        getLoanAccount(parentId: string): Promise<LoanAccount | null>;
         assignLoanAccount(parentId: string,childId: string): Promise<Collateral>;
         unassignLoanAccount(parentId: string,childId: string): Promise<Collateral>;
 
@@ -796,10 +796,10 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        account(parentId: string): Promise<Account | null>;
+        getAccount(parentId: string): Promise<Account | null>;
         assignAccount(parentId: string,childId: string): Promise<FeeCharge>;
         unassignAccount(parentId: string,childId: string): Promise<FeeCharge>;
-        loanAccount(parentId: string): Promise<LoanAccount | null>;
+        getLoanAccount(parentId: string): Promise<LoanAccount | null>;
         assignLoanAccount(parentId: string,childId: string): Promise<FeeCharge>;
         unassignLoanAccount(parentId: string,childId: string): Promise<FeeCharge>;
 
@@ -826,14 +826,14 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        bank(parentId: string): Promise<Bank | null>;
+        getBank(parentId: string): Promise<Bank | null>;
         assignBank(parentId: string,childId: string): Promise<ExchangeRate>;
         unassignBank(parentId: string,childId: string): Promise<ExchangeRate>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        fxTrades(parentId: string,options?: PaginationOptions): Promise<FXTrade[]>;
+        getFxTrades(parentId: string,options?: PaginationOptions): Promise<FXTrade[]>;
         addToFxTrades(parentId: string,input: FXTrade): Promise<ExchangeRate>;
         removeFromFxTrades(parentId: string,childIds: string[]): Promise<ExchangeRate>;
 
@@ -857,22 +857,22 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        customer(parentId: string): Promise<Customer | null>;
+        getCustomer(parentId: string): Promise<Customer | null>;
         assignCustomer(parentId: string,childId: string): Promise<FXTrade>;
         unassignCustomer(parentId: string,childId: string): Promise<FXTrade>;
-        bank(parentId: string): Promise<Bank | null>;
+        getBank(parentId: string): Promise<Bank | null>;
         assignBank(parentId: string,childId: string): Promise<FXTrade>;
         unassignBank(parentId: string,childId: string): Promise<FXTrade>;
-        exchangeRate(parentId: string): Promise<ExchangeRate | null>;
+        getExchangeRate(parentId: string): Promise<ExchangeRate | null>;
         assignExchangeRate(parentId: string,childId: string): Promise<FXTrade>;
         unassignExchangeRate(parentId: string,childId: string): Promise<FXTrade>;
-        sourceAccount(parentId: string): Promise<Account | null>;
+        getSourceAccount(parentId: string): Promise<Account | null>;
         assignSourceAccount(parentId: string,childId: string): Promise<FXTrade>;
         unassignSourceAccount(parentId: string,childId: string): Promise<FXTrade>;
-        destinationAccount(parentId: string): Promise<Account | null>;
+        getDestinationAccount(parentId: string): Promise<Account | null>;
         assignDestinationAccount(parentId: string,childId: string): Promise<FXTrade>;
         unassignDestinationAccount(parentId: string,childId: string): Promise<FXTrade>;
-        transaction(parentId: string): Promise<Transaction | null>;
+        getTransaction(parentId: string): Promise<Transaction | null>;
         assignTransaction(parentId: string,childId: string): Promise<FXTrade>;
         unassignTransaction(parentId: string,childId: string): Promise<FXTrade>;
 
@@ -899,16 +899,16 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        transaction(parentId: string): Promise<Transaction | null>;
+        getTransaction(parentId: string): Promise<Transaction | null>;
         assignTransaction(parentId: string,childId: string): Promise<Dispute>;
         unassignTransaction(parentId: string,childId: string): Promise<Dispute>;
-        customer(parentId: string): Promise<Customer | null>;
+        getCustomer(parentId: string): Promise<Customer | null>;
         assignCustomer(parentId: string,childId: string): Promise<Dispute>;
         unassignCustomer(parentId: string,childId: string): Promise<Dispute>;
-        account(parentId: string): Promise<Account | null>;
+        getAccount(parentId: string): Promise<Account | null>;
         assignAccount(parentId: string,childId: string): Promise<Dispute>;
         unassignAccount(parentId: string,childId: string): Promise<Dispute>;
-        paymentCard(parentId: string): Promise<PaymentCard | null>;
+        getPaymentCard(parentId: string): Promise<PaymentCard | null>;
         assignPaymentCard(parentId: string,childId: string): Promise<Dispute>;
         unassignPaymentCard(parentId: string,childId: string): Promise<Dispute>;
 
@@ -935,20 +935,20 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        customer(parentId: string): Promise<Customer | null>;
+        getCustomer(parentId: string): Promise<Customer | null>;
         assignCustomer(parentId: string,childId: string): Promise<Consent>;
         unassignCustomer(parentId: string,childId: string): Promise<Consent>;
-        bank(parentId: string): Promise<Bank | null>;
+        getBank(parentId: string): Promise<Bank | null>;
         assignBank(parentId: string,childId: string): Promise<Consent>;
         unassignBank(parentId: string,childId: string): Promise<Consent>;
-        thirdPartyProvider(parentId: string): Promise<ThirdPartyProvider | null>;
+        getThirdPartyProvider(parentId: string): Promise<ThirdPartyProvider | null>;
         assignThirdPartyProvider(parentId: string,childId: string): Promise<Consent>;
         unassignThirdPartyProvider(parentId: string,childId: string): Promise<Consent>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        authorizedAccounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
+        getAuthorizedAccounts(parentId: string,options?: PaginationOptions): Promise<Account[]>;
         addToAuthorizedAccounts(parentId: string,input: Account): Promise<Consent>;
         removeFromAuthorizedAccounts(parentId: string,childIds: string[]): Promise<Consent>;
 
@@ -972,14 +972,14 @@ export interface BackendAPI {
         // single association(s)
         // -----------------------------------------
 
-        bank(parentId: string): Promise<Bank | null>;
+        getBank(parentId: string): Promise<Bank | null>;
         assignBank(parentId: string,childId: string): Promise<ThirdPartyProvider>;
         unassignBank(parentId: string,childId: string): Promise<ThirdPartyProvider>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-        consents(parentId: string,options?: PaginationOptions): Promise<Consent[]>;
+        getConsents(parentId: string,options?: PaginationOptions): Promise<Consent[]>;
         addToConsents(parentId: string,input: Consent): Promise<ThirdPartyProvider>;
         removeFromConsents(parentId: string,childIds: string[]): Promise<ThirdPartyProvider>;
 

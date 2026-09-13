@@ -6,7 +6,7 @@ LABEL org.opencontainers.image.version="0.0.1"
 LABEL com.harbormaster.blueprint="Apollo GraphQL"
 LABEL com.harbormaster.model="Banking Industry Domain Model"
 LABEL com.harbormaster.generated="2026-09-13"
-#LABEL com.harbormaster.certification="f61b6205-df9a-44ac-ac28-8ac521f86aee"
+#LABEL com.harbormaster.certification="e457c340-002d-4265-ace9-e6a603da42e5"
 
 # -----------------------------------------------
 # install a few essentials

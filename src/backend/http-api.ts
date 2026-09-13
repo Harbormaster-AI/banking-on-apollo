@@ -91,8 +91,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        branches: async (parentId: string,options?: PaginationOptions): Promise<Branch[]> => {
-            const response = await this.http.get(`/Bank/branches/${parentId}/`,
+        getBranches: async (parentId: string,options?: PaginationOptions): Promise<Branch[]> => {
+            const response = await this.http.get(`/Bank/getBranches/${parentId}/`,
                 {
                     params: options
                 }
@@ -114,8 +114,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        products: async (parentId: string,options?: PaginationOptions): Promise<BankingProduct[]> => {
-            const response = await this.http.get(`/Bank/products/${parentId}/`,
+        getProducts: async (parentId: string,options?: PaginationOptions): Promise<BankingProduct[]> => {
+            const response = await this.http.get(`/Bank/getProducts/${parentId}/`,
                 {
                     params: options
                 }
@@ -137,8 +137,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        customers: async (parentId: string,options?: PaginationOptions): Promise<Customer[]> => {
-            const response = await this.http.get(`/Bank/customers/${parentId}/`,
+        getCustomers: async (parentId: string,options?: PaginationOptions): Promise<Customer[]> => {
+            const response = await this.http.get(`/Bank/getCustomers/${parentId}/`,
                 {
                     params: options
                 }
@@ -160,8 +160,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        accounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
-            const response = await this.http.get(`/Bank/accounts/${parentId}/`,
+        getAccounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
+            const response = await this.http.get(`/Bank/getAccounts/${parentId}/`,
                 {
                     params: options
                 }
@@ -183,8 +183,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        paymentCards: async (parentId: string,options?: PaginationOptions): Promise<PaymentCard[]> => {
-            const response = await this.http.get(`/Bank/paymentCards/${parentId}/`,
+        getPaymentCards: async (parentId: string,options?: PaginationOptions): Promise<PaymentCard[]> => {
+            const response = await this.http.get(`/Bank/getPaymentCards/${parentId}/`,
                 {
                     params: options
                 }
@@ -206,8 +206,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        loanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
-            const response = await this.http.get(`/Bank/loanAccounts/${parentId}/`,
+        getLoanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
+            const response = await this.http.get(`/Bank/getLoanAccounts/${parentId}/`,
                 {
                     params: options
                 }
@@ -229,8 +229,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        exchangeRates: async (parentId: string,options?: PaginationOptions): Promise<ExchangeRate[]> => {
-            const response = await this.http.get(`/Bank/exchangeRates/${parentId}/`,
+        getExchangeRates: async (parentId: string,options?: PaginationOptions): Promise<ExchangeRate[]> => {
+            const response = await this.http.get(`/Bank/getExchangeRates/${parentId}/`,
                 {
                     params: options
                 }
@@ -252,8 +252,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        consents: async (parentId: string,options?: PaginationOptions): Promise<Consent[]> => {
-            const response = await this.http.get(`/Bank/consents/${parentId}/`,
+        getConsents: async (parentId: string,options?: PaginationOptions): Promise<Consent[]> => {
+            const response = await this.http.get(`/Bank/getConsents/${parentId}/`,
                 {
                     params: options
                 }
@@ -275,8 +275,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        thirdPartyProviders: async (parentId: string,options?: PaginationOptions): Promise<ThirdPartyProvider[]> => {
-            const response = await this.http.get(`/Bank/thirdPartyProviders/${parentId}/`,
+        getThirdPartyProviders: async (parentId: string,options?: PaginationOptions): Promise<ThirdPartyProvider[]> => {
+            const response = await this.http.get(`/Bank/getThirdPartyProviders/${parentId}/`,
                 {
                     params: options
                 }
@@ -333,8 +333,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        bank: async (id: string): Promise<Bank | null> => {
-            const response = await this.http.get(`/Branch/bank/${id}`);
+        getBank: async (id: string): Promise<Bank | null> => {
+            const response = await this.http.get(`/Branch/getBank/${id}`);
             return response.data;
         },
 
@@ -352,8 +352,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        accounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
-            const response = await this.http.get(`/Branch/accounts/${parentId}/`,
+        getAccounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
+            const response = await this.http.get(`/Branch/getAccounts/${parentId}/`,
                 {
                     params: options
                 }
@@ -375,8 +375,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        loanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
-            const response = await this.http.get(`/Branch/loanAccounts/${parentId}/`,
+        getLoanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
+            const response = await this.http.get(`/Branch/getLoanAccounts/${parentId}/`,
                 {
                     params: options
                 }
@@ -398,8 +398,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        atms: async (parentId: string,options?: PaginationOptions): Promise<ATM[]> => {
-            const response = await this.http.get(`/Branch/atms/${parentId}/`,
+        getAtms: async (parentId: string,options?: PaginationOptions): Promise<ATM[]> => {
+            const response = await this.http.get(`/Branch/getAtms/${parentId}/`,
                 {
                     params: options
                 }
@@ -456,8 +456,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        branch: async (id: string): Promise<Branch | null> => {
-            const response = await this.http.get(`/ATM/branch/${id}`);
+        getBranch: async (id: string): Promise<Branch | null> => {
+            const response = await this.http.get(`/ATM/getBranch/${id}`);
             return response.data;
         },
 
@@ -510,8 +510,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        bank: async (id: string): Promise<Bank | null> => {
-            const response = await this.http.get(`/Customer/bank/${id}`);
+        getBank: async (id: string): Promise<Bank | null> => {
+            const response = await this.http.get(`/Customer/getBank/${id}`);
             return response.data;
         },
 
@@ -529,8 +529,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        accounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
-            const response = await this.http.get(`/Customer/accounts/${parentId}/`,
+        getAccounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
+            const response = await this.http.get(`/Customer/getAccounts/${parentId}/`,
                 {
                     params: options
                 }
@@ -552,8 +552,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        loanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
-            const response = await this.http.get(`/Customer/loanAccounts/${parentId}/`,
+        getLoanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
+            const response = await this.http.get(`/Customer/getLoanAccounts/${parentId}/`,
                 {
                     params: options
                 }
@@ -575,8 +575,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        paymentCards: async (parentId: string,options?: PaginationOptions): Promise<PaymentCard[]> => {
-            const response = await this.http.get(`/Customer/paymentCards/${parentId}/`,
+        getPaymentCards: async (parentId: string,options?: PaginationOptions): Promise<PaymentCard[]> => {
+            const response = await this.http.get(`/Customer/getPaymentCards/${parentId}/`,
                 {
                     params: options
                 }
@@ -598,8 +598,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        externalAccounts: async (parentId: string,options?: PaginationOptions): Promise<ExternalAccount[]> => {
-            const response = await this.http.get(`/Customer/externalAccounts/${parentId}/`,
+        getExternalAccounts: async (parentId: string,options?: PaginationOptions): Promise<ExternalAccount[]> => {
+            const response = await this.http.get(`/Customer/getExternalAccounts/${parentId}/`,
                 {
                     params: options
                 }
@@ -621,8 +621,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        fundsTransfers: async (parentId: string,options?: PaginationOptions): Promise<FundsTransfer[]> => {
-            const response = await this.http.get(`/Customer/fundsTransfers/${parentId}/`,
+        getFundsTransfers: async (parentId: string,options?: PaginationOptions): Promise<FundsTransfer[]> => {
+            const response = await this.http.get(`/Customer/getFundsTransfers/${parentId}/`,
                 {
                     params: options
                 }
@@ -644,8 +644,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        disputes: async (parentId: string,options?: PaginationOptions): Promise<Dispute[]> => {
-            const response = await this.http.get(`/Customer/disputes/${parentId}/`,
+        getDisputes: async (parentId: string,options?: PaginationOptions): Promise<Dispute[]> => {
+            const response = await this.http.get(`/Customer/getDisputes/${parentId}/`,
                 {
                     params: options
                 }
@@ -667,8 +667,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        kycProfiles: async (parentId: string,options?: PaginationOptions): Promise<KycProfile[]> => {
-            const response = await this.http.get(`/Customer/kycProfiles/${parentId}/`,
+        getKycProfiles: async (parentId: string,options?: PaginationOptions): Promise<KycProfile[]> => {
+            const response = await this.http.get(`/Customer/getKycProfiles/${parentId}/`,
                 {
                     params: options
                 }
@@ -690,8 +690,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        consents: async (parentId: string,options?: PaginationOptions): Promise<Consent[]> => {
-            const response = await this.http.get(`/Customer/consents/${parentId}/`,
+        getConsents: async (parentId: string,options?: PaginationOptions): Promise<Consent[]> => {
+            const response = await this.http.get(`/Customer/getConsents/${parentId}/`,
                 {
                     params: options
                 }
@@ -748,8 +748,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        customer: async (id: string): Promise<Customer | null> => {
-            const response = await this.http.get(`/KycProfile/customer/${id}`);
+        getCustomer: async (id: string): Promise<Customer | null> => {
+            const response = await this.http.get(`/KycProfile/getCustomer/${id}`);
             return response.data;
         },
 
@@ -767,8 +767,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        identityDocuments: async (parentId: string,options?: PaginationOptions): Promise<IdentityDocument[]> => {
-            const response = await this.http.get(`/KycProfile/identityDocuments/${parentId}/`,
+        getIdentityDocuments: async (parentId: string,options?: PaginationOptions): Promise<IdentityDocument[]> => {
+            const response = await this.http.get(`/KycProfile/getIdentityDocuments/${parentId}/`,
                 {
                     params: options
                 }
@@ -790,8 +790,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        riskAssessments: async (parentId: string,options?: PaginationOptions): Promise<RiskAssessment[]> => {
-            const response = await this.http.get(`/KycProfile/riskAssessments/${parentId}/`,
+        getRiskAssessments: async (parentId: string,options?: PaginationOptions): Promise<RiskAssessment[]> => {
+            const response = await this.http.get(`/KycProfile/getRiskAssessments/${parentId}/`,
                 {
                     params: options
                 }
@@ -813,8 +813,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        screenings: async (parentId: string,options?: PaginationOptions): Promise<ScreeningResult[]> => {
-            const response = await this.http.get(`/KycProfile/screenings/${parentId}/`,
+        getScreenings: async (parentId: string,options?: PaginationOptions): Promise<ScreeningResult[]> => {
+            const response = await this.http.get(`/KycProfile/getScreenings/${parentId}/`,
                 {
                     params: options
                 }
@@ -871,8 +871,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        kycProfile: async (id: string): Promise<KycProfile | null> => {
-            const response = await this.http.get(`/IdentityDocument/kycProfile/${id}`);
+        getKycProfile: async (id: string): Promise<KycProfile | null> => {
+            const response = await this.http.get(`/IdentityDocument/getKycProfile/${id}`);
             return response.data;
         },
 
@@ -925,8 +925,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        kycProfile: async (id: string): Promise<KycProfile | null> => {
-            const response = await this.http.get(`/RiskAssessment/kycProfile/${id}`);
+        getKycProfile: async (id: string): Promise<KycProfile | null> => {
+            const response = await this.http.get(`/RiskAssessment/getKycProfile/${id}`);
             return response.data;
         },
 
@@ -979,8 +979,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        kycProfile: async (id: string): Promise<KycProfile | null> => {
-            const response = await this.http.get(`/ScreeningResult/kycProfile/${id}`);
+        getKycProfile: async (id: string): Promise<KycProfile | null> => {
+            const response = await this.http.get(`/ScreeningResult/getKycProfile/${id}`);
             return response.data;
         },
 
@@ -1033,8 +1033,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        bank: async (id: string): Promise<Bank | null> => {
-            const response = await this.http.get(`/BankingProduct/bank/${id}`);
+        getBank: async (id: string): Promise<Bank | null> => {
+            const response = await this.http.get(`/BankingProduct/getBank/${id}`);
             return response.data;
         },
 
@@ -1052,8 +1052,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        accounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
-            const response = await this.http.get(`/BankingProduct/accounts/${parentId}/`,
+        getAccounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
+            const response = await this.http.get(`/BankingProduct/getAccounts/${parentId}/`,
                 {
                     params: options
                 }
@@ -1075,8 +1075,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        loanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
-            const response = await this.http.get(`/BankingProduct/loanAccounts/${parentId}/`,
+        getLoanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
+            const response = await this.http.get(`/BankingProduct/getLoanAccounts/${parentId}/`,
                 {
                     params: options
                 }
@@ -1098,8 +1098,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        paymentCards: async (parentId: string,options?: PaginationOptions): Promise<PaymentCard[]> => {
-            const response = await this.http.get(`/BankingProduct/paymentCards/${parentId}/`,
+        getPaymentCards: async (parentId: string,options?: PaginationOptions): Promise<PaymentCard[]> => {
+            const response = await this.http.get(`/BankingProduct/getPaymentCards/${parentId}/`,
                 {
                     params: options
                 }
@@ -1156,8 +1156,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        bank: async (id: string): Promise<Bank | null> => {
-            const response = await this.http.get(`/Account/bank/${id}`);
+        getBank: async (id: string): Promise<Bank | null> => {
+            const response = await this.http.get(`/Account/getBank/${id}`);
             return response.data;
         },
 
@@ -1175,8 +1175,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        branch: async (id: string): Promise<Branch | null> => {
-            const response = await this.http.get(`/Account/branch/${id}`);
+        getBranch: async (id: string): Promise<Branch | null> => {
+            const response = await this.http.get(`/Account/getBranch/${id}`);
             return response.data;
         },
 
@@ -1194,8 +1194,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        product: async (id: string): Promise<BankingProduct | null> => {
-            const response = await this.http.get(`/Account/product/${id}`);
+        getProduct: async (id: string): Promise<BankingProduct | null> => {
+            const response = await this.http.get(`/Account/getProduct/${id}`);
             return response.data;
         },
 
@@ -1213,8 +1213,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        owners: async (parentId: string,options?: PaginationOptions): Promise<Customer[]> => {
-            const response = await this.http.get(`/Account/owners/${parentId}/`,
+        getOwners: async (parentId: string,options?: PaginationOptions): Promise<Customer[]> => {
+            const response = await this.http.get(`/Account/getOwners/${parentId}/`,
                 {
                     params: options
                 }
@@ -1236,8 +1236,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        transactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
-            const response = await this.http.get(`/Account/transactions/${parentId}/`,
+        getTransactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
+            const response = await this.http.get(`/Account/getTransactions/${parentId}/`,
                 {
                     params: options
                 }
@@ -1259,8 +1259,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        statements: async (parentId: string,options?: PaginationOptions): Promise<AccountStatement[]> => {
-            const response = await this.http.get(`/Account/statements/${parentId}/`,
+        getStatements: async (parentId: string,options?: PaginationOptions): Promise<AccountStatement[]> => {
+            const response = await this.http.get(`/Account/getStatements/${parentId}/`,
                 {
                     params: options
                 }
@@ -1282,8 +1282,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        standingInstructions: async (parentId: string,options?: PaginationOptions): Promise<StandingInstruction[]> => {
-            const response = await this.http.get(`/Account/standingInstructions/${parentId}/`,
+        getStandingInstructions: async (parentId: string,options?: PaginationOptions): Promise<StandingInstruction[]> => {
+            const response = await this.http.get(`/Account/getStandingInstructions/${parentId}/`,
                 {
                     params: options
                 }
@@ -1305,8 +1305,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        feeCharges: async (parentId: string,options?: PaginationOptions): Promise<FeeCharge[]> => {
-            const response = await this.http.get(`/Account/feeCharges/${parentId}/`,
+        getFeeCharges: async (parentId: string,options?: PaginationOptions): Promise<FeeCharge[]> => {
+            const response = await this.http.get(`/Account/getFeeCharges/${parentId}/`,
                 {
                     params: options
                 }
@@ -1363,8 +1363,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        account: async (id: string): Promise<Account | null> => {
-            const response = await this.http.get(`/AccountStatement/account/${id}`);
+        getAccount: async (id: string): Promise<Account | null> => {
+            const response = await this.http.get(`/AccountStatement/getAccount/${id}`);
             return response.data;
         },
 
@@ -1417,8 +1417,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        account: async (id: string): Promise<Account | null> => {
-            const response = await this.http.get(`/Transaction/account/${id}`);
+        getAccount: async (id: string): Promise<Account | null> => {
+            const response = await this.http.get(`/Transaction/getAccount/${id}`);
             return response.data;
         },
 
@@ -1436,8 +1436,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        externalCounterparty: async (id: string): Promise<ExternalAccount | null> => {
-            const response = await this.http.get(`/Transaction/externalCounterparty/${id}`);
+        getExternalCounterparty: async (id: string): Promise<ExternalAccount | null> => {
+            const response = await this.http.get(`/Transaction/getExternalCounterparty/${id}`);
             return response.data;
         },
 
@@ -1455,8 +1455,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        paymentCard: async (id: string): Promise<PaymentCard | null> => {
-            const response = await this.http.get(`/Transaction/paymentCard/${id}`);
+        getPaymentCard: async (id: string): Promise<PaymentCard | null> => {
+            const response = await this.http.get(`/Transaction/getPaymentCard/${id}`);
             return response.data;
         },
 
@@ -1474,8 +1474,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        fundsTransfer: async (id: string): Promise<FundsTransfer | null> => {
-            const response = await this.http.get(`/Transaction/fundsTransfer/${id}`);
+        getFundsTransfer: async (id: string): Promise<FundsTransfer | null> => {
+            const response = await this.http.get(`/Transaction/getFundsTransfer/${id}`);
             return response.data;
         },
 
@@ -1493,8 +1493,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        fxTrade: async (id: string): Promise<FXTrade | null> => {
-            const response = await this.http.get(`/Transaction/fxTrade/${id}`);
+        getFxTrade: async (id: string): Promise<FXTrade | null> => {
+            const response = await this.http.get(`/Transaction/getFxTrade/${id}`);
             return response.data;
         },
 
@@ -1512,8 +1512,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        dispute: async (id: string): Promise<Dispute | null> => {
-            const response = await this.http.get(`/Transaction/dispute/${id}`);
+        getDispute: async (id: string): Promise<Dispute | null> => {
+            const response = await this.http.get(`/Transaction/getDispute/${id}`);
             return response.data;
         },
 
@@ -1566,8 +1566,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        customer: async (id: string): Promise<Customer | null> => {
-            const response = await this.http.get(`/ExternalAccount/customer/${id}`);
+        getCustomer: async (id: string): Promise<Customer | null> => {
+            const response = await this.http.get(`/ExternalAccount/getCustomer/${id}`);
             return response.data;
         },
 
@@ -1585,8 +1585,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        transactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
-            const response = await this.http.get(`/ExternalAccount/transactions/${parentId}/`,
+        getTransactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
+            const response = await this.http.get(`/ExternalAccount/getTransactions/${parentId}/`,
                 {
                     params: options
                 }
@@ -1643,8 +1643,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        sourceAccount: async (id: string): Promise<Account | null> => {
-            const response = await this.http.get(`/FundsTransfer/sourceAccount/${id}`);
+        getSourceAccount: async (id: string): Promise<Account | null> => {
+            const response = await this.http.get(`/FundsTransfer/getSourceAccount/${id}`);
             return response.data;
         },
 
@@ -1662,8 +1662,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        destinationAccount: async (id: string): Promise<Account | null> => {
-            const response = await this.http.get(`/FundsTransfer/destinationAccount/${id}`);
+        getDestinationAccount: async (id: string): Promise<Account | null> => {
+            const response = await this.http.get(`/FundsTransfer/getDestinationAccount/${id}`);
             return response.data;
         },
 
@@ -1681,8 +1681,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        externalBeneficiary: async (id: string): Promise<ExternalAccount | null> => {
-            const response = await this.http.get(`/FundsTransfer/externalBeneficiary/${id}`);
+        getExternalBeneficiary: async (id: string): Promise<ExternalAccount | null> => {
+            const response = await this.http.get(`/FundsTransfer/getExternalBeneficiary/${id}`);
             return response.data;
         },
 
@@ -1700,8 +1700,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        initiatedBy: async (id: string): Promise<Customer | null> => {
-            const response = await this.http.get(`/FundsTransfer/initiatedBy/${id}`);
+        getInitiatedBy: async (id: string): Promise<Customer | null> => {
+            const response = await this.http.get(`/FundsTransfer/getInitiatedBy/${id}`);
             return response.data;
         },
 
@@ -1719,8 +1719,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        transactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
-            const response = await this.http.get(`/FundsTransfer/transactions/${parentId}/`,
+        getTransactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
+            const response = await this.http.get(`/FundsTransfer/getTransactions/${parentId}/`,
                 {
                     params: options
                 }
@@ -1777,8 +1777,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        account: async (id: string): Promise<Account | null> => {
-            const response = await this.http.get(`/StandingInstruction/account/${id}`);
+        getAccount: async (id: string): Promise<Account | null> => {
+            const response = await this.http.get(`/StandingInstruction/getAccount/${id}`);
             return response.data;
         },
 
@@ -1796,8 +1796,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        beneficiary: async (id: string): Promise<ExternalAccount | null> => {
-            const response = await this.http.get(`/StandingInstruction/beneficiary/${id}`);
+        getBeneficiary: async (id: string): Promise<ExternalAccount | null> => {
+            const response = await this.http.get(`/StandingInstruction/getBeneficiary/${id}`);
             return response.data;
         },
 
@@ -1850,8 +1850,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        bank: async (id: string): Promise<Bank | null> => {
-            const response = await this.http.get(`/PaymentCard/bank/${id}`);
+        getBank: async (id: string): Promise<Bank | null> => {
+            const response = await this.http.get(`/PaymentCard/getBank/${id}`);
             return response.data;
         },
 
@@ -1869,8 +1869,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        account: async (id: string): Promise<Account | null> => {
-            const response = await this.http.get(`/PaymentCard/account/${id}`);
+        getAccount: async (id: string): Promise<Account | null> => {
+            const response = await this.http.get(`/PaymentCard/getAccount/${id}`);
             return response.data;
         },
 
@@ -1888,8 +1888,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        customer: async (id: string): Promise<Customer | null> => {
-            const response = await this.http.get(`/PaymentCard/customer/${id}`);
+        getCustomer: async (id: string): Promise<Customer | null> => {
+            const response = await this.http.get(`/PaymentCard/getCustomer/${id}`);
             return response.data;
         },
 
@@ -1907,8 +1907,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        transactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
-            const response = await this.http.get(`/PaymentCard/transactions/${parentId}/`,
+        getTransactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
+            const response = await this.http.get(`/PaymentCard/getTransactions/${parentId}/`,
                 {
                     params: options
                 }
@@ -1965,8 +1965,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        bank: async (id: string): Promise<Bank | null> => {
-            const response = await this.http.get(`/LoanAccount/bank/${id}`);
+        getBank: async (id: string): Promise<Bank | null> => {
+            const response = await this.http.get(`/LoanAccount/getBank/${id}`);
             return response.data;
         },
 
@@ -1984,8 +1984,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        branch: async (id: string): Promise<Branch | null> => {
-            const response = await this.http.get(`/LoanAccount/branch/${id}`);
+        getBranch: async (id: string): Promise<Branch | null> => {
+            const response = await this.http.get(`/LoanAccount/getBranch/${id}`);
             return response.data;
         },
 
@@ -2003,8 +2003,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        product: async (id: string): Promise<BankingProduct | null> => {
-            const response = await this.http.get(`/LoanAccount/product/${id}`);
+        getProduct: async (id: string): Promise<BankingProduct | null> => {
+            const response = await this.http.get(`/LoanAccount/getProduct/${id}`);
             return response.data;
         },
 
@@ -2022,8 +2022,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        borrowers: async (parentId: string,options?: PaginationOptions): Promise<Customer[]> => {
-            const response = await this.http.get(`/LoanAccount/borrowers/${parentId}/`,
+        getBorrowers: async (parentId: string,options?: PaginationOptions): Promise<Customer[]> => {
+            const response = await this.http.get(`/LoanAccount/getBorrowers/${parentId}/`,
                 {
                     params: options
                 }
@@ -2045,8 +2045,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        repaymentSchedule: async (parentId: string,options?: PaginationOptions): Promise<RepaymentSchedule[]> => {
-            const response = await this.http.get(`/LoanAccount/repaymentSchedule/${parentId}/`,
+        getRepaymentSchedule: async (parentId: string,options?: PaginationOptions): Promise<RepaymentSchedule[]> => {
+            const response = await this.http.get(`/LoanAccount/getRepaymentSchedule/${parentId}/`,
                 {
                     params: options
                 }
@@ -2068,8 +2068,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        payments: async (parentId: string,options?: PaginationOptions): Promise<LoanPayment[]> => {
-            const response = await this.http.get(`/LoanAccount/payments/${parentId}/`,
+        getPayments: async (parentId: string,options?: PaginationOptions): Promise<LoanPayment[]> => {
+            const response = await this.http.get(`/LoanAccount/getPayments/${parentId}/`,
                 {
                     params: options
                 }
@@ -2091,8 +2091,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        collateral: async (parentId: string,options?: PaginationOptions): Promise<Collateral[]> => {
-            const response = await this.http.get(`/LoanAccount/collateral/${parentId}/`,
+        getCollateral: async (parentId: string,options?: PaginationOptions): Promise<Collateral[]> => {
+            const response = await this.http.get(`/LoanAccount/getCollateral/${parentId}/`,
                 {
                     params: options
                 }
@@ -2114,8 +2114,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        feeCharges: async (parentId: string,options?: PaginationOptions): Promise<FeeCharge[]> => {
-            const response = await this.http.get(`/LoanAccount/feeCharges/${parentId}/`,
+        getFeeCharges: async (parentId: string,options?: PaginationOptions): Promise<FeeCharge[]> => {
+            const response = await this.http.get(`/LoanAccount/getFeeCharges/${parentId}/`,
                 {
                     params: options
                 }
@@ -2172,8 +2172,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        loanAccount: async (id: string): Promise<LoanAccount | null> => {
-            const response = await this.http.get(`/RepaymentSchedule/loanAccount/${id}`);
+        getLoanAccount: async (id: string): Promise<LoanAccount | null> => {
+            const response = await this.http.get(`/RepaymentSchedule/getLoanAccount/${id}`);
             return response.data;
         },
 
@@ -2191,8 +2191,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        payment: async (id: string): Promise<LoanPayment | null> => {
-            const response = await this.http.get(`/RepaymentSchedule/payment/${id}`);
+        getPayment: async (id: string): Promise<LoanPayment | null> => {
+            const response = await this.http.get(`/RepaymentSchedule/getPayment/${id}`);
             return response.data;
         },
 
@@ -2245,8 +2245,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        loanAccount: async (id: string): Promise<LoanAccount | null> => {
-            const response = await this.http.get(`/LoanPayment/loanAccount/${id}`);
+        getLoanAccount: async (id: string): Promise<LoanAccount | null> => {
+            const response = await this.http.get(`/LoanPayment/getLoanAccount/${id}`);
             return response.data;
         },
 
@@ -2264,8 +2264,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        transaction: async (id: string): Promise<Transaction | null> => {
-            const response = await this.http.get(`/LoanPayment/transaction/${id}`);
+        getTransaction: async (id: string): Promise<Transaction | null> => {
+            const response = await this.http.get(`/LoanPayment/getTransaction/${id}`);
             return response.data;
         },
 
@@ -2318,8 +2318,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        loanAccount: async (id: string): Promise<LoanAccount | null> => {
-            const response = await this.http.get(`/Collateral/loanAccount/${id}`);
+        getLoanAccount: async (id: string): Promise<LoanAccount | null> => {
+            const response = await this.http.get(`/Collateral/getLoanAccount/${id}`);
             return response.data;
         },
 
@@ -2372,8 +2372,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        account: async (id: string): Promise<Account | null> => {
-            const response = await this.http.get(`/FeeCharge/account/${id}`);
+        getAccount: async (id: string): Promise<Account | null> => {
+            const response = await this.http.get(`/FeeCharge/getAccount/${id}`);
             return response.data;
         },
 
@@ -2391,8 +2391,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        loanAccount: async (id: string): Promise<LoanAccount | null> => {
-            const response = await this.http.get(`/FeeCharge/loanAccount/${id}`);
+        getLoanAccount: async (id: string): Promise<LoanAccount | null> => {
+            const response = await this.http.get(`/FeeCharge/getLoanAccount/${id}`);
             return response.data;
         },
 
@@ -2445,8 +2445,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        bank: async (id: string): Promise<Bank | null> => {
-            const response = await this.http.get(`/ExchangeRate/bank/${id}`);
+        getBank: async (id: string): Promise<Bank | null> => {
+            const response = await this.http.get(`/ExchangeRate/getBank/${id}`);
             return response.data;
         },
 
@@ -2464,8 +2464,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        fxTrades: async (parentId: string,options?: PaginationOptions): Promise<FXTrade[]> => {
-            const response = await this.http.get(`/ExchangeRate/fxTrades/${parentId}/`,
+        getFxTrades: async (parentId: string,options?: PaginationOptions): Promise<FXTrade[]> => {
+            const response = await this.http.get(`/ExchangeRate/getFxTrades/${parentId}/`,
                 {
                     params: options
                 }
@@ -2522,8 +2522,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        customer: async (id: string): Promise<Customer | null> => {
-            const response = await this.http.get(`/FXTrade/customer/${id}`);
+        getCustomer: async (id: string): Promise<Customer | null> => {
+            const response = await this.http.get(`/FXTrade/getCustomer/${id}`);
             return response.data;
         },
 
@@ -2541,8 +2541,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        bank: async (id: string): Promise<Bank | null> => {
-            const response = await this.http.get(`/FXTrade/bank/${id}`);
+        getBank: async (id: string): Promise<Bank | null> => {
+            const response = await this.http.get(`/FXTrade/getBank/${id}`);
             return response.data;
         },
 
@@ -2560,8 +2560,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        exchangeRate: async (id: string): Promise<ExchangeRate | null> => {
-            const response = await this.http.get(`/FXTrade/exchangeRate/${id}`);
+        getExchangeRate: async (id: string): Promise<ExchangeRate | null> => {
+            const response = await this.http.get(`/FXTrade/getExchangeRate/${id}`);
             return response.data;
         },
 
@@ -2579,8 +2579,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        sourceAccount: async (id: string): Promise<Account | null> => {
-            const response = await this.http.get(`/FXTrade/sourceAccount/${id}`);
+        getSourceAccount: async (id: string): Promise<Account | null> => {
+            const response = await this.http.get(`/FXTrade/getSourceAccount/${id}`);
             return response.data;
         },
 
@@ -2598,8 +2598,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        destinationAccount: async (id: string): Promise<Account | null> => {
-            const response = await this.http.get(`/FXTrade/destinationAccount/${id}`);
+        getDestinationAccount: async (id: string): Promise<Account | null> => {
+            const response = await this.http.get(`/FXTrade/getDestinationAccount/${id}`);
             return response.data;
         },
 
@@ -2617,8 +2617,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        transaction: async (id: string): Promise<Transaction | null> => {
-            const response = await this.http.get(`/FXTrade/transaction/${id}`);
+        getTransaction: async (id: string): Promise<Transaction | null> => {
+            const response = await this.http.get(`/FXTrade/getTransaction/${id}`);
             return response.data;
         },
 
@@ -2671,8 +2671,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        transaction: async (id: string): Promise<Transaction | null> => {
-            const response = await this.http.get(`/Dispute/transaction/${id}`);
+        getTransaction: async (id: string): Promise<Transaction | null> => {
+            const response = await this.http.get(`/Dispute/getTransaction/${id}`);
             return response.data;
         },
 
@@ -2690,8 +2690,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        customer: async (id: string): Promise<Customer | null> => {
-            const response = await this.http.get(`/Dispute/customer/${id}`);
+        getCustomer: async (id: string): Promise<Customer | null> => {
+            const response = await this.http.get(`/Dispute/getCustomer/${id}`);
             return response.data;
         },
 
@@ -2709,8 +2709,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        account: async (id: string): Promise<Account | null> => {
-            const response = await this.http.get(`/Dispute/account/${id}`);
+        getAccount: async (id: string): Promise<Account | null> => {
+            const response = await this.http.get(`/Dispute/getAccount/${id}`);
             return response.data;
         },
 
@@ -2728,8 +2728,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        paymentCard: async (id: string): Promise<PaymentCard | null> => {
-            const response = await this.http.get(`/Dispute/paymentCard/${id}`);
+        getPaymentCard: async (id: string): Promise<PaymentCard | null> => {
+            const response = await this.http.get(`/Dispute/getPaymentCard/${id}`);
             return response.data;
         },
 
@@ -2782,8 +2782,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        customer: async (id: string): Promise<Customer | null> => {
-            const response = await this.http.get(`/Consent/customer/${id}`);
+        getCustomer: async (id: string): Promise<Customer | null> => {
+            const response = await this.http.get(`/Consent/getCustomer/${id}`);
             return response.data;
         },
 
@@ -2801,8 +2801,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        bank: async (id: string): Promise<Bank | null> => {
-            const response = await this.http.get(`/Consent/bank/${id}`);
+        getBank: async (id: string): Promise<Bank | null> => {
+            const response = await this.http.get(`/Consent/getBank/${id}`);
             return response.data;
         },
 
@@ -2820,8 +2820,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        thirdPartyProvider: async (id: string): Promise<ThirdPartyProvider | null> => {
-            const response = await this.http.get(`/Consent/thirdPartyProvider/${id}`);
+        getThirdPartyProvider: async (id: string): Promise<ThirdPartyProvider | null> => {
+            const response = await this.http.get(`/Consent/getThirdPartyProvider/${id}`);
             return response.data;
         },
 
@@ -2839,8 +2839,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        authorizedAccounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
-            const response = await this.http.get(`/Consent/authorizedAccounts/${parentId}/`,
+        getAuthorizedAccounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
+            const response = await this.http.get(`/Consent/getAuthorizedAccounts/${parentId}/`,
                 {
                     params: options
                 }
@@ -2897,8 +2897,8 @@ export class HttpBackendAPI implements BackendAPI {
             return true;
         },
 
-        bank: async (id: string): Promise<Bank | null> => {
-            const response = await this.http.get(`/ThirdPartyProvider/bank/${id}`);
+        getBank: async (id: string): Promise<Bank | null> => {
+            const response = await this.http.get(`/ThirdPartyProvider/getBank/${id}`);
             return response.data;
         },
 
@@ -2916,8 +2916,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        consents: async (parentId: string,options?: PaginationOptions): Promise<Consent[]> => {
-            const response = await this.http.get(`/ThirdPartyProvider/consents/${parentId}/`,
+        getConsents: async (parentId: string,options?: PaginationOptions): Promise<Consent[]> => {
+            const response = await this.http.get(`/ThirdPartyProvider/getConsents/${parentId}/`,
                 {
                     params: options
                 }

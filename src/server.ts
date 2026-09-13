@@ -3,7 +3,7 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 
 import { typeDefs } from "./graphql/schema";
 import { resolvers } from "./graphql/resolvers";
-import { HttpBackendAPI } from "./backend/http-apis";
+import { HttpBackendAPI } from "./backend/http-api";
 
 const backend = new HttpBackendAPI();
 

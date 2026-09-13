@@ -38,11 +38,6 @@ interface ResolverContext {
 backend: BackendAPI;
 }
 
-export interface PaginationOptions {
-pageSize?: number;
-after?: string | null;
-}
-
 interface ParentIdentifier {
     parentId: string;
 }
@@ -1223,20 +1218,20 @@ Bank: {
         return await backend.bank.getBranches(parentId);
     },
 
-    assignToBranches: async (
+    addToBranches: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.assignToBranches(parentId,childIds);
+        return await backend.bank.addToBranches(parentId,childIds);
     },
 
-    unassignFromBranches: async (
+    removeFromBranches: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.unassignFromBranches(parentId,childIds);
+        return await backend.bank.removeFromBranches(parentId,childIds);
     },
     products: async (
         _: ResolverParent,
@@ -1246,20 +1241,20 @@ Bank: {
         return await backend.bank.getProducts(parentId);
     },
 
-    assignToProducts: async (
+    addToProducts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.assignToProducts(parentId,childIds);
+        return await backend.bank.addToProducts(parentId,childIds);
     },
 
-    unassignFromProducts: async (
+    removeFromProducts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.unassignFromProducts(parentId,childIds);
+        return await backend.bank.removeFromProducts(parentId,childIds);
     },
     customers: async (
         _: ResolverParent,
@@ -1269,20 +1264,20 @@ Bank: {
         return await backend.bank.getCustomers(parentId);
     },
 
-    assignToCustomers: async (
+    addToCustomers: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.assignToCustomers(parentId,childIds);
+        return await backend.bank.addToCustomers(parentId,childIds);
     },
 
-    unassignFromCustomers: async (
+    removeFromCustomers: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.unassignFromCustomers(parentId,childIds);
+        return await backend.bank.removeFromCustomers(parentId,childIds);
     },
     accounts: async (
         _: ResolverParent,
@@ -1292,20 +1287,20 @@ Bank: {
         return await backend.bank.getAccounts(parentId);
     },
 
-    assignToAccounts: async (
+    addToAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.assignToAccounts(parentId,childIds);
+        return await backend.bank.addToAccounts(parentId,childIds);
     },
 
-    unassignFromAccounts: async (
+    removeFromAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.unassignFromAccounts(parentId,childIds);
+        return await backend.bank.removeFromAccounts(parentId,childIds);
     },
     paymentCards: async (
         _: ResolverParent,
@@ -1315,20 +1310,20 @@ Bank: {
         return await backend.bank.getPaymentCards(parentId);
     },
 
-    assignToPaymentCards: async (
+    addToPaymentCards: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.assignToPaymentCards(parentId,childIds);
+        return await backend.bank.addToPaymentCards(parentId,childIds);
     },
 
-    unassignFromPaymentCards: async (
+    removeFromPaymentCards: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.unassignFromPaymentCards(parentId,childIds);
+        return await backend.bank.removeFromPaymentCards(parentId,childIds);
     },
     loanAccounts: async (
         _: ResolverParent,
@@ -1338,20 +1333,20 @@ Bank: {
         return await backend.bank.getLoanAccounts(parentId);
     },
 
-    assignToLoanAccounts: async (
+    addToLoanAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.assignToLoanAccounts(parentId,childIds);
+        return await backend.bank.addToLoanAccounts(parentId,childIds);
     },
 
-    unassignFromLoanAccounts: async (
+    removeFromLoanAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.unassignFromLoanAccounts(parentId,childIds);
+        return await backend.bank.removeFromLoanAccounts(parentId,childIds);
     },
     exchangeRates: async (
         _: ResolverParent,
@@ -1361,20 +1356,20 @@ Bank: {
         return await backend.bank.getExchangeRates(parentId);
     },
 
-    assignToExchangeRates: async (
+    addToExchangeRates: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.assignToExchangeRates(parentId,childIds);
+        return await backend.bank.addToExchangeRates(parentId,childIds);
     },
 
-    unassignFromExchangeRates: async (
+    removeFromExchangeRates: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.unassignFromExchangeRates(parentId,childIds);
+        return await backend.bank.removeFromExchangeRates(parentId,childIds);
     },
     consents: async (
         _: ResolverParent,
@@ -1384,20 +1379,20 @@ Bank: {
         return await backend.bank.getConsents(parentId);
     },
 
-    assignToConsents: async (
+    addToConsents: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.assignToConsents(parentId,childIds);
+        return await backend.bank.addToConsents(parentId,childIds);
     },
 
-    unassignFromConsents: async (
+    removeFromConsents: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.unassignFromConsents(parentId,childIds);
+        return await backend.bank.removeFromConsents(parentId,childIds);
     },
     thirdPartyProviders: async (
         _: ResolverParent,
@@ -1407,20 +1402,20 @@ Bank: {
         return await backend.bank.getThirdPartyProviders(parentId);
     },
 
-    assignToThirdPartyProviders: async (
+    addToThirdPartyProviders: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.assignToThirdPartyProviders(parentId,childIds);
+        return await backend.bank.addToThirdPartyProviders(parentId,childIds);
     },
 
-    unassignFromThirdPartyProviders: async (
+    removeFromThirdPartyProviders: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.unassignFromThirdPartyProviders(parentId,childIds);
+        return await backend.bank.removeFromThirdPartyProviders(parentId,childIds);
     },
 },
 Branch: {
@@ -1437,7 +1432,7 @@ Branch: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.branch.assignToBank(parentId,childId);
+        return await backend.branch.assignBank(parentId,childId);
     },
 
     unassignBank: async (
@@ -1445,7 +1440,7 @@ Branch: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.branch.unassignFromBank(parentId,childId);
+        return await backend.branch.unassignBank(parentId,childId);
     },
     accounts: async (
         _: ResolverParent,
@@ -1455,20 +1450,20 @@ Branch: {
         return await backend.branch.getAccounts(parentId);
     },
 
-    assignToAccounts: async (
+    addToAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.branch.assignToAccounts(parentId,childIds);
+        return await backend.branch.addToAccounts(parentId,childIds);
     },
 
-    unassignFromAccounts: async (
+    removeFromAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.branch.unassignFromAccounts(parentId,childIds);
+        return await backend.branch.removeFromAccounts(parentId,childIds);
     },
     loanAccounts: async (
         _: ResolverParent,
@@ -1478,20 +1473,20 @@ Branch: {
         return await backend.branch.getLoanAccounts(parentId);
     },
 
-    assignToLoanAccounts: async (
+    addToLoanAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.branch.assignToLoanAccounts(parentId,childIds);
+        return await backend.branch.addToLoanAccounts(parentId,childIds);
     },
 
-    unassignFromLoanAccounts: async (
+    removeFromLoanAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.branch.unassignFromLoanAccounts(parentId,childIds);
+        return await backend.branch.removeFromLoanAccounts(parentId,childIds);
     },
     atms: async (
         _: ResolverParent,
@@ -1501,20 +1496,20 @@ Branch: {
         return await backend.branch.getAtms(parentId);
     },
 
-    assignToAtms: async (
+    addToAtms: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.branch.assignToAtms(parentId,childIds);
+        return await backend.branch.addToAtms(parentId,childIds);
     },
 
-    unassignFromAtms: async (
+    removeFromAtms: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.branch.unassignFromAtms(parentId,childIds);
+        return await backend.branch.removeFromAtms(parentId,childIds);
     },
 },
 ATM: {
@@ -1531,7 +1526,7 @@ ATM: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.aTM.assignToBranch(parentId,childId);
+        return await backend.aTM.assignBranch(parentId,childId);
     },
 
     unassignBranch: async (
@@ -1539,7 +1534,7 @@ ATM: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.aTM.unassignFromBranch(parentId,childId);
+        return await backend.aTM.unassignBranch(parentId,childId);
     },
 },
 Customer: {
@@ -1556,7 +1551,7 @@ Customer: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.assignToBank(parentId,childId);
+        return await backend.customer.assignBank(parentId,childId);
     },
 
     unassignBank: async (
@@ -1564,7 +1559,7 @@ Customer: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.customer.unassignFromBank(parentId,childId);
+        return await backend.customer.unassignBank(parentId,childId);
     },
     accounts: async (
         _: ResolverParent,
@@ -1574,20 +1569,20 @@ Customer: {
         return await backend.customer.getAccounts(parentId);
     },
 
-    assignToAccounts: async (
+    addToAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.assignToAccounts(parentId,childIds);
+        return await backend.customer.addToAccounts(parentId,childIds);
     },
 
-    unassignFromAccounts: async (
+    removeFromAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.unassignFromAccounts(parentId,childIds);
+        return await backend.customer.removeFromAccounts(parentId,childIds);
     },
     loanAccounts: async (
         _: ResolverParent,
@@ -1597,20 +1592,20 @@ Customer: {
         return await backend.customer.getLoanAccounts(parentId);
     },
 
-    assignToLoanAccounts: async (
+    addToLoanAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.assignToLoanAccounts(parentId,childIds);
+        return await backend.customer.addToLoanAccounts(parentId,childIds);
     },
 
-    unassignFromLoanAccounts: async (
+    removeFromLoanAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.unassignFromLoanAccounts(parentId,childIds);
+        return await backend.customer.removeFromLoanAccounts(parentId,childIds);
     },
     paymentCards: async (
         _: ResolverParent,
@@ -1620,20 +1615,20 @@ Customer: {
         return await backend.customer.getPaymentCards(parentId);
     },
 
-    assignToPaymentCards: async (
+    addToPaymentCards: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.assignToPaymentCards(parentId,childIds);
+        return await backend.customer.addToPaymentCards(parentId,childIds);
     },
 
-    unassignFromPaymentCards: async (
+    removeFromPaymentCards: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.unassignFromPaymentCards(parentId,childIds);
+        return await backend.customer.removeFromPaymentCards(parentId,childIds);
     },
     externalAccounts: async (
         _: ResolverParent,
@@ -1643,20 +1638,20 @@ Customer: {
         return await backend.customer.getExternalAccounts(parentId);
     },
 
-    assignToExternalAccounts: async (
+    addToExternalAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.assignToExternalAccounts(parentId,childIds);
+        return await backend.customer.addToExternalAccounts(parentId,childIds);
     },
 
-    unassignFromExternalAccounts: async (
+    removeFromExternalAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.unassignFromExternalAccounts(parentId,childIds);
+        return await backend.customer.removeFromExternalAccounts(parentId,childIds);
     },
     fundsTransfers: async (
         _: ResolverParent,
@@ -1666,20 +1661,20 @@ Customer: {
         return await backend.customer.getFundsTransfers(parentId);
     },
 
-    assignToFundsTransfers: async (
+    addToFundsTransfers: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.assignToFundsTransfers(parentId,childIds);
+        return await backend.customer.addToFundsTransfers(parentId,childIds);
     },
 
-    unassignFromFundsTransfers: async (
+    removeFromFundsTransfers: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.unassignFromFundsTransfers(parentId,childIds);
+        return await backend.customer.removeFromFundsTransfers(parentId,childIds);
     },
     disputes: async (
         _: ResolverParent,
@@ -1689,20 +1684,20 @@ Customer: {
         return await backend.customer.getDisputes(parentId);
     },
 
-    assignToDisputes: async (
+    addToDisputes: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.assignToDisputes(parentId,childIds);
+        return await backend.customer.addToDisputes(parentId,childIds);
     },
 
-    unassignFromDisputes: async (
+    removeFromDisputes: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.unassignFromDisputes(parentId,childIds);
+        return await backend.customer.removeFromDisputes(parentId,childIds);
     },
     kycProfiles: async (
         _: ResolverParent,
@@ -1712,20 +1707,20 @@ Customer: {
         return await backend.customer.getKycProfiles(parentId);
     },
 
-    assignToKycProfiles: async (
+    addToKycProfiles: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.assignToKycProfiles(parentId,childIds);
+        return await backend.customer.addToKycProfiles(parentId,childIds);
     },
 
-    unassignFromKycProfiles: async (
+    removeFromKycProfiles: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.unassignFromKycProfiles(parentId,childIds);
+        return await backend.customer.removeFromKycProfiles(parentId,childIds);
     },
     consents: async (
         _: ResolverParent,
@@ -1735,20 +1730,20 @@ Customer: {
         return await backend.customer.getConsents(parentId);
     },
 
-    assignToConsents: async (
+    addToConsents: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.assignToConsents(parentId,childIds);
+        return await backend.customer.addToConsents(parentId,childIds);
     },
 
-    unassignFromConsents: async (
+    removeFromConsents: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.unassignFromConsents(parentId,childIds);
+        return await backend.customer.removeFromConsents(parentId,childIds);
     },
 },
 KycProfile: {
@@ -1765,7 +1760,7 @@ KycProfile: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.kycProfile.assignToCustomer(parentId,childId);
+        return await backend.kycProfile.assignCustomer(parentId,childId);
     },
 
     unassignCustomer: async (
@@ -1773,7 +1768,7 @@ KycProfile: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.kycProfile.unassignFromCustomer(parentId,childId);
+        return await backend.kycProfile.unassignCustomer(parentId,childId);
     },
     identityDocuments: async (
         _: ResolverParent,
@@ -1783,20 +1778,20 @@ KycProfile: {
         return await backend.kycProfile.getIdentityDocuments(parentId);
     },
 
-    assignToIdentityDocuments: async (
+    addToIdentityDocuments: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.kycProfile.assignToIdentityDocuments(parentId,childIds);
+        return await backend.kycProfile.addToIdentityDocuments(parentId,childIds);
     },
 
-    unassignFromIdentityDocuments: async (
+    removeFromIdentityDocuments: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.kycProfile.unassignFromIdentityDocuments(parentId,childIds);
+        return await backend.kycProfile.removeFromIdentityDocuments(parentId,childIds);
     },
     riskAssessments: async (
         _: ResolverParent,
@@ -1806,20 +1801,20 @@ KycProfile: {
         return await backend.kycProfile.getRiskAssessments(parentId);
     },
 
-    assignToRiskAssessments: async (
+    addToRiskAssessments: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.kycProfile.assignToRiskAssessments(parentId,childIds);
+        return await backend.kycProfile.addToRiskAssessments(parentId,childIds);
     },
 
-    unassignFromRiskAssessments: async (
+    removeFromRiskAssessments: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.kycProfile.unassignFromRiskAssessments(parentId,childIds);
+        return await backend.kycProfile.removeFromRiskAssessments(parentId,childIds);
     },
     screenings: async (
         _: ResolverParent,
@@ -1829,20 +1824,20 @@ KycProfile: {
         return await backend.kycProfile.getScreenings(parentId);
     },
 
-    assignToScreenings: async (
+    addToScreenings: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.kycProfile.assignToScreenings(parentId,childIds);
+        return await backend.kycProfile.addToScreenings(parentId,childIds);
     },
 
-    unassignFromScreenings: async (
+    removeFromScreenings: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.kycProfile.unassignFromScreenings(parentId,childIds);
+        return await backend.kycProfile.removeFromScreenings(parentId,childIds);
     },
 },
 IdentityDocument: {
@@ -1859,7 +1854,7 @@ IdentityDocument: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.identityDocument.assignToKycProfile(parentId,childId);
+        return await backend.identityDocument.assignKycProfile(parentId,childId);
     },
 
     unassignKycProfile: async (
@@ -1867,7 +1862,7 @@ IdentityDocument: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.identityDocument.unassignFromKycProfile(parentId,childId);
+        return await backend.identityDocument.unassignKycProfile(parentId,childId);
     },
 },
 RiskAssessment: {
@@ -1884,7 +1879,7 @@ RiskAssessment: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.riskAssessment.assignToKycProfile(parentId,childId);
+        return await backend.riskAssessment.assignKycProfile(parentId,childId);
     },
 
     unassignKycProfile: async (
@@ -1892,7 +1887,7 @@ RiskAssessment: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.riskAssessment.unassignFromKycProfile(parentId,childId);
+        return await backend.riskAssessment.unassignKycProfile(parentId,childId);
     },
 },
 ScreeningResult: {
@@ -1909,7 +1904,7 @@ ScreeningResult: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.screeningResult.assignToKycProfile(parentId,childId);
+        return await backend.screeningResult.assignKycProfile(parentId,childId);
     },
 
     unassignKycProfile: async (
@@ -1917,7 +1912,7 @@ ScreeningResult: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.screeningResult.unassignFromKycProfile(parentId,childId);
+        return await backend.screeningResult.unassignKycProfile(parentId,childId);
     },
 },
 BankingProduct: {
@@ -1934,7 +1929,7 @@ BankingProduct: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bankingProduct.assignToBank(parentId,childId);
+        return await backend.bankingProduct.assignBank(parentId,childId);
     },
 
     unassignBank: async (
@@ -1942,7 +1937,7 @@ BankingProduct: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.bankingProduct.unassignFromBank(parentId,childId);
+        return await backend.bankingProduct.unassignBank(parentId,childId);
     },
     accounts: async (
         _: ResolverParent,
@@ -1952,20 +1947,20 @@ BankingProduct: {
         return await backend.bankingProduct.getAccounts(parentId);
     },
 
-    assignToAccounts: async (
+    addToAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bankingProduct.assignToAccounts(parentId,childIds);
+        return await backend.bankingProduct.addToAccounts(parentId,childIds);
     },
 
-    unassignFromAccounts: async (
+    removeFromAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bankingProduct.unassignFromAccounts(parentId,childIds);
+        return await backend.bankingProduct.removeFromAccounts(parentId,childIds);
     },
     loanAccounts: async (
         _: ResolverParent,
@@ -1975,20 +1970,20 @@ BankingProduct: {
         return await backend.bankingProduct.getLoanAccounts(parentId);
     },
 
-    assignToLoanAccounts: async (
+    addToLoanAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bankingProduct.assignToLoanAccounts(parentId,childIds);
+        return await backend.bankingProduct.addToLoanAccounts(parentId,childIds);
     },
 
-    unassignFromLoanAccounts: async (
+    removeFromLoanAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bankingProduct.unassignFromLoanAccounts(parentId,childIds);
+        return await backend.bankingProduct.removeFromLoanAccounts(parentId,childIds);
     },
     paymentCards: async (
         _: ResolverParent,
@@ -1998,20 +1993,20 @@ BankingProduct: {
         return await backend.bankingProduct.getPaymentCards(parentId);
     },
 
-    assignToPaymentCards: async (
+    addToPaymentCards: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bankingProduct.assignToPaymentCards(parentId,childIds);
+        return await backend.bankingProduct.addToPaymentCards(parentId,childIds);
     },
 
-    unassignFromPaymentCards: async (
+    removeFromPaymentCards: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.bankingProduct.unassignFromPaymentCards(parentId,childIds);
+        return await backend.bankingProduct.removeFromPaymentCards(parentId,childIds);
     },
 },
 Account: {
@@ -2028,7 +2023,7 @@ Account: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.assignToBank(parentId,childId);
+        return await backend.account.assignBank(parentId,childId);
     },
 
     unassignBank: async (
@@ -2036,7 +2031,7 @@ Account: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.account.unassignFromBank(parentId,childId);
+        return await backend.account.unassignBank(parentId,childId);
     },
     branch: async (
         _: ResolverParent,
@@ -2051,7 +2046,7 @@ Account: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.assignToBranch(parentId,childId);
+        return await backend.account.assignBranch(parentId,childId);
     },
 
     unassignBranch: async (
@@ -2059,7 +2054,7 @@ Account: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.account.unassignFromBranch(parentId,childId);
+        return await backend.account.unassignBranch(parentId,childId);
     },
     product: async (
         _: ResolverParent,
@@ -2074,7 +2069,7 @@ Account: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.assignToProduct(parentId,childId);
+        return await backend.account.assignProduct(parentId,childId);
     },
 
     unassignProduct: async (
@@ -2082,7 +2077,7 @@ Account: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.account.unassignFromProduct(parentId,childId);
+        return await backend.account.unassignProduct(parentId,childId);
     },
     owners: async (
         _: ResolverParent,
@@ -2092,20 +2087,20 @@ Account: {
         return await backend.account.getOwners(parentId);
     },
 
-    assignToOwners: async (
+    addToOwners: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.assignToOwners(parentId,childIds);
+        return await backend.account.addToOwners(parentId,childIds);
     },
 
-    unassignFromOwners: async (
+    removeFromOwners: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.unassignFromOwners(parentId,childIds);
+        return await backend.account.removeFromOwners(parentId,childIds);
     },
     transactions: async (
         _: ResolverParent,
@@ -2115,20 +2110,20 @@ Account: {
         return await backend.account.getTransactions(parentId);
     },
 
-    assignToTransactions: async (
+    addToTransactions: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.assignToTransactions(parentId,childIds);
+        return await backend.account.addToTransactions(parentId,childIds);
     },
 
-    unassignFromTransactions: async (
+    removeFromTransactions: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.unassignFromTransactions(parentId,childIds);
+        return await backend.account.removeFromTransactions(parentId,childIds);
     },
     statements: async (
         _: ResolverParent,
@@ -2138,20 +2133,20 @@ Account: {
         return await backend.account.getStatements(parentId);
     },
 
-    assignToStatements: async (
+    addToStatements: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.assignToStatements(parentId,childIds);
+        return await backend.account.addToStatements(parentId,childIds);
     },
 
-    unassignFromStatements: async (
+    removeFromStatements: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.unassignFromStatements(parentId,childIds);
+        return await backend.account.removeFromStatements(parentId,childIds);
     },
     standingInstructions: async (
         _: ResolverParent,
@@ -2161,20 +2156,20 @@ Account: {
         return await backend.account.getStandingInstructions(parentId);
     },
 
-    assignToStandingInstructions: async (
+    addToStandingInstructions: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.assignToStandingInstructions(parentId,childIds);
+        return await backend.account.addToStandingInstructions(parentId,childIds);
     },
 
-    unassignFromStandingInstructions: async (
+    removeFromStandingInstructions: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.unassignFromStandingInstructions(parentId,childIds);
+        return await backend.account.removeFromStandingInstructions(parentId,childIds);
     },
     feeCharges: async (
         _: ResolverParent,
@@ -2184,20 +2179,20 @@ Account: {
         return await backend.account.getFeeCharges(parentId);
     },
 
-    assignToFeeCharges: async (
+    addToFeeCharges: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.assignToFeeCharges(parentId,childIds);
+        return await backend.account.addToFeeCharges(parentId,childIds);
     },
 
-    unassignFromFeeCharges: async (
+    removeFromFeeCharges: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.unassignFromFeeCharges(parentId,childIds);
+        return await backend.account.removeFromFeeCharges(parentId,childIds);
     },
 },
 AccountStatement: {
@@ -2214,7 +2209,7 @@ AccountStatement: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.accountStatement.assignToAccount(parentId,childId);
+        return await backend.accountStatement.assignAccount(parentId,childId);
     },
 
     unassignAccount: async (
@@ -2222,7 +2217,7 @@ AccountStatement: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.accountStatement.unassignFromAccount(parentId,childId);
+        return await backend.accountStatement.unassignAccount(parentId,childId);
     },
 },
 Transaction: {
@@ -2239,7 +2234,7 @@ Transaction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.transaction.assignToAccount(parentId,childId);
+        return await backend.transaction.assignAccount(parentId,childId);
     },
 
     unassignAccount: async (
@@ -2247,7 +2242,7 @@ Transaction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.transaction.unassignFromAccount(parentId,childId);
+        return await backend.transaction.unassignAccount(parentId,childId);
     },
     externalCounterparty: async (
         _: ResolverParent,
@@ -2262,7 +2257,7 @@ Transaction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.transaction.assignToExternalCounterparty(parentId,childId);
+        return await backend.transaction.assignExternalCounterparty(parentId,childId);
     },
 
     unassignExternalCounterparty: async (
@@ -2270,7 +2265,7 @@ Transaction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.transaction.unassignFromExternalCounterparty(parentId,childId);
+        return await backend.transaction.unassignExternalCounterparty(parentId,childId);
     },
     paymentCard: async (
         _: ResolverParent,
@@ -2285,7 +2280,7 @@ Transaction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.transaction.assignToPaymentCard(parentId,childId);
+        return await backend.transaction.assignPaymentCard(parentId,childId);
     },
 
     unassignPaymentCard: async (
@@ -2293,7 +2288,7 @@ Transaction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.transaction.unassignFromPaymentCard(parentId,childId);
+        return await backend.transaction.unassignPaymentCard(parentId,childId);
     },
     fundsTransfer: async (
         _: ResolverParent,
@@ -2308,7 +2303,7 @@ Transaction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.transaction.assignToFundsTransfer(parentId,childId);
+        return await backend.transaction.assignFundsTransfer(parentId,childId);
     },
 
     unassignFundsTransfer: async (
@@ -2316,7 +2311,7 @@ Transaction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.transaction.unassignFromFundsTransfer(parentId,childId);
+        return await backend.transaction.unassignFundsTransfer(parentId,childId);
     },
     fxTrade: async (
         _: ResolverParent,
@@ -2331,7 +2326,7 @@ Transaction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.transaction.assignToFxTrade(parentId,childId);
+        return await backend.transaction.assignFxTrade(parentId,childId);
     },
 
     unassignFxTrade: async (
@@ -2339,7 +2334,7 @@ Transaction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.transaction.unassignFromFxTrade(parentId,childId);
+        return await backend.transaction.unassignFxTrade(parentId,childId);
     },
     dispute: async (
         _: ResolverParent,
@@ -2354,7 +2349,7 @@ Transaction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.transaction.assignToDispute(parentId,childId);
+        return await backend.transaction.assignDispute(parentId,childId);
     },
 
     unassignDispute: async (
@@ -2362,7 +2357,7 @@ Transaction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.transaction.unassignFromDispute(parentId,childId);
+        return await backend.transaction.unassignDispute(parentId,childId);
     },
 },
 ExternalAccount: {
@@ -2379,7 +2374,7 @@ ExternalAccount: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.externalAccount.assignToCustomer(parentId,childId);
+        return await backend.externalAccount.assignCustomer(parentId,childId);
     },
 
     unassignCustomer: async (
@@ -2387,7 +2382,7 @@ ExternalAccount: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.externalAccount.unassignFromCustomer(parentId,childId);
+        return await backend.externalAccount.unassignCustomer(parentId,childId);
     },
     transactions: async (
         _: ResolverParent,
@@ -2397,20 +2392,20 @@ ExternalAccount: {
         return await backend.externalAccount.getTransactions(parentId);
     },
 
-    assignToTransactions: async (
+    addToTransactions: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.externalAccount.assignToTransactions(parentId,childIds);
+        return await backend.externalAccount.addToTransactions(parentId,childIds);
     },
 
-    unassignFromTransactions: async (
+    removeFromTransactions: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.externalAccount.unassignFromTransactions(parentId,childIds);
+        return await backend.externalAccount.removeFromTransactions(parentId,childIds);
     },
 },
 FundsTransfer: {
@@ -2427,7 +2422,7 @@ FundsTransfer: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.fundsTransfer.assignToSourceAccount(parentId,childId);
+        return await backend.fundsTransfer.assignSourceAccount(parentId,childId);
     },
 
     unassignSourceAccount: async (
@@ -2435,7 +2430,7 @@ FundsTransfer: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.fundsTransfer.unassignFromSourceAccount(parentId,childId);
+        return await backend.fundsTransfer.unassignSourceAccount(parentId,childId);
     },
     destinationAccount: async (
         _: ResolverParent,
@@ -2450,7 +2445,7 @@ FundsTransfer: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.fundsTransfer.assignToDestinationAccount(parentId,childId);
+        return await backend.fundsTransfer.assignDestinationAccount(parentId,childId);
     },
 
     unassignDestinationAccount: async (
@@ -2458,7 +2453,7 @@ FundsTransfer: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.fundsTransfer.unassignFromDestinationAccount(parentId,childId);
+        return await backend.fundsTransfer.unassignDestinationAccount(parentId,childId);
     },
     externalBeneficiary: async (
         _: ResolverParent,
@@ -2473,7 +2468,7 @@ FundsTransfer: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.fundsTransfer.assignToExternalBeneficiary(parentId,childId);
+        return await backend.fundsTransfer.assignExternalBeneficiary(parentId,childId);
     },
 
     unassignExternalBeneficiary: async (
@@ -2481,7 +2476,7 @@ FundsTransfer: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.fundsTransfer.unassignFromExternalBeneficiary(parentId,childId);
+        return await backend.fundsTransfer.unassignExternalBeneficiary(parentId,childId);
     },
     initiatedBy: async (
         _: ResolverParent,
@@ -2496,7 +2491,7 @@ FundsTransfer: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.fundsTransfer.assignToInitiatedBy(parentId,childId);
+        return await backend.fundsTransfer.assignInitiatedBy(parentId,childId);
     },
 
     unassignInitiatedBy: async (
@@ -2504,7 +2499,7 @@ FundsTransfer: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.fundsTransfer.unassignFromInitiatedBy(parentId,childId);
+        return await backend.fundsTransfer.unassignInitiatedBy(parentId,childId);
     },
     transactions: async (
         _: ResolverParent,
@@ -2514,20 +2509,20 @@ FundsTransfer: {
         return await backend.fundsTransfer.getTransactions(parentId);
     },
 
-    assignToTransactions: async (
+    addToTransactions: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.fundsTransfer.assignToTransactions(parentId,childIds);
+        return await backend.fundsTransfer.addToTransactions(parentId,childIds);
     },
 
-    unassignFromTransactions: async (
+    removeFromTransactions: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.fundsTransfer.unassignFromTransactions(parentId,childIds);
+        return await backend.fundsTransfer.removeFromTransactions(parentId,childIds);
     },
 },
 StandingInstruction: {
@@ -2544,7 +2539,7 @@ StandingInstruction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.standingInstruction.assignToAccount(parentId,childId);
+        return await backend.standingInstruction.assignAccount(parentId,childId);
     },
 
     unassignAccount: async (
@@ -2552,7 +2547,7 @@ StandingInstruction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.standingInstruction.unassignFromAccount(parentId,childId);
+        return await backend.standingInstruction.unassignAccount(parentId,childId);
     },
     beneficiary: async (
         _: ResolverParent,
@@ -2567,7 +2562,7 @@ StandingInstruction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.standingInstruction.assignToBeneficiary(parentId,childId);
+        return await backend.standingInstruction.assignBeneficiary(parentId,childId);
     },
 
     unassignBeneficiary: async (
@@ -2575,7 +2570,7 @@ StandingInstruction: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.standingInstruction.unassignFromBeneficiary(parentId,childId);
+        return await backend.standingInstruction.unassignBeneficiary(parentId,childId);
     },
 },
 PaymentCard: {
@@ -2592,7 +2587,7 @@ PaymentCard: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.paymentCard.assignToBank(parentId,childId);
+        return await backend.paymentCard.assignBank(parentId,childId);
     },
 
     unassignBank: async (
@@ -2600,7 +2595,7 @@ PaymentCard: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.paymentCard.unassignFromBank(parentId,childId);
+        return await backend.paymentCard.unassignBank(parentId,childId);
     },
     account: async (
         _: ResolverParent,
@@ -2615,7 +2610,7 @@ PaymentCard: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.paymentCard.assignToAccount(parentId,childId);
+        return await backend.paymentCard.assignAccount(parentId,childId);
     },
 
     unassignAccount: async (
@@ -2623,7 +2618,7 @@ PaymentCard: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.paymentCard.unassignFromAccount(parentId,childId);
+        return await backend.paymentCard.unassignAccount(parentId,childId);
     },
     customer: async (
         _: ResolverParent,
@@ -2638,7 +2633,7 @@ PaymentCard: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.paymentCard.assignToCustomer(parentId,childId);
+        return await backend.paymentCard.assignCustomer(parentId,childId);
     },
 
     unassignCustomer: async (
@@ -2646,7 +2641,7 @@ PaymentCard: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.paymentCard.unassignFromCustomer(parentId,childId);
+        return await backend.paymentCard.unassignCustomer(parentId,childId);
     },
     transactions: async (
         _: ResolverParent,
@@ -2656,20 +2651,20 @@ PaymentCard: {
         return await backend.paymentCard.getTransactions(parentId);
     },
 
-    assignToTransactions: async (
+    addToTransactions: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.paymentCard.assignToTransactions(parentId,childIds);
+        return await backend.paymentCard.addToTransactions(parentId,childIds);
     },
 
-    unassignFromTransactions: async (
+    removeFromTransactions: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.paymentCard.unassignFromTransactions(parentId,childIds);
+        return await backend.paymentCard.removeFromTransactions(parentId,childIds);
     },
 },
 LoanAccount: {
@@ -2686,7 +2681,7 @@ LoanAccount: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.assignToBank(parentId,childId);
+        return await backend.loanAccount.assignBank(parentId,childId);
     },
 
     unassignBank: async (
@@ -2694,7 +2689,7 @@ LoanAccount: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.loanAccount.unassignFromBank(parentId,childId);
+        return await backend.loanAccount.unassignBank(parentId,childId);
     },
     branch: async (
         _: ResolverParent,
@@ -2709,7 +2704,7 @@ LoanAccount: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.assignToBranch(parentId,childId);
+        return await backend.loanAccount.assignBranch(parentId,childId);
     },
 
     unassignBranch: async (
@@ -2717,7 +2712,7 @@ LoanAccount: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.loanAccount.unassignFromBranch(parentId,childId);
+        return await backend.loanAccount.unassignBranch(parentId,childId);
     },
     product: async (
         _: ResolverParent,
@@ -2732,7 +2727,7 @@ LoanAccount: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.assignToProduct(parentId,childId);
+        return await backend.loanAccount.assignProduct(parentId,childId);
     },
 
     unassignProduct: async (
@@ -2740,7 +2735,7 @@ LoanAccount: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.loanAccount.unassignFromProduct(parentId,childId);
+        return await backend.loanAccount.unassignProduct(parentId,childId);
     },
     borrowers: async (
         _: ResolverParent,
@@ -2750,20 +2745,20 @@ LoanAccount: {
         return await backend.loanAccount.getBorrowers(parentId);
     },
 
-    assignToBorrowers: async (
+    addToBorrowers: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.assignToBorrowers(parentId,childIds);
+        return await backend.loanAccount.addToBorrowers(parentId,childIds);
     },
 
-    unassignFromBorrowers: async (
+    removeFromBorrowers: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.unassignFromBorrowers(parentId,childIds);
+        return await backend.loanAccount.removeFromBorrowers(parentId,childIds);
     },
     repaymentSchedule: async (
         _: ResolverParent,
@@ -2773,20 +2768,20 @@ LoanAccount: {
         return await backend.loanAccount.getRepaymentSchedule(parentId);
     },
 
-    assignToRepaymentSchedule: async (
+    addToRepaymentSchedule: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.assignToRepaymentSchedule(parentId,childIds);
+        return await backend.loanAccount.addToRepaymentSchedule(parentId,childIds);
     },
 
-    unassignFromRepaymentSchedule: async (
+    removeFromRepaymentSchedule: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.unassignFromRepaymentSchedule(parentId,childIds);
+        return await backend.loanAccount.removeFromRepaymentSchedule(parentId,childIds);
     },
     payments: async (
         _: ResolverParent,
@@ -2796,20 +2791,20 @@ LoanAccount: {
         return await backend.loanAccount.getPayments(parentId);
     },
 
-    assignToPayments: async (
+    addToPayments: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.assignToPayments(parentId,childIds);
+        return await backend.loanAccount.addToPayments(parentId,childIds);
     },
 
-    unassignFromPayments: async (
+    removeFromPayments: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.unassignFromPayments(parentId,childIds);
+        return await backend.loanAccount.removeFromPayments(parentId,childIds);
     },
     collateral: async (
         _: ResolverParent,
@@ -2819,20 +2814,20 @@ LoanAccount: {
         return await backend.loanAccount.getCollateral(parentId);
     },
 
-    assignToCollateral: async (
+    addToCollateral: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.assignToCollateral(parentId,childIds);
+        return await backend.loanAccount.addToCollateral(parentId,childIds);
     },
 
-    unassignFromCollateral: async (
+    removeFromCollateral: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.unassignFromCollateral(parentId,childIds);
+        return await backend.loanAccount.removeFromCollateral(parentId,childIds);
     },
     feeCharges: async (
         _: ResolverParent,
@@ -2842,20 +2837,20 @@ LoanAccount: {
         return await backend.loanAccount.getFeeCharges(parentId);
     },
 
-    assignToFeeCharges: async (
+    addToFeeCharges: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.assignToFeeCharges(parentId,childIds);
+        return await backend.loanAccount.addToFeeCharges(parentId,childIds);
     },
 
-    unassignFromFeeCharges: async (
+    removeFromFeeCharges: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.unassignFromFeeCharges(parentId,childIds);
+        return await backend.loanAccount.removeFromFeeCharges(parentId,childIds);
     },
 },
 RepaymentSchedule: {
@@ -2872,7 +2867,7 @@ RepaymentSchedule: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.repaymentSchedule.assignToLoanAccount(parentId,childId);
+        return await backend.repaymentSchedule.assignLoanAccount(parentId,childId);
     },
 
     unassignLoanAccount: async (
@@ -2880,7 +2875,7 @@ RepaymentSchedule: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.repaymentSchedule.unassignFromLoanAccount(parentId,childId);
+        return await backend.repaymentSchedule.unassignLoanAccount(parentId,childId);
     },
     payment: async (
         _: ResolverParent,
@@ -2895,7 +2890,7 @@ RepaymentSchedule: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.repaymentSchedule.assignToPayment(parentId,childId);
+        return await backend.repaymentSchedule.assignPayment(parentId,childId);
     },
 
     unassignPayment: async (
@@ -2903,7 +2898,7 @@ RepaymentSchedule: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.repaymentSchedule.unassignFromPayment(parentId,childId);
+        return await backend.repaymentSchedule.unassignPayment(parentId,childId);
     },
 },
 LoanPayment: {
@@ -2920,7 +2915,7 @@ LoanPayment: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanPayment.assignToLoanAccount(parentId,childId);
+        return await backend.loanPayment.assignLoanAccount(parentId,childId);
     },
 
     unassignLoanAccount: async (
@@ -2928,7 +2923,7 @@ LoanPayment: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.loanPayment.unassignFromLoanAccount(parentId,childId);
+        return await backend.loanPayment.unassignLoanAccount(parentId,childId);
     },
     transaction: async (
         _: ResolverParent,
@@ -2943,7 +2938,7 @@ LoanPayment: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanPayment.assignToTransaction(parentId,childId);
+        return await backend.loanPayment.assignTransaction(parentId,childId);
     },
 
     unassignTransaction: async (
@@ -2951,7 +2946,7 @@ LoanPayment: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.loanPayment.unassignFromTransaction(parentId,childId);
+        return await backend.loanPayment.unassignTransaction(parentId,childId);
     },
 },
 Collateral: {
@@ -2968,7 +2963,7 @@ Collateral: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.collateral.assignToLoanAccount(parentId,childId);
+        return await backend.collateral.assignLoanAccount(parentId,childId);
     },
 
     unassignLoanAccount: async (
@@ -2976,7 +2971,7 @@ Collateral: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.collateral.unassignFromLoanAccount(parentId,childId);
+        return await backend.collateral.unassignLoanAccount(parentId,childId);
     },
 },
 FeeCharge: {
@@ -2993,7 +2988,7 @@ FeeCharge: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.feeCharge.assignToAccount(parentId,childId);
+        return await backend.feeCharge.assignAccount(parentId,childId);
     },
 
     unassignAccount: async (
@@ -3001,7 +2996,7 @@ FeeCharge: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.feeCharge.unassignFromAccount(parentId,childId);
+        return await backend.feeCharge.unassignAccount(parentId,childId);
     },
     loanAccount: async (
         _: ResolverParent,
@@ -3016,7 +3011,7 @@ FeeCharge: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.feeCharge.assignToLoanAccount(parentId,childId);
+        return await backend.feeCharge.assignLoanAccount(parentId,childId);
     },
 
     unassignLoanAccount: async (
@@ -3024,7 +3019,7 @@ FeeCharge: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.feeCharge.unassignFromLoanAccount(parentId,childId);
+        return await backend.feeCharge.unassignLoanAccount(parentId,childId);
     },
 },
 ExchangeRate: {
@@ -3041,7 +3036,7 @@ ExchangeRate: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.exchangeRate.assignToBank(parentId,childId);
+        return await backend.exchangeRate.assignBank(parentId,childId);
     },
 
     unassignBank: async (
@@ -3049,7 +3044,7 @@ ExchangeRate: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.exchangeRate.unassignFromBank(parentId,childId);
+        return await backend.exchangeRate.unassignBank(parentId,childId);
     },
     fxTrades: async (
         _: ResolverParent,
@@ -3059,20 +3054,20 @@ ExchangeRate: {
         return await backend.exchangeRate.getFxTrades(parentId);
     },
 
-    assignToFxTrades: async (
+    addToFxTrades: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.exchangeRate.assignToFxTrades(parentId,childIds);
+        return await backend.exchangeRate.addToFxTrades(parentId,childIds);
     },
 
-    unassignFromFxTrades: async (
+    removeFromFxTrades: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.exchangeRate.unassignFromFxTrades(parentId,childIds);
+        return await backend.exchangeRate.removeFromFxTrades(parentId,childIds);
     },
 },
 FXTrade: {
@@ -3089,7 +3084,7 @@ FXTrade: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.fXTrade.assignToCustomer(parentId,childId);
+        return await backend.fXTrade.assignCustomer(parentId,childId);
     },
 
     unassignCustomer: async (
@@ -3097,7 +3092,7 @@ FXTrade: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.fXTrade.unassignFromCustomer(parentId,childId);
+        return await backend.fXTrade.unassignCustomer(parentId,childId);
     },
     bank: async (
         _: ResolverParent,
@@ -3112,7 +3107,7 @@ FXTrade: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.fXTrade.assignToBank(parentId,childId);
+        return await backend.fXTrade.assignBank(parentId,childId);
     },
 
     unassignBank: async (
@@ -3120,7 +3115,7 @@ FXTrade: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.fXTrade.unassignFromBank(parentId,childId);
+        return await backend.fXTrade.unassignBank(parentId,childId);
     },
     exchangeRate: async (
         _: ResolverParent,
@@ -3135,7 +3130,7 @@ FXTrade: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.fXTrade.assignToExchangeRate(parentId,childId);
+        return await backend.fXTrade.assignExchangeRate(parentId,childId);
     },
 
     unassignExchangeRate: async (
@@ -3143,7 +3138,7 @@ FXTrade: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.fXTrade.unassignFromExchangeRate(parentId,childId);
+        return await backend.fXTrade.unassignExchangeRate(parentId,childId);
     },
     sourceAccount: async (
         _: ResolverParent,
@@ -3158,7 +3153,7 @@ FXTrade: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.fXTrade.assignToSourceAccount(parentId,childId);
+        return await backend.fXTrade.assignSourceAccount(parentId,childId);
     },
 
     unassignSourceAccount: async (
@@ -3166,7 +3161,7 @@ FXTrade: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.fXTrade.unassignFromSourceAccount(parentId,childId);
+        return await backend.fXTrade.unassignSourceAccount(parentId,childId);
     },
     destinationAccount: async (
         _: ResolverParent,
@@ -3181,7 +3176,7 @@ FXTrade: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.fXTrade.assignToDestinationAccount(parentId,childId);
+        return await backend.fXTrade.assignDestinationAccount(parentId,childId);
     },
 
     unassignDestinationAccount: async (
@@ -3189,7 +3184,7 @@ FXTrade: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.fXTrade.unassignFromDestinationAccount(parentId,childId);
+        return await backend.fXTrade.unassignDestinationAccount(parentId,childId);
     },
     transaction: async (
         _: ResolverParent,
@@ -3204,7 +3199,7 @@ FXTrade: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.fXTrade.assignToTransaction(parentId,childId);
+        return await backend.fXTrade.assignTransaction(parentId,childId);
     },
 
     unassignTransaction: async (
@@ -3212,7 +3207,7 @@ FXTrade: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.fXTrade.unassignFromTransaction(parentId,childId);
+        return await backend.fXTrade.unassignTransaction(parentId,childId);
     },
 },
 Dispute: {
@@ -3229,7 +3224,7 @@ Dispute: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.dispute.assignToTransaction(parentId,childId);
+        return await backend.dispute.assignTransaction(parentId,childId);
     },
 
     unassignTransaction: async (
@@ -3237,7 +3232,7 @@ Dispute: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.dispute.unassignFromTransaction(parentId,childId);
+        return await backend.dispute.unassignTransaction(parentId,childId);
     },
     customer: async (
         _: ResolverParent,
@@ -3252,7 +3247,7 @@ Dispute: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.dispute.assignToCustomer(parentId,childId);
+        return await backend.dispute.assignCustomer(parentId,childId);
     },
 
     unassignCustomer: async (
@@ -3260,7 +3255,7 @@ Dispute: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.dispute.unassignFromCustomer(parentId,childId);
+        return await backend.dispute.unassignCustomer(parentId,childId);
     },
     account: async (
         _: ResolverParent,
@@ -3275,7 +3270,7 @@ Dispute: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.dispute.assignToAccount(parentId,childId);
+        return await backend.dispute.assignAccount(parentId,childId);
     },
 
     unassignAccount: async (
@@ -3283,7 +3278,7 @@ Dispute: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.dispute.unassignFromAccount(parentId,childId);
+        return await backend.dispute.unassignAccount(parentId,childId);
     },
     paymentCard: async (
         _: ResolverParent,
@@ -3298,7 +3293,7 @@ Dispute: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.dispute.assignToPaymentCard(parentId,childId);
+        return await backend.dispute.assignPaymentCard(parentId,childId);
     },
 
     unassignPaymentCard: async (
@@ -3306,7 +3301,7 @@ Dispute: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.dispute.unassignFromPaymentCard(parentId,childId);
+        return await backend.dispute.unassignPaymentCard(parentId,childId);
     },
 },
 Consent: {
@@ -3323,7 +3318,7 @@ Consent: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.consent.assignToCustomer(parentId,childId);
+        return await backend.consent.assignCustomer(parentId,childId);
     },
 
     unassignCustomer: async (
@@ -3331,7 +3326,7 @@ Consent: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.consent.unassignFromCustomer(parentId,childId);
+        return await backend.consent.unassignCustomer(parentId,childId);
     },
     bank: async (
         _: ResolverParent,
@@ -3346,7 +3341,7 @@ Consent: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.consent.assignToBank(parentId,childId);
+        return await backend.consent.assignBank(parentId,childId);
     },
 
     unassignBank: async (
@@ -3354,7 +3349,7 @@ Consent: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.consent.unassignFromBank(parentId,childId);
+        return await backend.consent.unassignBank(parentId,childId);
     },
     thirdPartyProvider: async (
         _: ResolverParent,
@@ -3369,7 +3364,7 @@ Consent: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.consent.assignToThirdPartyProvider(parentId,childId);
+        return await backend.consent.assignThirdPartyProvider(parentId,childId);
     },
 
     unassignThirdPartyProvider: async (
@@ -3377,7 +3372,7 @@ Consent: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.consent.unassignFromThirdPartyProvider(parentId,childId);
+        return await backend.consent.unassignThirdPartyProvider(parentId,childId);
     },
     authorizedAccounts: async (
         _: ResolverParent,
@@ -3387,20 +3382,20 @@ Consent: {
         return await backend.consent.getAuthorizedAccounts(parentId);
     },
 
-    assignToAuthorizedAccounts: async (
+    addToAuthorizedAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.consent.assignToAuthorizedAccounts(parentId,childIds);
+        return await backend.consent.addToAuthorizedAccounts(parentId,childIds);
     },
 
-    unassignFromAuthorizedAccounts: async (
+    removeFromAuthorizedAccounts: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.consent.unassignFromAuthorizedAccounts(parentId,childIds);
+        return await backend.consent.removeFromAuthorizedAccounts(parentId,childIds);
     },
 },
 ThirdPartyProvider: {
@@ -3417,7 +3412,7 @@ ThirdPartyProvider: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.thirdPartyProvider.assignToBank(parentId,childId);
+        return await backend.thirdPartyProvider.assignBank(parentId,childId);
     },
 
     unassignBank: async (
@@ -3425,7 +3420,7 @@ ThirdPartyProvider: {
         { parentId, childId }: ParentChildIdentifiers,
         { backend }: ResolverContext) =>
     {
-        return await backend.thirdPartyProvider.unassignFromBank(parentId,childId);
+        return await backend.thirdPartyProvider.unassignBank(parentId,childId);
     },
     consents: async (
         _: ResolverParent,
@@ -3435,20 +3430,20 @@ ThirdPartyProvider: {
         return await backend.thirdPartyProvider.getConsents(parentId);
     },
 
-    assignToConsents: async (
+    addToConsents: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.thirdPartyProvider.assignToConsents(parentId,childIds);
+        return await backend.thirdPartyProvider.addToConsents(parentId,childIds);
     },
 
-    unassignFromConsents: async (
+    removeFromConsents: async (
         _: ResolverParent,
         { parentId, childIds }: ParentChildrenIdentifiers,
         { backend }: ResolverContext ) =>
     {
-        return await backend.thirdPartyProvider.unassignFromConsents(parentId,childIds);
+        return await backend.thirdPartyProvider.removeFromConsents(parentId,childIds);
     },
 },
 };

@@ -61,7 +61,6 @@ export class HttpBackendAPI implements BackendAPI {
     }
 
     bank = {
-        find(id: string): Promise<Bank | null>;
         find: async (id: string): Promise<Bank | null> => {
             const response = await this.http.get(`/Bank/load/${id}`);
             return response.data;
@@ -314,7 +313,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     branch = {
-        find(id: string): Promise<Branch | null>;
         find: async (id: string): Promise<Branch | null> => {
             const response = await this.http.get(`/Branch/load/${id}`);
             return response.data;
@@ -443,7 +441,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     aTM = {
-        find(id: string): Promise<ATM | null>;
         find: async (id: string): Promise<ATM | null> => {
             const response = await this.http.get(`/ATM/load/${id}`);
             return response.data;
@@ -500,7 +497,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     customer = {
-        find(id: string): Promise<Customer | null>;
         find: async (id: string): Promise<Customer | null> => {
             const response = await this.http.get(`/Customer/load/${id}`);
             return response.data;
@@ -749,7 +745,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     kycProfile = {
-        find(id: string): Promise<KycProfile | null>;
         find: async (id: string): Promise<KycProfile | null> => {
             const response = await this.http.get(`/KycProfile/load/${id}`);
             return response.data;
@@ -878,7 +873,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     identityDocument = {
-        find(id: string): Promise<IdentityDocument | null>;
         find: async (id: string): Promise<IdentityDocument | null> => {
             const response = await this.http.get(`/IdentityDocument/load/${id}`);
             return response.data;
@@ -935,7 +929,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     riskAssessment = {
-        find(id: string): Promise<RiskAssessment | null>;
         find: async (id: string): Promise<RiskAssessment | null> => {
             const response = await this.http.get(`/RiskAssessment/load/${id}`);
             return response.data;
@@ -992,7 +985,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     screeningResult = {
-        find(id: string): Promise<ScreeningResult | null>;
         find: async (id: string): Promise<ScreeningResult | null> => {
             const response = await this.http.get(`/ScreeningResult/load/${id}`);
             return response.data;
@@ -1049,7 +1041,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     bankingProduct = {
-        find(id: string): Promise<BankingProduct | null>;
         find: async (id: string): Promise<BankingProduct | null> => {
             const response = await this.http.get(`/BankingProduct/load/${id}`);
             return response.data;
@@ -1178,7 +1169,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     account = {
-        find(id: string): Promise<Account | null>;
         find: async (id: string): Promise<Account | null> => {
             const response = await this.http.get(`/Account/load/${id}`);
             return response.data;
@@ -1395,7 +1385,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     accountStatement = {
-        find(id: string): Promise<AccountStatement | null>;
         find: async (id: string): Promise<AccountStatement | null> => {
             const response = await this.http.get(`/AccountStatement/load/${id}`);
             return response.data;
@@ -1452,7 +1441,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     transaction = {
-        find(id: string): Promise<Transaction | null>;
         find: async (id: string): Promise<Transaction | null> => {
             const response = await this.http.get(`/Transaction/load/${id}`);
             return response.data;
@@ -1609,7 +1597,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     externalAccount = {
-        find(id: string): Promise<ExternalAccount | null>;
         find: async (id: string): Promise<ExternalAccount | null> => {
             const response = await this.http.get(`/ExternalAccount/load/${id}`);
             return response.data;
@@ -1690,7 +1677,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     fundsTransfer = {
-        find(id: string): Promise<FundsTransfer | null>;
         find: async (id: string): Promise<FundsTransfer | null> => {
             const response = await this.http.get(`/FundsTransfer/load/${id}`);
             return response.data;
@@ -1831,7 +1817,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     standingInstruction = {
-        find(id: string): Promise<StandingInstruction | null>;
         find: async (id: string): Promise<StandingInstruction | null> => {
             const response = await this.http.get(`/StandingInstruction/load/${id}`);
             return response.data;
@@ -1908,7 +1893,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     paymentCard = {
-        find(id: string): Promise<PaymentCard | null>;
         find: async (id: string): Promise<PaymentCard | null> => {
             const response = await this.http.get(`/PaymentCard/load/${id}`);
             return response.data;
@@ -2029,7 +2013,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     loanAccount = {
-        find(id: string): Promise<LoanAccount | null>;
         find: async (id: string): Promise<LoanAccount | null> => {
             const response = await this.http.get(`/LoanAccount/load/${id}`);
             return response.data;
@@ -2246,7 +2229,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     repaymentSchedule = {
-        find(id: string): Promise<RepaymentSchedule | null>;
         find: async (id: string): Promise<RepaymentSchedule | null> => {
             const response = await this.http.get(`/RepaymentSchedule/load/${id}`);
             return response.data;
@@ -2323,7 +2305,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     loanPayment = {
-        find(id: string): Promise<LoanPayment | null>;
         find: async (id: string): Promise<LoanPayment | null> => {
             const response = await this.http.get(`/LoanPayment/load/${id}`);
             return response.data;
@@ -2400,7 +2381,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     collateral = {
-        find(id: string): Promise<Collateral | null>;
         find: async (id: string): Promise<Collateral | null> => {
             const response = await this.http.get(`/Collateral/load/${id}`);
             return response.data;
@@ -2457,7 +2437,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     feeCharge = {
-        find(id: string): Promise<FeeCharge | null>;
         find: async (id: string): Promise<FeeCharge | null> => {
             const response = await this.http.get(`/FeeCharge/load/${id}`);
             return response.data;
@@ -2534,7 +2513,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     exchangeRate = {
-        find(id: string): Promise<ExchangeRate | null>;
         find: async (id: string): Promise<ExchangeRate | null> => {
             const response = await this.http.get(`/ExchangeRate/load/${id}`);
             return response.data;
@@ -2615,7 +2593,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     fXTrade = {
-        find(id: string): Promise<FXTrade | null>;
         find: async (id: string): Promise<FXTrade | null> => {
             const response = await this.http.get(`/FXTrade/load/${id}`);
             return response.data;
@@ -2772,7 +2749,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     dispute = {
-        find(id: string): Promise<Dispute | null>;
         find: async (id: string): Promise<Dispute | null> => {
             const response = await this.http.get(`/Dispute/load/${id}`);
             return response.data;
@@ -2889,7 +2865,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     consent = {
-        find(id: string): Promise<Consent | null>;
         find: async (id: string): Promise<Consent | null> => {
             const response = await this.http.get(`/Consent/load/${id}`);
             return response.data;
@@ -3010,7 +2985,6 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     thirdPartyProvider = {
-        find(id: string): Promise<ThirdPartyProvider | null>;
         find: async (id: string): Promise<ThirdPartyProvider | null> => {
             const response = await this.http.get(`/ThirdPartyProvider/load/${id}`);
             return response.data;

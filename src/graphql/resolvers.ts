@@ -1,7 +1,7 @@
 import {
     BackendAPI,
     PaginationOptions
-} from "../backend/api.ts";
+} from "../backend/api.js";
 
 import {
     Bank,
@@ -30,7 +30,7 @@ import {
     Dispute,
     Consent,
     ThirdPartyProvider,
-} from "../backend/types";
+} from "../backend/types.js";
 
 const { paginateResults } = require('./utils');
 

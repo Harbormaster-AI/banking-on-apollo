@@ -5,6 +5,8 @@
   "description": "Generated Apollo GraphQL API",
   "main": "dist/server.js",
   "type": "module",
+  "module": "NodeNext",
+  "moduleResolution": "NodeNext",
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",

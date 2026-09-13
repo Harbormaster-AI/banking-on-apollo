@@ -25,7 +25,7 @@ import {
     Dispute,
     Consent,
     ThirdPartyProvider,
-} from "../backend/types";
+} from "../backend/types.js";
 
 
 export const typeDefs = `

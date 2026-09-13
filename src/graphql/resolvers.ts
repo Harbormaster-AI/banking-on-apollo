@@ -32,8 +32,6 @@ import {
     ThirdPartyProvider,
 } from "../backend/types.js";
 
-const { paginateResults } = require('./utils');
-
 interface ResolverContext {
 backend: BackendAPI;
 }

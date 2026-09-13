@@ -556,7 +556,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.bank.remove( { id } );
+        return await backend.bank.remove( id );
     },
 //////////////////////////
 // Branch
@@ -582,7 +582,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.branch.remove( { id } );
+        return await backend.branch.remove( id );
     },
 //////////////////////////
 // ATM
@@ -608,7 +608,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.aTM.remove( { id } );
+        return await backend.aTM.remove( id );
     },
 //////////////////////////
 // Customer
@@ -634,7 +634,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.customer.remove( { id } );
+        return await backend.customer.remove( id );
     },
 //////////////////////////
 // KycProfile
@@ -660,7 +660,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.kycProfile.remove( { id } );
+        return await backend.kycProfile.remove( id );
     },
 //////////////////////////
 // IdentityDocument
@@ -686,7 +686,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.identityDocument.remove( { id } );
+        return await backend.identityDocument.remove( id );
     },
 //////////////////////////
 // RiskAssessment
@@ -712,7 +712,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.riskAssessment.remove( { id } );
+        return await backend.riskAssessment.remove( id );
     },
 //////////////////////////
 // ScreeningResult
@@ -738,7 +738,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.screeningResult.remove( { id } );
+        return await backend.screeningResult.remove( id );
     },
 //////////////////////////
 // BankingProduct
@@ -764,7 +764,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.bankingProduct.remove( { id } );
+        return await backend.bankingProduct.remove( id );
     },
 //////////////////////////
 // Account
@@ -790,7 +790,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.account.remove( { id } );
+        return await backend.account.remove( id );
     },
 //////////////////////////
 // AccountStatement
@@ -816,7 +816,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.accountStatement.remove( { id } );
+        return await backend.accountStatement.remove( id );
     },
 //////////////////////////
 // Transaction
@@ -842,7 +842,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.transaction.remove( { id } );
+        return await backend.transaction.remove( id );
     },
 //////////////////////////
 // ExternalAccount
@@ -868,7 +868,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.externalAccount.remove( { id } );
+        return await backend.externalAccount.remove( id );
     },
 //////////////////////////
 // FundsTransfer
@@ -894,7 +894,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.fundsTransfer.remove( { id } );
+        return await backend.fundsTransfer.remove( id );
     },
 //////////////////////////
 // StandingInstruction
@@ -920,7 +920,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.standingInstruction.remove( { id } );
+        return await backend.standingInstruction.remove( id );
     },
 //////////////////////////
 // PaymentCard
@@ -946,7 +946,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.paymentCard.remove( { id } );
+        return await backend.paymentCard.remove( id );
     },
 //////////////////////////
 // LoanAccount
@@ -972,7 +972,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanAccount.remove( { id } );
+        return await backend.loanAccount.remove( id );
     },
 //////////////////////////
 // RepaymentSchedule
@@ -998,7 +998,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.repaymentSchedule.remove( { id } );
+        return await backend.repaymentSchedule.remove( id );
     },
 //////////////////////////
 // LoanPayment
@@ -1024,7 +1024,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.loanPayment.remove( { id } );
+        return await backend.loanPayment.remove( id );
     },
 //////////////////////////
 // Collateral
@@ -1050,7 +1050,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.collateral.remove( { id } );
+        return await backend.collateral.remove( id );
     },
 //////////////////////////
 // FeeCharge
@@ -1076,7 +1076,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.feeCharge.remove( { id } );
+        return await backend.feeCharge.remove( id );
     },
 //////////////////////////
 // ExchangeRate
@@ -1102,7 +1102,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.exchangeRate.remove( { id } );
+        return await backend.exchangeRate.remove( id );
     },
 //////////////////////////
 // FXTrade
@@ -1128,7 +1128,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.fXTrade.remove( { id } );
+        return await backend.fXTrade.remove( id );
     },
 //////////////////////////
 // Dispute
@@ -1154,7 +1154,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.dispute.remove( { id } );
+        return await backend.dispute.remove( id );
     },
 //////////////////////////
 // Consent
@@ -1180,7 +1180,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.consent.remove( { id } );
+        return await backend.consent.remove( id );
     },
 //////////////////////////
 // ThirdPartyProvider
@@ -1206,7 +1206,7 @@ Mutation: {
         { id }: { id: string },
         { backend }: ResolverContext ) =>
     {
-        return await backend.thirdPartyProvider.remove( { id } );
+        return await backend.thirdPartyProvider.remove( id );
     },
 },
 Bank: {

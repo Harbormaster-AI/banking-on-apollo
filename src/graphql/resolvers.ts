@@ -25,24 +25,24 @@ module.exports = {
         return await backend.bank.find( id );
     },
 
-    banks: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.bank.findAll();
+    banks: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.bank.findAll({ pageSize = 25, after });
 
-    const bankPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const bankPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { bankPage,
-        cursor: bankPage.length ? bankPage[bankPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: bankPage.length
-        ? bankPage[bankPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { bankPage,
+            cursor: bankPage.length ? bankPage[bankPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: bankPage.length
+            ? bankPage[bankPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // Branch
     //////////////////////////
@@ -50,24 +50,24 @@ module.exports = {
         return await backend.branch.find( id );
     },
 
-    branchs: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.branch.findAll();
+    branchs: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.branch.findAll({ pageSize = 25, after });
 
-    const branchPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const branchPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { branchPage,
-        cursor: branchPage.length ? branchPage[branchPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: branchPage.length
-        ? branchPage[branchPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { branchPage,
+            cursor: branchPage.length ? branchPage[branchPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: branchPage.length
+            ? branchPage[branchPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // ATM
     //////////////////////////
@@ -75,24 +75,24 @@ module.exports = {
         return await backend.aTM.find( id );
     },
 
-    aTMs: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.aTM.findAll();
+    aTMs: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.aTM.findAll({ pageSize = 25, after });
 
-    const aTMPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const aTMPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { aTMPage,
-        cursor: aTMPage.length ? aTMPage[aTMPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: aTMPage.length
-        ? aTMPage[aTMPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { aTMPage,
+            cursor: aTMPage.length ? aTMPage[aTMPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: aTMPage.length
+            ? aTMPage[aTMPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // Customer
     //////////////////////////
@@ -100,24 +100,24 @@ module.exports = {
         return await backend.customer.find( id );
     },
 
-    customers: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.customer.findAll();
+    customers: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.customer.findAll({ pageSize = 25, after });
 
-    const customerPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const customerPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { customerPage,
-        cursor: customerPage.length ? customerPage[customerPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: customerPage.length
-        ? customerPage[customerPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { customerPage,
+            cursor: customerPage.length ? customerPage[customerPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: customerPage.length
+            ? customerPage[customerPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // KycProfile
     //////////////////////////
@@ -125,24 +125,24 @@ module.exports = {
         return await backend.kycProfile.find( id );
     },
 
-    kycProfiles: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.kycProfile.findAll();
+    kycProfiles: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.kycProfile.findAll({ pageSize = 25, after });
 
-    const kycProfilePage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const kycProfilePage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { kycProfilePage,
-        cursor: kycProfilePage.length ? kycProfilePage[kycProfilePage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: kycProfilePage.length
-        ? kycProfilePage[kycProfilePage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { kycProfilePage,
+            cursor: kycProfilePage.length ? kycProfilePage[kycProfilePage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: kycProfilePage.length
+            ? kycProfilePage[kycProfilePage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // IdentityDocument
     //////////////////////////
@@ -150,24 +150,24 @@ module.exports = {
         return await backend.identityDocument.find( id );
     },
 
-    identityDocuments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.identityDocument.findAll();
+    identityDocuments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.identityDocument.findAll({ pageSize = 25, after });
 
-    const identityDocumentPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const identityDocumentPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { identityDocumentPage,
-        cursor: identityDocumentPage.length ? identityDocumentPage[identityDocumentPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: identityDocumentPage.length
-        ? identityDocumentPage[identityDocumentPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { identityDocumentPage,
+            cursor: identityDocumentPage.length ? identityDocumentPage[identityDocumentPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: identityDocumentPage.length
+            ? identityDocumentPage[identityDocumentPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // RiskAssessment
     //////////////////////////
@@ -175,24 +175,24 @@ module.exports = {
         return await backend.riskAssessment.find( id );
     },
 
-    riskAssessments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.riskAssessment.findAll();
+    riskAssessments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.riskAssessment.findAll({ pageSize = 25, after });
 
-    const riskAssessmentPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const riskAssessmentPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { riskAssessmentPage,
-        cursor: riskAssessmentPage.length ? riskAssessmentPage[riskAssessmentPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: riskAssessmentPage.length
-        ? riskAssessmentPage[riskAssessmentPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { riskAssessmentPage,
+            cursor: riskAssessmentPage.length ? riskAssessmentPage[riskAssessmentPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: riskAssessmentPage.length
+            ? riskAssessmentPage[riskAssessmentPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // ScreeningResult
     //////////////////////////
@@ -200,24 +200,24 @@ module.exports = {
         return await backend.screeningResult.find( id );
     },
 
-    screeningResults: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.screeningResult.findAll();
+    screeningResults: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.screeningResult.findAll({ pageSize = 25, after });
 
-    const screeningResultPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const screeningResultPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { screeningResultPage,
-        cursor: screeningResultPage.length ? screeningResultPage[screeningResultPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: screeningResultPage.length
-        ? screeningResultPage[screeningResultPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { screeningResultPage,
+            cursor: screeningResultPage.length ? screeningResultPage[screeningResultPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: screeningResultPage.length
+            ? screeningResultPage[screeningResultPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // BankingProduct
     //////////////////////////
@@ -225,24 +225,24 @@ module.exports = {
         return await backend.bankingProduct.find( id );
     },
 
-    bankingProducts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.bankingProduct.findAll();
+    bankingProducts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.bankingProduct.findAll({ pageSize = 25, after });
 
-    const bankingProductPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const bankingProductPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { bankingProductPage,
-        cursor: bankingProductPage.length ? bankingProductPage[bankingProductPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: bankingProductPage.length
-        ? bankingProductPage[bankingProductPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { bankingProductPage,
+            cursor: bankingProductPage.length ? bankingProductPage[bankingProductPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: bankingProductPage.length
+            ? bankingProductPage[bankingProductPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // Account
     //////////////////////////
@@ -250,24 +250,24 @@ module.exports = {
         return await backend.account.find( id );
     },
 
-    accounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.account.findAll();
+    accounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.account.findAll({ pageSize = 25, after });
 
-    const accountPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const accountPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { accountPage,
-        cursor: accountPage.length ? accountPage[accountPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: accountPage.length
-        ? accountPage[accountPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { accountPage,
+            cursor: accountPage.length ? accountPage[accountPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: accountPage.length
+            ? accountPage[accountPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // AccountStatement
     //////////////////////////
@@ -275,24 +275,24 @@ module.exports = {
         return await backend.accountStatement.find( id );
     },
 
-    accountStatements: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.accountStatement.findAll();
+    accountStatements: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.accountStatement.findAll({ pageSize = 25, after });
 
-    const accountStatementPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const accountStatementPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { accountStatementPage,
-        cursor: accountStatementPage.length ? accountStatementPage[accountStatementPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: accountStatementPage.length
-        ? accountStatementPage[accountStatementPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { accountStatementPage,
+            cursor: accountStatementPage.length ? accountStatementPage[accountStatementPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: accountStatementPage.length
+            ? accountStatementPage[accountStatementPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // Transaction
     //////////////////////////
@@ -300,24 +300,24 @@ module.exports = {
         return await backend.transaction.find( id );
     },
 
-    transactions: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.transaction.findAll();
+    transactions: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.transaction.findAll({ pageSize = 25, after });
 
-    const transactionPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const transactionPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { transactionPage,
-        cursor: transactionPage.length ? transactionPage[transactionPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: transactionPage.length
-        ? transactionPage[transactionPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { transactionPage,
+            cursor: transactionPage.length ? transactionPage[transactionPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: transactionPage.length
+            ? transactionPage[transactionPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // ExternalAccount
     //////////////////////////
@@ -325,24 +325,24 @@ module.exports = {
         return await backend.externalAccount.find( id );
     },
 
-    externalAccounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.externalAccount.findAll();
+    externalAccounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.externalAccount.findAll({ pageSize = 25, after });
 
-    const externalAccountPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const externalAccountPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { externalAccountPage,
-        cursor: externalAccountPage.length ? externalAccountPage[externalAccountPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: externalAccountPage.length
-        ? externalAccountPage[externalAccountPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { externalAccountPage,
+            cursor: externalAccountPage.length ? externalAccountPage[externalAccountPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: externalAccountPage.length
+            ? externalAccountPage[externalAccountPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // FundsTransfer
     //////////////////////////
@@ -350,24 +350,24 @@ module.exports = {
         return await backend.fundsTransfer.find( id );
     },
 
-    fundsTransfers: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.fundsTransfer.findAll();
+    fundsTransfers: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.fundsTransfer.findAll({ pageSize = 25, after });
 
-    const fundsTransferPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const fundsTransferPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { fundsTransferPage,
-        cursor: fundsTransferPage.length ? fundsTransferPage[fundsTransferPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: fundsTransferPage.length
-        ? fundsTransferPage[fundsTransferPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { fundsTransferPage,
+            cursor: fundsTransferPage.length ? fundsTransferPage[fundsTransferPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: fundsTransferPage.length
+            ? fundsTransferPage[fundsTransferPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // StandingInstruction
     //////////////////////////
@@ -375,24 +375,24 @@ module.exports = {
         return await backend.standingInstruction.find( id );
     },
 
-    standingInstructions: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.standingInstruction.findAll();
+    standingInstructions: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.standingInstruction.findAll({ pageSize = 25, after });
 
-    const standingInstructionPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const standingInstructionPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { standingInstructionPage,
-        cursor: standingInstructionPage.length ? standingInstructionPage[standingInstructionPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: standingInstructionPage.length
-        ? standingInstructionPage[standingInstructionPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { standingInstructionPage,
+            cursor: standingInstructionPage.length ? standingInstructionPage[standingInstructionPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: standingInstructionPage.length
+            ? standingInstructionPage[standingInstructionPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // PaymentCard
     //////////////////////////
@@ -400,24 +400,24 @@ module.exports = {
         return await backend.paymentCard.find( id );
     },
 
-    paymentCards: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.paymentCard.findAll();
+    paymentCards: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.paymentCard.findAll({ pageSize = 25, after });
 
-    const paymentCardPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const paymentCardPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { paymentCardPage,
-        cursor: paymentCardPage.length ? paymentCardPage[paymentCardPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: paymentCardPage.length
-        ? paymentCardPage[paymentCardPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { paymentCardPage,
+            cursor: paymentCardPage.length ? paymentCardPage[paymentCardPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: paymentCardPage.length
+            ? paymentCardPage[paymentCardPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // LoanAccount
     //////////////////////////
@@ -425,24 +425,24 @@ module.exports = {
         return await backend.loanAccount.find( id );
     },
 
-    loanAccounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.loanAccount.findAll();
+    loanAccounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.loanAccount.findAll({ pageSize = 25, after });
 
-    const loanAccountPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const loanAccountPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { loanAccountPage,
-        cursor: loanAccountPage.length ? loanAccountPage[loanAccountPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: loanAccountPage.length
-        ? loanAccountPage[loanAccountPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { loanAccountPage,
+            cursor: loanAccountPage.length ? loanAccountPage[loanAccountPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: loanAccountPage.length
+            ? loanAccountPage[loanAccountPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // RepaymentSchedule
     //////////////////////////
@@ -450,24 +450,24 @@ module.exports = {
         return await backend.repaymentSchedule.find( id );
     },
 
-    repaymentSchedules: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.repaymentSchedule.findAll();
+    repaymentSchedules: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.repaymentSchedule.findAll({ pageSize = 25, after });
 
-    const repaymentSchedulePage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const repaymentSchedulePage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { repaymentSchedulePage,
-        cursor: repaymentSchedulePage.length ? repaymentSchedulePage[repaymentSchedulePage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: repaymentSchedulePage.length
-        ? repaymentSchedulePage[repaymentSchedulePage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { repaymentSchedulePage,
+            cursor: repaymentSchedulePage.length ? repaymentSchedulePage[repaymentSchedulePage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: repaymentSchedulePage.length
+            ? repaymentSchedulePage[repaymentSchedulePage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // LoanPayment
     //////////////////////////
@@ -475,24 +475,24 @@ module.exports = {
         return await backend.loanPayment.find( id );
     },
 
-    loanPayments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.loanPayment.findAll();
+    loanPayments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.loanPayment.findAll({ pageSize = 25, after });
 
-    const loanPaymentPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const loanPaymentPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { loanPaymentPage,
-        cursor: loanPaymentPage.length ? loanPaymentPage[loanPaymentPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: loanPaymentPage.length
-        ? loanPaymentPage[loanPaymentPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { loanPaymentPage,
+            cursor: loanPaymentPage.length ? loanPaymentPage[loanPaymentPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: loanPaymentPage.length
+            ? loanPaymentPage[loanPaymentPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // Collateral
     //////////////////////////
@@ -500,24 +500,24 @@ module.exports = {
         return await backend.collateral.find( id );
     },
 
-    collaterals: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.collateral.findAll();
+    collaterals: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.collateral.findAll({ pageSize = 25, after });
 
-    const collateralPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const collateralPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { collateralPage,
-        cursor: collateralPage.length ? collateralPage[collateralPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: collateralPage.length
-        ? collateralPage[collateralPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { collateralPage,
+            cursor: collateralPage.length ? collateralPage[collateralPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: collateralPage.length
+            ? collateralPage[collateralPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // FeeCharge
     //////////////////////////
@@ -525,24 +525,24 @@ module.exports = {
         return await backend.feeCharge.find( id );
     },
 
-    feeCharges: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.feeCharge.findAll();
+    feeCharges: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.feeCharge.findAll({ pageSize = 25, after });
 
-    const feeChargePage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const feeChargePage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { feeChargePage,
-        cursor: feeChargePage.length ? feeChargePage[feeChargePage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: feeChargePage.length
-        ? feeChargePage[feeChargePage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { feeChargePage,
+            cursor: feeChargePage.length ? feeChargePage[feeChargePage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: feeChargePage.length
+            ? feeChargePage[feeChargePage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // ExchangeRate
     //////////////////////////
@@ -550,24 +550,24 @@ module.exports = {
         return await backend.exchangeRate.find( id );
     },
 
-    exchangeRates: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.exchangeRate.findAll();
+    exchangeRates: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.exchangeRate.findAll({ pageSize = 25, after });
 
-    const exchangeRatePage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const exchangeRatePage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { exchangeRatePage,
-        cursor: exchangeRatePage.length ? exchangeRatePage[exchangeRatePage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: exchangeRatePage.length
-        ? exchangeRatePage[exchangeRatePage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { exchangeRatePage,
+            cursor: exchangeRatePage.length ? exchangeRatePage[exchangeRatePage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: exchangeRatePage.length
+            ? exchangeRatePage[exchangeRatePage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // FXTrade
     //////////////////////////
@@ -575,24 +575,24 @@ module.exports = {
         return await backend.fXTrade.find( id );
     },
 
-    fXTrades: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.fXTrade.findAll();
+    fXTrades: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.fXTrade.findAll({ pageSize = 25, after });
 
-    const fXTradePage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const fXTradePage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { fXTradePage,
-        cursor: fXTradePage.length ? fXTradePage[fXTradePage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: fXTradePage.length
-        ? fXTradePage[fXTradePage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { fXTradePage,
+            cursor: fXTradePage.length ? fXTradePage[fXTradePage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: fXTradePage.length
+            ? fXTradePage[fXTradePage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // Dispute
     //////////////////////////
@@ -600,24 +600,24 @@ module.exports = {
         return await backend.dispute.find( id );
     },
 
-    disputes: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.dispute.findAll();
+    disputes: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.dispute.findAll({ pageSize = 25, after });
 
-    const disputePage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const disputePage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { disputePage,
-        cursor: disputePage.length ? disputePage[disputePage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: disputePage.length
-        ? disputePage[disputePage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { disputePage,
+            cursor: disputePage.length ? disputePage[disputePage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: disputePage.length
+            ? disputePage[disputePage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // Consent
     //////////////////////////
@@ -625,24 +625,24 @@ module.exports = {
         return await backend.consent.find( id );
     },
 
-    consents: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.consent.findAll();
+    consents: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.consent.findAll({ pageSize = 25, after });
 
-    const consentPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const consentPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { consentPage,
-        cursor: consentPage.length ? consentPage[consentPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: consentPage.length
-        ? consentPage[consentPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { consentPage,
+            cursor: consentPage.length ? consentPage[consentPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: consentPage.length
+            ? consentPage[consentPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
     //////////////////////////
     // ThirdPartyProvider
     //////////////////////////
@@ -650,24 +650,24 @@ module.exports = {
         return await backend.thirdPartyProvider.find( id );
     },
 
-    thirdPartyProviders: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
-    const all = await backend.thirdPartyProvider.findAll();
+    thirdPartyProviders: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext) => {
+        const all = await backend.thirdPartyProvider.findAll({ pageSize = 25, after });
 
-    const thirdPartyProviderPage = paginateResults({
-        after,
-        pageSize,
-        results: all,
-    });
+        const thirdPartyProviderPage = paginateResults({
+            after,
+            pageSize,
+            results: all,
+        });
 
-    return { thirdPartyProviderPage,
-        cursor: thirdPartyProviderPage.length ? thirdPartyProviderPage[thirdPartyProviderPage.length - 1].cursor : null,
-        // if the cursor of the end of the paginated results is the same as the
-        // last item in _all_ results, then there are no more results after this
-        hasMore: thirdPartyProviderPage.length
-        ? thirdPartyProviderPage[thirdPartyProviderPage.length - 1].cursor !== all[all.length - 1].cursor
-: false,
-};
-},
+        return { thirdPartyProviderPage,
+            cursor: thirdPartyProviderPage.length ? thirdPartyProviderPage[thirdPartyProviderPage.length - 1].cursor : null,
+            // if the cursor of the end of the paginated results is the same as the
+            // last item in _all_ results, then there are no more results after this
+            hasMore: thirdPartyProviderPage.length
+            ? thirdPartyProviderPage[thirdPartyProviderPage.length - 1].cursor !== all[all.length - 1].cursor
+            : false,
+        };
+    },
 },
 
 Mutation: {

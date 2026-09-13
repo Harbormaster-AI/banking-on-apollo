@@ -61,6 +61,7 @@ export class HttpBackendAPI implements BackendAPI {
     }
 
     bank = {
+        find(id: string): Promise<Bank | null>;
         find: async (id: string): Promise<Bank | null> => {
             const response = await this.http.get(`/Bank/load/${id}`);
             return response.data;
@@ -102,12 +103,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToBranches: async (parentId: string,input: Branch): Promise<Bank> => {
-            const response = await this.http.post(`/Bank/addToBranches/${parentId}/`,input);
+        addBranchesToBank: async (parentId: string,input: Branch): Promise<Bank> => {
+            const response = await this.http.post(`/Bank/addBranchesToBank/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomBranches: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeBranchesFromBank: async (parentId: string,childIds: string[]): Promise<Bank> => {
             const response = await this.http.put(`/Bank/removeFomBranches/${parentId}/`,
                 {
                     ids: childIds
@@ -126,12 +127,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToProducts: async (parentId: string,input: BankingProduct): Promise<Bank> => {
-            const response = await this.http.post(`/Bank/addToProducts/${parentId}/`,input);
+        addProductsToBank: async (parentId: string,input: BankingProduct): Promise<Bank> => {
+            const response = await this.http.post(`/Bank/addProductsToBank/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomProducts: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeProductsFromBank: async (parentId: string,childIds: string[]): Promise<Bank> => {
             const response = await this.http.put(`/Bank/removeFomProducts/${parentId}/`,
                 {
                     ids: childIds
@@ -150,12 +151,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToCustomers: async (parentId: string,input: Customer): Promise<Bank> => {
-            const response = await this.http.post(`/Bank/addToCustomers/${parentId}/`,input);
+        addCustomersToBank: async (parentId: string,input: Customer): Promise<Bank> => {
+            const response = await this.http.post(`/Bank/addCustomersToBank/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomCustomers: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeCustomersFromBank: async (parentId: string,childIds: string[]): Promise<Bank> => {
             const response = await this.http.put(`/Bank/removeFomCustomers/${parentId}/`,
                 {
                     ids: childIds
@@ -174,12 +175,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToAccounts: async (parentId: string,input: Account): Promise<Bank> => {
-            const response = await this.http.post(`/Bank/addToAccounts/${parentId}/`,input);
+        addAccountsToBank: async (parentId: string,input: Account): Promise<Bank> => {
+            const response = await this.http.post(`/Bank/addAccountsToBank/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomAccounts: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeAccountsFromBank: async (parentId: string,childIds: string[]): Promise<Bank> => {
             const response = await this.http.put(`/Bank/removeFomAccounts/${parentId}/`,
                 {
                     ids: childIds
@@ -198,12 +199,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToPaymentCards: async (parentId: string,input: PaymentCard): Promise<Bank> => {
-            const response = await this.http.post(`/Bank/addToPaymentCards/${parentId}/`,input);
+        addPaymentCardsToBank: async (parentId: string,input: PaymentCard): Promise<Bank> => {
+            const response = await this.http.post(`/Bank/addPaymentCardsToBank/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomPaymentCards: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removePaymentCardsFromBank: async (parentId: string,childIds: string[]): Promise<Bank> => {
             const response = await this.http.put(`/Bank/removeFomPaymentCards/${parentId}/`,
                 {
                     ids: childIds
@@ -222,12 +223,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToLoanAccounts: async (parentId: string,input: LoanAccount): Promise<Bank> => {
-            const response = await this.http.post(`/Bank/addToLoanAccounts/${parentId}/`,input);
+        addLoanAccountsToBank: async (parentId: string,input: LoanAccount): Promise<Bank> => {
+            const response = await this.http.post(`/Bank/addLoanAccountsToBank/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomLoanAccounts: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeLoanAccountsFromBank: async (parentId: string,childIds: string[]): Promise<Bank> => {
             const response = await this.http.put(`/Bank/removeFomLoanAccounts/${parentId}/`,
                 {
                     ids: childIds
@@ -246,12 +247,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToExchangeRates: async (parentId: string,input: ExchangeRate): Promise<Bank> => {
-            const response = await this.http.post(`/Bank/addToExchangeRates/${parentId}/`,input);
+        addExchangeRatesToBank: async (parentId: string,input: ExchangeRate): Promise<Bank> => {
+            const response = await this.http.post(`/Bank/addExchangeRatesToBank/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomExchangeRates: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeExchangeRatesFromBank: async (parentId: string,childIds: string[]): Promise<Bank> => {
             const response = await this.http.put(`/Bank/removeFomExchangeRates/${parentId}/`,
                 {
                     ids: childIds
@@ -270,12 +271,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToConsents: async (parentId: string,input: Consent): Promise<Bank> => {
-            const response = await this.http.post(`/Bank/addToConsents/${parentId}/`,input);
+        addConsentsToBank: async (parentId: string,input: Consent): Promise<Bank> => {
+            const response = await this.http.post(`/Bank/addConsentsToBank/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomConsents: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeConsentsFromBank: async (parentId: string,childIds: string[]): Promise<Bank> => {
             const response = await this.http.put(`/Bank/removeFomConsents/${parentId}/`,
                 {
                     ids: childIds
@@ -294,12 +295,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToThirdPartyProviders: async (parentId: string,input: ThirdPartyProvider): Promise<Bank> => {
-            const response = await this.http.post(`/Bank/addToThirdPartyProviders/${parentId}/`,input);
+        addThirdPartyProvidersToBank: async (parentId: string,input: ThirdPartyProvider): Promise<Bank> => {
+            const response = await this.http.post(`/Bank/addThirdPartyProvidersToBank/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomThirdPartyProviders: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeThirdPartyProvidersFromBank: async (parentId: string,childIds: string[]): Promise<Bank> => {
             const response = await this.http.put(`/Bank/removeFomThirdPartyProviders/${parentId}/`,
                 {
                     ids: childIds
@@ -313,6 +314,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     branch = {
+        find(id: string): Promise<Branch | null>;
         find: async (id: string): Promise<Branch | null> => {
             const response = await this.http.get(`/Branch/load/${id}`);
             return response.data;
@@ -349,8 +351,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBank: async (id: string, bankId: string): Promise<Branch> => {
-            const response = await this.http.put(`/Branch/bank/${id}`,
+        assignBankToBranch: async (id: string, bankId: string): Promise<Branch> => {
+            const response = await this.http.put(`/Branch/assignBankToBranch/${id}`,
                 {
                     id: bankId
                 }
@@ -358,8 +360,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBank: async (id: string ): Promise<Branch> => {
-            const response = await this.http.delete(`/Branch//bank/${id}`);
+        unassignBankFromBranch: async (id: string ): Promise<Branch> => {
+            const response = await this.http.delete(`/Branch/unassignBankFromBranch/${id}`);
             return response.data;
         },
 
@@ -374,12 +376,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToAccounts: async (parentId: string,input: Account): Promise<Branch> => {
-            const response = await this.http.post(`/Branch/addToAccounts/${parentId}/`,input);
+        addAccountsToBranch: async (parentId: string,input: Account): Promise<Branch> => {
+            const response = await this.http.post(`/Branch/addAccountsToBranch/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomAccounts: async (parentId: string,childIds: string[]): Promise<Branch> => {
+        removeAccountsFromBranch: async (parentId: string,childIds: string[]): Promise<Branch> => {
             const response = await this.http.put(`/Branch/removeFomAccounts/${parentId}/`,
                 {
                     ids: childIds
@@ -398,12 +400,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToLoanAccounts: async (parentId: string,input: LoanAccount): Promise<Branch> => {
-            const response = await this.http.post(`/Branch/addToLoanAccounts/${parentId}/`,input);
+        addLoanAccountsToBranch: async (parentId: string,input: LoanAccount): Promise<Branch> => {
+            const response = await this.http.post(`/Branch/addLoanAccountsToBranch/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomLoanAccounts: async (parentId: string,childIds: string[]): Promise<Branch> => {
+        removeLoanAccountsFromBranch: async (parentId: string,childIds: string[]): Promise<Branch> => {
             const response = await this.http.put(`/Branch/removeFomLoanAccounts/${parentId}/`,
                 {
                     ids: childIds
@@ -422,12 +424,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToAtms: async (parentId: string,input: ATM): Promise<Branch> => {
-            const response = await this.http.post(`/Branch/addToAtms/${parentId}/`,input);
+        addAtmsToBranch: async (parentId: string,input: ATM): Promise<Branch> => {
+            const response = await this.http.post(`/Branch/addAtmsToBranch/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomAtms: async (parentId: string,childIds: string[]): Promise<Branch> => {
+        removeAtmsFromBranch: async (parentId: string,childIds: string[]): Promise<Branch> => {
             const response = await this.http.put(`/Branch/removeFomAtms/${parentId}/`,
                 {
                     ids: childIds
@@ -441,6 +443,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     aTM = {
+        find(id: string): Promise<ATM | null>;
         find: async (id: string): Promise<ATM | null> => {
             const response = await this.http.get(`/ATM/load/${id}`);
             return response.data;
@@ -477,8 +480,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBranch: async (id: string, branchId: string): Promise<ATM> => {
-            const response = await this.http.put(`/ATM/branch/${id}`,
+        assignBranchToATM: async (id: string, branchId: string): Promise<ATM> => {
+            const response = await this.http.put(`/ATM/assignBranchToATM/${id}`,
                 {
                     id: branchId
                 }
@@ -486,8 +489,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBranch: async (id: string ): Promise<ATM> => {
-            const response = await this.http.delete(`/ATM//branch/${id}`);
+        unassignBranchFromATM: async (id: string ): Promise<ATM> => {
+            const response = await this.http.delete(`/ATM/unassignBranchFromATM/${id}`);
             return response.data;
         },
 
@@ -497,6 +500,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     customer = {
+        find(id: string): Promise<Customer | null>;
         find: async (id: string): Promise<Customer | null> => {
             const response = await this.http.get(`/Customer/load/${id}`);
             return response.data;
@@ -533,8 +537,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBank: async (id: string, bankId: string): Promise<Customer> => {
-            const response = await this.http.put(`/Customer/bank/${id}`,
+        assignBankToCustomer: async (id: string, bankId: string): Promise<Customer> => {
+            const response = await this.http.put(`/Customer/assignBankToCustomer/${id}`,
                 {
                     id: bankId
                 }
@@ -542,8 +546,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBank: async (id: string ): Promise<Customer> => {
-            const response = await this.http.delete(`/Customer//bank/${id}`);
+        unassignBankFromCustomer: async (id: string ): Promise<Customer> => {
+            const response = await this.http.delete(`/Customer/unassignBankFromCustomer/${id}`);
             return response.data;
         },
 
@@ -558,12 +562,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToAccounts: async (parentId: string,input: Account): Promise<Customer> => {
-            const response = await this.http.post(`/Customer/addToAccounts/${parentId}/`,input);
+        addAccountsToCustomer: async (parentId: string,input: Account): Promise<Customer> => {
+            const response = await this.http.post(`/Customer/addAccountsToCustomer/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomAccounts: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeAccountsFromCustomer: async (parentId: string,childIds: string[]): Promise<Customer> => {
             const response = await this.http.put(`/Customer/removeFomAccounts/${parentId}/`,
                 {
                     ids: childIds
@@ -582,12 +586,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToLoanAccounts: async (parentId: string,input: LoanAccount): Promise<Customer> => {
-            const response = await this.http.post(`/Customer/addToLoanAccounts/${parentId}/`,input);
+        addLoanAccountsToCustomer: async (parentId: string,input: LoanAccount): Promise<Customer> => {
+            const response = await this.http.post(`/Customer/addLoanAccountsToCustomer/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomLoanAccounts: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeLoanAccountsFromCustomer: async (parentId: string,childIds: string[]): Promise<Customer> => {
             const response = await this.http.put(`/Customer/removeFomLoanAccounts/${parentId}/`,
                 {
                     ids: childIds
@@ -606,12 +610,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToPaymentCards: async (parentId: string,input: PaymentCard): Promise<Customer> => {
-            const response = await this.http.post(`/Customer/addToPaymentCards/${parentId}/`,input);
+        addPaymentCardsToCustomer: async (parentId: string,input: PaymentCard): Promise<Customer> => {
+            const response = await this.http.post(`/Customer/addPaymentCardsToCustomer/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomPaymentCards: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removePaymentCardsFromCustomer: async (parentId: string,childIds: string[]): Promise<Customer> => {
             const response = await this.http.put(`/Customer/removeFomPaymentCards/${parentId}/`,
                 {
                     ids: childIds
@@ -630,12 +634,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToExternalAccounts: async (parentId: string,input: ExternalAccount): Promise<Customer> => {
-            const response = await this.http.post(`/Customer/addToExternalAccounts/${parentId}/`,input);
+        addExternalAccountsToCustomer: async (parentId: string,input: ExternalAccount): Promise<Customer> => {
+            const response = await this.http.post(`/Customer/addExternalAccountsToCustomer/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomExternalAccounts: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeExternalAccountsFromCustomer: async (parentId: string,childIds: string[]): Promise<Customer> => {
             const response = await this.http.put(`/Customer/removeFomExternalAccounts/${parentId}/`,
                 {
                     ids: childIds
@@ -654,12 +658,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToFundsTransfers: async (parentId: string,input: FundsTransfer): Promise<Customer> => {
-            const response = await this.http.post(`/Customer/addToFundsTransfers/${parentId}/`,input);
+        addFundsTransfersToCustomer: async (parentId: string,input: FundsTransfer): Promise<Customer> => {
+            const response = await this.http.post(`/Customer/addFundsTransfersToCustomer/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomFundsTransfers: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeFundsTransfersFromCustomer: async (parentId: string,childIds: string[]): Promise<Customer> => {
             const response = await this.http.put(`/Customer/removeFomFundsTransfers/${parentId}/`,
                 {
                     ids: childIds
@@ -678,12 +682,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToDisputes: async (parentId: string,input: Dispute): Promise<Customer> => {
-            const response = await this.http.post(`/Customer/addToDisputes/${parentId}/`,input);
+        addDisputesToCustomer: async (parentId: string,input: Dispute): Promise<Customer> => {
+            const response = await this.http.post(`/Customer/addDisputesToCustomer/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomDisputes: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeDisputesFromCustomer: async (parentId: string,childIds: string[]): Promise<Customer> => {
             const response = await this.http.put(`/Customer/removeFomDisputes/${parentId}/`,
                 {
                     ids: childIds
@@ -702,12 +706,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToKycProfiles: async (parentId: string,input: KycProfile): Promise<Customer> => {
-            const response = await this.http.post(`/Customer/addToKycProfiles/${parentId}/`,input);
+        addKycProfilesToCustomer: async (parentId: string,input: KycProfile): Promise<Customer> => {
+            const response = await this.http.post(`/Customer/addKycProfilesToCustomer/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomKycProfiles: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeKycProfilesFromCustomer: async (parentId: string,childIds: string[]): Promise<Customer> => {
             const response = await this.http.put(`/Customer/removeFomKycProfiles/${parentId}/`,
                 {
                     ids: childIds
@@ -726,12 +730,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToConsents: async (parentId: string,input: Consent): Promise<Customer> => {
-            const response = await this.http.post(`/Customer/addToConsents/${parentId}/`,input);
+        addConsentsToCustomer: async (parentId: string,input: Consent): Promise<Customer> => {
+            const response = await this.http.post(`/Customer/addConsentsToCustomer/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomConsents: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeConsentsFromCustomer: async (parentId: string,childIds: string[]): Promise<Customer> => {
             const response = await this.http.put(`/Customer/removeFomConsents/${parentId}/`,
                 {
                     ids: childIds
@@ -745,6 +749,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     kycProfile = {
+        find(id: string): Promise<KycProfile | null>;
         find: async (id: string): Promise<KycProfile | null> => {
             const response = await this.http.get(`/KycProfile/load/${id}`);
             return response.data;
@@ -781,8 +786,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToCustomer: async (id: string, customerId: string): Promise<KycProfile> => {
-            const response = await this.http.put(`/KycProfile/customer/${id}`,
+        assignCustomerToKycProfile: async (id: string, customerId: string): Promise<KycProfile> => {
+            const response = await this.http.put(`/KycProfile/assignCustomerToKycProfile/${id}`,
                 {
                     id: customerId
                 }
@@ -790,8 +795,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignCustomer: async (id: string ): Promise<KycProfile> => {
-            const response = await this.http.delete(`/KycProfile//customer/${id}`);
+        unassignCustomerFromKycProfile: async (id: string ): Promise<KycProfile> => {
+            const response = await this.http.delete(`/KycProfile/unassignCustomerFromKycProfile/${id}`);
             return response.data;
         },
 
@@ -806,12 +811,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToIdentityDocuments: async (parentId: string,input: IdentityDocument): Promise<KycProfile> => {
-            const response = await this.http.post(`/KycProfile/addToIdentityDocuments/${parentId}/`,input);
+        addIdentityDocumentsToKycProfile: async (parentId: string,input: IdentityDocument): Promise<KycProfile> => {
+            const response = await this.http.post(`/KycProfile/addIdentityDocumentsToKycProfile/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomIdentityDocuments: async (parentId: string,childIds: string[]): Promise<KycProfile> => {
+        removeIdentityDocumentsFromKycProfile: async (parentId: string,childIds: string[]): Promise<KycProfile> => {
             const response = await this.http.put(`/KycProfile/removeFomIdentityDocuments/${parentId}/`,
                 {
                     ids: childIds
@@ -830,12 +835,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToRiskAssessments: async (parentId: string,input: RiskAssessment): Promise<KycProfile> => {
-            const response = await this.http.post(`/KycProfile/addToRiskAssessments/${parentId}/`,input);
+        addRiskAssessmentsToKycProfile: async (parentId: string,input: RiskAssessment): Promise<KycProfile> => {
+            const response = await this.http.post(`/KycProfile/addRiskAssessmentsToKycProfile/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomRiskAssessments: async (parentId: string,childIds: string[]): Promise<KycProfile> => {
+        removeRiskAssessmentsFromKycProfile: async (parentId: string,childIds: string[]): Promise<KycProfile> => {
             const response = await this.http.put(`/KycProfile/removeFomRiskAssessments/${parentId}/`,
                 {
                     ids: childIds
@@ -854,12 +859,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToScreenings: async (parentId: string,input: ScreeningResult): Promise<KycProfile> => {
-            const response = await this.http.post(`/KycProfile/addToScreenings/${parentId}/`,input);
+        addScreeningsToKycProfile: async (parentId: string,input: ScreeningResult): Promise<KycProfile> => {
+            const response = await this.http.post(`/KycProfile/addScreeningsToKycProfile/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomScreenings: async (parentId: string,childIds: string[]): Promise<KycProfile> => {
+        removeScreeningsFromKycProfile: async (parentId: string,childIds: string[]): Promise<KycProfile> => {
             const response = await this.http.put(`/KycProfile/removeFomScreenings/${parentId}/`,
                 {
                     ids: childIds
@@ -873,6 +878,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     identityDocument = {
+        find(id: string): Promise<IdentityDocument | null>;
         find: async (id: string): Promise<IdentityDocument | null> => {
             const response = await this.http.get(`/IdentityDocument/load/${id}`);
             return response.data;
@@ -909,8 +915,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToKycProfile: async (id: string, kycProfileId: string): Promise<IdentityDocument> => {
-            const response = await this.http.put(`/IdentityDocument/kycProfile/${id}`,
+        assignKycProfileToIdentityDocument: async (id: string, kycProfileId: string): Promise<IdentityDocument> => {
+            const response = await this.http.put(`/IdentityDocument/assignKycProfileToIdentityDocument/${id}`,
                 {
                     id: kycProfileId
                 }
@@ -918,8 +924,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignKycProfile: async (id: string ): Promise<IdentityDocument> => {
-            const response = await this.http.delete(`/IdentityDocument//kycProfile/${id}`);
+        unassignKycProfileFromIdentityDocument: async (id: string ): Promise<IdentityDocument> => {
+            const response = await this.http.delete(`/IdentityDocument/unassignKycProfileFromIdentityDocument/${id}`);
             return response.data;
         },
 
@@ -929,6 +935,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     riskAssessment = {
+        find(id: string): Promise<RiskAssessment | null>;
         find: async (id: string): Promise<RiskAssessment | null> => {
             const response = await this.http.get(`/RiskAssessment/load/${id}`);
             return response.data;
@@ -965,8 +972,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToKycProfile: async (id: string, kycProfileId: string): Promise<RiskAssessment> => {
-            const response = await this.http.put(`/RiskAssessment/kycProfile/${id}`,
+        assignKycProfileToRiskAssessment: async (id: string, kycProfileId: string): Promise<RiskAssessment> => {
+            const response = await this.http.put(`/RiskAssessment/assignKycProfileToRiskAssessment/${id}`,
                 {
                     id: kycProfileId
                 }
@@ -974,8 +981,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignKycProfile: async (id: string ): Promise<RiskAssessment> => {
-            const response = await this.http.delete(`/RiskAssessment//kycProfile/${id}`);
+        unassignKycProfileFromRiskAssessment: async (id: string ): Promise<RiskAssessment> => {
+            const response = await this.http.delete(`/RiskAssessment/unassignKycProfileFromRiskAssessment/${id}`);
             return response.data;
         },
 
@@ -985,6 +992,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     screeningResult = {
+        find(id: string): Promise<ScreeningResult | null>;
         find: async (id: string): Promise<ScreeningResult | null> => {
             const response = await this.http.get(`/ScreeningResult/load/${id}`);
             return response.data;
@@ -1021,8 +1029,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToKycProfile: async (id: string, kycProfileId: string): Promise<ScreeningResult> => {
-            const response = await this.http.put(`/ScreeningResult/kycProfile/${id}`,
+        assignKycProfileToScreeningResult: async (id: string, kycProfileId: string): Promise<ScreeningResult> => {
+            const response = await this.http.put(`/ScreeningResult/assignKycProfileToScreeningResult/${id}`,
                 {
                     id: kycProfileId
                 }
@@ -1030,8 +1038,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignKycProfile: async (id: string ): Promise<ScreeningResult> => {
-            const response = await this.http.delete(`/ScreeningResult//kycProfile/${id}`);
+        unassignKycProfileFromScreeningResult: async (id: string ): Promise<ScreeningResult> => {
+            const response = await this.http.delete(`/ScreeningResult/unassignKycProfileFromScreeningResult/${id}`);
             return response.data;
         },
 
@@ -1041,6 +1049,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     bankingProduct = {
+        find(id: string): Promise<BankingProduct | null>;
         find: async (id: string): Promise<BankingProduct | null> => {
             const response = await this.http.get(`/BankingProduct/load/${id}`);
             return response.data;
@@ -1077,8 +1086,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBank: async (id: string, bankId: string): Promise<BankingProduct> => {
-            const response = await this.http.put(`/BankingProduct/bank/${id}`,
+        assignBankToBankingProduct: async (id: string, bankId: string): Promise<BankingProduct> => {
+            const response = await this.http.put(`/BankingProduct/assignBankToBankingProduct/${id}`,
                 {
                     id: bankId
                 }
@@ -1086,8 +1095,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBank: async (id: string ): Promise<BankingProduct> => {
-            const response = await this.http.delete(`/BankingProduct//bank/${id}`);
+        unassignBankFromBankingProduct: async (id: string ): Promise<BankingProduct> => {
+            const response = await this.http.delete(`/BankingProduct/unassignBankFromBankingProduct/${id}`);
             return response.data;
         },
 
@@ -1102,12 +1111,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToAccounts: async (parentId: string,input: Account): Promise<BankingProduct> => {
-            const response = await this.http.post(`/BankingProduct/addToAccounts/${parentId}/`,input);
+        addAccountsToBankingProduct: async (parentId: string,input: Account): Promise<BankingProduct> => {
+            const response = await this.http.post(`/BankingProduct/addAccountsToBankingProduct/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomAccounts: async (parentId: string,childIds: string[]): Promise<BankingProduct> => {
+        removeAccountsFromBankingProduct: async (parentId: string,childIds: string[]): Promise<BankingProduct> => {
             const response = await this.http.put(`/BankingProduct/removeFomAccounts/${parentId}/`,
                 {
                     ids: childIds
@@ -1126,12 +1135,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToLoanAccounts: async (parentId: string,input: LoanAccount): Promise<BankingProduct> => {
-            const response = await this.http.post(`/BankingProduct/addToLoanAccounts/${parentId}/`,input);
+        addLoanAccountsToBankingProduct: async (parentId: string,input: LoanAccount): Promise<BankingProduct> => {
+            const response = await this.http.post(`/BankingProduct/addLoanAccountsToBankingProduct/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomLoanAccounts: async (parentId: string,childIds: string[]): Promise<BankingProduct> => {
+        removeLoanAccountsFromBankingProduct: async (parentId: string,childIds: string[]): Promise<BankingProduct> => {
             const response = await this.http.put(`/BankingProduct/removeFomLoanAccounts/${parentId}/`,
                 {
                     ids: childIds
@@ -1150,12 +1159,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToPaymentCards: async (parentId: string,input: PaymentCard): Promise<BankingProduct> => {
-            const response = await this.http.post(`/BankingProduct/addToPaymentCards/${parentId}/`,input);
+        addPaymentCardsToBankingProduct: async (parentId: string,input: PaymentCard): Promise<BankingProduct> => {
+            const response = await this.http.post(`/BankingProduct/addPaymentCardsToBankingProduct/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomPaymentCards: async (parentId: string,childIds: string[]): Promise<BankingProduct> => {
+        removePaymentCardsFromBankingProduct: async (parentId: string,childIds: string[]): Promise<BankingProduct> => {
             const response = await this.http.put(`/BankingProduct/removeFomPaymentCards/${parentId}/`,
                 {
                     ids: childIds
@@ -1169,6 +1178,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     account = {
+        find(id: string): Promise<Account | null>;
         find: async (id: string): Promise<Account | null> => {
             const response = await this.http.get(`/Account/load/${id}`);
             return response.data;
@@ -1205,8 +1215,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBank: async (id: string, bankId: string): Promise<Account> => {
-            const response = await this.http.put(`/Account/bank/${id}`,
+        assignBankToAccount: async (id: string, bankId: string): Promise<Account> => {
+            const response = await this.http.put(`/Account/assignBankToAccount/${id}`,
                 {
                     id: bankId
                 }
@@ -1214,8 +1224,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBank: async (id: string ): Promise<Account> => {
-            const response = await this.http.delete(`/Account//bank/${id}`);
+        unassignBankFromAccount: async (id: string ): Promise<Account> => {
+            const response = await this.http.delete(`/Account/unassignBankFromAccount/${id}`);
             return response.data;
         },
 
@@ -1225,8 +1235,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBranch: async (id: string, branchId: string): Promise<Account> => {
-            const response = await this.http.put(`/Account/branch/${id}`,
+        assignBranchToAccount: async (id: string, branchId: string): Promise<Account> => {
+            const response = await this.http.put(`/Account/assignBranchToAccount/${id}`,
                 {
                     id: branchId
                 }
@@ -1234,8 +1244,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBranch: async (id: string ): Promise<Account> => {
-            const response = await this.http.delete(`/Account//branch/${id}`);
+        unassignBranchFromAccount: async (id: string ): Promise<Account> => {
+            const response = await this.http.delete(`/Account/unassignBranchFromAccount/${id}`);
             return response.data;
         },
 
@@ -1245,8 +1255,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToProduct: async (id: string, productId: string): Promise<Account> => {
-            const response = await this.http.put(`/Account/product/${id}`,
+        assignProductToAccount: async (id: string, productId: string): Promise<Account> => {
+            const response = await this.http.put(`/Account/assignProductToAccount/${id}`,
                 {
                     id: productId
                 }
@@ -1254,8 +1264,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignProduct: async (id: string ): Promise<Account> => {
-            const response = await this.http.delete(`/Account//product/${id}`);
+        unassignProductFromAccount: async (id: string ): Promise<Account> => {
+            const response = await this.http.delete(`/Account/unassignProductFromAccount/${id}`);
             return response.data;
         },
 
@@ -1270,12 +1280,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToOwners: async (parentId: string,input: Customer): Promise<Account> => {
-            const response = await this.http.post(`/Account/addToOwners/${parentId}/`,input);
+        addOwnersToAccount: async (parentId: string,input: Customer): Promise<Account> => {
+            const response = await this.http.post(`/Account/addOwnersToAccount/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomOwners: async (parentId: string,childIds: string[]): Promise<Account> => {
+        removeOwnersFromAccount: async (parentId: string,childIds: string[]): Promise<Account> => {
             const response = await this.http.put(`/Account/removeFomOwners/${parentId}/`,
                 {
                     ids: childIds
@@ -1294,12 +1304,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToTransactions: async (parentId: string,input: Transaction): Promise<Account> => {
-            const response = await this.http.post(`/Account/addToTransactions/${parentId}/`,input);
+        addTransactionsToAccount: async (parentId: string,input: Transaction): Promise<Account> => {
+            const response = await this.http.post(`/Account/addTransactionsToAccount/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomTransactions: async (parentId: string,childIds: string[]): Promise<Account> => {
+        removeTransactionsFromAccount: async (parentId: string,childIds: string[]): Promise<Account> => {
             const response = await this.http.put(`/Account/removeFomTransactions/${parentId}/`,
                 {
                     ids: childIds
@@ -1318,12 +1328,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToStatements: async (parentId: string,input: AccountStatement): Promise<Account> => {
-            const response = await this.http.post(`/Account/addToStatements/${parentId}/`,input);
+        addStatementsToAccount: async (parentId: string,input: AccountStatement): Promise<Account> => {
+            const response = await this.http.post(`/Account/addStatementsToAccount/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomStatements: async (parentId: string,childIds: string[]): Promise<Account> => {
+        removeStatementsFromAccount: async (parentId: string,childIds: string[]): Promise<Account> => {
             const response = await this.http.put(`/Account/removeFomStatements/${parentId}/`,
                 {
                     ids: childIds
@@ -1342,12 +1352,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToStandingInstructions: async (parentId: string,input: StandingInstruction): Promise<Account> => {
-            const response = await this.http.post(`/Account/addToStandingInstructions/${parentId}/`,input);
+        addStandingInstructionsToAccount: async (parentId: string,input: StandingInstruction): Promise<Account> => {
+            const response = await this.http.post(`/Account/addStandingInstructionsToAccount/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomStandingInstructions: async (parentId: string,childIds: string[]): Promise<Account> => {
+        removeStandingInstructionsFromAccount: async (parentId: string,childIds: string[]): Promise<Account> => {
             const response = await this.http.put(`/Account/removeFomStandingInstructions/${parentId}/`,
                 {
                     ids: childIds
@@ -1366,12 +1376,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToFeeCharges: async (parentId: string,input: FeeCharge): Promise<Account> => {
-            const response = await this.http.post(`/Account/addToFeeCharges/${parentId}/`,input);
+        addFeeChargesToAccount: async (parentId: string,input: FeeCharge): Promise<Account> => {
+            const response = await this.http.post(`/Account/addFeeChargesToAccount/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomFeeCharges: async (parentId: string,childIds: string[]): Promise<Account> => {
+        removeFeeChargesFromAccount: async (parentId: string,childIds: string[]): Promise<Account> => {
             const response = await this.http.put(`/Account/removeFomFeeCharges/${parentId}/`,
                 {
                     ids: childIds
@@ -1385,6 +1395,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     accountStatement = {
+        find(id: string): Promise<AccountStatement | null>;
         find: async (id: string): Promise<AccountStatement | null> => {
             const response = await this.http.get(`/AccountStatement/load/${id}`);
             return response.data;
@@ -1421,8 +1432,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToAccount: async (id: string, accountId: string): Promise<AccountStatement> => {
-            const response = await this.http.put(`/AccountStatement/account/${id}`,
+        assignAccountToAccountStatement: async (id: string, accountId: string): Promise<AccountStatement> => {
+            const response = await this.http.put(`/AccountStatement/assignAccountToAccountStatement/${id}`,
                 {
                     id: accountId
                 }
@@ -1430,8 +1441,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignAccount: async (id: string ): Promise<AccountStatement> => {
-            const response = await this.http.delete(`/AccountStatement//account/${id}`);
+        unassignAccountFromAccountStatement: async (id: string ): Promise<AccountStatement> => {
+            const response = await this.http.delete(`/AccountStatement/unassignAccountFromAccountStatement/${id}`);
             return response.data;
         },
 
@@ -1441,6 +1452,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     transaction = {
+        find(id: string): Promise<Transaction | null>;
         find: async (id: string): Promise<Transaction | null> => {
             const response = await this.http.get(`/Transaction/load/${id}`);
             return response.data;
@@ -1477,8 +1489,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToAccount: async (id: string, accountId: string): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/account/${id}`,
+        assignAccountToTransaction: async (id: string, accountId: string): Promise<Transaction> => {
+            const response = await this.http.put(`/Transaction/assignAccountToTransaction/${id}`,
                 {
                     id: accountId
                 }
@@ -1486,8 +1498,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignAccount: async (id: string ): Promise<Transaction> => {
-            const response = await this.http.delete(`/Transaction//account/${id}`);
+        unassignAccountFromTransaction: async (id: string ): Promise<Transaction> => {
+            const response = await this.http.delete(`/Transaction/unassignAccountFromTransaction/${id}`);
             return response.data;
         },
 
@@ -1497,8 +1509,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToExternalCounterparty: async (id: string, externalCounterpartyId: string): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/externalCounterparty/${id}`,
+        assignExternalCounterpartyToTransaction: async (id: string, externalCounterpartyId: string): Promise<Transaction> => {
+            const response = await this.http.put(`/Transaction/assignExternalCounterpartyToTransaction/${id}`,
                 {
                     id: externalCounterpartyId
                 }
@@ -1506,8 +1518,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignExternalCounterparty: async (id: string ): Promise<Transaction> => {
-            const response = await this.http.delete(`/Transaction//externalCounterparty/${id}`);
+        unassignExternalCounterpartyFromTransaction: async (id: string ): Promise<Transaction> => {
+            const response = await this.http.delete(`/Transaction/unassignExternalCounterpartyFromTransaction/${id}`);
             return response.data;
         },
 
@@ -1517,8 +1529,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToPaymentCard: async (id: string, paymentCardId: string): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/paymentCard/${id}`,
+        assignPaymentCardToTransaction: async (id: string, paymentCardId: string): Promise<Transaction> => {
+            const response = await this.http.put(`/Transaction/assignPaymentCardToTransaction/${id}`,
                 {
                     id: paymentCardId
                 }
@@ -1526,8 +1538,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignPaymentCard: async (id: string ): Promise<Transaction> => {
-            const response = await this.http.delete(`/Transaction//paymentCard/${id}`);
+        unassignPaymentCardFromTransaction: async (id: string ): Promise<Transaction> => {
+            const response = await this.http.delete(`/Transaction/unassignPaymentCardFromTransaction/${id}`);
             return response.data;
         },
 
@@ -1537,8 +1549,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToFundsTransfer: async (id: string, fundsTransferId: string): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/fundsTransfer/${id}`,
+        assignFundsTransferToTransaction: async (id: string, fundsTransferId: string): Promise<Transaction> => {
+            const response = await this.http.put(`/Transaction/assignFundsTransferToTransaction/${id}`,
                 {
                     id: fundsTransferId
                 }
@@ -1546,8 +1558,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignFundsTransfer: async (id: string ): Promise<Transaction> => {
-            const response = await this.http.delete(`/Transaction//fundsTransfer/${id}`);
+        unassignFundsTransferFromTransaction: async (id: string ): Promise<Transaction> => {
+            const response = await this.http.delete(`/Transaction/unassignFundsTransferFromTransaction/${id}`);
             return response.data;
         },
 
@@ -1557,8 +1569,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToFxTrade: async (id: string, fxTradeId: string): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/fxTrade/${id}`,
+        assignFxTradeToTransaction: async (id: string, fxTradeId: string): Promise<Transaction> => {
+            const response = await this.http.put(`/Transaction/assignFxTradeToTransaction/${id}`,
                 {
                     id: fxTradeId
                 }
@@ -1566,8 +1578,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignFxTrade: async (id: string ): Promise<Transaction> => {
-            const response = await this.http.delete(`/Transaction//fxTrade/${id}`);
+        unassignFxTradeFromTransaction: async (id: string ): Promise<Transaction> => {
+            const response = await this.http.delete(`/Transaction/unassignFxTradeFromTransaction/${id}`);
             return response.data;
         },
 
@@ -1577,8 +1589,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToDispute: async (id: string, disputeId: string): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/dispute/${id}`,
+        assignDisputeToTransaction: async (id: string, disputeId: string): Promise<Transaction> => {
+            const response = await this.http.put(`/Transaction/assignDisputeToTransaction/${id}`,
                 {
                     id: disputeId
                 }
@@ -1586,8 +1598,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignDispute: async (id: string ): Promise<Transaction> => {
-            const response = await this.http.delete(`/Transaction//dispute/${id}`);
+        unassignDisputeFromTransaction: async (id: string ): Promise<Transaction> => {
+            const response = await this.http.delete(`/Transaction/unassignDisputeFromTransaction/${id}`);
             return response.data;
         },
 
@@ -1597,6 +1609,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     externalAccount = {
+        find(id: string): Promise<ExternalAccount | null>;
         find: async (id: string): Promise<ExternalAccount | null> => {
             const response = await this.http.get(`/ExternalAccount/load/${id}`);
             return response.data;
@@ -1633,8 +1646,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToCustomer: async (id: string, customerId: string): Promise<ExternalAccount> => {
-            const response = await this.http.put(`/ExternalAccount/customer/${id}`,
+        assignCustomerToExternalAccount: async (id: string, customerId: string): Promise<ExternalAccount> => {
+            const response = await this.http.put(`/ExternalAccount/assignCustomerToExternalAccount/${id}`,
                 {
                     id: customerId
                 }
@@ -1642,8 +1655,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignCustomer: async (id: string ): Promise<ExternalAccount> => {
-            const response = await this.http.delete(`/ExternalAccount//customer/${id}`);
+        unassignCustomerFromExternalAccount: async (id: string ): Promise<ExternalAccount> => {
+            const response = await this.http.delete(`/ExternalAccount/unassignCustomerFromExternalAccount/${id}`);
             return response.data;
         },
 
@@ -1658,12 +1671,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToTransactions: async (parentId: string,input: Transaction): Promise<ExternalAccount> => {
-            const response = await this.http.post(`/ExternalAccount/addToTransactions/${parentId}/`,input);
+        addTransactionsToExternalAccount: async (parentId: string,input: Transaction): Promise<ExternalAccount> => {
+            const response = await this.http.post(`/ExternalAccount/addTransactionsToExternalAccount/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomTransactions: async (parentId: string,childIds: string[]): Promise<ExternalAccount> => {
+        removeTransactionsFromExternalAccount: async (parentId: string,childIds: string[]): Promise<ExternalAccount> => {
             const response = await this.http.put(`/ExternalAccount/removeFomTransactions/${parentId}/`,
                 {
                     ids: childIds
@@ -1677,6 +1690,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     fundsTransfer = {
+        find(id: string): Promise<FundsTransfer | null>;
         find: async (id: string): Promise<FundsTransfer | null> => {
             const response = await this.http.get(`/FundsTransfer/load/${id}`);
             return response.data;
@@ -1713,8 +1727,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToSourceAccount: async (id: string, sourceAccountId: string): Promise<FundsTransfer> => {
-            const response = await this.http.put(`/FundsTransfer/sourceAccount/${id}`,
+        assignSourceAccountToFundsTransfer: async (id: string, sourceAccountId: string): Promise<FundsTransfer> => {
+            const response = await this.http.put(`/FundsTransfer/assignSourceAccountToFundsTransfer/${id}`,
                 {
                     id: sourceAccountId
                 }
@@ -1722,8 +1736,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignSourceAccount: async (id: string ): Promise<FundsTransfer> => {
-            const response = await this.http.delete(`/FundsTransfer//sourceAccount/${id}`);
+        unassignSourceAccountFromFundsTransfer: async (id: string ): Promise<FundsTransfer> => {
+            const response = await this.http.delete(`/FundsTransfer/unassignSourceAccountFromFundsTransfer/${id}`);
             return response.data;
         },
 
@@ -1733,8 +1747,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToDestinationAccount: async (id: string, destinationAccountId: string): Promise<FundsTransfer> => {
-            const response = await this.http.put(`/FundsTransfer/destinationAccount/${id}`,
+        assignDestinationAccountToFundsTransfer: async (id: string, destinationAccountId: string): Promise<FundsTransfer> => {
+            const response = await this.http.put(`/FundsTransfer/assignDestinationAccountToFundsTransfer/${id}`,
                 {
                     id: destinationAccountId
                 }
@@ -1742,8 +1756,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignDestinationAccount: async (id: string ): Promise<FundsTransfer> => {
-            const response = await this.http.delete(`/FundsTransfer//destinationAccount/${id}`);
+        unassignDestinationAccountFromFundsTransfer: async (id: string ): Promise<FundsTransfer> => {
+            const response = await this.http.delete(`/FundsTransfer/unassignDestinationAccountFromFundsTransfer/${id}`);
             return response.data;
         },
 
@@ -1753,8 +1767,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToExternalBeneficiary: async (id: string, externalBeneficiaryId: string): Promise<FundsTransfer> => {
-            const response = await this.http.put(`/FundsTransfer/externalBeneficiary/${id}`,
+        assignExternalBeneficiaryToFundsTransfer: async (id: string, externalBeneficiaryId: string): Promise<FundsTransfer> => {
+            const response = await this.http.put(`/FundsTransfer/assignExternalBeneficiaryToFundsTransfer/${id}`,
                 {
                     id: externalBeneficiaryId
                 }
@@ -1762,8 +1776,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignExternalBeneficiary: async (id: string ): Promise<FundsTransfer> => {
-            const response = await this.http.delete(`/FundsTransfer//externalBeneficiary/${id}`);
+        unassignExternalBeneficiaryFromFundsTransfer: async (id: string ): Promise<FundsTransfer> => {
+            const response = await this.http.delete(`/FundsTransfer/unassignExternalBeneficiaryFromFundsTransfer/${id}`);
             return response.data;
         },
 
@@ -1773,8 +1787,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToInitiatedBy: async (id: string, initiatedById: string): Promise<FundsTransfer> => {
-            const response = await this.http.put(`/FundsTransfer/initiatedBy/${id}`,
+        assignInitiatedByToFundsTransfer: async (id: string, initiatedById: string): Promise<FundsTransfer> => {
+            const response = await this.http.put(`/FundsTransfer/assignInitiatedByToFundsTransfer/${id}`,
                 {
                     id: initiatedById
                 }
@@ -1782,8 +1796,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignInitiatedBy: async (id: string ): Promise<FundsTransfer> => {
-            const response = await this.http.delete(`/FundsTransfer//initiatedBy/${id}`);
+        unassignInitiatedByFromFundsTransfer: async (id: string ): Promise<FundsTransfer> => {
+            const response = await this.http.delete(`/FundsTransfer/unassignInitiatedByFromFundsTransfer/${id}`);
             return response.data;
         },
 
@@ -1798,12 +1812,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToTransactions: async (parentId: string,input: Transaction): Promise<FundsTransfer> => {
-            const response = await this.http.post(`/FundsTransfer/addToTransactions/${parentId}/`,input);
+        addTransactionsToFundsTransfer: async (parentId: string,input: Transaction): Promise<FundsTransfer> => {
+            const response = await this.http.post(`/FundsTransfer/addTransactionsToFundsTransfer/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomTransactions: async (parentId: string,childIds: string[]): Promise<FundsTransfer> => {
+        removeTransactionsFromFundsTransfer: async (parentId: string,childIds: string[]): Promise<FundsTransfer> => {
             const response = await this.http.put(`/FundsTransfer/removeFomTransactions/${parentId}/`,
                 {
                     ids: childIds
@@ -1817,6 +1831,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     standingInstruction = {
+        find(id: string): Promise<StandingInstruction | null>;
         find: async (id: string): Promise<StandingInstruction | null> => {
             const response = await this.http.get(`/StandingInstruction/load/${id}`);
             return response.data;
@@ -1853,8 +1868,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToAccount: async (id: string, accountId: string): Promise<StandingInstruction> => {
-            const response = await this.http.put(`/StandingInstruction/account/${id}`,
+        assignAccountToStandingInstruction: async (id: string, accountId: string): Promise<StandingInstruction> => {
+            const response = await this.http.put(`/StandingInstruction/assignAccountToStandingInstruction/${id}`,
                 {
                     id: accountId
                 }
@@ -1862,8 +1877,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignAccount: async (id: string ): Promise<StandingInstruction> => {
-            const response = await this.http.delete(`/StandingInstruction//account/${id}`);
+        unassignAccountFromStandingInstruction: async (id: string ): Promise<StandingInstruction> => {
+            const response = await this.http.delete(`/StandingInstruction/unassignAccountFromStandingInstruction/${id}`);
             return response.data;
         },
 
@@ -1873,8 +1888,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBeneficiary: async (id: string, beneficiaryId: string): Promise<StandingInstruction> => {
-            const response = await this.http.put(`/StandingInstruction/beneficiary/${id}`,
+        assignBeneficiaryToStandingInstruction: async (id: string, beneficiaryId: string): Promise<StandingInstruction> => {
+            const response = await this.http.put(`/StandingInstruction/assignBeneficiaryToStandingInstruction/${id}`,
                 {
                     id: beneficiaryId
                 }
@@ -1882,8 +1897,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBeneficiary: async (id: string ): Promise<StandingInstruction> => {
-            const response = await this.http.delete(`/StandingInstruction//beneficiary/${id}`);
+        unassignBeneficiaryFromStandingInstruction: async (id: string ): Promise<StandingInstruction> => {
+            const response = await this.http.delete(`/StandingInstruction/unassignBeneficiaryFromStandingInstruction/${id}`);
             return response.data;
         },
 
@@ -1893,6 +1908,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     paymentCard = {
+        find(id: string): Promise<PaymentCard | null>;
         find: async (id: string): Promise<PaymentCard | null> => {
             const response = await this.http.get(`/PaymentCard/load/${id}`);
             return response.data;
@@ -1929,8 +1945,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBank: async (id: string, bankId: string): Promise<PaymentCard> => {
-            const response = await this.http.put(`/PaymentCard/bank/${id}`,
+        assignBankToPaymentCard: async (id: string, bankId: string): Promise<PaymentCard> => {
+            const response = await this.http.put(`/PaymentCard/assignBankToPaymentCard/${id}`,
                 {
                     id: bankId
                 }
@@ -1938,8 +1954,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBank: async (id: string ): Promise<PaymentCard> => {
-            const response = await this.http.delete(`/PaymentCard//bank/${id}`);
+        unassignBankFromPaymentCard: async (id: string ): Promise<PaymentCard> => {
+            const response = await this.http.delete(`/PaymentCard/unassignBankFromPaymentCard/${id}`);
             return response.data;
         },
 
@@ -1949,8 +1965,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToAccount: async (id: string, accountId: string): Promise<PaymentCard> => {
-            const response = await this.http.put(`/PaymentCard/account/${id}`,
+        assignAccountToPaymentCard: async (id: string, accountId: string): Promise<PaymentCard> => {
+            const response = await this.http.put(`/PaymentCard/assignAccountToPaymentCard/${id}`,
                 {
                     id: accountId
                 }
@@ -1958,8 +1974,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignAccount: async (id: string ): Promise<PaymentCard> => {
-            const response = await this.http.delete(`/PaymentCard//account/${id}`);
+        unassignAccountFromPaymentCard: async (id: string ): Promise<PaymentCard> => {
+            const response = await this.http.delete(`/PaymentCard/unassignAccountFromPaymentCard/${id}`);
             return response.data;
         },
 
@@ -1969,8 +1985,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToCustomer: async (id: string, customerId: string): Promise<PaymentCard> => {
-            const response = await this.http.put(`/PaymentCard/customer/${id}`,
+        assignCustomerToPaymentCard: async (id: string, customerId: string): Promise<PaymentCard> => {
+            const response = await this.http.put(`/PaymentCard/assignCustomerToPaymentCard/${id}`,
                 {
                     id: customerId
                 }
@@ -1978,8 +1994,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignCustomer: async (id: string ): Promise<PaymentCard> => {
-            const response = await this.http.delete(`/PaymentCard//customer/${id}`);
+        unassignCustomerFromPaymentCard: async (id: string ): Promise<PaymentCard> => {
+            const response = await this.http.delete(`/PaymentCard/unassignCustomerFromPaymentCard/${id}`);
             return response.data;
         },
 
@@ -1994,12 +2010,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToTransactions: async (parentId: string,input: Transaction): Promise<PaymentCard> => {
-            const response = await this.http.post(`/PaymentCard/addToTransactions/${parentId}/`,input);
+        addTransactionsToPaymentCard: async (parentId: string,input: Transaction): Promise<PaymentCard> => {
+            const response = await this.http.post(`/PaymentCard/addTransactionsToPaymentCard/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomTransactions: async (parentId: string,childIds: string[]): Promise<PaymentCard> => {
+        removeTransactionsFromPaymentCard: async (parentId: string,childIds: string[]): Promise<PaymentCard> => {
             const response = await this.http.put(`/PaymentCard/removeFomTransactions/${parentId}/`,
                 {
                     ids: childIds
@@ -2013,6 +2029,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     loanAccount = {
+        find(id: string): Promise<LoanAccount | null>;
         find: async (id: string): Promise<LoanAccount | null> => {
             const response = await this.http.get(`/LoanAccount/load/${id}`);
             return response.data;
@@ -2049,8 +2066,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBank: async (id: string, bankId: string): Promise<LoanAccount> => {
-            const response = await this.http.put(`/LoanAccount/bank/${id}`,
+        assignBankToLoanAccount: async (id: string, bankId: string): Promise<LoanAccount> => {
+            const response = await this.http.put(`/LoanAccount/assignBankToLoanAccount/${id}`,
                 {
                     id: bankId
                 }
@@ -2058,8 +2075,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBank: async (id: string ): Promise<LoanAccount> => {
-            const response = await this.http.delete(`/LoanAccount//bank/${id}`);
+        unassignBankFromLoanAccount: async (id: string ): Promise<LoanAccount> => {
+            const response = await this.http.delete(`/LoanAccount/unassignBankFromLoanAccount/${id}`);
             return response.data;
         },
 
@@ -2069,8 +2086,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBranch: async (id: string, branchId: string): Promise<LoanAccount> => {
-            const response = await this.http.put(`/LoanAccount/branch/${id}`,
+        assignBranchToLoanAccount: async (id: string, branchId: string): Promise<LoanAccount> => {
+            const response = await this.http.put(`/LoanAccount/assignBranchToLoanAccount/${id}`,
                 {
                     id: branchId
                 }
@@ -2078,8 +2095,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBranch: async (id: string ): Promise<LoanAccount> => {
-            const response = await this.http.delete(`/LoanAccount//branch/${id}`);
+        unassignBranchFromLoanAccount: async (id: string ): Promise<LoanAccount> => {
+            const response = await this.http.delete(`/LoanAccount/unassignBranchFromLoanAccount/${id}`);
             return response.data;
         },
 
@@ -2089,8 +2106,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToProduct: async (id: string, productId: string): Promise<LoanAccount> => {
-            const response = await this.http.put(`/LoanAccount/product/${id}`,
+        assignProductToLoanAccount: async (id: string, productId: string): Promise<LoanAccount> => {
+            const response = await this.http.put(`/LoanAccount/assignProductToLoanAccount/${id}`,
                 {
                     id: productId
                 }
@@ -2098,8 +2115,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignProduct: async (id: string ): Promise<LoanAccount> => {
-            const response = await this.http.delete(`/LoanAccount//product/${id}`);
+        unassignProductFromLoanAccount: async (id: string ): Promise<LoanAccount> => {
+            const response = await this.http.delete(`/LoanAccount/unassignProductFromLoanAccount/${id}`);
             return response.data;
         },
 
@@ -2114,12 +2131,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToBorrowers: async (parentId: string,input: Customer): Promise<LoanAccount> => {
-            const response = await this.http.post(`/LoanAccount/addToBorrowers/${parentId}/`,input);
+        addBorrowersToLoanAccount: async (parentId: string,input: Customer): Promise<LoanAccount> => {
+            const response = await this.http.post(`/LoanAccount/addBorrowersToLoanAccount/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomBorrowers: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        removeBorrowersFromLoanAccount: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
             const response = await this.http.put(`/LoanAccount/removeFomBorrowers/${parentId}/`,
                 {
                     ids: childIds
@@ -2138,12 +2155,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToRepaymentSchedule: async (parentId: string,input: RepaymentSchedule): Promise<LoanAccount> => {
-            const response = await this.http.post(`/LoanAccount/addToRepaymentSchedule/${parentId}/`,input);
+        addRepaymentScheduleToLoanAccount: async (parentId: string,input: RepaymentSchedule): Promise<LoanAccount> => {
+            const response = await this.http.post(`/LoanAccount/addRepaymentScheduleToLoanAccount/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomRepaymentSchedule: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        removeRepaymentScheduleFromLoanAccount: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
             const response = await this.http.put(`/LoanAccount/removeFomRepaymentSchedule/${parentId}/`,
                 {
                     ids: childIds
@@ -2162,12 +2179,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToPayments: async (parentId: string,input: LoanPayment): Promise<LoanAccount> => {
-            const response = await this.http.post(`/LoanAccount/addToPayments/${parentId}/`,input);
+        addPaymentsToLoanAccount: async (parentId: string,input: LoanPayment): Promise<LoanAccount> => {
+            const response = await this.http.post(`/LoanAccount/addPaymentsToLoanAccount/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomPayments: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        removePaymentsFromLoanAccount: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
             const response = await this.http.put(`/LoanAccount/removeFomPayments/${parentId}/`,
                 {
                     ids: childIds
@@ -2186,12 +2203,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToCollateral: async (parentId: string,input: Collateral): Promise<LoanAccount> => {
-            const response = await this.http.post(`/LoanAccount/addToCollateral/${parentId}/`,input);
+        addCollateralToLoanAccount: async (parentId: string,input: Collateral): Promise<LoanAccount> => {
+            const response = await this.http.post(`/LoanAccount/addCollateralToLoanAccount/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomCollateral: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        removeCollateralFromLoanAccount: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
             const response = await this.http.put(`/LoanAccount/removeFomCollateral/${parentId}/`,
                 {
                     ids: childIds
@@ -2210,12 +2227,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToFeeCharges: async (parentId: string,input: FeeCharge): Promise<LoanAccount> => {
-            const response = await this.http.post(`/LoanAccount/addToFeeCharges/${parentId}/`,input);
+        addFeeChargesToLoanAccount: async (parentId: string,input: FeeCharge): Promise<LoanAccount> => {
+            const response = await this.http.post(`/LoanAccount/addFeeChargesToLoanAccount/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomFeeCharges: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        removeFeeChargesFromLoanAccount: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
             const response = await this.http.put(`/LoanAccount/removeFomFeeCharges/${parentId}/`,
                 {
                     ids: childIds
@@ -2229,6 +2246,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     repaymentSchedule = {
+        find(id: string): Promise<RepaymentSchedule | null>;
         find: async (id: string): Promise<RepaymentSchedule | null> => {
             const response = await this.http.get(`/RepaymentSchedule/load/${id}`);
             return response.data;
@@ -2265,8 +2283,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToLoanAccount: async (id: string, loanAccountId: string): Promise<RepaymentSchedule> => {
-            const response = await this.http.put(`/RepaymentSchedule/loanAccount/${id}`,
+        assignLoanAccountToRepaymentSchedule: async (id: string, loanAccountId: string): Promise<RepaymentSchedule> => {
+            const response = await this.http.put(`/RepaymentSchedule/assignLoanAccountToRepaymentSchedule/${id}`,
                 {
                     id: loanAccountId
                 }
@@ -2274,8 +2292,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignLoanAccount: async (id: string ): Promise<RepaymentSchedule> => {
-            const response = await this.http.delete(`/RepaymentSchedule//loanAccount/${id}`);
+        unassignLoanAccountFromRepaymentSchedule: async (id: string ): Promise<RepaymentSchedule> => {
+            const response = await this.http.delete(`/RepaymentSchedule/unassignLoanAccountFromRepaymentSchedule/${id}`);
             return response.data;
         },
 
@@ -2285,8 +2303,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToPayment: async (id: string, paymentId: string): Promise<RepaymentSchedule> => {
-            const response = await this.http.put(`/RepaymentSchedule/payment/${id}`,
+        assignPaymentToRepaymentSchedule: async (id: string, paymentId: string): Promise<RepaymentSchedule> => {
+            const response = await this.http.put(`/RepaymentSchedule/assignPaymentToRepaymentSchedule/${id}`,
                 {
                     id: paymentId
                 }
@@ -2294,8 +2312,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignPayment: async (id: string ): Promise<RepaymentSchedule> => {
-            const response = await this.http.delete(`/RepaymentSchedule//payment/${id}`);
+        unassignPaymentFromRepaymentSchedule: async (id: string ): Promise<RepaymentSchedule> => {
+            const response = await this.http.delete(`/RepaymentSchedule/unassignPaymentFromRepaymentSchedule/${id}`);
             return response.data;
         },
 
@@ -2305,6 +2323,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     loanPayment = {
+        find(id: string): Promise<LoanPayment | null>;
         find: async (id: string): Promise<LoanPayment | null> => {
             const response = await this.http.get(`/LoanPayment/load/${id}`);
             return response.data;
@@ -2341,8 +2360,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToLoanAccount: async (id: string, loanAccountId: string): Promise<LoanPayment> => {
-            const response = await this.http.put(`/LoanPayment/loanAccount/${id}`,
+        assignLoanAccountToLoanPayment: async (id: string, loanAccountId: string): Promise<LoanPayment> => {
+            const response = await this.http.put(`/LoanPayment/assignLoanAccountToLoanPayment/${id}`,
                 {
                     id: loanAccountId
                 }
@@ -2350,8 +2369,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignLoanAccount: async (id: string ): Promise<LoanPayment> => {
-            const response = await this.http.delete(`/LoanPayment//loanAccount/${id}`);
+        unassignLoanAccountFromLoanPayment: async (id: string ): Promise<LoanPayment> => {
+            const response = await this.http.delete(`/LoanPayment/unassignLoanAccountFromLoanPayment/${id}`);
             return response.data;
         },
 
@@ -2361,8 +2380,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToTransaction: async (id: string, transactionId: string): Promise<LoanPayment> => {
-            const response = await this.http.put(`/LoanPayment/transaction/${id}`,
+        assignTransactionToLoanPayment: async (id: string, transactionId: string): Promise<LoanPayment> => {
+            const response = await this.http.put(`/LoanPayment/assignTransactionToLoanPayment/${id}`,
                 {
                     id: transactionId
                 }
@@ -2370,8 +2389,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignTransaction: async (id: string ): Promise<LoanPayment> => {
-            const response = await this.http.delete(`/LoanPayment//transaction/${id}`);
+        unassignTransactionFromLoanPayment: async (id: string ): Promise<LoanPayment> => {
+            const response = await this.http.delete(`/LoanPayment/unassignTransactionFromLoanPayment/${id}`);
             return response.data;
         },
 
@@ -2381,6 +2400,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     collateral = {
+        find(id: string): Promise<Collateral | null>;
         find: async (id: string): Promise<Collateral | null> => {
             const response = await this.http.get(`/Collateral/load/${id}`);
             return response.data;
@@ -2417,8 +2437,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToLoanAccount: async (id: string, loanAccountId: string): Promise<Collateral> => {
-            const response = await this.http.put(`/Collateral/loanAccount/${id}`,
+        assignLoanAccountToCollateral: async (id: string, loanAccountId: string): Promise<Collateral> => {
+            const response = await this.http.put(`/Collateral/assignLoanAccountToCollateral/${id}`,
                 {
                     id: loanAccountId
                 }
@@ -2426,8 +2446,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignLoanAccount: async (id: string ): Promise<Collateral> => {
-            const response = await this.http.delete(`/Collateral//loanAccount/${id}`);
+        unassignLoanAccountFromCollateral: async (id: string ): Promise<Collateral> => {
+            const response = await this.http.delete(`/Collateral/unassignLoanAccountFromCollateral/${id}`);
             return response.data;
         },
 
@@ -2437,6 +2457,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     feeCharge = {
+        find(id: string): Promise<FeeCharge | null>;
         find: async (id: string): Promise<FeeCharge | null> => {
             const response = await this.http.get(`/FeeCharge/load/${id}`);
             return response.data;
@@ -2473,8 +2494,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToAccount: async (id: string, accountId: string): Promise<FeeCharge> => {
-            const response = await this.http.put(`/FeeCharge/account/${id}`,
+        assignAccountToFeeCharge: async (id: string, accountId: string): Promise<FeeCharge> => {
+            const response = await this.http.put(`/FeeCharge/assignAccountToFeeCharge/${id}`,
                 {
                     id: accountId
                 }
@@ -2482,8 +2503,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignAccount: async (id: string ): Promise<FeeCharge> => {
-            const response = await this.http.delete(`/FeeCharge//account/${id}`);
+        unassignAccountFromFeeCharge: async (id: string ): Promise<FeeCharge> => {
+            const response = await this.http.delete(`/FeeCharge/unassignAccountFromFeeCharge/${id}`);
             return response.data;
         },
 
@@ -2493,8 +2514,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToLoanAccount: async (id: string, loanAccountId: string): Promise<FeeCharge> => {
-            const response = await this.http.put(`/FeeCharge/loanAccount/${id}`,
+        assignLoanAccountToFeeCharge: async (id: string, loanAccountId: string): Promise<FeeCharge> => {
+            const response = await this.http.put(`/FeeCharge/assignLoanAccountToFeeCharge/${id}`,
                 {
                     id: loanAccountId
                 }
@@ -2502,8 +2523,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignLoanAccount: async (id: string ): Promise<FeeCharge> => {
-            const response = await this.http.delete(`/FeeCharge//loanAccount/${id}`);
+        unassignLoanAccountFromFeeCharge: async (id: string ): Promise<FeeCharge> => {
+            const response = await this.http.delete(`/FeeCharge/unassignLoanAccountFromFeeCharge/${id}`);
             return response.data;
         },
 
@@ -2513,6 +2534,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     exchangeRate = {
+        find(id: string): Promise<ExchangeRate | null>;
         find: async (id: string): Promise<ExchangeRate | null> => {
             const response = await this.http.get(`/ExchangeRate/load/${id}`);
             return response.data;
@@ -2549,8 +2571,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBank: async (id: string, bankId: string): Promise<ExchangeRate> => {
-            const response = await this.http.put(`/ExchangeRate/bank/${id}`,
+        assignBankToExchangeRate: async (id: string, bankId: string): Promise<ExchangeRate> => {
+            const response = await this.http.put(`/ExchangeRate/assignBankToExchangeRate/${id}`,
                 {
                     id: bankId
                 }
@@ -2558,8 +2580,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBank: async (id: string ): Promise<ExchangeRate> => {
-            const response = await this.http.delete(`/ExchangeRate//bank/${id}`);
+        unassignBankFromExchangeRate: async (id: string ): Promise<ExchangeRate> => {
+            const response = await this.http.delete(`/ExchangeRate/unassignBankFromExchangeRate/${id}`);
             return response.data;
         },
 
@@ -2574,12 +2596,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToFxTrades: async (parentId: string,input: FXTrade): Promise<ExchangeRate> => {
-            const response = await this.http.post(`/ExchangeRate/addToFxTrades/${parentId}/`,input);
+        addFxTradesToExchangeRate: async (parentId: string,input: FXTrade): Promise<ExchangeRate> => {
+            const response = await this.http.post(`/ExchangeRate/addFxTradesToExchangeRate/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomFxTrades: async (parentId: string,childIds: string[]): Promise<ExchangeRate> => {
+        removeFxTradesFromExchangeRate: async (parentId: string,childIds: string[]): Promise<ExchangeRate> => {
             const response = await this.http.put(`/ExchangeRate/removeFomFxTrades/${parentId}/`,
                 {
                     ids: childIds
@@ -2593,6 +2615,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     fXTrade = {
+        find(id: string): Promise<FXTrade | null>;
         find: async (id: string): Promise<FXTrade | null> => {
             const response = await this.http.get(`/FXTrade/load/${id}`);
             return response.data;
@@ -2629,8 +2652,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToCustomer: async (id: string, customerId: string): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/customer/${id}`,
+        assignCustomerToFXTrade: async (id: string, customerId: string): Promise<FXTrade> => {
+            const response = await this.http.put(`/FXTrade/assignCustomerToFXTrade/${id}`,
                 {
                     id: customerId
                 }
@@ -2638,8 +2661,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignCustomer: async (id: string ): Promise<FXTrade> => {
-            const response = await this.http.delete(`/FXTrade//customer/${id}`);
+        unassignCustomerFromFXTrade: async (id: string ): Promise<FXTrade> => {
+            const response = await this.http.delete(`/FXTrade/unassignCustomerFromFXTrade/${id}`);
             return response.data;
         },
 
@@ -2649,8 +2672,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBank: async (id: string, bankId: string): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/bank/${id}`,
+        assignBankToFXTrade: async (id: string, bankId: string): Promise<FXTrade> => {
+            const response = await this.http.put(`/FXTrade/assignBankToFXTrade/${id}`,
                 {
                     id: bankId
                 }
@@ -2658,8 +2681,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBank: async (id: string ): Promise<FXTrade> => {
-            const response = await this.http.delete(`/FXTrade//bank/${id}`);
+        unassignBankFromFXTrade: async (id: string ): Promise<FXTrade> => {
+            const response = await this.http.delete(`/FXTrade/unassignBankFromFXTrade/${id}`);
             return response.data;
         },
 
@@ -2669,8 +2692,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToExchangeRate: async (id: string, exchangeRateId: string): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/exchangeRate/${id}`,
+        assignExchangeRateToFXTrade: async (id: string, exchangeRateId: string): Promise<FXTrade> => {
+            const response = await this.http.put(`/FXTrade/assignExchangeRateToFXTrade/${id}`,
                 {
                     id: exchangeRateId
                 }
@@ -2678,8 +2701,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignExchangeRate: async (id: string ): Promise<FXTrade> => {
-            const response = await this.http.delete(`/FXTrade//exchangeRate/${id}`);
+        unassignExchangeRateFromFXTrade: async (id: string ): Promise<FXTrade> => {
+            const response = await this.http.delete(`/FXTrade/unassignExchangeRateFromFXTrade/${id}`);
             return response.data;
         },
 
@@ -2689,8 +2712,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToSourceAccount: async (id: string, sourceAccountId: string): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/sourceAccount/${id}`,
+        assignSourceAccountToFXTrade: async (id: string, sourceAccountId: string): Promise<FXTrade> => {
+            const response = await this.http.put(`/FXTrade/assignSourceAccountToFXTrade/${id}`,
                 {
                     id: sourceAccountId
                 }
@@ -2698,8 +2721,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignSourceAccount: async (id: string ): Promise<FXTrade> => {
-            const response = await this.http.delete(`/FXTrade//sourceAccount/${id}`);
+        unassignSourceAccountFromFXTrade: async (id: string ): Promise<FXTrade> => {
+            const response = await this.http.delete(`/FXTrade/unassignSourceAccountFromFXTrade/${id}`);
             return response.data;
         },
 
@@ -2709,8 +2732,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToDestinationAccount: async (id: string, destinationAccountId: string): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/destinationAccount/${id}`,
+        assignDestinationAccountToFXTrade: async (id: string, destinationAccountId: string): Promise<FXTrade> => {
+            const response = await this.http.put(`/FXTrade/assignDestinationAccountToFXTrade/${id}`,
                 {
                     id: destinationAccountId
                 }
@@ -2718,8 +2741,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignDestinationAccount: async (id: string ): Promise<FXTrade> => {
-            const response = await this.http.delete(`/FXTrade//destinationAccount/${id}`);
+        unassignDestinationAccountFromFXTrade: async (id: string ): Promise<FXTrade> => {
+            const response = await this.http.delete(`/FXTrade/unassignDestinationAccountFromFXTrade/${id}`);
             return response.data;
         },
 
@@ -2729,8 +2752,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToTransaction: async (id: string, transactionId: string): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/transaction/${id}`,
+        assignTransactionToFXTrade: async (id: string, transactionId: string): Promise<FXTrade> => {
+            const response = await this.http.put(`/FXTrade/assignTransactionToFXTrade/${id}`,
                 {
                     id: transactionId
                 }
@@ -2738,8 +2761,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignTransaction: async (id: string ): Promise<FXTrade> => {
-            const response = await this.http.delete(`/FXTrade//transaction/${id}`);
+        unassignTransactionFromFXTrade: async (id: string ): Promise<FXTrade> => {
+            const response = await this.http.delete(`/FXTrade/unassignTransactionFromFXTrade/${id}`);
             return response.data;
         },
 
@@ -2749,6 +2772,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     dispute = {
+        find(id: string): Promise<Dispute | null>;
         find: async (id: string): Promise<Dispute | null> => {
             const response = await this.http.get(`/Dispute/load/${id}`);
             return response.data;
@@ -2785,8 +2809,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToTransaction: async (id: string, transactionId: string): Promise<Dispute> => {
-            const response = await this.http.put(`/Dispute/transaction/${id}`,
+        assignTransactionToDispute: async (id: string, transactionId: string): Promise<Dispute> => {
+            const response = await this.http.put(`/Dispute/assignTransactionToDispute/${id}`,
                 {
                     id: transactionId
                 }
@@ -2794,8 +2818,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignTransaction: async (id: string ): Promise<Dispute> => {
-            const response = await this.http.delete(`/Dispute//transaction/${id}`);
+        unassignTransactionFromDispute: async (id: string ): Promise<Dispute> => {
+            const response = await this.http.delete(`/Dispute/unassignTransactionFromDispute/${id}`);
             return response.data;
         },
 
@@ -2805,8 +2829,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToCustomer: async (id: string, customerId: string): Promise<Dispute> => {
-            const response = await this.http.put(`/Dispute/customer/${id}`,
+        assignCustomerToDispute: async (id: string, customerId: string): Promise<Dispute> => {
+            const response = await this.http.put(`/Dispute/assignCustomerToDispute/${id}`,
                 {
                     id: customerId
                 }
@@ -2814,8 +2838,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignCustomer: async (id: string ): Promise<Dispute> => {
-            const response = await this.http.delete(`/Dispute//customer/${id}`);
+        unassignCustomerFromDispute: async (id: string ): Promise<Dispute> => {
+            const response = await this.http.delete(`/Dispute/unassignCustomerFromDispute/${id}`);
             return response.data;
         },
 
@@ -2825,8 +2849,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToAccount: async (id: string, accountId: string): Promise<Dispute> => {
-            const response = await this.http.put(`/Dispute/account/${id}`,
+        assignAccountToDispute: async (id: string, accountId: string): Promise<Dispute> => {
+            const response = await this.http.put(`/Dispute/assignAccountToDispute/${id}`,
                 {
                     id: accountId
                 }
@@ -2834,8 +2858,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignAccount: async (id: string ): Promise<Dispute> => {
-            const response = await this.http.delete(`/Dispute//account/${id}`);
+        unassignAccountFromDispute: async (id: string ): Promise<Dispute> => {
+            const response = await this.http.delete(`/Dispute/unassignAccountFromDispute/${id}`);
             return response.data;
         },
 
@@ -2845,8 +2869,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToPaymentCard: async (id: string, paymentCardId: string): Promise<Dispute> => {
-            const response = await this.http.put(`/Dispute/paymentCard/${id}`,
+        assignPaymentCardToDispute: async (id: string, paymentCardId: string): Promise<Dispute> => {
+            const response = await this.http.put(`/Dispute/assignPaymentCardToDispute/${id}`,
                 {
                     id: paymentCardId
                 }
@@ -2854,8 +2878,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignPaymentCard: async (id: string ): Promise<Dispute> => {
-            const response = await this.http.delete(`/Dispute//paymentCard/${id}`);
+        unassignPaymentCardFromDispute: async (id: string ): Promise<Dispute> => {
+            const response = await this.http.delete(`/Dispute/unassignPaymentCardFromDispute/${id}`);
             return response.data;
         },
 
@@ -2865,6 +2889,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     consent = {
+        find(id: string): Promise<Consent | null>;
         find: async (id: string): Promise<Consent | null> => {
             const response = await this.http.get(`/Consent/load/${id}`);
             return response.data;
@@ -2901,8 +2926,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToCustomer: async (id: string, customerId: string): Promise<Consent> => {
-            const response = await this.http.put(`/Consent/customer/${id}`,
+        assignCustomerToConsent: async (id: string, customerId: string): Promise<Consent> => {
+            const response = await this.http.put(`/Consent/assignCustomerToConsent/${id}`,
                 {
                     id: customerId
                 }
@@ -2910,8 +2935,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignCustomer: async (id: string ): Promise<Consent> => {
-            const response = await this.http.delete(`/Consent//customer/${id}`);
+        unassignCustomerFromConsent: async (id: string ): Promise<Consent> => {
+            const response = await this.http.delete(`/Consent/unassignCustomerFromConsent/${id}`);
             return response.data;
         },
 
@@ -2921,8 +2946,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBank: async (id: string, bankId: string): Promise<Consent> => {
-            const response = await this.http.put(`/Consent/bank/${id}`,
+        assignBankToConsent: async (id: string, bankId: string): Promise<Consent> => {
+            const response = await this.http.put(`/Consent/assignBankToConsent/${id}`,
                 {
                     id: bankId
                 }
@@ -2930,8 +2955,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBank: async (id: string ): Promise<Consent> => {
-            const response = await this.http.delete(`/Consent//bank/${id}`);
+        unassignBankFromConsent: async (id: string ): Promise<Consent> => {
+            const response = await this.http.delete(`/Consent/unassignBankFromConsent/${id}`);
             return response.data;
         },
 
@@ -2941,8 +2966,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToThirdPartyProvider: async (id: string, thirdPartyProviderId: string): Promise<Consent> => {
-            const response = await this.http.put(`/Consent/thirdPartyProvider/${id}`,
+        assignThirdPartyProviderToConsent: async (id: string, thirdPartyProviderId: string): Promise<Consent> => {
+            const response = await this.http.put(`/Consent/assignThirdPartyProviderToConsent/${id}`,
                 {
                     id: thirdPartyProviderId
                 }
@@ -2950,8 +2975,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignThirdPartyProvider: async (id: string ): Promise<Consent> => {
-            const response = await this.http.delete(`/Consent//thirdPartyProvider/${id}`);
+        unassignThirdPartyProviderFromConsent: async (id: string ): Promise<Consent> => {
+            const response = await this.http.delete(`/Consent/unassignThirdPartyProviderFromConsent/${id}`);
             return response.data;
         },
 
@@ -2966,12 +2991,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToAuthorizedAccounts: async (parentId: string,input: Account): Promise<Consent> => {
-            const response = await this.http.post(`/Consent/addToAuthorizedAccounts/${parentId}/`,input);
+        addAuthorizedAccountsToConsent: async (parentId: string,input: Account): Promise<Consent> => {
+            const response = await this.http.post(`/Consent/addAuthorizedAccountsToConsent/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomAuthorizedAccounts: async (parentId: string,childIds: string[]): Promise<Consent> => {
+        removeAuthorizedAccountsFromConsent: async (parentId: string,childIds: string[]): Promise<Consent> => {
             const response = await this.http.put(`/Consent/removeFomAuthorizedAccounts/${parentId}/`,
                 {
                     ids: childIds
@@ -2985,6 +3010,7 @@ export class HttpBackendAPI implements BackendAPI {
 
 
     thirdPartyProvider = {
+        find(id: string): Promise<ThirdPartyProvider | null>;
         find: async (id: string): Promise<ThirdPartyProvider | null> => {
             const response = await this.http.get(`/ThirdPartyProvider/load/${id}`);
             return response.data;
@@ -3021,8 +3047,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        assignToBank: async (id: string, bankId: string): Promise<ThirdPartyProvider> => {
-            const response = await this.http.put(`/ThirdPartyProvider/bank/${id}`,
+        assignBankToThirdPartyProvider: async (id: string, bankId: string): Promise<ThirdPartyProvider> => {
+            const response = await this.http.put(`/ThirdPartyProvider/assignBankToThirdPartyProvider/${id}`,
                 {
                     id: bankId
                 }
@@ -3030,8 +3056,8 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        unassignBank: async (id: string ): Promise<ThirdPartyProvider> => {
-            const response = await this.http.delete(`/ThirdPartyProvider//bank/${id}`);
+        unassignBankFromThirdPartyProvider: async (id: string ): Promise<ThirdPartyProvider> => {
+            const response = await this.http.delete(`/ThirdPartyProvider/unassignBankFromThirdPartyProvider/${id}`);
             return response.data;
         },
 
@@ -3046,12 +3072,12 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToConsents: async (parentId: string,input: Consent): Promise<ThirdPartyProvider> => {
-            const response = await this.http.post(`/ThirdPartyProvider/addToConsents/${parentId}/`,input);
+        addConsentsToThirdPartyProvider: async (parentId: string,input: Consent): Promise<ThirdPartyProvider> => {
+            const response = await this.http.post(`/ThirdPartyProvider/addConsentsToThirdPartyProvider/${parentId}/`,input);
             return response.data;
         },
 
-        removeFomConsents: async (parentId: string,childIds: string[]): Promise<ThirdPartyProvider> => {
+        removeConsentsFromThirdPartyProvider: async (parentId: string,childIds: string[]): Promise<ThirdPartyProvider> => {
             const response = await this.http.put(`/ThirdPartyProvider/removeFomConsents/${parentId}/`,
                 {
                     ids: childIds

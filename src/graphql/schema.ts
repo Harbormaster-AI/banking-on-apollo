@@ -1,6 +1,36 @@
 import { gql } from "graphql-tag";
 export const typeDefs = gql`
 
+import {
+    Bank,
+    Branch,
+    ATM,
+    Customer,
+    KycProfile,
+    IdentityDocument,
+    RiskAssessment,
+    ScreeningResult,
+    BankingProduct,
+    Account,
+    AccountStatement,
+    Transaction,
+    ExternalAccount,
+    FundsTransfer,
+    StandingInstruction,
+    PaymentCard,
+    LoanAccount,
+    RepaymentSchedule,
+    LoanPayment,
+    Collateral,
+    FeeCharge,
+    ExchangeRate,
+    FXTrade,
+    Dispute,
+    Consent,
+    ThirdPartyProvider,
+} from "../backend/types";
+
+
 # read related functions
 type Query {
 

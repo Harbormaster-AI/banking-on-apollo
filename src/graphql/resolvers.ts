@@ -1,5 +1,17 @@
 const { paginateResults } = require('./utils');
 
+
+interface ResolverContext {
+backend: BackendAPI;
+}
+
+export interface PaginationOptions {
+pageSize?: number;
+after?: string | null;
+}
+
+type ResolverParent = unknown;
+
 module.exports = {
 
     Query: {
@@ -9,11 +21,11 @@ module.exports = {
     //////////////////////////
     // Bank
     //////////////////////////
-    bank: async (_, { id }, { backend }) => {
+    bank: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.bank.find( id );
     },
 
-    banks: async (_, { pageSize = 25, after }, { backend }) => {
+    banks: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.bank.findAll();
 
     const bankPage = paginateResults({
@@ -34,11 +46,11 @@ module.exports = {
     //////////////////////////
     // Branch
     //////////////////////////
-    branch: async (_, { id }, { backend }) => {
+    branch: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.branch.find( id );
     },
 
-    branchs: async (_, { pageSize = 25, after }, { backend }) => {
+    branchs: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.branch.findAll();
 
     const branchPage = paginateResults({
@@ -59,11 +71,11 @@ module.exports = {
     //////////////////////////
     // ATM
     //////////////////////////
-    aTM: async (_, { id }, { backend }) => {
+    aTM: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.aTM.find( id );
     },
 
-    aTMs: async (_, { pageSize = 25, after }, { backend }) => {
+    aTMs: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.aTM.findAll();
 
     const aTMPage = paginateResults({
@@ -84,11 +96,11 @@ module.exports = {
     //////////////////////////
     // Customer
     //////////////////////////
-    customer: async (_, { id }, { backend }) => {
+    customer: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.customer.find( id );
     },
 
-    customers: async (_, { pageSize = 25, after }, { backend }) => {
+    customers: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.customer.findAll();
 
     const customerPage = paginateResults({
@@ -109,11 +121,11 @@ module.exports = {
     //////////////////////////
     // KycProfile
     //////////////////////////
-    kycProfile: async (_, { id }, { backend }) => {
+    kycProfile: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.kycProfile.find( id );
     },
 
-    kycProfiles: async (_, { pageSize = 25, after }, { backend }) => {
+    kycProfiles: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.kycProfile.findAll();
 
     const kycProfilePage = paginateResults({
@@ -134,11 +146,11 @@ module.exports = {
     //////////////////////////
     // IdentityDocument
     //////////////////////////
-    identityDocument: async (_, { id }, { backend }) => {
+    identityDocument: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.identityDocument.find( id );
     },
 
-    identityDocuments: async (_, { pageSize = 25, after }, { backend }) => {
+    identityDocuments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.identityDocument.findAll();
 
     const identityDocumentPage = paginateResults({
@@ -159,11 +171,11 @@ module.exports = {
     //////////////////////////
     // RiskAssessment
     //////////////////////////
-    riskAssessment: async (_, { id }, { backend }) => {
+    riskAssessment: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.riskAssessment.find( id );
     },
 
-    riskAssessments: async (_, { pageSize = 25, after }, { backend }) => {
+    riskAssessments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.riskAssessment.findAll();
 
     const riskAssessmentPage = paginateResults({
@@ -184,11 +196,11 @@ module.exports = {
     //////////////////////////
     // ScreeningResult
     //////////////////////////
-    screeningResult: async (_, { id }, { backend }) => {
+    screeningResult: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.screeningResult.find( id );
     },
 
-    screeningResults: async (_, { pageSize = 25, after }, { backend }) => {
+    screeningResults: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.screeningResult.findAll();
 
     const screeningResultPage = paginateResults({
@@ -209,11 +221,11 @@ module.exports = {
     //////////////////////////
     // BankingProduct
     //////////////////////////
-    bankingProduct: async (_, { id }, { backend }) => {
+    bankingProduct: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.bankingProduct.find( id );
     },
 
-    bankingProducts: async (_, { pageSize = 25, after }, { backend }) => {
+    bankingProducts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.bankingProduct.findAll();
 
     const bankingProductPage = paginateResults({
@@ -234,11 +246,11 @@ module.exports = {
     //////////////////////////
     // Account
     //////////////////////////
-    account: async (_, { id }, { backend }) => {
+    account: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.account.find( id );
     },
 
-    accounts: async (_, { pageSize = 25, after }, { backend }) => {
+    accounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.account.findAll();
 
     const accountPage = paginateResults({
@@ -259,11 +271,11 @@ module.exports = {
     //////////////////////////
     // AccountStatement
     //////////////////////////
-    accountStatement: async (_, { id }, { backend }) => {
+    accountStatement: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.accountStatement.find( id );
     },
 
-    accountStatements: async (_, { pageSize = 25, after }, { backend }) => {
+    accountStatements: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.accountStatement.findAll();
 
     const accountStatementPage = paginateResults({
@@ -284,11 +296,11 @@ module.exports = {
     //////////////////////////
     // Transaction
     //////////////////////////
-    transaction: async (_, { id }, { backend }) => {
+    transaction: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.transaction.find( id );
     },
 
-    transactions: async (_, { pageSize = 25, after }, { backend }) => {
+    transactions: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.transaction.findAll();
 
     const transactionPage = paginateResults({
@@ -309,11 +321,11 @@ module.exports = {
     //////////////////////////
     // ExternalAccount
     //////////////////////////
-    externalAccount: async (_, { id }, { backend }) => {
+    externalAccount: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.externalAccount.find( id );
     },
 
-    externalAccounts: async (_, { pageSize = 25, after }, { backend }) => {
+    externalAccounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.externalAccount.findAll();
 
     const externalAccountPage = paginateResults({
@@ -334,11 +346,11 @@ module.exports = {
     //////////////////////////
     // FundsTransfer
     //////////////////////////
-    fundsTransfer: async (_, { id }, { backend }) => {
+    fundsTransfer: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.fundsTransfer.find( id );
     },
 
-    fundsTransfers: async (_, { pageSize = 25, after }, { backend }) => {
+    fundsTransfers: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.fundsTransfer.findAll();
 
     const fundsTransferPage = paginateResults({
@@ -359,11 +371,11 @@ module.exports = {
     //////////////////////////
     // StandingInstruction
     //////////////////////////
-    standingInstruction: async (_, { id }, { backend }) => {
+    standingInstruction: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.standingInstruction.find( id );
     },
 
-    standingInstructions: async (_, { pageSize = 25, after }, { backend }) => {
+    standingInstructions: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.standingInstruction.findAll();
 
     const standingInstructionPage = paginateResults({
@@ -384,11 +396,11 @@ module.exports = {
     //////////////////////////
     // PaymentCard
     //////////////////////////
-    paymentCard: async (_, { id }, { backend }) => {
+    paymentCard: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.paymentCard.find( id );
     },
 
-    paymentCards: async (_, { pageSize = 25, after }, { backend }) => {
+    paymentCards: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.paymentCard.findAll();
 
     const paymentCardPage = paginateResults({
@@ -409,11 +421,11 @@ module.exports = {
     //////////////////////////
     // LoanAccount
     //////////////////////////
-    loanAccount: async (_, { id }, { backend }) => {
+    loanAccount: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.loanAccount.find( id );
     },
 
-    loanAccounts: async (_, { pageSize = 25, after }, { backend }) => {
+    loanAccounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.loanAccount.findAll();
 
     const loanAccountPage = paginateResults({
@@ -434,11 +446,11 @@ module.exports = {
     //////////////////////////
     // RepaymentSchedule
     //////////////////////////
-    repaymentSchedule: async (_, { id }, { backend }) => {
+    repaymentSchedule: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.repaymentSchedule.find( id );
     },
 
-    repaymentSchedules: async (_, { pageSize = 25, after }, { backend }) => {
+    repaymentSchedules: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.repaymentSchedule.findAll();
 
     const repaymentSchedulePage = paginateResults({
@@ -459,11 +471,11 @@ module.exports = {
     //////////////////////////
     // LoanPayment
     //////////////////////////
-    loanPayment: async (_, { id }, { backend }) => {
+    loanPayment: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.loanPayment.find( id );
     },
 
-    loanPayments: async (_, { pageSize = 25, after }, { backend }) => {
+    loanPayments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.loanPayment.findAll();
 
     const loanPaymentPage = paginateResults({
@@ -484,11 +496,11 @@ module.exports = {
     //////////////////////////
     // Collateral
     //////////////////////////
-    collateral: async (_, { id }, { backend }) => {
+    collateral: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.collateral.find( id );
     },
 
-    collaterals: async (_, { pageSize = 25, after }, { backend }) => {
+    collaterals: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.collateral.findAll();
 
     const collateralPage = paginateResults({
@@ -509,11 +521,11 @@ module.exports = {
     //////////////////////////
     // FeeCharge
     //////////////////////////
-    feeCharge: async (_, { id }, { backend }) => {
+    feeCharge: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.feeCharge.find( id );
     },
 
-    feeCharges: async (_, { pageSize = 25, after }, { backend }) => {
+    feeCharges: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.feeCharge.findAll();
 
     const feeChargePage = paginateResults({
@@ -534,11 +546,11 @@ module.exports = {
     //////////////////////////
     // ExchangeRate
     //////////////////////////
-    exchangeRate: async (_, { id }, { backend }) => {
+    exchangeRate: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.exchangeRate.find( id );
     },
 
-    exchangeRates: async (_, { pageSize = 25, after }, { backend }) => {
+    exchangeRates: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.exchangeRate.findAll();
 
     const exchangeRatePage = paginateResults({
@@ -559,11 +571,11 @@ module.exports = {
     //////////////////////////
     // FXTrade
     //////////////////////////
-    fXTrade: async (_, { id }, { backend }) => {
+    fXTrade: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.fXTrade.find( id );
     },
 
-    fXTrades: async (_, { pageSize = 25, after }, { backend }) => {
+    fXTrades: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.fXTrade.findAll();
 
     const fXTradePage = paginateResults({
@@ -584,11 +596,11 @@ module.exports = {
     //////////////////////////
     // Dispute
     //////////////////////////
-    dispute: async (_, { id }, { backend }) => {
+    dispute: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.dispute.find( id );
     },
 
-    disputes: async (_, { pageSize = 25, after }, { backend }) => {
+    disputes: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.dispute.findAll();
 
     const disputePage = paginateResults({
@@ -609,11 +621,11 @@ module.exports = {
     //////////////////////////
     // Consent
     //////////////////////////
-    consent: async (_, { id }, { backend }) => {
+    consent: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.consent.find( id );
     },
 
-    consents: async (_, { pageSize = 25, after }, { backend }) => {
+    consents: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.consent.findAll();
 
     const consentPage = paginateResults({
@@ -634,11 +646,11 @@ module.exports = {
     //////////////////////////
     // ThirdPartyProvider
     //////////////////////////
-    thirdPartyProvider: async (_, { id }, { backend }) => {
+    thirdPartyProvider: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
         return await backend.thirdPartyProvider.find( id );
     },
 
-    thirdPartyProviders: async (_, { pageSize = 25, after }, { backend }) => {
+    thirdPartyProviders: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
     const all = await backend.thirdPartyProvider.findAll();
 
     const thirdPartyProviderPage = paginateResults({
@@ -660,375 +672,375 @@ module.exports = {
 
 Mutation: {
 
-    //////////////////////////
+//////////////////////////
 // Bank
 //////////////////////////
-    addBank: async (_, { name, legalName, swiftBic, headquartersCountry, website }, { backend }) => {
-        return await backend.bank.add( { name, legalName, swiftBic, headquartersCountry, website } );
+    addBank: async ( _: ResolverParent, args : Bank, { backend }: ResolverContext) => {
+        return await backend.bank.add( args );
     },
 
-    updateBank: async (_, { name, legalName, swiftBic, headquartersCountry, website, id }, { backend }) => {
-        return await backend.bank.update( { name, legalName, swiftBic, headquartersCountry, website }, id );
+    updateBank: async ( _: ResolverParent, args : Bank, { backend }: ResolverContext) => {
+        return await backend.bank.update( args );
     },
 
-    removeBank: async (_, { id }, { backend }) => {
+    removeBank: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.bank.remove( { id } );
     },
         //////////////////////////
 // Branch
 //////////////////////////
-    addBranch: async (_, { name, branchCode, address, phone, openingHours }, { backend }) => {
-        return await backend.branch.add( { name, branchCode, address, phone, openingHours } );
+    addBranch: async ( _: ResolverParent, args : Branch, { backend }: ResolverContext) => {
+        return await backend.branch.add( args );
     },
 
-    updateBranch: async (_, { name, branchCode, address, phone, openingHours, id }, { backend }) => {
-        return await backend.branch.update( { name, branchCode, address, phone, openingHours }, id );
+    updateBranch: async ( _: ResolverParent, args : Branch, { backend }: ResolverContext) => {
+        return await backend.branch.update( args );
     },
 
-    removeBranch: async (_, { id }, { backend }) => {
+    removeBranch: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.branch.remove( { id } );
     },
         //////////////////////////
 // ATM
 //////////////////////////
-    addATM: async (_, { terminalId, location, Status }, { backend }) => {
-        return await backend.aTM.add( { terminalId, location, Status } );
+    addATM: async ( _: ResolverParent, args : ATM, { backend }: ResolverContext) => {
+        return await backend.aTM.add( args );
     },
 
-    updateATM: async (_, { terminalId, location, Status, id }, { backend }) => {
-        return await backend.aTM.update( { terminalId, location, Status }, id );
+    updateATM: async ( _: ResolverParent, args : ATM, { backend }: ResolverContext) => {
+        return await backend.aTM.update( args );
     },
 
-    removeATM: async (_, { id }, { backend }) => {
+    removeATM: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.aTM.remove( { id } );
     },
         //////////////////////////
 // Customer
 //////////////////////////
-    addCustomer: async (_, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus }, { backend }) => {
-        return await backend.customer.add( { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus } );
+    addCustomer: async ( _: ResolverParent, args : Customer, { backend }: ResolverContext) => {
+        return await backend.customer.add( args );
     },
 
-    updateCustomer: async (_, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus, id }, { backend }) => {
-        return await backend.customer.update( { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus }, id );
+    updateCustomer: async ( _: ResolverParent, args : Customer, { backend }: ResolverContext) => {
+        return await backend.customer.update( args );
     },
 
-    removeCustomer: async (_, { id }, { backend }) => {
+    removeCustomer: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.customer.remove( { id } );
     },
         //////////////////////////
 // KycProfile
 //////////////////////////
-    addKycProfile: async (_, { profileId, lastReviewedOn, Status }, { backend }) => {
-        return await backend.kycProfile.add( { profileId, lastReviewedOn, Status } );
+    addKycProfile: async ( _: ResolverParent, args : KycProfile, { backend }: ResolverContext) => {
+        return await backend.kycProfile.add( args );
     },
 
-    updateKycProfile: async (_, { profileId, lastReviewedOn, Status, id }, { backend }) => {
-        return await backend.kycProfile.update( { profileId, lastReviewedOn, Status }, id );
+    updateKycProfile: async ( _: ResolverParent, args : KycProfile, { backend }: ResolverContext) => {
+        return await backend.kycProfile.update( args );
     },
 
-    removeKycProfile: async (_, { id }, { backend }) => {
+    removeKycProfile: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.kycProfile.remove( { id } );
     },
         //////////////////////////
 // IdentityDocument
 //////////////////////////
-    addIdentityDocument: async (_, { documentNumber, issuingCountry, expirationDate, DocumentType }, { backend }) => {
-        return await backend.identityDocument.add( { documentNumber, issuingCountry, expirationDate, DocumentType } );
+    addIdentityDocument: async ( _: ResolverParent, args : IdentityDocument, { backend }: ResolverContext) => {
+        return await backend.identityDocument.add( args );
     },
 
-    updateIdentityDocument: async (_, { documentNumber, issuingCountry, expirationDate, DocumentType, id }, { backend }) => {
-        return await backend.identityDocument.update( { documentNumber, issuingCountry, expirationDate, DocumentType }, id );
+    updateIdentityDocument: async ( _: ResolverParent, args : IdentityDocument, { backend }: ResolverContext) => {
+        return await backend.identityDocument.update( args );
     },
 
-    removeIdentityDocument: async (_, { id }, { backend }) => {
+    removeIdentityDocument: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.identityDocument.remove( { id } );
     },
         //////////////////////////
 // RiskAssessment
 //////////////////////////
-    addRiskAssessment: async (_, { score, assessedOn, Rating }, { backend }) => {
-        return await backend.riskAssessment.add( { score, assessedOn, Rating } );
+    addRiskAssessment: async ( _: ResolverParent, args : RiskAssessment, { backend }: ResolverContext) => {
+        return await backend.riskAssessment.add( args );
     },
 
-    updateRiskAssessment: async (_, { score, assessedOn, Rating, id }, { backend }) => {
-        return await backend.riskAssessment.update( { score, assessedOn, Rating }, id );
+    updateRiskAssessment: async ( _: ResolverParent, args : RiskAssessment, { backend }: ResolverContext) => {
+        return await backend.riskAssessment.update( args );
     },
 
-    removeRiskAssessment: async (_, { id }, { backend }) => {
+    removeRiskAssessment: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.riskAssessment.remove( { id } );
     },
         //////////////////////////
 // ScreeningResult
 //////////////////////////
-    addScreeningResult: async (_, { screeningDate, provider, Outcome }, { backend }) => {
-        return await backend.screeningResult.add( { screeningDate, provider, Outcome } );
+    addScreeningResult: async ( _: ResolverParent, args : ScreeningResult, { backend }: ResolverContext) => {
+        return await backend.screeningResult.add( args );
     },
 
-    updateScreeningResult: async (_, { screeningDate, provider, Outcome, id }, { backend }) => {
-        return await backend.screeningResult.update( { screeningDate, provider, Outcome }, id );
+    updateScreeningResult: async ( _: ResolverParent, args : ScreeningResult, { backend }: ResolverContext) => {
+        return await backend.screeningResult.update( args );
     },
 
-    removeScreeningResult: async (_, { id }, { backend }) => {
+    removeScreeningResult: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.screeningResult.remove( { id } );
     },
         //////////////////////////
 // BankingProduct
 //////////////////////////
-    addBankingProduct: async (_, { productCode, name, description, ProductCategory }, { backend }) => {
-        return await backend.bankingProduct.add( { productCode, name, description, ProductCategory } );
+    addBankingProduct: async ( _: ResolverParent, args : BankingProduct, { backend }: ResolverContext) => {
+        return await backend.bankingProduct.add( args );
     },
 
-    updateBankingProduct: async (_, { productCode, name, description, ProductCategory, id }, { backend }) => {
-        return await backend.bankingProduct.update( { productCode, name, description, ProductCategory }, id );
+    updateBankingProduct: async ( _: ResolverParent, args : BankingProduct, { backend }: ResolverContext) => {
+        return await backend.bankingProduct.update( args );
     },
 
-    removeBankingProduct: async (_, { id }, { backend }) => {
+    removeBankingProduct: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.bankingProduct.remove( { id } );
     },
         //////////////////////////
 // Account
 //////////////////////////
-    addAccount: async (_, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
-        return await backend.account.add( { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } );
+    addAccount: async ( _: ResolverParent, args : Account, { backend }: ResolverContext) => {
+        return await backend.account.add( args );
     },
 
-    updateAccount: async (_, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status, id }, { backend }) => {
-        return await backend.account.update( { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, id );
+    updateAccount: async ( _: ResolverParent, args : Account, { backend }: ResolverContext) => {
+        return await backend.account.update( args );
     },
 
-    removeAccount: async (_, { id }, { backend }) => {
+    removeAccount: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.account.remove( { id } );
     },
         //////////////////////////
 // AccountStatement
 //////////////////////////
-    addAccountStatement: async (_, { statementNumber, periodStart, periodEnd, openingBalance, closingBalance, DeliveryMethod }, { backend }) => {
-        return await backend.accountStatement.add( { statementNumber, periodStart, periodEnd, openingBalance, closingBalance, DeliveryMethod } );
+    addAccountStatement: async ( _: ResolverParent, args : AccountStatement, { backend }: ResolverContext) => {
+        return await backend.accountStatement.add( args );
     },
 
-    updateAccountStatement: async (_, { statementNumber, periodStart, periodEnd, openingBalance, closingBalance, DeliveryMethod, id }, { backend }) => {
-        return await backend.accountStatement.update( { statementNumber, periodStart, periodEnd, openingBalance, closingBalance, DeliveryMethod }, id );
+    updateAccountStatement: async ( _: ResolverParent, args : AccountStatement, { backend }: ResolverContext) => {
+        return await backend.accountStatement.update( args );
     },
 
-    removeAccountStatement: async (_, { id }, { backend }) => {
+    removeAccountStatement: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.accountStatement.remove( { id } );
     },
         //////////////////////////
 // Transaction
 //////////////////////////
-    addTransaction: async (_, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel }, { backend }) => {
-        return await backend.transaction.add( { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel } );
+    addTransaction: async ( _: ResolverParent, args : Transaction, { backend }: ResolverContext) => {
+        return await backend.transaction.add( args );
     },
 
-    updateTransaction: async (_, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel, id }, { backend }) => {
-        return await backend.transaction.update( { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel }, id );
+    updateTransaction: async ( _: ResolverParent, args : Transaction, { backend }: ResolverContext) => {
+        return await backend.transaction.update( args );
     },
 
-    removeTransaction: async (_, { id }, { backend }) => {
+    removeTransaction: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.transaction.remove( { id } );
     },
         //////////////////////////
 // ExternalAccount
 //////////////////////////
-    addExternalAccount: async (_, { name, iban, accountNumber, bic, bankName, country }, { backend }) => {
-        return await backend.externalAccount.add( { name, iban, accountNumber, bic, bankName, country } );
+    addExternalAccount: async ( _: ResolverParent, args : ExternalAccount, { backend }: ResolverContext) => {
+        return await backend.externalAccount.add( args );
     },
 
-    updateExternalAccount: async (_, { name, iban, accountNumber, bic, bankName, country, id }, { backend }) => {
-        return await backend.externalAccount.update( { name, iban, accountNumber, bic, bankName, country }, id );
+    updateExternalAccount: async ( _: ResolverParent, args : ExternalAccount, { backend }: ResolverContext) => {
+        return await backend.externalAccount.update( args );
     },
 
-    removeExternalAccount: async (_, { id }, { backend }) => {
+    removeExternalAccount: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.externalAccount.remove( { id } );
     },
         //////////////////////////
 // FundsTransfer
 //////////////////////////
-    addFundsTransfer: async (_, { transferReference, amount, requestedDate, executionDate, purpose, feeAmount, Method, Status }, { backend }) => {
-        return await backend.fundsTransfer.add( { transferReference, amount, requestedDate, executionDate, purpose, feeAmount, Method, Status } );
+    addFundsTransfer: async ( _: ResolverParent, args : FundsTransfer, { backend }: ResolverContext) => {
+        return await backend.fundsTransfer.add( args );
     },
 
-    updateFundsTransfer: async (_, { transferReference, amount, requestedDate, executionDate, purpose, feeAmount, Method, Status, id }, { backend }) => {
-        return await backend.fundsTransfer.update( { transferReference, amount, requestedDate, executionDate, purpose, feeAmount, Method, Status }, id );
+    updateFundsTransfer: async ( _: ResolverParent, args : FundsTransfer, { backend }: ResolverContext) => {
+        return await backend.fundsTransfer.update( args );
     },
 
-    removeFundsTransfer: async (_, { id }, { backend }) => {
+    removeFundsTransfer: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.fundsTransfer.remove( { id } );
     },
         //////////////////////////
 // StandingInstruction
 //////////////////////////
-    addStandingInstruction: async (_, { instructionId, amount, nextExecutionDate, Frequency, Status }, { backend }) => {
-        return await backend.standingInstruction.add( { instructionId, amount, nextExecutionDate, Frequency, Status } );
+    addStandingInstruction: async ( _: ResolverParent, args : StandingInstruction, { backend }: ResolverContext) => {
+        return await backend.standingInstruction.add( args );
     },
 
-    updateStandingInstruction: async (_, { instructionId, amount, nextExecutionDate, Frequency, Status, id }, { backend }) => {
-        return await backend.standingInstruction.update( { instructionId, amount, nextExecutionDate, Frequency, Status }, id );
+    updateStandingInstruction: async ( _: ResolverParent, args : StandingInstruction, { backend }: ResolverContext) => {
+        return await backend.standingInstruction.update( args );
     },
 
-    removeStandingInstruction: async (_, { id }, { backend }) => {
+    removeStandingInstruction: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.standingInstruction.remove( { id } );
     },
         //////////////////////////
 // PaymentCard
 //////////////////////////
-    addPaymentCard: async (_, { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network }, { backend }) => {
-        return await backend.paymentCard.add( { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network } );
+    addPaymentCard: async ( _: ResolverParent, args : PaymentCard, { backend }: ResolverContext) => {
+        return await backend.paymentCard.add( args );
     },
 
-    updatePaymentCard: async (_, { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network, id }, { backend }) => {
-        return await backend.paymentCard.update( { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network }, id );
+    updatePaymentCard: async ( _: ResolverParent, args : PaymentCard, { backend }: ResolverContext) => {
+        return await backend.paymentCard.update( args );
     },
 
-    removePaymentCard: async (_, { id }, { backend }) => {
+    removePaymentCard: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.paymentCard.remove( { id } );
     },
         //////////////////////////
 // LoanAccount
 //////////////////////////
-    addLoanAccount: async (_, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status }, { backend }) => {
-        return await backend.loanAccount.add( { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status } );
+    addLoanAccount: async ( _: ResolverParent, args : LoanAccount, { backend }: ResolverContext) => {
+        return await backend.loanAccount.add( args );
     },
 
-    updateLoanAccount: async (_, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status, id }, { backend }) => {
-        return await backend.loanAccount.update( { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status }, id );
+    updateLoanAccount: async ( _: ResolverParent, args : LoanAccount, { backend }: ResolverContext) => {
+        return await backend.loanAccount.update( args );
     },
 
-    removeLoanAccount: async (_, { id }, { backend }) => {
+    removeLoanAccount: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.loanAccount.remove( { id } );
     },
         //////////////////////////
 // RepaymentSchedule
 //////////////////////////
-    addRepaymentSchedule: async (_, { installmentNumber, dueDate, principalDue, interestDue, totalDue, Status }, { backend }) => {
-        return await backend.repaymentSchedule.add( { installmentNumber, dueDate, principalDue, interestDue, totalDue, Status } );
+    addRepaymentSchedule: async ( _: ResolverParent, args : RepaymentSchedule, { backend }: ResolverContext) => {
+        return await backend.repaymentSchedule.add( args );
     },
 
-    updateRepaymentSchedule: async (_, { installmentNumber, dueDate, principalDue, interestDue, totalDue, Status, id }, { backend }) => {
-        return await backend.repaymentSchedule.update( { installmentNumber, dueDate, principalDue, interestDue, totalDue, Status }, id );
+    updateRepaymentSchedule: async ( _: ResolverParent, args : RepaymentSchedule, { backend }: ResolverContext) => {
+        return await backend.repaymentSchedule.update( args );
     },
 
-    removeRepaymentSchedule: async (_, { id }, { backend }) => {
+    removeRepaymentSchedule: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.repaymentSchedule.remove( { id } );
     },
         //////////////////////////
 // LoanPayment
 //////////////////////////
-    addLoanPayment: async (_, { paymentReference, amount, paymentDate, Method, Status }, { backend }) => {
-        return await backend.loanPayment.add( { paymentReference, amount, paymentDate, Method, Status } );
+    addLoanPayment: async ( _: ResolverParent, args : LoanPayment, { backend }: ResolverContext) => {
+        return await backend.loanPayment.add( args );
     },
 
-    updateLoanPayment: async (_, { paymentReference, amount, paymentDate, Method, Status, id }, { backend }) => {
-        return await backend.loanPayment.update( { paymentReference, amount, paymentDate, Method, Status }, id );
+    updateLoanPayment: async ( _: ResolverParent, args : LoanPayment, { backend }: ResolverContext) => {
+        return await backend.loanPayment.update( args );
     },
 
-    removeLoanPayment: async (_, { id }, { backend }) => {
+    removeLoanPayment: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.loanPayment.remove( { id } );
     },
         //////////////////////////
 // Collateral
 //////////////////////////
-    addCollateral: async (_, { appraisedValue, description, location, CollateralType }, { backend }) => {
-        return await backend.collateral.add( { appraisedValue, description, location, CollateralType } );
+    addCollateral: async ( _: ResolverParent, args : Collateral, { backend }: ResolverContext) => {
+        return await backend.collateral.add( args );
     },
 
-    updateCollateral: async (_, { appraisedValue, description, location, CollateralType, id }, { backend }) => {
-        return await backend.collateral.update( { appraisedValue, description, location, CollateralType }, id );
+    updateCollateral: async ( _: ResolverParent, args : Collateral, { backend }: ResolverContext) => {
+        return await backend.collateral.update( args );
     },
 
-    removeCollateral: async (_, { id }, { backend }) => {
+    removeCollateral: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.collateral.remove( { id } );
     },
         //////////////////////////
 // FeeCharge
 //////////////////////////
-    addFeeCharge: async (_, { feeCode, amount, appliedOn, FeeType }, { backend }) => {
-        return await backend.feeCharge.add( { feeCode, amount, appliedOn, FeeType } );
+    addFeeCharge: async ( _: ResolverParent, args : FeeCharge, { backend }: ResolverContext) => {
+        return await backend.feeCharge.add( args );
     },
 
-    updateFeeCharge: async (_, { feeCode, amount, appliedOn, FeeType, id }, { backend }) => {
-        return await backend.feeCharge.update( { feeCode, amount, appliedOn, FeeType }, id );
+    updateFeeCharge: async ( _: ResolverParent, args : FeeCharge, { backend }: ResolverContext) => {
+        return await backend.feeCharge.update( args );
     },
 
-    removeFeeCharge: async (_, { id }, { backend }) => {
+    removeFeeCharge: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.feeCharge.remove( { id } );
     },
         //////////////////////////
 // ExchangeRate
 //////////////////////////
-    addExchangeRate: async (_, { baseCurrency, counterCurrency, rate, asOf, source }, { backend }) => {
-        return await backend.exchangeRate.add( { baseCurrency, counterCurrency, rate, asOf, source } );
+    addExchangeRate: async ( _: ResolverParent, args : ExchangeRate, { backend }: ResolverContext) => {
+        return await backend.exchangeRate.add( args );
     },
 
-    updateExchangeRate: async (_, { baseCurrency, counterCurrency, rate, asOf, source, id }, { backend }) => {
-        return await backend.exchangeRate.update( { baseCurrency, counterCurrency, rate, asOf, source }, id );
+    updateExchangeRate: async ( _: ResolverParent, args : ExchangeRate, { backend }: ResolverContext) => {
+        return await backend.exchangeRate.update( args );
     },
 
-    removeExchangeRate: async (_, { id }, { backend }) => {
+    removeExchangeRate: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.exchangeRate.remove( { id } );
     },
         //////////////////////////
 // FXTrade
 //////////////////////////
-    addFXTrade: async (_, { tradeReference, tradeDate, settlementDate, amountSold, amountBought, rate, Status }, { backend }) => {
-        return await backend.fXTrade.add( { tradeReference, tradeDate, settlementDate, amountSold, amountBought, rate, Status } );
+    addFXTrade: async ( _: ResolverParent, args : FXTrade, { backend }: ResolverContext) => {
+        return await backend.fXTrade.add( args );
     },
 
-    updateFXTrade: async (_, { tradeReference, tradeDate, settlementDate, amountSold, amountBought, rate, Status, id }, { backend }) => {
-        return await backend.fXTrade.update( { tradeReference, tradeDate, settlementDate, amountSold, amountBought, rate, Status }, id );
+    updateFXTrade: async ( _: ResolverParent, args : FXTrade, { backend }: ResolverContext) => {
+        return await backend.fXTrade.update( args );
     },
 
-    removeFXTrade: async (_, { id }, { backend }) => {
+    removeFXTrade: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.fXTrade.remove( { id } );
     },
         //////////////////////////
 // Dispute
 //////////////////////////
-    addDispute: async (_, { disputeReference, raisedOn, reason, Status }, { backend }) => {
-        return await backend.dispute.add( { disputeReference, raisedOn, reason, Status } );
+    addDispute: async ( _: ResolverParent, args : Dispute, { backend }: ResolverContext) => {
+        return await backend.dispute.add( args );
     },
 
-    updateDispute: async (_, { disputeReference, raisedOn, reason, Status, id }, { backend }) => {
-        return await backend.dispute.update( { disputeReference, raisedOn, reason, Status }, id );
+    updateDispute: async ( _: ResolverParent, args : Dispute, { backend }: ResolverContext) => {
+        return await backend.dispute.update( args );
     },
 
-    removeDispute: async (_, { id }, { backend }) => {
+    removeDispute: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.dispute.remove( { id } );
     },
         //////////////////////////
 // Consent
 //////////////////////////
-    addConsent: async (_, { grantedOn, expiresOn, ConsentType, Status }, { backend }) => {
-        return await backend.consent.add( { grantedOn, expiresOn, ConsentType, Status } );
+    addConsent: async ( _: ResolverParent, args : Consent, { backend }: ResolverContext) => {
+        return await backend.consent.add( args );
     },
 
-    updateConsent: async (_, { grantedOn, expiresOn, ConsentType, Status, id }, { backend }) => {
-        return await backend.consent.update( { grantedOn, expiresOn, ConsentType, Status }, id );
+    updateConsent: async ( _: ResolverParent, args : Consent, { backend }: ResolverContext) => {
+        return await backend.consent.update( args );
     },
 
-    removeConsent: async (_, { id }, { backend }) => {
+    removeConsent: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.consent.remove( { id } );
     },
         //////////////////////////
 // ThirdPartyProvider
 //////////////////////////
-    addThirdPartyProvider: async (_, { name, registrationId, website }, { backend }) => {
-        return await backend.thirdPartyProvider.add( { name, registrationId, website } );
+    addThirdPartyProvider: async ( _: ResolverParent, args : ThirdPartyProvider, { backend }: ResolverContext) => {
+        return await backend.thirdPartyProvider.add( args );
     },
 
-    updateThirdPartyProvider: async (_, { name, registrationId, website, id }, { backend }) => {
-        return await backend.thirdPartyProvider.update( { name, registrationId, website }, id );
+    updateThirdPartyProvider: async ( _: ResolverParent, args : ThirdPartyProvider, { backend }: ResolverContext) => {
+        return await backend.thirdPartyProvider.update( args );
     },
 
-    removeThirdPartyProvider: async (_, { id }, { backend }) => {
+    removeThirdPartyProvider: async ( _: ResolverParent { id }, { backend }: ResolverContext) => {
         return await backend.thirdPartyProvider.remove( { id } );
     },
         },
 
 Bank: {
         
-    branches: async (bank, {}, { backend }) => {
+    branches: async (bank, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.getBranches( bank.id ).then(branches => {
                 resolve(branches);
@@ -1036,15 +1048,15 @@ Bank: {
         })
     },
 
-    addToBranches: async (bank, { name, branchCode, address, phone, openingHours }, { backend }) => {
+    addToBranches: async (bank, args: Bank, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.bank.addToBranches( bank.id, { name, branchCode, address, phone, openingHours } ).then( result => {
+            backend.bank.addToBranches( bank.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToBranches: async (bank, { branchesIds }, { backend }) => {
+    assignToBranches: async (bank, { branchesIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.assignToBranches( bank.id, branchesIds ).then( result => {
                 resolve ( result );
@@ -1053,7 +1065,7 @@ Bank: {
     },
 
     
-    products: async (bank, {}, { backend }) => {
+    products: async (bank, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.getProducts( bank.id ).then(products => {
                 resolve(products);
@@ -1061,15 +1073,15 @@ Bank: {
         })
     },
 
-    addToProducts: async (bank, { productCode, name, description, ProductCategory }, { backend }) => {
+    addToProducts: async (bank, args: Bank, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.bank.addToProducts( bank.id, { productCode, name, description, ProductCategory } ).then( result => {
+            backend.bank.addToProducts( bank.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToProducts: async (bank, { productsIds }, { backend }) => {
+    assignToProducts: async (bank, { productsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.assignToProducts( bank.id, productsIds ).then( result => {
                 resolve ( result );
@@ -1078,7 +1090,7 @@ Bank: {
     },
 
     
-    customers: async (bank, {}, { backend }) => {
+    customers: async (bank, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.getCustomers( bank.id ).then(customers => {
                 resolve(customers);
@@ -1086,15 +1098,15 @@ Bank: {
         })
     },
 
-    addToCustomers: async (bank, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus }, { backend }) => {
+    addToCustomers: async (bank, args: Bank, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.bank.addToCustomers( bank.id, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus } ).then( result => {
+            backend.bank.addToCustomers( bank.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToCustomers: async (bank, { customersIds }, { backend }) => {
+    assignToCustomers: async (bank, { customersIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.assignToCustomers( bank.id, customersIds ).then( result => {
                 resolve ( result );
@@ -1103,7 +1115,7 @@ Bank: {
     },
 
     
-    accounts: async (bank, {}, { backend }) => {
+    accounts: async (bank, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.getAccounts( bank.id ).then(accounts => {
                 resolve(accounts);
@@ -1111,15 +1123,15 @@ Bank: {
         })
     },
 
-    addToAccounts: async (bank, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
+    addToAccounts: async (bank, args: Bank, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.bank.addToAccounts( bank.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } ).then( result => {
+            backend.bank.addToAccounts( bank.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToAccounts: async (bank, { accountsIds }, { backend }) => {
+    assignToAccounts: async (bank, { accountsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.assignToAccounts( bank.id, accountsIds ).then( result => {
                 resolve ( result );
@@ -1128,7 +1140,7 @@ Bank: {
     },
 
     
-    paymentCards: async (bank, {}, { backend }) => {
+    paymentCards: async (bank, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.getPaymentCards( bank.id ).then(paymentCards => {
                 resolve(paymentCards);
@@ -1136,15 +1148,15 @@ Bank: {
         })
     },
 
-    addToPaymentCards: async (bank, { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network }, { backend }) => {
+    addToPaymentCards: async (bank, args: Bank, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.bank.addToPaymentCards( bank.id, { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network } ).then( result => {
+            backend.bank.addToPaymentCards( bank.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToPaymentCards: async (bank, { paymentCardsIds }, { backend }) => {
+    assignToPaymentCards: async (bank, { paymentCardsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.assignToPaymentCards( bank.id, paymentCardsIds ).then( result => {
                 resolve ( result );
@@ -1153,7 +1165,7 @@ Bank: {
     },
 
     
-    loanAccounts: async (bank, {}, { backend }) => {
+    loanAccounts: async (bank, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.getLoanAccounts( bank.id ).then(loanAccounts => {
                 resolve(loanAccounts);
@@ -1161,15 +1173,15 @@ Bank: {
         })
     },
 
-    addToLoanAccounts: async (bank, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status }, { backend }) => {
+    addToLoanAccounts: async (bank, args: Bank, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.bank.addToLoanAccounts( bank.id, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status } ).then( result => {
+            backend.bank.addToLoanAccounts( bank.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToLoanAccounts: async (bank, { loanAccountsIds }, { backend }) => {
+    assignToLoanAccounts: async (bank, { loanAccountsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.assignToLoanAccounts( bank.id, loanAccountsIds ).then( result => {
                 resolve ( result );
@@ -1178,7 +1190,7 @@ Bank: {
     },
 
     
-    exchangeRates: async (bank, {}, { backend }) => {
+    exchangeRates: async (bank, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.getExchangeRates( bank.id ).then(exchangeRates => {
                 resolve(exchangeRates);
@@ -1186,15 +1198,15 @@ Bank: {
         })
     },
 
-    addToExchangeRates: async (bank, { baseCurrency, counterCurrency, rate, asOf, source }, { backend }) => {
+    addToExchangeRates: async (bank, args: Bank, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.bank.addToExchangeRates( bank.id, { baseCurrency, counterCurrency, rate, asOf, source } ).then( result => {
+            backend.bank.addToExchangeRates( bank.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToExchangeRates: async (bank, { exchangeRatesIds }, { backend }) => {
+    assignToExchangeRates: async (bank, { exchangeRatesIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.assignToExchangeRates( bank.id, exchangeRatesIds ).then( result => {
                 resolve ( result );
@@ -1203,7 +1215,7 @@ Bank: {
     },
 
     
-    consents: async (bank, {}, { backend }) => {
+    consents: async (bank, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.getConsents( bank.id ).then(consents => {
                 resolve(consents);
@@ -1211,15 +1223,15 @@ Bank: {
         })
     },
 
-    addToConsents: async (bank, { grantedOn, expiresOn, ConsentType, Status }, { backend }) => {
+    addToConsents: async (bank, args: Bank, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.bank.addToConsents( bank.id, { grantedOn, expiresOn, ConsentType, Status } ).then( result => {
+            backend.bank.addToConsents( bank.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToConsents: async (bank, { consentsIds }, { backend }) => {
+    assignToConsents: async (bank, { consentsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.assignToConsents( bank.id, consentsIds ).then( result => {
                 resolve ( result );
@@ -1228,7 +1240,7 @@ Bank: {
     },
 
     
-    thirdPartyProviders: async (bank, {}, { backend }) => {
+    thirdPartyProviders: async (bank, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.getThirdPartyProviders( bank.id ).then(thirdPartyProviders => {
                 resolve(thirdPartyProviders);
@@ -1236,15 +1248,15 @@ Bank: {
         })
     },
 
-    addToThirdPartyProviders: async (bank, { name, registrationId, website }, { backend }) => {
+    addToThirdPartyProviders: async (bank, args: Bank, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.bank.addToThirdPartyProviders( bank.id, { name, registrationId, website } ).then( result => {
+            backend.bank.addToThirdPartyProviders( bank.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToThirdPartyProviders: async (bank, { thirdPartyProvidersIds }, { backend }) => {
+    assignToThirdPartyProviders: async (bank, { thirdPartyProvidersIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bank.assignToThirdPartyProviders( bank.id, thirdPartyProvidersIds ).then( result => {
                 resolve ( result );
@@ -1255,7 +1267,7 @@ Bank: {
     },
 Branch: {
     
-    bank: async (branch, { id }, { backend }) => {
+    bank: async (branch, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.branch.getBank( branch.id ).then(bank => {
                 resolve(bank);
@@ -1263,19 +1275,15 @@ Branch: {
         })
     },
 
-    addBank: async (branch, { name, legalName, swiftBic, headquartersCountry, website }, { backend }) => {
-        return await backend.branch.addBank( branch.id, { name, legalName, swiftBic, headquartersCountry, website } );
-    },
-
-    assignBank: async (branch, { bankId }, { backend }) => {
+    assignBank: async (branch, { bankId }, { backend }: ResolverContext) => {
         return await backend.branch.assignToBank( branch.id, bankId );
     },
 
-    unassignBank: async (_, { branchId }, { backend }) => {
+    unassignBank: async ( _: ResolverParent { branchId }, { backend }: ResolverContext) => {
         return await backend.branch.unassignFromBank( branchId );
     },
         
-    accounts: async (branch, {}, { backend }) => {
+    accounts: async (branch, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.branch.getAccounts( branch.id ).then(accounts => {
                 resolve(accounts);
@@ -1283,15 +1291,15 @@ Branch: {
         })
     },
 
-    addToAccounts: async (branch, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
+    addToAccounts: async (branch, args: Branch, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.branch.addToAccounts( branch.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } ).then( result => {
+            backend.branch.addToAccounts( branch.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToAccounts: async (branch, { accountsIds }, { backend }) => {
+    assignToAccounts: async (branch, { accountsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.branch.assignToAccounts( branch.id, accountsIds ).then( result => {
                 resolve ( result );
@@ -1300,7 +1308,7 @@ Branch: {
     },
 
     
-    loanAccounts: async (branch, {}, { backend }) => {
+    loanAccounts: async (branch, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.branch.getLoanAccounts( branch.id ).then(loanAccounts => {
                 resolve(loanAccounts);
@@ -1308,15 +1316,15 @@ Branch: {
         })
     },
 
-    addToLoanAccounts: async (branch, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status }, { backend }) => {
+    addToLoanAccounts: async (branch, args: Branch, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.branch.addToLoanAccounts( branch.id, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status } ).then( result => {
+            backend.branch.addToLoanAccounts( branch.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToLoanAccounts: async (branch, { loanAccountsIds }, { backend }) => {
+    assignToLoanAccounts: async (branch, { loanAccountsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.branch.assignToLoanAccounts( branch.id, loanAccountsIds ).then( result => {
                 resolve ( result );
@@ -1325,7 +1333,7 @@ Branch: {
     },
 
     
-    atms: async (branch, {}, { backend }) => {
+    atms: async (branch, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.branch.getAtms( branch.id ).then(atms => {
                 resolve(atms);
@@ -1333,15 +1341,15 @@ Branch: {
         })
     },
 
-    addToAtms: async (branch, { terminalId, location, Status }, { backend }) => {
+    addToAtms: async (branch, args: Branch, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.branch.addToAtms( branch.id, { terminalId, location, Status } ).then( result => {
+            backend.branch.addToAtms( branch.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToAtms: async (branch, { atmsIds }, { backend }) => {
+    assignToAtms: async (branch, { atmsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.branch.assignToAtms( branch.id, atmsIds ).then( result => {
                 resolve ( result );
@@ -1352,7 +1360,7 @@ Branch: {
     },
 ATM: {
     
-    branch: async (aTM, { id }, { backend }) => {
+    branch: async (aTM, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.aTM.getBranch( aTM.id ).then(branch => {
                 resolve(branch);
@@ -1360,21 +1368,17 @@ ATM: {
         })
     },
 
-    addBranch: async (aTM, { name, branchCode, address, phone, openingHours }, { backend }) => {
-        return await backend.aTM.addBranch( aTM.id, { name, branchCode, address, phone, openingHours } );
-    },
-
-    assignBranch: async (aTM, { branchId }, { backend }) => {
+    assignBranch: async (aTM, { branchId }, { backend }: ResolverContext) => {
         return await backend.aTM.assignToBranch( aTM.id, branchId );
     },
 
-    unassignBranch: async (_, { aTMId }, { backend }) => {
+    unassignBranch: async ( _: ResolverParent { aTMId }, { backend }: ResolverContext) => {
         return await backend.aTM.unassignFromBranch( aTMId );
     },
         },
 Customer: {
     
-    bank: async (customer, { id }, { backend }) => {
+    bank: async (customer, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.getBank( customer.id ).then(bank => {
                 resolve(bank);
@@ -1382,19 +1386,15 @@ Customer: {
         })
     },
 
-    addBank: async (customer, { name, legalName, swiftBic, headquartersCountry, website }, { backend }) => {
-        return await backend.customer.addBank( customer.id, { name, legalName, swiftBic, headquartersCountry, website } );
-    },
-
-    assignBank: async (customer, { bankId }, { backend }) => {
+    assignBank: async (customer, { bankId }, { backend }: ResolverContext) => {
         return await backend.customer.assignToBank( customer.id, bankId );
     },
 
-    unassignBank: async (_, { customerId }, { backend }) => {
+    unassignBank: async ( _: ResolverParent { customerId }, { backend }: ResolverContext) => {
         return await backend.customer.unassignFromBank( customerId );
     },
         
-    accounts: async (customer, {}, { backend }) => {
+    accounts: async (customer, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.getAccounts( customer.id ).then(accounts => {
                 resolve(accounts);
@@ -1402,15 +1402,15 @@ Customer: {
         })
     },
 
-    addToAccounts: async (customer, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
+    addToAccounts: async (customer, args: Customer, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.customer.addToAccounts( customer.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } ).then( result => {
+            backend.customer.addToAccounts( customer.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToAccounts: async (customer, { accountsIds }, { backend }) => {
+    assignToAccounts: async (customer, { accountsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.assignToAccounts( customer.id, accountsIds ).then( result => {
                 resolve ( result );
@@ -1419,7 +1419,7 @@ Customer: {
     },
 
     
-    loanAccounts: async (customer, {}, { backend }) => {
+    loanAccounts: async (customer, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.getLoanAccounts( customer.id ).then(loanAccounts => {
                 resolve(loanAccounts);
@@ -1427,15 +1427,15 @@ Customer: {
         })
     },
 
-    addToLoanAccounts: async (customer, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status }, { backend }) => {
+    addToLoanAccounts: async (customer, args: Customer, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.customer.addToLoanAccounts( customer.id, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status } ).then( result => {
+            backend.customer.addToLoanAccounts( customer.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToLoanAccounts: async (customer, { loanAccountsIds }, { backend }) => {
+    assignToLoanAccounts: async (customer, { loanAccountsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.assignToLoanAccounts( customer.id, loanAccountsIds ).then( result => {
                 resolve ( result );
@@ -1444,7 +1444,7 @@ Customer: {
     },
 
     
-    paymentCards: async (customer, {}, { backend }) => {
+    paymentCards: async (customer, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.getPaymentCards( customer.id ).then(paymentCards => {
                 resolve(paymentCards);
@@ -1452,15 +1452,15 @@ Customer: {
         })
     },
 
-    addToPaymentCards: async (customer, { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network }, { backend }) => {
+    addToPaymentCards: async (customer, args: Customer, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.customer.addToPaymentCards( customer.id, { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network } ).then( result => {
+            backend.customer.addToPaymentCards( customer.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToPaymentCards: async (customer, { paymentCardsIds }, { backend }) => {
+    assignToPaymentCards: async (customer, { paymentCardsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.assignToPaymentCards( customer.id, paymentCardsIds ).then( result => {
                 resolve ( result );
@@ -1469,7 +1469,7 @@ Customer: {
     },
 
     
-    externalAccounts: async (customer, {}, { backend }) => {
+    externalAccounts: async (customer, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.getExternalAccounts( customer.id ).then(externalAccounts => {
                 resolve(externalAccounts);
@@ -1477,15 +1477,15 @@ Customer: {
         })
     },
 
-    addToExternalAccounts: async (customer, { name, iban, accountNumber, bic, bankName, country }, { backend }) => {
+    addToExternalAccounts: async (customer, args: Customer, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.customer.addToExternalAccounts( customer.id, { name, iban, accountNumber, bic, bankName, country } ).then( result => {
+            backend.customer.addToExternalAccounts( customer.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToExternalAccounts: async (customer, { externalAccountsIds }, { backend }) => {
+    assignToExternalAccounts: async (customer, { externalAccountsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.assignToExternalAccounts( customer.id, externalAccountsIds ).then( result => {
                 resolve ( result );
@@ -1494,7 +1494,7 @@ Customer: {
     },
 
     
-    fundsTransfers: async (customer, {}, { backend }) => {
+    fundsTransfers: async (customer, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.getFundsTransfers( customer.id ).then(fundsTransfers => {
                 resolve(fundsTransfers);
@@ -1502,15 +1502,15 @@ Customer: {
         })
     },
 
-    addToFundsTransfers: async (customer, { transferReference, amount, requestedDate, executionDate, purpose, feeAmount, Method, Status }, { backend }) => {
+    addToFundsTransfers: async (customer, args: Customer, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.customer.addToFundsTransfers( customer.id, { transferReference, amount, requestedDate, executionDate, purpose, feeAmount, Method, Status } ).then( result => {
+            backend.customer.addToFundsTransfers( customer.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToFundsTransfers: async (customer, { fundsTransfersIds }, { backend }) => {
+    assignToFundsTransfers: async (customer, { fundsTransfersIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.assignToFundsTransfers( customer.id, fundsTransfersIds ).then( result => {
                 resolve ( result );
@@ -1519,7 +1519,7 @@ Customer: {
     },
 
     
-    disputes: async (customer, {}, { backend }) => {
+    disputes: async (customer, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.getDisputes( customer.id ).then(disputes => {
                 resolve(disputes);
@@ -1527,15 +1527,15 @@ Customer: {
         })
     },
 
-    addToDisputes: async (customer, { disputeReference, raisedOn, reason, Status }, { backend }) => {
+    addToDisputes: async (customer, args: Customer, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.customer.addToDisputes( customer.id, { disputeReference, raisedOn, reason, Status } ).then( result => {
+            backend.customer.addToDisputes( customer.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToDisputes: async (customer, { disputesIds }, { backend }) => {
+    assignToDisputes: async (customer, { disputesIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.assignToDisputes( customer.id, disputesIds ).then( result => {
                 resolve ( result );
@@ -1544,7 +1544,7 @@ Customer: {
     },
 
     
-    kycProfiles: async (customer, {}, { backend }) => {
+    kycProfiles: async (customer, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.getKycProfiles( customer.id ).then(kycProfiles => {
                 resolve(kycProfiles);
@@ -1552,15 +1552,15 @@ Customer: {
         })
     },
 
-    addToKycProfiles: async (customer, { profileId, lastReviewedOn, Status }, { backend }) => {
+    addToKycProfiles: async (customer, args: Customer, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.customer.addToKycProfiles( customer.id, { profileId, lastReviewedOn, Status } ).then( result => {
+            backend.customer.addToKycProfiles( customer.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToKycProfiles: async (customer, { kycProfilesIds }, { backend }) => {
+    assignToKycProfiles: async (customer, { kycProfilesIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.assignToKycProfiles( customer.id, kycProfilesIds ).then( result => {
                 resolve ( result );
@@ -1569,7 +1569,7 @@ Customer: {
     },
 
     
-    consents: async (customer, {}, { backend }) => {
+    consents: async (customer, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.getConsents( customer.id ).then(consents => {
                 resolve(consents);
@@ -1577,15 +1577,15 @@ Customer: {
         })
     },
 
-    addToConsents: async (customer, { grantedOn, expiresOn, ConsentType, Status }, { backend }) => {
+    addToConsents: async (customer, args: Customer, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.customer.addToConsents( customer.id, { grantedOn, expiresOn, ConsentType, Status } ).then( result => {
+            backend.customer.addToConsents( customer.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToConsents: async (customer, { consentsIds }, { backend }) => {
+    assignToConsents: async (customer, { consentsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.customer.assignToConsents( customer.id, consentsIds ).then( result => {
                 resolve ( result );
@@ -1596,7 +1596,7 @@ Customer: {
     },
 KycProfile: {
     
-    customer: async (kycProfile, { id }, { backend }) => {
+    customer: async (kycProfile, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.kycProfile.getCustomer( kycProfile.id ).then(customer => {
                 resolve(customer);
@@ -1604,19 +1604,15 @@ KycProfile: {
         })
     },
 
-    addCustomer: async (kycProfile, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus }, { backend }) => {
-        return await backend.kycProfile.addCustomer( kycProfile.id, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus } );
-    },
-
-    assignCustomer: async (kycProfile, { customerId }, { backend }) => {
+    assignCustomer: async (kycProfile, { customerId }, { backend }: ResolverContext) => {
         return await backend.kycProfile.assignToCustomer( kycProfile.id, customerId );
     },
 
-    unassignCustomer: async (_, { kycProfileId }, { backend }) => {
+    unassignCustomer: async ( _: ResolverParent { kycProfileId }, { backend }: ResolverContext) => {
         return await backend.kycProfile.unassignFromCustomer( kycProfileId );
     },
         
-    identityDocuments: async (kycProfile, {}, { backend }) => {
+    identityDocuments: async (kycProfile, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.kycProfile.getIdentityDocuments( kycProfile.id ).then(identityDocuments => {
                 resolve(identityDocuments);
@@ -1624,15 +1620,15 @@ KycProfile: {
         })
     },
 
-    addToIdentityDocuments: async (kycProfile, { documentNumber, issuingCountry, expirationDate, DocumentType }, { backend }) => {
+    addToIdentityDocuments: async (kycProfile, args: KycProfile, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.kycProfile.addToIdentityDocuments( kycProfile.id, { documentNumber, issuingCountry, expirationDate, DocumentType } ).then( result => {
+            backend.kycProfile.addToIdentityDocuments( kycProfile.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToIdentityDocuments: async (kycProfile, { identityDocumentsIds }, { backend }) => {
+    assignToIdentityDocuments: async (kycProfile, { identityDocumentsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.kycProfile.assignToIdentityDocuments( kycProfile.id, identityDocumentsIds ).then( result => {
                 resolve ( result );
@@ -1641,7 +1637,7 @@ KycProfile: {
     },
 
     
-    riskAssessments: async (kycProfile, {}, { backend }) => {
+    riskAssessments: async (kycProfile, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.kycProfile.getRiskAssessments( kycProfile.id ).then(riskAssessments => {
                 resolve(riskAssessments);
@@ -1649,15 +1645,15 @@ KycProfile: {
         })
     },
 
-    addToRiskAssessments: async (kycProfile, { score, assessedOn, Rating }, { backend }) => {
+    addToRiskAssessments: async (kycProfile, args: KycProfile, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.kycProfile.addToRiskAssessments( kycProfile.id, { score, assessedOn, Rating } ).then( result => {
+            backend.kycProfile.addToRiskAssessments( kycProfile.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToRiskAssessments: async (kycProfile, { riskAssessmentsIds }, { backend }) => {
+    assignToRiskAssessments: async (kycProfile, { riskAssessmentsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.kycProfile.assignToRiskAssessments( kycProfile.id, riskAssessmentsIds ).then( result => {
                 resolve ( result );
@@ -1666,7 +1662,7 @@ KycProfile: {
     },
 
     
-    screenings: async (kycProfile, {}, { backend }) => {
+    screenings: async (kycProfile, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.kycProfile.getScreenings( kycProfile.id ).then(screenings => {
                 resolve(screenings);
@@ -1674,15 +1670,15 @@ KycProfile: {
         })
     },
 
-    addToScreenings: async (kycProfile, { screeningDate, provider, Outcome }, { backend }) => {
+    addToScreenings: async (kycProfile, args: KycProfile, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.kycProfile.addToScreenings( kycProfile.id, { screeningDate, provider, Outcome } ).then( result => {
+            backend.kycProfile.addToScreenings( kycProfile.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToScreenings: async (kycProfile, { screeningsIds }, { backend }) => {
+    assignToScreenings: async (kycProfile, { screeningsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.kycProfile.assignToScreenings( kycProfile.id, screeningsIds ).then( result => {
                 resolve ( result );
@@ -1693,7 +1689,7 @@ KycProfile: {
     },
 IdentityDocument: {
     
-    kycProfile: async (identityDocument, { id }, { backend }) => {
+    kycProfile: async (identityDocument, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.identityDocument.getKycProfile( identityDocument.id ).then(kycProfile => {
                 resolve(kycProfile);
@@ -1701,21 +1697,17 @@ IdentityDocument: {
         })
     },
 
-    addKycProfile: async (identityDocument, { profileId, lastReviewedOn, Status }, { backend }) => {
-        return await backend.identityDocument.addKycProfile( identityDocument.id, { profileId, lastReviewedOn, Status } );
-    },
-
-    assignKycProfile: async (identityDocument, { kycProfileId }, { backend }) => {
+    assignKycProfile: async (identityDocument, { kycProfileId }, { backend }: ResolverContext) => {
         return await backend.identityDocument.assignToKycProfile( identityDocument.id, kycProfileId );
     },
 
-    unassignKycProfile: async (_, { identityDocumentId }, { backend }) => {
+    unassignKycProfile: async ( _: ResolverParent { identityDocumentId }, { backend }: ResolverContext) => {
         return await backend.identityDocument.unassignFromKycProfile( identityDocumentId );
     },
         },
 RiskAssessment: {
     
-    kycProfile: async (riskAssessment, { id }, { backend }) => {
+    kycProfile: async (riskAssessment, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.riskAssessment.getKycProfile( riskAssessment.id ).then(kycProfile => {
                 resolve(kycProfile);
@@ -1723,21 +1715,17 @@ RiskAssessment: {
         })
     },
 
-    addKycProfile: async (riskAssessment, { profileId, lastReviewedOn, Status }, { backend }) => {
-        return await backend.riskAssessment.addKycProfile( riskAssessment.id, { profileId, lastReviewedOn, Status } );
-    },
-
-    assignKycProfile: async (riskAssessment, { kycProfileId }, { backend }) => {
+    assignKycProfile: async (riskAssessment, { kycProfileId }, { backend }: ResolverContext) => {
         return await backend.riskAssessment.assignToKycProfile( riskAssessment.id, kycProfileId );
     },
 
-    unassignKycProfile: async (_, { riskAssessmentId }, { backend }) => {
+    unassignKycProfile: async ( _: ResolverParent { riskAssessmentId }, { backend }: ResolverContext) => {
         return await backend.riskAssessment.unassignFromKycProfile( riskAssessmentId );
     },
         },
 ScreeningResult: {
     
-    kycProfile: async (screeningResult, { id }, { backend }) => {
+    kycProfile: async (screeningResult, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.screeningResult.getKycProfile( screeningResult.id ).then(kycProfile => {
                 resolve(kycProfile);
@@ -1745,21 +1733,17 @@ ScreeningResult: {
         })
     },
 
-    addKycProfile: async (screeningResult, { profileId, lastReviewedOn, Status }, { backend }) => {
-        return await backend.screeningResult.addKycProfile( screeningResult.id, { profileId, lastReviewedOn, Status } );
-    },
-
-    assignKycProfile: async (screeningResult, { kycProfileId }, { backend }) => {
+    assignKycProfile: async (screeningResult, { kycProfileId }, { backend }: ResolverContext) => {
         return await backend.screeningResult.assignToKycProfile( screeningResult.id, kycProfileId );
     },
 
-    unassignKycProfile: async (_, { screeningResultId }, { backend }) => {
+    unassignKycProfile: async ( _: ResolverParent { screeningResultId }, { backend }: ResolverContext) => {
         return await backend.screeningResult.unassignFromKycProfile( screeningResultId );
     },
         },
 BankingProduct: {
     
-    bank: async (bankingProduct, { id }, { backend }) => {
+    bank: async (bankingProduct, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bankingProduct.getBank( bankingProduct.id ).then(bank => {
                 resolve(bank);
@@ -1767,19 +1751,15 @@ BankingProduct: {
         })
     },
 
-    addBank: async (bankingProduct, { name, legalName, swiftBic, headquartersCountry, website }, { backend }) => {
-        return await backend.bankingProduct.addBank( bankingProduct.id, { name, legalName, swiftBic, headquartersCountry, website } );
-    },
-
-    assignBank: async (bankingProduct, { bankId }, { backend }) => {
+    assignBank: async (bankingProduct, { bankId }, { backend }: ResolverContext) => {
         return await backend.bankingProduct.assignToBank( bankingProduct.id, bankId );
     },
 
-    unassignBank: async (_, { bankingProductId }, { backend }) => {
+    unassignBank: async ( _: ResolverParent { bankingProductId }, { backend }: ResolverContext) => {
         return await backend.bankingProduct.unassignFromBank( bankingProductId );
     },
         
-    accounts: async (bankingProduct, {}, { backend }) => {
+    accounts: async (bankingProduct, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bankingProduct.getAccounts( bankingProduct.id ).then(accounts => {
                 resolve(accounts);
@@ -1787,15 +1767,15 @@ BankingProduct: {
         })
     },
 
-    addToAccounts: async (bankingProduct, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
+    addToAccounts: async (bankingProduct, args: BankingProduct, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.bankingProduct.addToAccounts( bankingProduct.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } ).then( result => {
+            backend.bankingProduct.addToAccounts( bankingProduct.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToAccounts: async (bankingProduct, { accountsIds }, { backend }) => {
+    assignToAccounts: async (bankingProduct, { accountsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bankingProduct.assignToAccounts( bankingProduct.id, accountsIds ).then( result => {
                 resolve ( result );
@@ -1804,7 +1784,7 @@ BankingProduct: {
     },
 
     
-    loanAccounts: async (bankingProduct, {}, { backend }) => {
+    loanAccounts: async (bankingProduct, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bankingProduct.getLoanAccounts( bankingProduct.id ).then(loanAccounts => {
                 resolve(loanAccounts);
@@ -1812,15 +1792,15 @@ BankingProduct: {
         })
     },
 
-    addToLoanAccounts: async (bankingProduct, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status }, { backend }) => {
+    addToLoanAccounts: async (bankingProduct, args: BankingProduct, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.bankingProduct.addToLoanAccounts( bankingProduct.id, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status } ).then( result => {
+            backend.bankingProduct.addToLoanAccounts( bankingProduct.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToLoanAccounts: async (bankingProduct, { loanAccountsIds }, { backend }) => {
+    assignToLoanAccounts: async (bankingProduct, { loanAccountsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bankingProduct.assignToLoanAccounts( bankingProduct.id, loanAccountsIds ).then( result => {
                 resolve ( result );
@@ -1829,7 +1809,7 @@ BankingProduct: {
     },
 
     
-    paymentCards: async (bankingProduct, {}, { backend }) => {
+    paymentCards: async (bankingProduct, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bankingProduct.getPaymentCards( bankingProduct.id ).then(paymentCards => {
                 resolve(paymentCards);
@@ -1837,15 +1817,15 @@ BankingProduct: {
         })
     },
 
-    addToPaymentCards: async (bankingProduct, { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network }, { backend }) => {
+    addToPaymentCards: async (bankingProduct, args: BankingProduct, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.bankingProduct.addToPaymentCards( bankingProduct.id, { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network } ).then( result => {
+            backend.bankingProduct.addToPaymentCards( bankingProduct.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToPaymentCards: async (bankingProduct, { paymentCardsIds }, { backend }) => {
+    assignToPaymentCards: async (bankingProduct, { paymentCardsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.bankingProduct.assignToPaymentCards( bankingProduct.id, paymentCardsIds ).then( result => {
                 resolve ( result );
@@ -1856,7 +1836,7 @@ BankingProduct: {
     },
 Account: {
     
-    bank: async (account, { id }, { backend }) => {
+    bank: async (account, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.getBank( account.id ).then(bank => {
                 resolve(bank);
@@ -1864,19 +1844,15 @@ Account: {
         })
     },
 
-    addBank: async (account, { name, legalName, swiftBic, headquartersCountry, website }, { backend }) => {
-        return await backend.account.addBank( account.id, { name, legalName, swiftBic, headquartersCountry, website } );
-    },
-
-    assignBank: async (account, { bankId }, { backend }) => {
+    assignBank: async (account, { bankId }, { backend }: ResolverContext) => {
         return await backend.account.assignToBank( account.id, bankId );
     },
 
-    unassignBank: async (_, { accountId }, { backend }) => {
+    unassignBank: async ( _: ResolverParent { accountId }, { backend }: ResolverContext) => {
         return await backend.account.unassignFromBank( accountId );
     },
     
-    branch: async (account, { id }, { backend }) => {
+    branch: async (account, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.getBranch( account.id ).then(branch => {
                 resolve(branch);
@@ -1884,19 +1860,15 @@ Account: {
         })
     },
 
-    addBranch: async (account, { name, branchCode, address, phone, openingHours }, { backend }) => {
-        return await backend.account.addBranch( account.id, { name, branchCode, address, phone, openingHours } );
-    },
-
-    assignBranch: async (account, { branchId }, { backend }) => {
+    assignBranch: async (account, { branchId }, { backend }: ResolverContext) => {
         return await backend.account.assignToBranch( account.id, branchId );
     },
 
-    unassignBranch: async (_, { accountId }, { backend }) => {
+    unassignBranch: async ( _: ResolverParent { accountId }, { backend }: ResolverContext) => {
         return await backend.account.unassignFromBranch( accountId );
     },
     
-    product: async (account, { id }, { backend }) => {
+    product: async (account, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.getProduct( account.id ).then(bankingProduct => {
                 resolve(bankingProduct);
@@ -1904,19 +1876,15 @@ Account: {
         })
     },
 
-    addProduct: async (account, { productCode, name, description, ProductCategory }, { backend }) => {
-        return await backend.account.addProduct( account.id, { productCode, name, description, ProductCategory } );
-    },
-
-    assignProduct: async (account, { productId }, { backend }) => {
+    assignProduct: async (account, { productId }, { backend }: ResolverContext) => {
         return await backend.account.assignToProduct( account.id, productId );
     },
 
-    unassignProduct: async (_, { accountId }, { backend }) => {
+    unassignProduct: async ( _: ResolverParent { accountId }, { backend }: ResolverContext) => {
         return await backend.account.unassignFromProduct( accountId );
     },
         
-    owners: async (account, {}, { backend }) => {
+    owners: async (account, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.getOwners( account.id ).then(owners => {
                 resolve(owners);
@@ -1924,15 +1892,15 @@ Account: {
         })
     },
 
-    addToOwners: async (account, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus }, { backend }) => {
+    addToOwners: async (account, args: Account, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.account.addToOwners( account.id, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus } ).then( result => {
+            backend.account.addToOwners( account.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToOwners: async (account, { ownersIds }, { backend }) => {
+    assignToOwners: async (account, { ownersIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.assignToOwners( account.id, ownersIds ).then( result => {
                 resolve ( result );
@@ -1941,7 +1909,7 @@ Account: {
     },
 
     
-    transactions: async (account, {}, { backend }) => {
+    transactions: async (account, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.getTransactions( account.id ).then(transactions => {
                 resolve(transactions);
@@ -1949,15 +1917,15 @@ Account: {
         })
     },
 
-    addToTransactions: async (account, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel }, { backend }) => {
+    addToTransactions: async (account, args: Account, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.account.addToTransactions( account.id, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel } ).then( result => {
+            backend.account.addToTransactions( account.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToTransactions: async (account, { transactionsIds }, { backend }) => {
+    assignToTransactions: async (account, { transactionsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.assignToTransactions( account.id, transactionsIds ).then( result => {
                 resolve ( result );
@@ -1966,7 +1934,7 @@ Account: {
     },
 
     
-    statements: async (account, {}, { backend }) => {
+    statements: async (account, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.getStatements( account.id ).then(statements => {
                 resolve(statements);
@@ -1974,15 +1942,15 @@ Account: {
         })
     },
 
-    addToStatements: async (account, { statementNumber, periodStart, periodEnd, openingBalance, closingBalance, DeliveryMethod }, { backend }) => {
+    addToStatements: async (account, args: Account, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.account.addToStatements( account.id, { statementNumber, periodStart, periodEnd, openingBalance, closingBalance, DeliveryMethod } ).then( result => {
+            backend.account.addToStatements( account.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToStatements: async (account, { statementsIds }, { backend }) => {
+    assignToStatements: async (account, { statementsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.assignToStatements( account.id, statementsIds ).then( result => {
                 resolve ( result );
@@ -1991,7 +1959,7 @@ Account: {
     },
 
     
-    standingInstructions: async (account, {}, { backend }) => {
+    standingInstructions: async (account, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.getStandingInstructions( account.id ).then(standingInstructions => {
                 resolve(standingInstructions);
@@ -1999,15 +1967,15 @@ Account: {
         })
     },
 
-    addToStandingInstructions: async (account, { instructionId, amount, nextExecutionDate, Frequency, Status }, { backend }) => {
+    addToStandingInstructions: async (account, args: Account, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.account.addToStandingInstructions( account.id, { instructionId, amount, nextExecutionDate, Frequency, Status } ).then( result => {
+            backend.account.addToStandingInstructions( account.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToStandingInstructions: async (account, { standingInstructionsIds }, { backend }) => {
+    assignToStandingInstructions: async (account, { standingInstructionsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.assignToStandingInstructions( account.id, standingInstructionsIds ).then( result => {
                 resolve ( result );
@@ -2016,7 +1984,7 @@ Account: {
     },
 
     
-    feeCharges: async (account, {}, { backend }) => {
+    feeCharges: async (account, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.getFeeCharges( account.id ).then(feeCharges => {
                 resolve(feeCharges);
@@ -2024,15 +1992,15 @@ Account: {
         })
     },
 
-    addToFeeCharges: async (account, { feeCode, amount, appliedOn, FeeType }, { backend }) => {
+    addToFeeCharges: async (account, args: Account, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.account.addToFeeCharges( account.id, { feeCode, amount, appliedOn, FeeType } ).then( result => {
+            backend.account.addToFeeCharges( account.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToFeeCharges: async (account, { feeChargesIds }, { backend }) => {
+    assignToFeeCharges: async (account, { feeChargesIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.account.assignToFeeCharges( account.id, feeChargesIds ).then( result => {
                 resolve ( result );
@@ -2043,7 +2011,7 @@ Account: {
     },
 AccountStatement: {
     
-    account: async (accountStatement, { id }, { backend }) => {
+    account: async (accountStatement, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.accountStatement.getAccount( accountStatement.id ).then(account => {
                 resolve(account);
@@ -2051,21 +2019,17 @@ AccountStatement: {
         })
     },
 
-    addAccount: async (accountStatement, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
-        return await backend.accountStatement.addAccount( accountStatement.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } );
-    },
-
-    assignAccount: async (accountStatement, { accountId }, { backend }) => {
+    assignAccount: async (accountStatement, { accountId }, { backend }: ResolverContext) => {
         return await backend.accountStatement.assignToAccount( accountStatement.id, accountId );
     },
 
-    unassignAccount: async (_, { accountStatementId }, { backend }) => {
+    unassignAccount: async ( _: ResolverParent { accountStatementId }, { backend }: ResolverContext) => {
         return await backend.accountStatement.unassignFromAccount( accountStatementId );
     },
         },
 Transaction: {
     
-    account: async (transaction, { id }, { backend }) => {
+    account: async (transaction, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.transaction.getAccount( transaction.id ).then(account => {
                 resolve(account);
@@ -2073,19 +2037,15 @@ Transaction: {
         })
     },
 
-    addAccount: async (transaction, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
-        return await backend.transaction.addAccount( transaction.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } );
-    },
-
-    assignAccount: async (transaction, { accountId }, { backend }) => {
+    assignAccount: async (transaction, { accountId }, { backend }: ResolverContext) => {
         return await backend.transaction.assignToAccount( transaction.id, accountId );
     },
 
-    unassignAccount: async (_, { transactionId }, { backend }) => {
+    unassignAccount: async ( _: ResolverParent { transactionId }, { backend }: ResolverContext) => {
         return await backend.transaction.unassignFromAccount( transactionId );
     },
     
-    externalCounterparty: async (transaction, { id }, { backend }) => {
+    externalCounterparty: async (transaction, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.transaction.getExternalCounterparty( transaction.id ).then(externalAccount => {
                 resolve(externalAccount);
@@ -2093,19 +2053,15 @@ Transaction: {
         })
     },
 
-    addExternalCounterparty: async (transaction, { name, iban, accountNumber, bic, bankName, country }, { backend }) => {
-        return await backend.transaction.addExternalCounterparty( transaction.id, { name, iban, accountNumber, bic, bankName, country } );
-    },
-
-    assignExternalCounterparty: async (transaction, { externalCounterpartyId }, { backend }) => {
+    assignExternalCounterparty: async (transaction, { externalCounterpartyId }, { backend }: ResolverContext) => {
         return await backend.transaction.assignToExternalCounterparty( transaction.id, externalCounterpartyId );
     },
 
-    unassignExternalCounterparty: async (_, { transactionId }, { backend }) => {
+    unassignExternalCounterparty: async ( _: ResolverParent { transactionId }, { backend }: ResolverContext) => {
         return await backend.transaction.unassignFromExternalCounterparty( transactionId );
     },
     
-    paymentCard: async (transaction, { id }, { backend }) => {
+    paymentCard: async (transaction, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.transaction.getPaymentCard( transaction.id ).then(paymentCard => {
                 resolve(paymentCard);
@@ -2113,19 +2069,15 @@ Transaction: {
         })
     },
 
-    addPaymentCard: async (transaction, { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network }, { backend }) => {
-        return await backend.transaction.addPaymentCard( transaction.id, { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network } );
-    },
-
-    assignPaymentCard: async (transaction, { paymentCardId }, { backend }) => {
+    assignPaymentCard: async (transaction, { paymentCardId }, { backend }: ResolverContext) => {
         return await backend.transaction.assignToPaymentCard( transaction.id, paymentCardId );
     },
 
-    unassignPaymentCard: async (_, { transactionId }, { backend }) => {
+    unassignPaymentCard: async ( _: ResolverParent { transactionId }, { backend }: ResolverContext) => {
         return await backend.transaction.unassignFromPaymentCard( transactionId );
     },
     
-    fundsTransfer: async (transaction, { id }, { backend }) => {
+    fundsTransfer: async (transaction, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.transaction.getFundsTransfer( transaction.id ).then(fundsTransfer => {
                 resolve(fundsTransfer);
@@ -2133,19 +2085,15 @@ Transaction: {
         })
     },
 
-    addFundsTransfer: async (transaction, { transferReference, amount, requestedDate, executionDate, purpose, feeAmount, Method, Status }, { backend }) => {
-        return await backend.transaction.addFundsTransfer( transaction.id, { transferReference, amount, requestedDate, executionDate, purpose, feeAmount, Method, Status } );
-    },
-
-    assignFundsTransfer: async (transaction, { fundsTransferId }, { backend }) => {
+    assignFundsTransfer: async (transaction, { fundsTransferId }, { backend }: ResolverContext) => {
         return await backend.transaction.assignToFundsTransfer( transaction.id, fundsTransferId );
     },
 
-    unassignFundsTransfer: async (_, { transactionId }, { backend }) => {
+    unassignFundsTransfer: async ( _: ResolverParent { transactionId }, { backend }: ResolverContext) => {
         return await backend.transaction.unassignFromFundsTransfer( transactionId );
     },
     
-    fxTrade: async (transaction, { id }, { backend }) => {
+    fxTrade: async (transaction, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.transaction.getFxTrade( transaction.id ).then(fXTrade => {
                 resolve(fXTrade);
@@ -2153,19 +2101,15 @@ Transaction: {
         })
     },
 
-    addFxTrade: async (transaction, { tradeReference, tradeDate, settlementDate, amountSold, amountBought, rate, Status }, { backend }) => {
-        return await backend.transaction.addFxTrade( transaction.id, { tradeReference, tradeDate, settlementDate, amountSold, amountBought, rate, Status } );
-    },
-
-    assignFxTrade: async (transaction, { fxTradeId }, { backend }) => {
+    assignFxTrade: async (transaction, { fxTradeId }, { backend }: ResolverContext) => {
         return await backend.transaction.assignToFxTrade( transaction.id, fxTradeId );
     },
 
-    unassignFxTrade: async (_, { transactionId }, { backend }) => {
+    unassignFxTrade: async ( _: ResolverParent { transactionId }, { backend }: ResolverContext) => {
         return await backend.transaction.unassignFromFxTrade( transactionId );
     },
     
-    dispute: async (transaction, { id }, { backend }) => {
+    dispute: async (transaction, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.transaction.getDispute( transaction.id ).then(dispute => {
                 resolve(dispute);
@@ -2173,21 +2117,17 @@ Transaction: {
         })
     },
 
-    addDispute: async (transaction, { disputeReference, raisedOn, reason, Status }, { backend }) => {
-        return await backend.transaction.addDispute( transaction.id, { disputeReference, raisedOn, reason, Status } );
-    },
-
-    assignDispute: async (transaction, { disputeId }, { backend }) => {
+    assignDispute: async (transaction, { disputeId }, { backend }: ResolverContext) => {
         return await backend.transaction.assignToDispute( transaction.id, disputeId );
     },
 
-    unassignDispute: async (_, { transactionId }, { backend }) => {
+    unassignDispute: async ( _: ResolverParent { transactionId }, { backend }: ResolverContext) => {
         return await backend.transaction.unassignFromDispute( transactionId );
     },
         },
 ExternalAccount: {
     
-    customer: async (externalAccount, { id }, { backend }) => {
+    customer: async (externalAccount, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.externalAccount.getCustomer( externalAccount.id ).then(customer => {
                 resolve(customer);
@@ -2195,19 +2135,15 @@ ExternalAccount: {
         })
     },
 
-    addCustomer: async (externalAccount, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus }, { backend }) => {
-        return await backend.externalAccount.addCustomer( externalAccount.id, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus } );
-    },
-
-    assignCustomer: async (externalAccount, { customerId }, { backend }) => {
+    assignCustomer: async (externalAccount, { customerId }, { backend }: ResolverContext) => {
         return await backend.externalAccount.assignToCustomer( externalAccount.id, customerId );
     },
 
-    unassignCustomer: async (_, { externalAccountId }, { backend }) => {
+    unassignCustomer: async ( _: ResolverParent { externalAccountId }, { backend }: ResolverContext) => {
         return await backend.externalAccount.unassignFromCustomer( externalAccountId );
     },
         
-    transactions: async (externalAccount, {}, { backend }) => {
+    transactions: async (externalAccount, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.externalAccount.getTransactions( externalAccount.id ).then(transactions => {
                 resolve(transactions);
@@ -2215,15 +2151,15 @@ ExternalAccount: {
         })
     },
 
-    addToTransactions: async (externalAccount, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel }, { backend }) => {
+    addToTransactions: async (externalAccount, args: ExternalAccount, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.externalAccount.addToTransactions( externalAccount.id, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel } ).then( result => {
+            backend.externalAccount.addToTransactions( externalAccount.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToTransactions: async (externalAccount, { transactionsIds }, { backend }) => {
+    assignToTransactions: async (externalAccount, { transactionsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.externalAccount.assignToTransactions( externalAccount.id, transactionsIds ).then( result => {
                 resolve ( result );
@@ -2234,7 +2170,7 @@ ExternalAccount: {
     },
 FundsTransfer: {
     
-    sourceAccount: async (fundsTransfer, { id }, { backend }) => {
+    sourceAccount: async (fundsTransfer, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.fundsTransfer.getSourceAccount( fundsTransfer.id ).then(account => {
                 resolve(account);
@@ -2242,19 +2178,15 @@ FundsTransfer: {
         })
     },
 
-    addSourceAccount: async (fundsTransfer, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
-        return await backend.fundsTransfer.addSourceAccount( fundsTransfer.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } );
-    },
-
-    assignSourceAccount: async (fundsTransfer, { sourceAccountId }, { backend }) => {
+    assignSourceAccount: async (fundsTransfer, { sourceAccountId }, { backend }: ResolverContext) => {
         return await backend.fundsTransfer.assignToSourceAccount( fundsTransfer.id, sourceAccountId );
     },
 
-    unassignSourceAccount: async (_, { fundsTransferId }, { backend }) => {
+    unassignSourceAccount: async ( _: ResolverParent { fundsTransferId }, { backend }: ResolverContext) => {
         return await backend.fundsTransfer.unassignFromSourceAccount( fundsTransferId );
     },
     
-    destinationAccount: async (fundsTransfer, { id }, { backend }) => {
+    destinationAccount: async (fundsTransfer, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.fundsTransfer.getDestinationAccount( fundsTransfer.id ).then(account => {
                 resolve(account);
@@ -2262,19 +2194,15 @@ FundsTransfer: {
         })
     },
 
-    addDestinationAccount: async (fundsTransfer, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
-        return await backend.fundsTransfer.addDestinationAccount( fundsTransfer.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } );
-    },
-
-    assignDestinationAccount: async (fundsTransfer, { destinationAccountId }, { backend }) => {
+    assignDestinationAccount: async (fundsTransfer, { destinationAccountId }, { backend }: ResolverContext) => {
         return await backend.fundsTransfer.assignToDestinationAccount( fundsTransfer.id, destinationAccountId );
     },
 
-    unassignDestinationAccount: async (_, { fundsTransferId }, { backend }) => {
+    unassignDestinationAccount: async ( _: ResolverParent { fundsTransferId }, { backend }: ResolverContext) => {
         return await backend.fundsTransfer.unassignFromDestinationAccount( fundsTransferId );
     },
     
-    externalBeneficiary: async (fundsTransfer, { id }, { backend }) => {
+    externalBeneficiary: async (fundsTransfer, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.fundsTransfer.getExternalBeneficiary( fundsTransfer.id ).then(externalAccount => {
                 resolve(externalAccount);
@@ -2282,19 +2210,15 @@ FundsTransfer: {
         })
     },
 
-    addExternalBeneficiary: async (fundsTransfer, { name, iban, accountNumber, bic, bankName, country }, { backend }) => {
-        return await backend.fundsTransfer.addExternalBeneficiary( fundsTransfer.id, { name, iban, accountNumber, bic, bankName, country } );
-    },
-
-    assignExternalBeneficiary: async (fundsTransfer, { externalBeneficiaryId }, { backend }) => {
+    assignExternalBeneficiary: async (fundsTransfer, { externalBeneficiaryId }, { backend }: ResolverContext) => {
         return await backend.fundsTransfer.assignToExternalBeneficiary( fundsTransfer.id, externalBeneficiaryId );
     },
 
-    unassignExternalBeneficiary: async (_, { fundsTransferId }, { backend }) => {
+    unassignExternalBeneficiary: async ( _: ResolverParent { fundsTransferId }, { backend }: ResolverContext) => {
         return await backend.fundsTransfer.unassignFromExternalBeneficiary( fundsTransferId );
     },
     
-    initiatedBy: async (fundsTransfer, { id }, { backend }) => {
+    initiatedBy: async (fundsTransfer, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.fundsTransfer.getInitiatedBy( fundsTransfer.id ).then(customer => {
                 resolve(customer);
@@ -2302,19 +2226,15 @@ FundsTransfer: {
         })
     },
 
-    addInitiatedBy: async (fundsTransfer, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus }, { backend }) => {
-        return await backend.fundsTransfer.addInitiatedBy( fundsTransfer.id, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus } );
-    },
-
-    assignInitiatedBy: async (fundsTransfer, { initiatedById }, { backend }) => {
+    assignInitiatedBy: async (fundsTransfer, { initiatedById }, { backend }: ResolverContext) => {
         return await backend.fundsTransfer.assignToInitiatedBy( fundsTransfer.id, initiatedById );
     },
 
-    unassignInitiatedBy: async (_, { fundsTransferId }, { backend }) => {
+    unassignInitiatedBy: async ( _: ResolverParent { fundsTransferId }, { backend }: ResolverContext) => {
         return await backend.fundsTransfer.unassignFromInitiatedBy( fundsTransferId );
     },
         
-    transactions: async (fundsTransfer, {}, { backend }) => {
+    transactions: async (fundsTransfer, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.fundsTransfer.getTransactions( fundsTransfer.id ).then(transactions => {
                 resolve(transactions);
@@ -2322,15 +2242,15 @@ FundsTransfer: {
         })
     },
 
-    addToTransactions: async (fundsTransfer, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel }, { backend }) => {
+    addToTransactions: async (fundsTransfer, args: FundsTransfer, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.fundsTransfer.addToTransactions( fundsTransfer.id, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel } ).then( result => {
+            backend.fundsTransfer.addToTransactions( fundsTransfer.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToTransactions: async (fundsTransfer, { transactionsIds }, { backend }) => {
+    assignToTransactions: async (fundsTransfer, { transactionsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.fundsTransfer.assignToTransactions( fundsTransfer.id, transactionsIds ).then( result => {
                 resolve ( result );
@@ -2341,7 +2261,7 @@ FundsTransfer: {
     },
 StandingInstruction: {
     
-    account: async (standingInstruction, { id }, { backend }) => {
+    account: async (standingInstruction, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.standingInstruction.getAccount( standingInstruction.id ).then(account => {
                 resolve(account);
@@ -2349,19 +2269,15 @@ StandingInstruction: {
         })
     },
 
-    addAccount: async (standingInstruction, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
-        return await backend.standingInstruction.addAccount( standingInstruction.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } );
-    },
-
-    assignAccount: async (standingInstruction, { accountId }, { backend }) => {
+    assignAccount: async (standingInstruction, { accountId }, { backend }: ResolverContext) => {
         return await backend.standingInstruction.assignToAccount( standingInstruction.id, accountId );
     },
 
-    unassignAccount: async (_, { standingInstructionId }, { backend }) => {
+    unassignAccount: async ( _: ResolverParent { standingInstructionId }, { backend }: ResolverContext) => {
         return await backend.standingInstruction.unassignFromAccount( standingInstructionId );
     },
     
-    beneficiary: async (standingInstruction, { id }, { backend }) => {
+    beneficiary: async (standingInstruction, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.standingInstruction.getBeneficiary( standingInstruction.id ).then(externalAccount => {
                 resolve(externalAccount);
@@ -2369,21 +2285,17 @@ StandingInstruction: {
         })
     },
 
-    addBeneficiary: async (standingInstruction, { name, iban, accountNumber, bic, bankName, country }, { backend }) => {
-        return await backend.standingInstruction.addBeneficiary( standingInstruction.id, { name, iban, accountNumber, bic, bankName, country } );
-    },
-
-    assignBeneficiary: async (standingInstruction, { beneficiaryId }, { backend }) => {
+    assignBeneficiary: async (standingInstruction, { beneficiaryId }, { backend }: ResolverContext) => {
         return await backend.standingInstruction.assignToBeneficiary( standingInstruction.id, beneficiaryId );
     },
 
-    unassignBeneficiary: async (_, { standingInstructionId }, { backend }) => {
+    unassignBeneficiary: async ( _: ResolverParent { standingInstructionId }, { backend }: ResolverContext) => {
         return await backend.standingInstruction.unassignFromBeneficiary( standingInstructionId );
     },
         },
 PaymentCard: {
     
-    bank: async (paymentCard, { id }, { backend }) => {
+    bank: async (paymentCard, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.paymentCard.getBank( paymentCard.id ).then(bank => {
                 resolve(bank);
@@ -2391,19 +2303,15 @@ PaymentCard: {
         })
     },
 
-    addBank: async (paymentCard, { name, legalName, swiftBic, headquartersCountry, website }, { backend }) => {
-        return await backend.paymentCard.addBank( paymentCard.id, { name, legalName, swiftBic, headquartersCountry, website } );
-    },
-
-    assignBank: async (paymentCard, { bankId }, { backend }) => {
+    assignBank: async (paymentCard, { bankId }, { backend }: ResolverContext) => {
         return await backend.paymentCard.assignToBank( paymentCard.id, bankId );
     },
 
-    unassignBank: async (_, { paymentCardId }, { backend }) => {
+    unassignBank: async ( _: ResolverParent { paymentCardId }, { backend }: ResolverContext) => {
         return await backend.paymentCard.unassignFromBank( paymentCardId );
     },
     
-    account: async (paymentCard, { id }, { backend }) => {
+    account: async (paymentCard, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.paymentCard.getAccount( paymentCard.id ).then(account => {
                 resolve(account);
@@ -2411,19 +2319,15 @@ PaymentCard: {
         })
     },
 
-    addAccount: async (paymentCard, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
-        return await backend.paymentCard.addAccount( paymentCard.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } );
-    },
-
-    assignAccount: async (paymentCard, { accountId }, { backend }) => {
+    assignAccount: async (paymentCard, { accountId }, { backend }: ResolverContext) => {
         return await backend.paymentCard.assignToAccount( paymentCard.id, accountId );
     },
 
-    unassignAccount: async (_, { paymentCardId }, { backend }) => {
+    unassignAccount: async ( _: ResolverParent { paymentCardId }, { backend }: ResolverContext) => {
         return await backend.paymentCard.unassignFromAccount( paymentCardId );
     },
     
-    customer: async (paymentCard, { id }, { backend }) => {
+    customer: async (paymentCard, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.paymentCard.getCustomer( paymentCard.id ).then(customer => {
                 resolve(customer);
@@ -2431,19 +2335,15 @@ PaymentCard: {
         })
     },
 
-    addCustomer: async (paymentCard, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus }, { backend }) => {
-        return await backend.paymentCard.addCustomer( paymentCard.id, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus } );
-    },
-
-    assignCustomer: async (paymentCard, { customerId }, { backend }) => {
+    assignCustomer: async (paymentCard, { customerId }, { backend }: ResolverContext) => {
         return await backend.paymentCard.assignToCustomer( paymentCard.id, customerId );
     },
 
-    unassignCustomer: async (_, { paymentCardId }, { backend }) => {
+    unassignCustomer: async ( _: ResolverParent { paymentCardId }, { backend }: ResolverContext) => {
         return await backend.paymentCard.unassignFromCustomer( paymentCardId );
     },
         
-    transactions: async (paymentCard, {}, { backend }) => {
+    transactions: async (paymentCard, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.paymentCard.getTransactions( paymentCard.id ).then(transactions => {
                 resolve(transactions);
@@ -2451,15 +2351,15 @@ PaymentCard: {
         })
     },
 
-    addToTransactions: async (paymentCard, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel }, { backend }) => {
+    addToTransactions: async (paymentCard, args: PaymentCard, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.paymentCard.addToTransactions( paymentCard.id, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel } ).then( result => {
+            backend.paymentCard.addToTransactions( paymentCard.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToTransactions: async (paymentCard, { transactionsIds }, { backend }) => {
+    assignToTransactions: async (paymentCard, { transactionsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.paymentCard.assignToTransactions( paymentCard.id, transactionsIds ).then( result => {
                 resolve ( result );
@@ -2470,7 +2370,7 @@ PaymentCard: {
     },
 LoanAccount: {
     
-    bank: async (loanAccount, { id }, { backend }) => {
+    bank: async (loanAccount, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.getBank( loanAccount.id ).then(bank => {
                 resolve(bank);
@@ -2478,19 +2378,15 @@ LoanAccount: {
         })
     },
 
-    addBank: async (loanAccount, { name, legalName, swiftBic, headquartersCountry, website }, { backend }) => {
-        return await backend.loanAccount.addBank( loanAccount.id, { name, legalName, swiftBic, headquartersCountry, website } );
-    },
-
-    assignBank: async (loanAccount, { bankId }, { backend }) => {
+    assignBank: async (loanAccount, { bankId }, { backend }: ResolverContext) => {
         return await backend.loanAccount.assignToBank( loanAccount.id, bankId );
     },
 
-    unassignBank: async (_, { loanAccountId }, { backend }) => {
+    unassignBank: async ( _: ResolverParent { loanAccountId }, { backend }: ResolverContext) => {
         return await backend.loanAccount.unassignFromBank( loanAccountId );
     },
     
-    branch: async (loanAccount, { id }, { backend }) => {
+    branch: async (loanAccount, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.getBranch( loanAccount.id ).then(branch => {
                 resolve(branch);
@@ -2498,19 +2394,15 @@ LoanAccount: {
         })
     },
 
-    addBranch: async (loanAccount, { name, branchCode, address, phone, openingHours }, { backend }) => {
-        return await backend.loanAccount.addBranch( loanAccount.id, { name, branchCode, address, phone, openingHours } );
-    },
-
-    assignBranch: async (loanAccount, { branchId }, { backend }) => {
+    assignBranch: async (loanAccount, { branchId }, { backend }: ResolverContext) => {
         return await backend.loanAccount.assignToBranch( loanAccount.id, branchId );
     },
 
-    unassignBranch: async (_, { loanAccountId }, { backend }) => {
+    unassignBranch: async ( _: ResolverParent { loanAccountId }, { backend }: ResolverContext) => {
         return await backend.loanAccount.unassignFromBranch( loanAccountId );
     },
     
-    product: async (loanAccount, { id }, { backend }) => {
+    product: async (loanAccount, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.getProduct( loanAccount.id ).then(bankingProduct => {
                 resolve(bankingProduct);
@@ -2518,19 +2410,15 @@ LoanAccount: {
         })
     },
 
-    addProduct: async (loanAccount, { productCode, name, description, ProductCategory }, { backend }) => {
-        return await backend.loanAccount.addProduct( loanAccount.id, { productCode, name, description, ProductCategory } );
-    },
-
-    assignProduct: async (loanAccount, { productId }, { backend }) => {
+    assignProduct: async (loanAccount, { productId }, { backend }: ResolverContext) => {
         return await backend.loanAccount.assignToProduct( loanAccount.id, productId );
     },
 
-    unassignProduct: async (_, { loanAccountId }, { backend }) => {
+    unassignProduct: async ( _: ResolverParent { loanAccountId }, { backend }: ResolverContext) => {
         return await backend.loanAccount.unassignFromProduct( loanAccountId );
     },
         
-    borrowers: async (loanAccount, {}, { backend }) => {
+    borrowers: async (loanAccount, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.getBorrowers( loanAccount.id ).then(borrowers => {
                 resolve(borrowers);
@@ -2538,15 +2426,15 @@ LoanAccount: {
         })
     },
 
-    addToBorrowers: async (loanAccount, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus }, { backend }) => {
+    addToBorrowers: async (loanAccount, args: LoanAccount, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.loanAccount.addToBorrowers( loanAccount.id, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus } ).then( result => {
+            backend.loanAccount.addToBorrowers( loanAccount.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToBorrowers: async (loanAccount, { borrowersIds }, { backend }) => {
+    assignToBorrowers: async (loanAccount, { borrowersIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.assignToBorrowers( loanAccount.id, borrowersIds ).then( result => {
                 resolve ( result );
@@ -2555,7 +2443,7 @@ LoanAccount: {
     },
 
     
-    repaymentSchedule: async (loanAccount, {}, { backend }) => {
+    repaymentSchedule: async (loanAccount, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.getRepaymentSchedule( loanAccount.id ).then(repaymentSchedule => {
                 resolve(repaymentSchedule);
@@ -2563,15 +2451,15 @@ LoanAccount: {
         })
     },
 
-    addToRepaymentSchedule: async (loanAccount, { installmentNumber, dueDate, principalDue, interestDue, totalDue, Status }, { backend }) => {
+    addToRepaymentSchedule: async (loanAccount, args: LoanAccount, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.loanAccount.addToRepaymentSchedule( loanAccount.id, { installmentNumber, dueDate, principalDue, interestDue, totalDue, Status } ).then( result => {
+            backend.loanAccount.addToRepaymentSchedule( loanAccount.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToRepaymentSchedule: async (loanAccount, { repaymentScheduleIds }, { backend }) => {
+    assignToRepaymentSchedule: async (loanAccount, { repaymentScheduleIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.assignToRepaymentSchedule( loanAccount.id, repaymentScheduleIds ).then( result => {
                 resolve ( result );
@@ -2580,7 +2468,7 @@ LoanAccount: {
     },
 
     
-    payments: async (loanAccount, {}, { backend }) => {
+    payments: async (loanAccount, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.getPayments( loanAccount.id ).then(payments => {
                 resolve(payments);
@@ -2588,15 +2476,15 @@ LoanAccount: {
         })
     },
 
-    addToPayments: async (loanAccount, { paymentReference, amount, paymentDate, Method, Status }, { backend }) => {
+    addToPayments: async (loanAccount, args: LoanAccount, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.loanAccount.addToPayments( loanAccount.id, { paymentReference, amount, paymentDate, Method, Status } ).then( result => {
+            backend.loanAccount.addToPayments( loanAccount.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToPayments: async (loanAccount, { paymentsIds }, { backend }) => {
+    assignToPayments: async (loanAccount, { paymentsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.assignToPayments( loanAccount.id, paymentsIds ).then( result => {
                 resolve ( result );
@@ -2605,7 +2493,7 @@ LoanAccount: {
     },
 
     
-    collateral: async (loanAccount, {}, { backend }) => {
+    collateral: async (loanAccount, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.getCollateral( loanAccount.id ).then(collateral => {
                 resolve(collateral);
@@ -2613,15 +2501,15 @@ LoanAccount: {
         })
     },
 
-    addToCollateral: async (loanAccount, { appraisedValue, description, location, CollateralType }, { backend }) => {
+    addToCollateral: async (loanAccount, args: LoanAccount, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.loanAccount.addToCollateral( loanAccount.id, { appraisedValue, description, location, CollateralType } ).then( result => {
+            backend.loanAccount.addToCollateral( loanAccount.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToCollateral: async (loanAccount, { collateralIds }, { backend }) => {
+    assignToCollateral: async (loanAccount, { collateralIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.assignToCollateral( loanAccount.id, collateralIds ).then( result => {
                 resolve ( result );
@@ -2630,7 +2518,7 @@ LoanAccount: {
     },
 
     
-    feeCharges: async (loanAccount, {}, { backend }) => {
+    feeCharges: async (loanAccount, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.getFeeCharges( loanAccount.id ).then(feeCharges => {
                 resolve(feeCharges);
@@ -2638,15 +2526,15 @@ LoanAccount: {
         })
     },
 
-    addToFeeCharges: async (loanAccount, { feeCode, amount, appliedOn, FeeType }, { backend }) => {
+    addToFeeCharges: async (loanAccount, args: LoanAccount, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.loanAccount.addToFeeCharges( loanAccount.id, { feeCode, amount, appliedOn, FeeType } ).then( result => {
+            backend.loanAccount.addToFeeCharges( loanAccount.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToFeeCharges: async (loanAccount, { feeChargesIds }, { backend }) => {
+    assignToFeeCharges: async (loanAccount, { feeChargesIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanAccount.assignToFeeCharges( loanAccount.id, feeChargesIds ).then( result => {
                 resolve ( result );
@@ -2657,7 +2545,7 @@ LoanAccount: {
     },
 RepaymentSchedule: {
     
-    loanAccount: async (repaymentSchedule, { id }, { backend }) => {
+    loanAccount: async (repaymentSchedule, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.repaymentSchedule.getLoanAccount( repaymentSchedule.id ).then(loanAccount => {
                 resolve(loanAccount);
@@ -2665,19 +2553,15 @@ RepaymentSchedule: {
         })
     },
 
-    addLoanAccount: async (repaymentSchedule, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status }, { backend }) => {
-        return await backend.repaymentSchedule.addLoanAccount( repaymentSchedule.id, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status } );
-    },
-
-    assignLoanAccount: async (repaymentSchedule, { loanAccountId }, { backend }) => {
+    assignLoanAccount: async (repaymentSchedule, { loanAccountId }, { backend }: ResolverContext) => {
         return await backend.repaymentSchedule.assignToLoanAccount( repaymentSchedule.id, loanAccountId );
     },
 
-    unassignLoanAccount: async (_, { repaymentScheduleId }, { backend }) => {
+    unassignLoanAccount: async ( _: ResolverParent { repaymentScheduleId }, { backend }: ResolverContext) => {
         return await backend.repaymentSchedule.unassignFromLoanAccount( repaymentScheduleId );
     },
     
-    payment: async (repaymentSchedule, { id }, { backend }) => {
+    payment: async (repaymentSchedule, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.repaymentSchedule.getPayment( repaymentSchedule.id ).then(loanPayment => {
                 resolve(loanPayment);
@@ -2685,21 +2569,17 @@ RepaymentSchedule: {
         })
     },
 
-    addPayment: async (repaymentSchedule, { paymentReference, amount, paymentDate, Method, Status }, { backend }) => {
-        return await backend.repaymentSchedule.addPayment( repaymentSchedule.id, { paymentReference, amount, paymentDate, Method, Status } );
-    },
-
-    assignPayment: async (repaymentSchedule, { paymentId }, { backend }) => {
+    assignPayment: async (repaymentSchedule, { paymentId }, { backend }: ResolverContext) => {
         return await backend.repaymentSchedule.assignToPayment( repaymentSchedule.id, paymentId );
     },
 
-    unassignPayment: async (_, { repaymentScheduleId }, { backend }) => {
+    unassignPayment: async ( _: ResolverParent { repaymentScheduleId }, { backend }: ResolverContext) => {
         return await backend.repaymentSchedule.unassignFromPayment( repaymentScheduleId );
     },
         },
 LoanPayment: {
     
-    loanAccount: async (loanPayment, { id }, { backend }) => {
+    loanAccount: async (loanPayment, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanPayment.getLoanAccount( loanPayment.id ).then(loanAccount => {
                 resolve(loanAccount);
@@ -2707,19 +2587,15 @@ LoanPayment: {
         })
     },
 
-    addLoanAccount: async (loanPayment, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status }, { backend }) => {
-        return await backend.loanPayment.addLoanAccount( loanPayment.id, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status } );
-    },
-
-    assignLoanAccount: async (loanPayment, { loanAccountId }, { backend }) => {
+    assignLoanAccount: async (loanPayment, { loanAccountId }, { backend }: ResolverContext) => {
         return await backend.loanPayment.assignToLoanAccount( loanPayment.id, loanAccountId );
     },
 
-    unassignLoanAccount: async (_, { loanPaymentId }, { backend }) => {
+    unassignLoanAccount: async ( _: ResolverParent { loanPaymentId }, { backend }: ResolverContext) => {
         return await backend.loanPayment.unassignFromLoanAccount( loanPaymentId );
     },
     
-    transaction: async (loanPayment, { id }, { backend }) => {
+    transaction: async (loanPayment, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.loanPayment.getTransaction( loanPayment.id ).then(transaction => {
                 resolve(transaction);
@@ -2727,21 +2603,17 @@ LoanPayment: {
         })
     },
 
-    addTransaction: async (loanPayment, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel }, { backend }) => {
-        return await backend.loanPayment.addTransaction( loanPayment.id, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel } );
-    },
-
-    assignTransaction: async (loanPayment, { transactionId }, { backend }) => {
+    assignTransaction: async (loanPayment, { transactionId }, { backend }: ResolverContext) => {
         return await backend.loanPayment.assignToTransaction( loanPayment.id, transactionId );
     },
 
-    unassignTransaction: async (_, { loanPaymentId }, { backend }) => {
+    unassignTransaction: async ( _: ResolverParent { loanPaymentId }, { backend }: ResolverContext) => {
         return await backend.loanPayment.unassignFromTransaction( loanPaymentId );
     },
         },
 Collateral: {
     
-    loanAccount: async (collateral, { id }, { backend }) => {
+    loanAccount: async (collateral, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.collateral.getLoanAccount( collateral.id ).then(loanAccount => {
                 resolve(loanAccount);
@@ -2749,21 +2621,17 @@ Collateral: {
         })
     },
 
-    addLoanAccount: async (collateral, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status }, { backend }) => {
-        return await backend.collateral.addLoanAccount( collateral.id, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status } );
-    },
-
-    assignLoanAccount: async (collateral, { loanAccountId }, { backend }) => {
+    assignLoanAccount: async (collateral, { loanAccountId }, { backend }: ResolverContext) => {
         return await backend.collateral.assignToLoanAccount( collateral.id, loanAccountId );
     },
 
-    unassignLoanAccount: async (_, { collateralId }, { backend }) => {
+    unassignLoanAccount: async ( _: ResolverParent { collateralId }, { backend }: ResolverContext) => {
         return await backend.collateral.unassignFromLoanAccount( collateralId );
     },
         },
 FeeCharge: {
     
-    account: async (feeCharge, { id }, { backend }) => {
+    account: async (feeCharge, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.feeCharge.getAccount( feeCharge.id ).then(account => {
                 resolve(account);
@@ -2771,19 +2639,15 @@ FeeCharge: {
         })
     },
 
-    addAccount: async (feeCharge, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
-        return await backend.feeCharge.addAccount( feeCharge.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } );
-    },
-
-    assignAccount: async (feeCharge, { accountId }, { backend }) => {
+    assignAccount: async (feeCharge, { accountId }, { backend }: ResolverContext) => {
         return await backend.feeCharge.assignToAccount( feeCharge.id, accountId );
     },
 
-    unassignAccount: async (_, { feeChargeId }, { backend }) => {
+    unassignAccount: async ( _: ResolverParent { feeChargeId }, { backend }: ResolverContext) => {
         return await backend.feeCharge.unassignFromAccount( feeChargeId );
     },
     
-    loanAccount: async (feeCharge, { id }, { backend }) => {
+    loanAccount: async (feeCharge, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.feeCharge.getLoanAccount( feeCharge.id ).then(loanAccount => {
                 resolve(loanAccount);
@@ -2791,21 +2655,17 @@ FeeCharge: {
         })
     },
 
-    addLoanAccount: async (feeCharge, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status }, { backend }) => {
-        return await backend.feeCharge.addLoanAccount( feeCharge.id, { loanNumber, principalAmount, outstandingPrincipal, interestRate, originationDate, maturityDate, paymentDayOfMonth, currency, LoanType, RateType, Compounding, Status } );
-    },
-
-    assignLoanAccount: async (feeCharge, { loanAccountId }, { backend }) => {
+    assignLoanAccount: async (feeCharge, { loanAccountId }, { backend }: ResolverContext) => {
         return await backend.feeCharge.assignToLoanAccount( feeCharge.id, loanAccountId );
     },
 
-    unassignLoanAccount: async (_, { feeChargeId }, { backend }) => {
+    unassignLoanAccount: async ( _: ResolverParent { feeChargeId }, { backend }: ResolverContext) => {
         return await backend.feeCharge.unassignFromLoanAccount( feeChargeId );
     },
         },
 ExchangeRate: {
     
-    bank: async (exchangeRate, { id }, { backend }) => {
+    bank: async (exchangeRate, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.exchangeRate.getBank( exchangeRate.id ).then(bank => {
                 resolve(bank);
@@ -2813,19 +2673,15 @@ ExchangeRate: {
         })
     },
 
-    addBank: async (exchangeRate, { name, legalName, swiftBic, headquartersCountry, website }, { backend }) => {
-        return await backend.exchangeRate.addBank( exchangeRate.id, { name, legalName, swiftBic, headquartersCountry, website } );
-    },
-
-    assignBank: async (exchangeRate, { bankId }, { backend }) => {
+    assignBank: async (exchangeRate, { bankId }, { backend }: ResolverContext) => {
         return await backend.exchangeRate.assignToBank( exchangeRate.id, bankId );
     },
 
-    unassignBank: async (_, { exchangeRateId }, { backend }) => {
+    unassignBank: async ( _: ResolverParent { exchangeRateId }, { backend }: ResolverContext) => {
         return await backend.exchangeRate.unassignFromBank( exchangeRateId );
     },
         
-    fxTrades: async (exchangeRate, {}, { backend }) => {
+    fxTrades: async (exchangeRate, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.exchangeRate.getFxTrades( exchangeRate.id ).then(fxTrades => {
                 resolve(fxTrades);
@@ -2833,15 +2689,15 @@ ExchangeRate: {
         })
     },
 
-    addToFxTrades: async (exchangeRate, { tradeReference, tradeDate, settlementDate, amountSold, amountBought, rate, Status }, { backend }) => {
+    addToFxTrades: async (exchangeRate, args: ExchangeRate, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.exchangeRate.addToFxTrades( exchangeRate.id, { tradeReference, tradeDate, settlementDate, amountSold, amountBought, rate, Status } ).then( result => {
+            backend.exchangeRate.addToFxTrades( exchangeRate.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToFxTrades: async (exchangeRate, { fxTradesIds }, { backend }) => {
+    assignToFxTrades: async (exchangeRate, { fxTradesIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.exchangeRate.assignToFxTrades( exchangeRate.id, fxTradesIds ).then( result => {
                 resolve ( result );
@@ -2852,7 +2708,7 @@ ExchangeRate: {
     },
 FXTrade: {
     
-    customer: async (fXTrade, { id }, { backend }) => {
+    customer: async (fXTrade, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.fXTrade.getCustomer( fXTrade.id ).then(customer => {
                 resolve(customer);
@@ -2860,19 +2716,15 @@ FXTrade: {
         })
     },
 
-    addCustomer: async (fXTrade, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus }, { backend }) => {
-        return await backend.fXTrade.addCustomer( fXTrade.id, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus } );
-    },
-
-    assignCustomer: async (fXTrade, { customerId }, { backend }) => {
+    assignCustomer: async (fXTrade, { customerId }, { backend }: ResolverContext) => {
         return await backend.fXTrade.assignToCustomer( fXTrade.id, customerId );
     },
 
-    unassignCustomer: async (_, { fXTradeId }, { backend }) => {
+    unassignCustomer: async ( _: ResolverParent { fXTradeId }, { backend }: ResolverContext) => {
         return await backend.fXTrade.unassignFromCustomer( fXTradeId );
     },
     
-    bank: async (fXTrade, { id }, { backend }) => {
+    bank: async (fXTrade, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.fXTrade.getBank( fXTrade.id ).then(bank => {
                 resolve(bank);
@@ -2880,19 +2732,15 @@ FXTrade: {
         })
     },
 
-    addBank: async (fXTrade, { name, legalName, swiftBic, headquartersCountry, website }, { backend }) => {
-        return await backend.fXTrade.addBank( fXTrade.id, { name, legalName, swiftBic, headquartersCountry, website } );
-    },
-
-    assignBank: async (fXTrade, { bankId }, { backend }) => {
+    assignBank: async (fXTrade, { bankId }, { backend }: ResolverContext) => {
         return await backend.fXTrade.assignToBank( fXTrade.id, bankId );
     },
 
-    unassignBank: async (_, { fXTradeId }, { backend }) => {
+    unassignBank: async ( _: ResolverParent { fXTradeId }, { backend }: ResolverContext) => {
         return await backend.fXTrade.unassignFromBank( fXTradeId );
     },
     
-    exchangeRate: async (fXTrade, { id }, { backend }) => {
+    exchangeRate: async (fXTrade, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.fXTrade.getExchangeRate( fXTrade.id ).then(exchangeRate => {
                 resolve(exchangeRate);
@@ -2900,19 +2748,15 @@ FXTrade: {
         })
     },
 
-    addExchangeRate: async (fXTrade, { baseCurrency, counterCurrency, rate, asOf, source }, { backend }) => {
-        return await backend.fXTrade.addExchangeRate( fXTrade.id, { baseCurrency, counterCurrency, rate, asOf, source } );
-    },
-
-    assignExchangeRate: async (fXTrade, { exchangeRateId }, { backend }) => {
+    assignExchangeRate: async (fXTrade, { exchangeRateId }, { backend }: ResolverContext) => {
         return await backend.fXTrade.assignToExchangeRate( fXTrade.id, exchangeRateId );
     },
 
-    unassignExchangeRate: async (_, { fXTradeId }, { backend }) => {
+    unassignExchangeRate: async ( _: ResolverParent { fXTradeId }, { backend }: ResolverContext) => {
         return await backend.fXTrade.unassignFromExchangeRate( fXTradeId );
     },
     
-    sourceAccount: async (fXTrade, { id }, { backend }) => {
+    sourceAccount: async (fXTrade, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.fXTrade.getSourceAccount( fXTrade.id ).then(account => {
                 resolve(account);
@@ -2920,19 +2764,15 @@ FXTrade: {
         })
     },
 
-    addSourceAccount: async (fXTrade, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
-        return await backend.fXTrade.addSourceAccount( fXTrade.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } );
-    },
-
-    assignSourceAccount: async (fXTrade, { sourceAccountId }, { backend }) => {
+    assignSourceAccount: async (fXTrade, { sourceAccountId }, { backend }: ResolverContext) => {
         return await backend.fXTrade.assignToSourceAccount( fXTrade.id, sourceAccountId );
     },
 
-    unassignSourceAccount: async (_, { fXTradeId }, { backend }) => {
+    unassignSourceAccount: async ( _: ResolverParent { fXTradeId }, { backend }: ResolverContext) => {
         return await backend.fXTrade.unassignFromSourceAccount( fXTradeId );
     },
     
-    destinationAccount: async (fXTrade, { id }, { backend }) => {
+    destinationAccount: async (fXTrade, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.fXTrade.getDestinationAccount( fXTrade.id ).then(account => {
                 resolve(account);
@@ -2940,19 +2780,15 @@ FXTrade: {
         })
     },
 
-    addDestinationAccount: async (fXTrade, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
-        return await backend.fXTrade.addDestinationAccount( fXTrade.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } );
-    },
-
-    assignDestinationAccount: async (fXTrade, { destinationAccountId }, { backend }) => {
+    assignDestinationAccount: async (fXTrade, { destinationAccountId }, { backend }: ResolverContext) => {
         return await backend.fXTrade.assignToDestinationAccount( fXTrade.id, destinationAccountId );
     },
 
-    unassignDestinationAccount: async (_, { fXTradeId }, { backend }) => {
+    unassignDestinationAccount: async ( _: ResolverParent { fXTradeId }, { backend }: ResolverContext) => {
         return await backend.fXTrade.unassignFromDestinationAccount( fXTradeId );
     },
     
-    transaction: async (fXTrade, { id }, { backend }) => {
+    transaction: async (fXTrade, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.fXTrade.getTransaction( fXTrade.id ).then(transaction => {
                 resolve(transaction);
@@ -2960,21 +2796,17 @@ FXTrade: {
         })
     },
 
-    addTransaction: async (fXTrade, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel }, { backend }) => {
-        return await backend.fXTrade.addTransaction( fXTrade.id, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel } );
-    },
-
-    assignTransaction: async (fXTrade, { transactionId }, { backend }) => {
+    assignTransaction: async (fXTrade, { transactionId }, { backend }: ResolverContext) => {
         return await backend.fXTrade.assignToTransaction( fXTrade.id, transactionId );
     },
 
-    unassignTransaction: async (_, { fXTradeId }, { backend }) => {
+    unassignTransaction: async ( _: ResolverParent { fXTradeId }, { backend }: ResolverContext) => {
         return await backend.fXTrade.unassignFromTransaction( fXTradeId );
     },
         },
 Dispute: {
     
-    transaction: async (dispute, { id }, { backend }) => {
+    transaction: async (dispute, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.dispute.getTransaction( dispute.id ).then(transaction => {
                 resolve(transaction);
@@ -2982,19 +2814,15 @@ Dispute: {
         })
     },
 
-    addTransaction: async (dispute, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel }, { backend }) => {
-        return await backend.dispute.addTransaction( dispute.id, { bookingDate, valueDate, amount, description, Direction, TransactionType, Status, Channel } );
-    },
-
-    assignTransaction: async (dispute, { transactionId }, { backend }) => {
+    assignTransaction: async (dispute, { transactionId }, { backend }: ResolverContext) => {
         return await backend.dispute.assignToTransaction( dispute.id, transactionId );
     },
 
-    unassignTransaction: async (_, { disputeId }, { backend }) => {
+    unassignTransaction: async ( _: ResolverParent { disputeId }, { backend }: ResolverContext) => {
         return await backend.dispute.unassignFromTransaction( disputeId );
     },
     
-    customer: async (dispute, { id }, { backend }) => {
+    customer: async (dispute, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.dispute.getCustomer( dispute.id ).then(customer => {
                 resolve(customer);
@@ -3002,19 +2830,15 @@ Dispute: {
         })
     },
 
-    addCustomer: async (dispute, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus }, { backend }) => {
-        return await backend.dispute.addCustomer( dispute.id, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus } );
-    },
-
-    assignCustomer: async (dispute, { customerId }, { backend }) => {
+    assignCustomer: async (dispute, { customerId }, { backend }: ResolverContext) => {
         return await backend.dispute.assignToCustomer( dispute.id, customerId );
     },
 
-    unassignCustomer: async (_, { disputeId }, { backend }) => {
+    unassignCustomer: async ( _: ResolverParent { disputeId }, { backend }: ResolverContext) => {
         return await backend.dispute.unassignFromCustomer( disputeId );
     },
     
-    account: async (dispute, { id }, { backend }) => {
+    account: async (dispute, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.dispute.getAccount( dispute.id ).then(account => {
                 resolve(account);
@@ -3022,19 +2846,15 @@ Dispute: {
         })
     },
 
-    addAccount: async (dispute, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
-        return await backend.dispute.addAccount( dispute.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } );
-    },
-
-    assignAccount: async (dispute, { accountId }, { backend }) => {
+    assignAccount: async (dispute, { accountId }, { backend }: ResolverContext) => {
         return await backend.dispute.assignToAccount( dispute.id, accountId );
     },
 
-    unassignAccount: async (_, { disputeId }, { backend }) => {
+    unassignAccount: async ( _: ResolverParent { disputeId }, { backend }: ResolverContext) => {
         return await backend.dispute.unassignFromAccount( disputeId );
     },
     
-    paymentCard: async (dispute, { id }, { backend }) => {
+    paymentCard: async (dispute, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.dispute.getPaymentCard( dispute.id ).then(paymentCard => {
                 resolve(paymentCard);
@@ -3042,21 +2862,17 @@ Dispute: {
         })
     },
 
-    addPaymentCard: async (dispute, { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network }, { backend }) => {
-        return await backend.dispute.addPaymentCard( dispute.id, { cardNumber, embossedName, expiryMonth, expiryYear, CardType, CardStatus, Network } );
-    },
-
-    assignPaymentCard: async (dispute, { paymentCardId }, { backend }) => {
+    assignPaymentCard: async (dispute, { paymentCardId }, { backend }: ResolverContext) => {
         return await backend.dispute.assignToPaymentCard( dispute.id, paymentCardId );
     },
 
-    unassignPaymentCard: async (_, { disputeId }, { backend }) => {
+    unassignPaymentCard: async ( _: ResolverParent { disputeId }, { backend }: ResolverContext) => {
         return await backend.dispute.unassignFromPaymentCard( disputeId );
     },
         },
 Consent: {
     
-    customer: async (consent, { id }, { backend }) => {
+    customer: async (consent, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.consent.getCustomer( consent.id ).then(customer => {
                 resolve(customer);
@@ -3064,19 +2880,15 @@ Consent: {
         })
     },
 
-    addCustomer: async (consent, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus }, { backend }) => {
-        return await backend.consent.addCustomer( consent.id, { firstName, lastName, legalName, dateOfBirth, taxId, email, phone, address, CustomerType, RiskRating, KycStatus } );
-    },
-
-    assignCustomer: async (consent, { customerId }, { backend }) => {
+    assignCustomer: async (consent, { customerId }, { backend }: ResolverContext) => {
         return await backend.consent.assignToCustomer( consent.id, customerId );
     },
 
-    unassignCustomer: async (_, { consentId }, { backend }) => {
+    unassignCustomer: async ( _: ResolverParent { consentId }, { backend }: ResolverContext) => {
         return await backend.consent.unassignFromCustomer( consentId );
     },
     
-    bank: async (consent, { id }, { backend }) => {
+    bank: async (consent, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.consent.getBank( consent.id ).then(bank => {
                 resolve(bank);
@@ -3084,19 +2896,15 @@ Consent: {
         })
     },
 
-    addBank: async (consent, { name, legalName, swiftBic, headquartersCountry, website }, { backend }) => {
-        return await backend.consent.addBank( consent.id, { name, legalName, swiftBic, headquartersCountry, website } );
-    },
-
-    assignBank: async (consent, { bankId }, { backend }) => {
+    assignBank: async (consent, { bankId }, { backend }: ResolverContext) => {
         return await backend.consent.assignToBank( consent.id, bankId );
     },
 
-    unassignBank: async (_, { consentId }, { backend }) => {
+    unassignBank: async ( _: ResolverParent { consentId }, { backend }: ResolverContext) => {
         return await backend.consent.unassignFromBank( consentId );
     },
     
-    thirdPartyProvider: async (consent, { id }, { backend }) => {
+    thirdPartyProvider: async (consent, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.consent.getThirdPartyProvider( consent.id ).then(thirdPartyProvider => {
                 resolve(thirdPartyProvider);
@@ -3104,19 +2912,15 @@ Consent: {
         })
     },
 
-    addThirdPartyProvider: async (consent, { name, registrationId, website }, { backend }) => {
-        return await backend.consent.addThirdPartyProvider( consent.id, { name, registrationId, website } );
-    },
-
-    assignThirdPartyProvider: async (consent, { thirdPartyProviderId }, { backend }) => {
+    assignThirdPartyProvider: async (consent, { thirdPartyProviderId }, { backend }: ResolverContext) => {
         return await backend.consent.assignToThirdPartyProvider( consent.id, thirdPartyProviderId );
     },
 
-    unassignThirdPartyProvider: async (_, { consentId }, { backend }) => {
+    unassignThirdPartyProvider: async ( _: ResolverParent { consentId }, { backend }: ResolverContext) => {
         return await backend.consent.unassignFromThirdPartyProvider( consentId );
     },
         
-    authorizedAccounts: async (consent, {}, { backend }) => {
+    authorizedAccounts: async (consent, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.consent.getAuthorizedAccounts( consent.id ).then(authorizedAccounts => {
                 resolve(authorizedAccounts);
@@ -3124,15 +2928,15 @@ Consent: {
         })
     },
 
-    addToAuthorizedAccounts: async (consent, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status }, { backend }) => {
+    addToAuthorizedAccounts: async (consent, args: Consent, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.consent.addToAuthorizedAccounts( consent.id, { accountNumber, iban, accountName, currency, openedOn, closedOn, AccountType, OwnershipType, Status } ).then( result => {
+            backend.consent.addToAuthorizedAccounts( consent.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToAuthorizedAccounts: async (consent, { authorizedAccountsIds }, { backend }) => {
+    assignToAuthorizedAccounts: async (consent, { authorizedAccountsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.consent.assignToAuthorizedAccounts( consent.id, authorizedAccountsIds ).then( result => {
                 resolve ( result );
@@ -3143,7 +2947,7 @@ Consent: {
     },
 ThirdPartyProvider: {
     
-    bank: async (thirdPartyProvider, { id }, { backend }) => {
+    bank: async (thirdPartyProvider, { id }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.thirdPartyProvider.getBank( thirdPartyProvider.id ).then(bank => {
                 resolve(bank);
@@ -3151,19 +2955,15 @@ ThirdPartyProvider: {
         })
     },
 
-    addBank: async (thirdPartyProvider, { name, legalName, swiftBic, headquartersCountry, website }, { backend }) => {
-        return await backend.thirdPartyProvider.addBank( thirdPartyProvider.id, { name, legalName, swiftBic, headquartersCountry, website } );
-    },
-
-    assignBank: async (thirdPartyProvider, { bankId }, { backend }) => {
+    assignBank: async (thirdPartyProvider, { bankId }, { backend }: ResolverContext) => {
         return await backend.thirdPartyProvider.assignToBank( thirdPartyProvider.id, bankId );
     },
 
-    unassignBank: async (_, { thirdPartyProviderId }, { backend }) => {
+    unassignBank: async ( _: ResolverParent { thirdPartyProviderId }, { backend }: ResolverContext) => {
         return await backend.thirdPartyProvider.unassignFromBank( thirdPartyProviderId );
     },
         
-    consents: async (thirdPartyProvider, {}, { backend }) => {
+    consents: async (thirdPartyProvider, {}, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.thirdPartyProvider.getConsents( thirdPartyProvider.id ).then(consents => {
                 resolve(consents);
@@ -3171,15 +2971,15 @@ ThirdPartyProvider: {
         })
     },
 
-    addToConsents: async (thirdPartyProvider, { grantedOn, expiresOn, ConsentType, Status }, { backend }) => {
+    addToConsents: async (thirdPartyProvider, args: ThirdPartyProvider, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
-            backend.thirdPartyProvider.addToConsents( thirdPartyProvider.id, { grantedOn, expiresOn, ConsentType, Status } ).then( result => {
+            backend.thirdPartyProvider.addToConsents( thirdPartyProvider.id, args ).then( result => {
                 resolve ( result );
             })
         })
     },
 
-    assignToConsents: async (thirdPartyProvider, { consentsIds }, { backend }) => {
+    assignToConsents: async (thirdPartyProvider, { consentsIds }, { backend }: ResolverContext) => {
         return new Promise(function(resolve, reject) {
             backend.thirdPartyProvider.assignToConsents( thirdPartyProvider.id, consentsIds ).then( result => {
                 resolve ( result );

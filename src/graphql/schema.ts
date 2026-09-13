@@ -168,61 +168,61 @@ type Query {
 type Mutation {
 
 addBank(
-        name: String!
-        legalName: String!
-        swiftBic: String!
-        headquartersCountry: String!
-        website: String!
+        name: String
+        legalName: String
+        swiftBic: String
+        headquartersCountry: String
+        website: String
 ): Bank
 
 updateBank(
 id: ID!
-        name: String!
-        legalName: String!
-        swiftBic: String!
-        headquartersCountry: String!
-        website: String!
+        name: String
+        legalName: String
+        swiftBic: String
+        headquartersCountry: String
+        website: String
 ): Bank
 removeBank(id: ID!): Boolean
 addBranch(
-        name: String!
-        branchCode: String!
-        address: String!
-        phone: String!
-        openingHours: String!
+        name: String
+        branchCode: String
+        address: String
+        phone: String
+        openingHours: String
 ): Branch
 
 updateBranch(
 id: ID!
-        name: String!
-        branchCode: String!
-        address: String!
-        phone: String!
-        openingHours: String!
+        name: String
+        branchCode: String
+        address: String
+        phone: String
+        openingHours: String
 ): Branch
 removeBranch(id: ID!): Boolean
 addATM(
-        terminalId: String!
-        location: String!
+        terminalId: String
+        location: String
         Status:  ATMStatus
 ): ATM
 
 updateATM(
 id: ID!
-        terminalId: String!
-        location: String!
+        terminalId: String
+        location: String
         Status:  ATMStatus
 ): ATM
 removeATM(id: ID!): Boolean
 addCustomer(
-        firstName: String!
-        lastName: String!
-        legalName: String!
-        dateOfBirth: String!
-        taxId: String!
-        email: String!
-        phone: String!
-        address: String!
+        firstName: String
+        lastName: String
+        legalName: String
+        dateOfBirth: String
+        taxId: String
+        email: String
+        phone: String
+        address: String
         CustomerType:  CustomerType
         RiskRating:  RiskRating
         KycStatus:  KycStatus
@@ -230,95 +230,95 @@ addCustomer(
 
 updateCustomer(
 id: ID!
-        firstName: String!
-        lastName: String!
-        legalName: String!
-        dateOfBirth: String!
-        taxId: String!
-        email: String!
-        phone: String!
-        address: String!
+        firstName: String
+        lastName: String
+        legalName: String
+        dateOfBirth: String
+        taxId: String
+        email: String
+        phone: String
+        address: String
         CustomerType:  CustomerType
         RiskRating:  RiskRating
         KycStatus:  KycStatus
 ): Customer
 removeCustomer(id: ID!): Boolean
 addKycProfile(
-        profileId: String!
-        lastReviewedOn: String!
+        profileId: String
+        lastReviewedOn: String
         Status:  KycStatus
 ): KycProfile
 
 updateKycProfile(
 id: ID!
-        profileId: String!
-        lastReviewedOn: String!
+        profileId: String
+        lastReviewedOn: String
         Status:  KycStatus
 ): KycProfile
 removeKycProfile(id: ID!): Boolean
 addIdentityDocument(
-        documentNumber: String!
-        issuingCountry: String!
-        expirationDate: String!
+        documentNumber: String
+        issuingCountry: String
+        expirationDate: String
         DocumentType:  IdentityDocumentType
 ): IdentityDocument
 
 updateIdentityDocument(
 id: ID!
-        documentNumber: String!
-        issuingCountry: String!
-        expirationDate: String!
+        documentNumber: String
+        issuingCountry: String
+        expirationDate: String
         DocumentType:  IdentityDocumentType
 ): IdentityDocument
 removeIdentityDocument(id: ID!): Boolean
 addRiskAssessment(
-        score: Int!
-        assessedOn: String!
+        score: Int
+        assessedOn: String
         Rating:  RiskRating
 ): RiskAssessment
 
 updateRiskAssessment(
 id: ID!
-        score: Int!
-        assessedOn: String!
+        score: Int
+        assessedOn: String
         Rating:  RiskRating
 ): RiskAssessment
 removeRiskAssessment(id: ID!): Boolean
 addScreeningResult(
-        screeningDate: String!
-        provider: String!
+        screeningDate: String
+        provider: String
         Outcome:  ScreeningOutcome
 ): ScreeningResult
 
 updateScreeningResult(
 id: ID!
-        screeningDate: String!
-        provider: String!
+        screeningDate: String
+        provider: String
         Outcome:  ScreeningOutcome
 ): ScreeningResult
 removeScreeningResult(id: ID!): Boolean
 addBankingProduct(
-        productCode: String!
-        name: String!
-        description: String!
+        productCode: String
+        name: String
+        description: String
         ProductCategory:  ProductCategory
 ): BankingProduct
 
 updateBankingProduct(
 id: ID!
-        productCode: String!
-        name: String!
-        description: String!
+        productCode: String
+        name: String
+        description: String
         ProductCategory:  ProductCategory
 ): BankingProduct
 removeBankingProduct(id: ID!): Boolean
 addAccount(
-        accountNumber: String!
-        iban: String!
-        accountName: String!
-        currency: String!
-        openedOn: String!
-        closedOn: String!
+        accountNumber: String
+        iban: String
+        accountName: String
+        currency: String
+        openedOn: String
+        closedOn: String
         AccountType:  AccountType
         OwnershipType:  AccountOwnershipType
         Status:  AccountStatus
@@ -326,41 +326,41 @@ addAccount(
 
 updateAccount(
 id: ID!
-        accountNumber: String!
-        iban: String!
-        accountName: String!
-        currency: String!
-        openedOn: String!
-        closedOn: String!
+        accountNumber: String
+        iban: String
+        accountName: String
+        currency: String
+        openedOn: String
+        closedOn: String
         AccountType:  AccountType
         OwnershipType:  AccountOwnershipType
         Status:  AccountStatus
 ): Account
 removeAccount(id: ID!): Boolean
 addAccountStatement(
-        statementNumber: String!
-        periodStart: String!
-        periodEnd: String!
-        openingBalance: String!
-        closingBalance: String!
+        statementNumber: String
+        periodStart: String
+        periodEnd: String
+        openingBalance: String
+        closingBalance: String
         DeliveryMethod:  StatementDeliveryMethod
 ): AccountStatement
 
 updateAccountStatement(
 id: ID!
-        statementNumber: String!
-        periodStart: String!
-        periodEnd: String!
-        openingBalance: String!
-        closingBalance: String!
+        statementNumber: String
+        periodStart: String
+        periodEnd: String
+        openingBalance: String
+        closingBalance: String
         DeliveryMethod:  StatementDeliveryMethod
 ): AccountStatement
 removeAccountStatement(id: ID!): Boolean
 addTransaction(
-        bookingDate: String!
-        valueDate: String!
-        amount: String!
-        description: String!
+        bookingDate: String
+        valueDate: String
+        amount: String
+        description: String
         Direction:  TransactionDirection
         TransactionType:  TransactionType
         Status:  TransactionStatus
@@ -369,10 +369,10 @@ addTransaction(
 
 updateTransaction(
 id: ID!
-        bookingDate: String!
-        valueDate: String!
-        amount: String!
-        description: String!
+        bookingDate: String
+        valueDate: String
+        amount: String
+        description: String
         Direction:  TransactionDirection
         TransactionType:  TransactionType
         Status:  TransactionStatus
@@ -380,69 +380,69 @@ id: ID!
 ): Transaction
 removeTransaction(id: ID!): Boolean
 addExternalAccount(
-        name: String!
-        iban: String!
-        accountNumber: String!
-        bic: String!
-        bankName: String!
-        country: String!
+        name: String
+        iban: String
+        accountNumber: String
+        bic: String
+        bankName: String
+        country: String
 ): ExternalAccount
 
 updateExternalAccount(
 id: ID!
-        name: String!
-        iban: String!
-        accountNumber: String!
-        bic: String!
-        bankName: String!
-        country: String!
+        name: String
+        iban: String
+        accountNumber: String
+        bic: String
+        bankName: String
+        country: String
 ): ExternalAccount
 removeExternalAccount(id: ID!): Boolean
 addFundsTransfer(
-        transferReference: String!
-        amount: String!
-        requestedDate: String!
-        executionDate: String!
-        purpose: String!
-        feeAmount: String!
+        transferReference: String
+        amount: String
+        requestedDate: String
+        executionDate: String
+        purpose: String
+        feeAmount: String
         Method:  PaymentMethod
         Status:  PaymentStatus
 ): FundsTransfer
 
 updateFundsTransfer(
 id: ID!
-        transferReference: String!
-        amount: String!
-        requestedDate: String!
-        executionDate: String!
-        purpose: String!
-        feeAmount: String!
+        transferReference: String
+        amount: String
+        requestedDate: String
+        executionDate: String
+        purpose: String
+        feeAmount: String
         Method:  PaymentMethod
         Status:  PaymentStatus
 ): FundsTransfer
 removeFundsTransfer(id: ID!): Boolean
 addStandingInstruction(
-        instructionId: String!
-        amount: String!
-        nextExecutionDate: String!
+        instructionId: String
+        amount: String
+        nextExecutionDate: String
         Frequency:  StandingInstructionFrequency
         Status:  StandingInstructionStatus
 ): StandingInstruction
 
 updateStandingInstruction(
 id: ID!
-        instructionId: String!
-        amount: String!
-        nextExecutionDate: String!
+        instructionId: String
+        amount: String
+        nextExecutionDate: String
         Frequency:  StandingInstructionFrequency
         Status:  StandingInstructionStatus
 ): StandingInstruction
 removeStandingInstruction(id: ID!): Boolean
 addPaymentCard(
-        cardNumber: String!
-        embossedName: String!
-        expiryMonth: Int!
-        expiryYear: Int!
+        cardNumber: String
+        embossedName: String
+        expiryMonth: Int
+        expiryYear: Int
         CardType:  CardType
         CardStatus:  CardStatus
         Network:  CardNetwork
@@ -450,24 +450,24 @@ addPaymentCard(
 
 updatePaymentCard(
 id: ID!
-        cardNumber: String!
-        embossedName: String!
-        expiryMonth: Int!
-        expiryYear: Int!
+        cardNumber: String
+        embossedName: String
+        expiryMonth: Int
+        expiryYear: Int
         CardType:  CardType
         CardStatus:  CardStatus
         Network:  CardNetwork
 ): PaymentCard
 removePaymentCard(id: ID!): Boolean
 addLoanAccount(
-        loanNumber: String!
-        principalAmount: String!
-        outstandingPrincipal: String!
-        interestRate: String!
-        originationDate: String!
-        maturityDate: String!
-        paymentDayOfMonth: Int!
-        currency: String!
+        loanNumber: String
+        principalAmount: String
+        outstandingPrincipal: String
+        interestRate: String
+        originationDate: String
+        maturityDate: String
+        paymentDayOfMonth: Int
+        currency: String
         LoanType:  LoanType
         RateType:  RateType
         Compounding:  InterestCompounding
@@ -476,14 +476,14 @@ addLoanAccount(
 
 updateLoanAccount(
 id: ID!
-        loanNumber: String!
-        principalAmount: String!
-        outstandingPrincipal: String!
-        interestRate: String!
-        originationDate: String!
-        maturityDate: String!
-        paymentDayOfMonth: Int!
-        currency: String!
+        loanNumber: String
+        principalAmount: String
+        outstandingPrincipal: String
+        interestRate: String
+        originationDate: String
+        maturityDate: String
+        paymentDayOfMonth: Int
+        currency: String
         LoanType:  LoanType
         RateType:  RateType
         Compounding:  InterestCompounding
@@ -491,150 +491,150 @@ id: ID!
 ): LoanAccount
 removeLoanAccount(id: ID!): Boolean
 addRepaymentSchedule(
-        installmentNumber: Int!
-        dueDate: String!
-        principalDue: String!
-        interestDue: String!
-        totalDue: String!
+        installmentNumber: Int
+        dueDate: String
+        principalDue: String
+        interestDue: String
+        totalDue: String
         Status:  InstallmentStatus
 ): RepaymentSchedule
 
 updateRepaymentSchedule(
 id: ID!
-        installmentNumber: Int!
-        dueDate: String!
-        principalDue: String!
-        interestDue: String!
-        totalDue: String!
+        installmentNumber: Int
+        dueDate: String
+        principalDue: String
+        interestDue: String
+        totalDue: String
         Status:  InstallmentStatus
 ): RepaymentSchedule
 removeRepaymentSchedule(id: ID!): Boolean
 addLoanPayment(
-        paymentReference: String!
-        amount: String!
-        paymentDate: String!
+        paymentReference: String
+        amount: String
+        paymentDate: String
         Method:  PaymentMethod
         Status:  PaymentStatus
 ): LoanPayment
 
 updateLoanPayment(
 id: ID!
-        paymentReference: String!
-        amount: String!
-        paymentDate: String!
+        paymentReference: String
+        amount: String
+        paymentDate: String
         Method:  PaymentMethod
         Status:  PaymentStatus
 ): LoanPayment
 removeLoanPayment(id: ID!): Boolean
 addCollateral(
-        appraisedValue: String!
-        description: String!
-        location: String!
+        appraisedValue: String
+        description: String
+        location: String
         CollateralType:  CollateralType
 ): Collateral
 
 updateCollateral(
 id: ID!
-        appraisedValue: String!
-        description: String!
-        location: String!
+        appraisedValue: String
+        description: String
+        location: String
         CollateralType:  CollateralType
 ): Collateral
 removeCollateral(id: ID!): Boolean
 addFeeCharge(
-        feeCode: String!
-        amount: String!
-        appliedOn: String!
+        feeCode: String
+        amount: String
+        appliedOn: String
         FeeType:  FeeType
 ): FeeCharge
 
 updateFeeCharge(
 id: ID!
-        feeCode: String!
-        amount: String!
-        appliedOn: String!
+        feeCode: String
+        amount: String
+        appliedOn: String
         FeeType:  FeeType
 ): FeeCharge
 removeFeeCharge(id: ID!): Boolean
 addExchangeRate(
-        baseCurrency: String!
-        counterCurrency: String!
-        rate: String!
-        asOf: String!
-        source: String!
+        baseCurrency: String
+        counterCurrency: String
+        rate: String
+        asOf: String
+        source: String
 ): ExchangeRate
 
 updateExchangeRate(
 id: ID!
-        baseCurrency: String!
-        counterCurrency: String!
-        rate: String!
-        asOf: String!
-        source: String!
+        baseCurrency: String
+        counterCurrency: String
+        rate: String
+        asOf: String
+        source: String
 ): ExchangeRate
 removeExchangeRate(id: ID!): Boolean
 addFXTrade(
-        tradeReference: String!
-        tradeDate: String!
-        settlementDate: String!
-        amountSold: String!
-        amountBought: String!
-        rate: String!
+        tradeReference: String
+        tradeDate: String
+        settlementDate: String
+        amountSold: String
+        amountBought: String
+        rate: String
         Status:  TradeStatus
 ): FXTrade
 
 updateFXTrade(
 id: ID!
-        tradeReference: String!
-        tradeDate: String!
-        settlementDate: String!
-        amountSold: String!
-        amountBought: String!
-        rate: String!
+        tradeReference: String
+        tradeDate: String
+        settlementDate: String
+        amountSold: String
+        amountBought: String
+        rate: String
         Status:  TradeStatus
 ): FXTrade
 removeFXTrade(id: ID!): Boolean
 addDispute(
-        disputeReference: String!
-        raisedOn: String!
-        reason: String!
+        disputeReference: String
+        raisedOn: String
+        reason: String
         Status:  DisputeStatus
 ): Dispute
 
 updateDispute(
 id: ID!
-        disputeReference: String!
-        raisedOn: String!
-        reason: String!
+        disputeReference: String
+        raisedOn: String
+        reason: String
         Status:  DisputeStatus
 ): Dispute
 removeDispute(id: ID!): Boolean
 addConsent(
-        grantedOn: String!
-        expiresOn: String!
+        grantedOn: String
+        expiresOn: String
         ConsentType:  ConsentType
         Status:  ConsentStatus
 ): Consent
 
 updateConsent(
 id: ID!
-        grantedOn: String!
-        expiresOn: String!
+        grantedOn: String
+        expiresOn: String
         ConsentType:  ConsentType
         Status:  ConsentStatus
 ): Consent
 removeConsent(id: ID!): Boolean
 addThirdPartyProvider(
-        name: String!
-        registrationId: String!
-        website: String!
+        name: String
+        registrationId: String
+        website: String
 ): ThirdPartyProvider
 
 updateThirdPartyProvider(
 id: ID!
-        name: String!
-        registrationId: String!
-        website: String!
+        name: String
+        registrationId: String
+        website: String
 ): ThirdPartyProvider
 removeThirdPartyProvider(id: ID!): Boolean
 }
@@ -644,11 +644,11 @@ removeThirdPartyProvider(id: ID!): Boolean
 """
 type Bank {
 id: ID!
-        name: String!
-        legalName: String!
-        swiftBic: String!
-        headquartersCountry: String!
-        website: String!
+        name: String
+        legalName: String
+        swiftBic: String
+        headquartersCountry: String
+        website: String
         branches:  [Branch]
         products:  [BankingProduct]
         customers:  [Customer]
@@ -659,65 +659,65 @@ id: ID!
         consents:  [Consent]
         thirdPartyProviders:  [ThirdPartyProvider]
     addToBranches(
-            name: String!
-            branchCode: String!
-            address: String!
-            phone: String!
-            openingHours: String!
+            name: String
+            branchCode: String
+            address: String
+            phone: String
+            openingHours: String
     ): Bank
     assignToBranches( branchesIds: [ID]! ): Bank
     addToProducts(
-            productCode: String!
-            name: String!
-            description: String!
+            productCode: String
+            name: String
+            description: String
             ProductCategory:  ProductCategory
     ): Bank
     assignToProducts( productsIds: [ID]! ): Bank
     addToCustomers(
-            firstName: String!
-            lastName: String!
-            legalName: String!
-            dateOfBirth: String!
-            taxId: String!
-            email: String!
-            phone: String!
-            address: String!
+            firstName: String
+            lastName: String
+            legalName: String
+            dateOfBirth: String
+            taxId: String
+            email: String
+            phone: String
+            address: String
             CustomerType:  CustomerType
             RiskRating:  RiskRating
             KycStatus:  KycStatus
     ): Bank
     assignToCustomers( customersIds: [ID]! ): Bank
     addToAccounts(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): Bank
     assignToAccounts( accountsIds: [ID]! ): Bank
     addToPaymentCards(
-            cardNumber: String!
-            embossedName: String!
-            expiryMonth: Int!
-            expiryYear: Int!
+            cardNumber: String
+            embossedName: String
+            expiryMonth: Int
+            expiryYear: Int
             CardType:  CardType
             CardStatus:  CardStatus
             Network:  CardNetwork
     ): Bank
     assignToPaymentCards( paymentCardsIds: [ID]! ): Bank
     addToLoanAccounts(
-            loanNumber: String!
-            principalAmount: String!
-            outstandingPrincipal: String!
-            interestRate: String!
-            originationDate: String!
-            maturityDate: String!
-            paymentDayOfMonth: Int!
-            currency: String!
+            loanNumber: String
+            principalAmount: String
+            outstandingPrincipal: String
+            interestRate: String
+            originationDate: String
+            maturityDate: String
+            paymentDayOfMonth: Int
+            currency: String
             LoanType:  LoanType
             RateType:  RateType
             Compounding:  InterestCompounding
@@ -725,24 +725,24 @@ id: ID!
     ): Bank
     assignToLoanAccounts( loanAccountsIds: [ID]! ): Bank
     addToExchangeRates(
-            baseCurrency: String!
-            counterCurrency: String!
-            rate: String!
-            asOf: String!
-            source: String!
+            baseCurrency: String
+            counterCurrency: String
+            rate: String
+            asOf: String
+            source: String
     ): Bank
     assignToExchangeRates( exchangeRatesIds: [ID]! ): Bank
     addToConsents(
-            grantedOn: String!
-            expiresOn: String!
+            grantedOn: String
+            expiresOn: String
             ConsentType:  ConsentType
             Status:  ConsentStatus
     ): Bank
     assignToConsents( consentsIds: [ID]! ): Bank
     addToThirdPartyProviders(
-            name: String!
-            registrationId: String!
-            website: String!
+            name: String
+            registrationId: String
+            website: String
     ): Bank
     assignToThirdPartyProviders( thirdPartyProvidersIds: [ID]! ): Bank
 
@@ -759,45 +759,45 @@ hasMore: Boolean!
 """
 type Branch {
 id: ID!
-        name: String!
-        branchCode: String!
-        address: String!
-        phone: String!
-        openingHours: String!
+        name: String
+        branchCode: String
+        address: String
+        phone: String
+        openingHours: String
         bank: Bank
         accounts:  [Account]
         loanAccounts:  [LoanAccount]
         atms:  [ATM]
     addBank(
-            name: String!
-            legalName: String!
-            swiftBic: String!
-            headquartersCountry: String!
-            website: String!
+            name: String
+            legalName: String
+            swiftBic: String
+            headquartersCountry: String
+            website: String
     ): Branch
     assignBank(  bankId: [ID]! ): Branch
     unassignBank( branchId: ID! ): Branch
     addToAccounts(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): Branch
     assignToAccounts( accountsIds: [ID]! ): Branch
     addToLoanAccounts(
-            loanNumber: String!
-            principalAmount: String!
-            outstandingPrincipal: String!
-            interestRate: String!
-            originationDate: String!
-            maturityDate: String!
-            paymentDayOfMonth: Int!
-            currency: String!
+            loanNumber: String
+            principalAmount: String
+            outstandingPrincipal: String
+            interestRate: String
+            originationDate: String
+            maturityDate: String
+            paymentDayOfMonth: Int
+            currency: String
             LoanType:  LoanType
             RateType:  RateType
             Compounding:  InterestCompounding
@@ -805,8 +805,8 @@ id: ID!
     ): Branch
     assignToLoanAccounts( loanAccountsIds: [ID]! ): Branch
     addToAtms(
-            terminalId: String!
-            location: String!
+            terminalId: String
+            location: String
             Status:  ATMStatus
     ): Branch
     assignToAtms( atmsIds: [ID]! ): Branch
@@ -824,16 +824,16 @@ hasMore: Boolean!
 """
 type ATM {
 id: ID!
-        terminalId: String!
-        location: String!
+        terminalId: String
+        location: String
         branch: Branch
         status:  ATMStatus
     addBranch(
-            name: String!
-            branchCode: String!
-            address: String!
-            phone: String!
-            openingHours: String!
+            name: String
+            branchCode: String
+            address: String
+            phone: String
+            openingHours: String
     ): ATM
     assignBranch(  branchId: [ID]! ): ATM
     unassignBranch( aTMId: ID! ): ATM
@@ -851,14 +851,14 @@ hasMore: Boolean!
 """
 type Customer {
 id: ID!
-        firstName: String!
-        lastName: String!
-        legalName: String!
-        dateOfBirth: String!
-        taxId: String!
-        email: String!
-        phone: String!
-        address: String!
+        firstName: String
+        lastName: String
+        legalName: String
+        dateOfBirth: String
+        taxId: String
+        email: String
+        phone: String
+        address: String
         bank: Bank
         accounts:  [Account]
         loanAccounts:  [LoanAccount]
@@ -872,35 +872,35 @@ id: ID!
         riskRating:  RiskRating
         kycStatus:  KycStatus
     addBank(
-            name: String!
-            legalName: String!
-            swiftBic: String!
-            headquartersCountry: String!
-            website: String!
+            name: String
+            legalName: String
+            swiftBic: String
+            headquartersCountry: String
+            website: String
     ): Customer
     assignBank(  bankId: [ID]! ): Customer
     unassignBank( customerId: ID! ): Customer
     addToAccounts(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): Customer
     assignToAccounts( accountsIds: [ID]! ): Customer
     addToLoanAccounts(
-            loanNumber: String!
-            principalAmount: String!
-            outstandingPrincipal: String!
-            interestRate: String!
-            originationDate: String!
-            maturityDate: String!
-            paymentDayOfMonth: Int!
-            currency: String!
+            loanNumber: String
+            principalAmount: String
+            outstandingPrincipal: String
+            interestRate: String
+            originationDate: String
+            maturityDate: String
+            paymentDayOfMonth: Int
+            currency: String
             LoanType:  LoanType
             RateType:  RateType
             Compounding:  InterestCompounding
@@ -908,51 +908,51 @@ id: ID!
     ): Customer
     assignToLoanAccounts( loanAccountsIds: [ID]! ): Customer
     addToPaymentCards(
-            cardNumber: String!
-            embossedName: String!
-            expiryMonth: Int!
-            expiryYear: Int!
+            cardNumber: String
+            embossedName: String
+            expiryMonth: Int
+            expiryYear: Int
             CardType:  CardType
             CardStatus:  CardStatus
             Network:  CardNetwork
     ): Customer
     assignToPaymentCards( paymentCardsIds: [ID]! ): Customer
     addToExternalAccounts(
-            name: String!
-            iban: String!
-            accountNumber: String!
-            bic: String!
-            bankName: String!
-            country: String!
+            name: String
+            iban: String
+            accountNumber: String
+            bic: String
+            bankName: String
+            country: String
     ): Customer
     assignToExternalAccounts( externalAccountsIds: [ID]! ): Customer
     addToFundsTransfers(
-            transferReference: String!
-            amount: String!
-            requestedDate: String!
-            executionDate: String!
-            purpose: String!
-            feeAmount: String!
+            transferReference: String
+            amount: String
+            requestedDate: String
+            executionDate: String
+            purpose: String
+            feeAmount: String
             Method:  PaymentMethod
             Status:  PaymentStatus
     ): Customer
     assignToFundsTransfers( fundsTransfersIds: [ID]! ): Customer
     addToDisputes(
-            disputeReference: String!
-            raisedOn: String!
-            reason: String!
+            disputeReference: String
+            raisedOn: String
+            reason: String
             Status:  DisputeStatus
     ): Customer
     assignToDisputes( disputesIds: [ID]! ): Customer
     addToKycProfiles(
-            profileId: String!
-            lastReviewedOn: String!
+            profileId: String
+            lastReviewedOn: String
             Status:  KycStatus
     ): Customer
     assignToKycProfiles( kycProfilesIds: [ID]! ): Customer
     addToConsents(
-            grantedOn: String!
-            expiresOn: String!
+            grantedOn: String
+            expiresOn: String
             ConsentType:  ConsentType
             Status:  ConsentStatus
     ): Customer
@@ -971,22 +971,22 @@ hasMore: Boolean!
 """
 type KycProfile {
 id: ID!
-        profileId: String!
-        lastReviewedOn: String!
+        profileId: String
+        lastReviewedOn: String
         customer: Customer
         identityDocuments:  [IdentityDocument]
         riskAssessments:  [RiskAssessment]
         screenings:  [ScreeningResult]
         status:  KycStatus
     addCustomer(
-            firstName: String!
-            lastName: String!
-            legalName: String!
-            dateOfBirth: String!
-            taxId: String!
-            email: String!
-            phone: String!
-            address: String!
+            firstName: String
+            lastName: String
+            legalName: String
+            dateOfBirth: String
+            taxId: String
+            email: String
+            phone: String
+            address: String
             CustomerType:  CustomerType
             RiskRating:  RiskRating
             KycStatus:  KycStatus
@@ -994,21 +994,21 @@ id: ID!
     assignCustomer(  customerId: [ID]! ): KycProfile
     unassignCustomer( kycProfileId: ID! ): KycProfile
     addToIdentityDocuments(
-            documentNumber: String!
-            issuingCountry: String!
-            expirationDate: String!
+            documentNumber: String
+            issuingCountry: String
+            expirationDate: String
             DocumentType:  IdentityDocumentType
     ): KycProfile
     assignToIdentityDocuments( identityDocumentsIds: [ID]! ): KycProfile
     addToRiskAssessments(
-            score: Int!
-            assessedOn: String!
+            score: Int
+            assessedOn: String
             Rating:  RiskRating
     ): KycProfile
     assignToRiskAssessments( riskAssessmentsIds: [ID]! ): KycProfile
     addToScreenings(
-            screeningDate: String!
-            provider: String!
+            screeningDate: String
+            provider: String
             Outcome:  ScreeningOutcome
     ): KycProfile
     assignToScreenings( screeningsIds: [ID]! ): KycProfile
@@ -1026,14 +1026,14 @@ hasMore: Boolean!
 """
 type IdentityDocument {
 id: ID!
-        documentNumber: String!
-        issuingCountry: String!
-        expirationDate: String!
+        documentNumber: String
+        issuingCountry: String
+        expirationDate: String
         kycProfile: KycProfile
         documentType:  IdentityDocumentType
     addKycProfile(
-            profileId: String!
-            lastReviewedOn: String!
+            profileId: String
+            lastReviewedOn: String
             Status:  KycStatus
     ): IdentityDocument
     assignKycProfile(  kycProfileId: [ID]! ): IdentityDocument
@@ -1052,13 +1052,13 @@ hasMore: Boolean!
 """
 type RiskAssessment {
 id: ID!
-        score: Int!
-        assessedOn: String!
+        score: Int
+        assessedOn: String
         kycProfile: KycProfile
         rating:  RiskRating
     addKycProfile(
-            profileId: String!
-            lastReviewedOn: String!
+            profileId: String
+            lastReviewedOn: String
             Status:  KycStatus
     ): RiskAssessment
     assignKycProfile(  kycProfileId: [ID]! ): RiskAssessment
@@ -1077,13 +1077,13 @@ hasMore: Boolean!
 """
 type ScreeningResult {
 id: ID!
-        screeningDate: String!
-        provider: String!
+        screeningDate: String
+        provider: String
         kycProfile: KycProfile
         outcome:  ScreeningOutcome
     addKycProfile(
-            profileId: String!
-            lastReviewedOn: String!
+            profileId: String
+            lastReviewedOn: String
             Status:  KycStatus
     ): ScreeningResult
     assignKycProfile(  kycProfileId: [ID]! ): ScreeningResult
@@ -1102,44 +1102,44 @@ hasMore: Boolean!
 """
 type BankingProduct {
 id: ID!
-        productCode: String!
-        name: String!
-        description: String!
+        productCode: String
+        name: String
+        description: String
         bank: Bank
         accounts:  [Account]
         loanAccounts:  [LoanAccount]
         paymentCards:  [PaymentCard]
         productCategory:  ProductCategory
     addBank(
-            name: String!
-            legalName: String!
-            swiftBic: String!
-            headquartersCountry: String!
-            website: String!
+            name: String
+            legalName: String
+            swiftBic: String
+            headquartersCountry: String
+            website: String
     ): BankingProduct
     assignBank(  bankId: [ID]! ): BankingProduct
     unassignBank( bankingProductId: ID! ): BankingProduct
     addToAccounts(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): BankingProduct
     assignToAccounts( accountsIds: [ID]! ): BankingProduct
     addToLoanAccounts(
-            loanNumber: String!
-            principalAmount: String!
-            outstandingPrincipal: String!
-            interestRate: String!
-            originationDate: String!
-            maturityDate: String!
-            paymentDayOfMonth: Int!
-            currency: String!
+            loanNumber: String
+            principalAmount: String
+            outstandingPrincipal: String
+            interestRate: String
+            originationDate: String
+            maturityDate: String
+            paymentDayOfMonth: Int
+            currency: String
             LoanType:  LoanType
             RateType:  RateType
             Compounding:  InterestCompounding
@@ -1147,10 +1147,10 @@ id: ID!
     ): BankingProduct
     assignToLoanAccounts( loanAccountsIds: [ID]! ): BankingProduct
     addToPaymentCards(
-            cardNumber: String!
-            embossedName: String!
-            expiryMonth: Int!
-            expiryYear: Int!
+            cardNumber: String
+            embossedName: String
+            expiryMonth: Int
+            expiryYear: Int
             CardType:  CardType
             CardStatus:  CardStatus
             Network:  CardNetwork
@@ -1170,12 +1170,12 @@ hasMore: Boolean!
 """
 type Account {
 id: ID!
-        accountNumber: String!
-        iban: String!
-        accountName: String!
-        currency: String!
-        openedOn: String!
-        closedOn: String!
+        accountNumber: String
+        iban: String
+        accountName: String
+        currency: String
+        openedOn: String
+        closedOn: String
         bank: Bank
         branch: Branch
         product: BankingProduct
@@ -1188,50 +1188,50 @@ id: ID!
         ownershipType:  AccountOwnershipType
         status:  AccountStatus
     addBank(
-            name: String!
-            legalName: String!
-            swiftBic: String!
-            headquartersCountry: String!
-            website: String!
+            name: String
+            legalName: String
+            swiftBic: String
+            headquartersCountry: String
+            website: String
     ): Account
     assignBank(  bankId: [ID]! ): Account
     unassignBank( accountId: ID! ): Account
     addBranch(
-            name: String!
-            branchCode: String!
-            address: String!
-            phone: String!
-            openingHours: String!
+            name: String
+            branchCode: String
+            address: String
+            phone: String
+            openingHours: String
     ): Account
     assignBranch(  branchId: [ID]! ): Account
     unassignBranch( accountId: ID! ): Account
     addProduct(
-            productCode: String!
-            name: String!
-            description: String!
+            productCode: String
+            name: String
+            description: String
             ProductCategory:  ProductCategory
     ): Account
     assignProduct(  productId: [ID]! ): Account
     unassignProduct( accountId: ID! ): Account
     addToOwners(
-            firstName: String!
-            lastName: String!
-            legalName: String!
-            dateOfBirth: String!
-            taxId: String!
-            email: String!
-            phone: String!
-            address: String!
+            firstName: String
+            lastName: String
+            legalName: String
+            dateOfBirth: String
+            taxId: String
+            email: String
+            phone: String
+            address: String
             CustomerType:  CustomerType
             RiskRating:  RiskRating
             KycStatus:  KycStatus
     ): Account
     assignToOwners( ownersIds: [ID]! ): Account
     addToTransactions(
-            bookingDate: String!
-            valueDate: String!
-            amount: String!
-            description: String!
+            bookingDate: String
+            valueDate: String
+            amount: String
+            description: String
             Direction:  TransactionDirection
             TransactionType:  TransactionType
             Status:  TransactionStatus
@@ -1239,26 +1239,26 @@ id: ID!
     ): Account
     assignToTransactions( transactionsIds: [ID]! ): Account
     addToStatements(
-            statementNumber: String!
-            periodStart: String!
-            periodEnd: String!
-            openingBalance: String!
-            closingBalance: String!
+            statementNumber: String
+            periodStart: String
+            periodEnd: String
+            openingBalance: String
+            closingBalance: String
             DeliveryMethod:  StatementDeliveryMethod
     ): Account
     assignToStatements( statementsIds: [ID]! ): Account
     addToStandingInstructions(
-            instructionId: String!
-            amount: String!
-            nextExecutionDate: String!
+            instructionId: String
+            amount: String
+            nextExecutionDate: String
             Frequency:  StandingInstructionFrequency
             Status:  StandingInstructionStatus
     ): Account
     assignToStandingInstructions( standingInstructionsIds: [ID]! ): Account
     addToFeeCharges(
-            feeCode: String!
-            amount: String!
-            appliedOn: String!
+            feeCode: String
+            amount: String
+            appliedOn: String
             FeeType:  FeeType
     ): Account
     assignToFeeCharges( feeChargesIds: [ID]! ): Account
@@ -1276,20 +1276,20 @@ hasMore: Boolean!
 """
 type AccountStatement {
 id: ID!
-        statementNumber: String!
-        periodStart: String!
-        periodEnd: String!
-        openingBalance: String!
-        closingBalance: String!
+        statementNumber: String
+        periodStart: String
+        periodEnd: String
+        openingBalance: String
+        closingBalance: String
         account: Account
         deliveryMethod:  StatementDeliveryMethod
     addAccount(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
@@ -1310,10 +1310,10 @@ hasMore: Boolean!
 """
 type Transaction {
 id: ID!
-        bookingDate: String!
-        valueDate: String!
-        amount: String!
-        description: String!
+        bookingDate: String
+        valueDate: String
+        amount: String
+        description: String
         account: Account
         externalCounterparty: ExternalAccount
         paymentCard: PaymentCard
@@ -1325,12 +1325,12 @@ id: ID!
         status:  TransactionStatus
         channel:  ChannelType
     addAccount(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
@@ -1338,20 +1338,20 @@ id: ID!
     assignAccount(  accountId: [ID]! ): Transaction
     unassignAccount( transactionId: ID! ): Transaction
     addExternalCounterparty(
-            name: String!
-            iban: String!
-            accountNumber: String!
-            bic: String!
-            bankName: String!
-            country: String!
+            name: String
+            iban: String
+            accountNumber: String
+            bic: String
+            bankName: String
+            country: String
     ): Transaction
     assignExternalCounterparty(  externalCounterpartyId: [ID]! ): Transaction
     unassignExternalCounterparty( transactionId: ID! ): Transaction
     addPaymentCard(
-            cardNumber: String!
-            embossedName: String!
-            expiryMonth: Int!
-            expiryYear: Int!
+            cardNumber: String
+            embossedName: String
+            expiryMonth: Int
+            expiryYear: Int
             CardType:  CardType
             CardStatus:  CardStatus
             Network:  CardNetwork
@@ -1359,32 +1359,32 @@ id: ID!
     assignPaymentCard(  paymentCardId: [ID]! ): Transaction
     unassignPaymentCard( transactionId: ID! ): Transaction
     addFundsTransfer(
-            transferReference: String!
-            amount: String!
-            requestedDate: String!
-            executionDate: String!
-            purpose: String!
-            feeAmount: String!
+            transferReference: String
+            amount: String
+            requestedDate: String
+            executionDate: String
+            purpose: String
+            feeAmount: String
             Method:  PaymentMethod
             Status:  PaymentStatus
     ): Transaction
     assignFundsTransfer(  fundsTransferId: [ID]! ): Transaction
     unassignFundsTransfer( transactionId: ID! ): Transaction
     addFxTrade(
-            tradeReference: String!
-            tradeDate: String!
-            settlementDate: String!
-            amountSold: String!
-            amountBought: String!
-            rate: String!
+            tradeReference: String
+            tradeDate: String
+            settlementDate: String
+            amountSold: String
+            amountBought: String
+            rate: String
             Status:  TradeStatus
     ): Transaction
     assignFxTrade(  fxTradeId: [ID]! ): Transaction
     unassignFxTrade( transactionId: ID! ): Transaction
     addDispute(
-            disputeReference: String!
-            raisedOn: String!
-            reason: String!
+            disputeReference: String
+            raisedOn: String
+            reason: String
             Status:  DisputeStatus
     ): Transaction
     assignDispute(  disputeId: [ID]! ): Transaction
@@ -1403,23 +1403,23 @@ hasMore: Boolean!
 """
 type ExternalAccount {
 id: ID!
-        name: String!
-        iban: String!
-        accountNumber: String!
-        bic: String!
-        bankName: String!
-        country: String!
+        name: String
+        iban: String
+        accountNumber: String
+        bic: String
+        bankName: String
+        country: String
         customer: Customer
         transactions:  [Transaction]
     addCustomer(
-            firstName: String!
-            lastName: String!
-            legalName: String!
-            dateOfBirth: String!
-            taxId: String!
-            email: String!
-            phone: String!
-            address: String!
+            firstName: String
+            lastName: String
+            legalName: String
+            dateOfBirth: String
+            taxId: String
+            email: String
+            phone: String
+            address: String
             CustomerType:  CustomerType
             RiskRating:  RiskRating
             KycStatus:  KycStatus
@@ -1427,10 +1427,10 @@ id: ID!
     assignCustomer(  customerId: [ID]! ): ExternalAccount
     unassignCustomer( externalAccountId: ID! ): ExternalAccount
     addToTransactions(
-            bookingDate: String!
-            valueDate: String!
-            amount: String!
-            description: String!
+            bookingDate: String
+            valueDate: String
+            amount: String
+            description: String
             Direction:  TransactionDirection
             TransactionType:  TransactionType
             Status:  TransactionStatus
@@ -1451,12 +1451,12 @@ hasMore: Boolean!
 """
 type FundsTransfer {
 id: ID!
-        transferReference: String!
-        amount: String!
-        requestedDate: String!
-        executionDate: String!
-        purpose: String!
-        feeAmount: String!
+        transferReference: String
+        amount: String
+        requestedDate: String
+        executionDate: String
+        purpose: String
+        feeAmount: String
         sourceAccount: Account
         destinationAccount: Account
         externalBeneficiary: ExternalAccount
@@ -1465,12 +1465,12 @@ id: ID!
         method:  PaymentMethod
         status:  PaymentStatus
     addSourceAccount(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
@@ -1478,12 +1478,12 @@ id: ID!
     assignSourceAccount(  sourceAccountId: [ID]! ): FundsTransfer
     unassignSourceAccount( fundsTransferId: ID! ): FundsTransfer
     addDestinationAccount(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
@@ -1491,24 +1491,24 @@ id: ID!
     assignDestinationAccount(  destinationAccountId: [ID]! ): FundsTransfer
     unassignDestinationAccount( fundsTransferId: ID! ): FundsTransfer
     addExternalBeneficiary(
-            name: String!
-            iban: String!
-            accountNumber: String!
-            bic: String!
-            bankName: String!
-            country: String!
+            name: String
+            iban: String
+            accountNumber: String
+            bic: String
+            bankName: String
+            country: String
     ): FundsTransfer
     assignExternalBeneficiary(  externalBeneficiaryId: [ID]! ): FundsTransfer
     unassignExternalBeneficiary( fundsTransferId: ID! ): FundsTransfer
     addInitiatedBy(
-            firstName: String!
-            lastName: String!
-            legalName: String!
-            dateOfBirth: String!
-            taxId: String!
-            email: String!
-            phone: String!
-            address: String!
+            firstName: String
+            lastName: String
+            legalName: String
+            dateOfBirth: String
+            taxId: String
+            email: String
+            phone: String
+            address: String
             CustomerType:  CustomerType
             RiskRating:  RiskRating
             KycStatus:  KycStatus
@@ -1516,10 +1516,10 @@ id: ID!
     assignInitiatedBy(  initiatedById: [ID]! ): FundsTransfer
     unassignInitiatedBy( fundsTransferId: ID! ): FundsTransfer
     addToTransactions(
-            bookingDate: String!
-            valueDate: String!
-            amount: String!
-            description: String!
+            bookingDate: String
+            valueDate: String
+            amount: String
+            description: String
             Direction:  TransactionDirection
             TransactionType:  TransactionType
             Status:  TransactionStatus
@@ -1540,20 +1540,20 @@ hasMore: Boolean!
 """
 type StandingInstruction {
 id: ID!
-        instructionId: String!
-        amount: String!
-        nextExecutionDate: String!
+        instructionId: String
+        amount: String
+        nextExecutionDate: String
         account: Account
         beneficiary: ExternalAccount
         frequency:  StandingInstructionFrequency
         status:  StandingInstructionStatus
     addAccount(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
@@ -1561,12 +1561,12 @@ id: ID!
     assignAccount(  accountId: [ID]! ): StandingInstruction
     unassignAccount( standingInstructionId: ID! ): StandingInstruction
     addBeneficiary(
-            name: String!
-            iban: String!
-            accountNumber: String!
-            bic: String!
-            bankName: String!
-            country: String!
+            name: String
+            iban: String
+            accountNumber: String
+            bic: String
+            bankName: String
+            country: String
     ): StandingInstruction
     assignBeneficiary(  beneficiaryId: [ID]! ): StandingInstruction
     unassignBeneficiary( standingInstructionId: ID! ): StandingInstruction
@@ -1584,10 +1584,10 @@ hasMore: Boolean!
 """
 type PaymentCard {
 id: ID!
-        cardNumber: String!
-        embossedName: String!
-        expiryMonth: Int!
-        expiryYear: Int!
+        cardNumber: String
+        embossedName: String
+        expiryMonth: Int
+        expiryYear: Int
         bank: Bank
         account: Account
         customer: Customer
@@ -1596,21 +1596,21 @@ id: ID!
         cardStatus:  CardStatus
         network:  CardNetwork
     addBank(
-            name: String!
-            legalName: String!
-            swiftBic: String!
-            headquartersCountry: String!
-            website: String!
+            name: String
+            legalName: String
+            swiftBic: String
+            headquartersCountry: String
+            website: String
     ): PaymentCard
     assignBank(  bankId: [ID]! ): PaymentCard
     unassignBank( paymentCardId: ID! ): PaymentCard
     addAccount(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
@@ -1618,14 +1618,14 @@ id: ID!
     assignAccount(  accountId: [ID]! ): PaymentCard
     unassignAccount( paymentCardId: ID! ): PaymentCard
     addCustomer(
-            firstName: String!
-            lastName: String!
-            legalName: String!
-            dateOfBirth: String!
-            taxId: String!
-            email: String!
-            phone: String!
-            address: String!
+            firstName: String
+            lastName: String
+            legalName: String
+            dateOfBirth: String
+            taxId: String
+            email: String
+            phone: String
+            address: String
             CustomerType:  CustomerType
             RiskRating:  RiskRating
             KycStatus:  KycStatus
@@ -1633,10 +1633,10 @@ id: ID!
     assignCustomer(  customerId: [ID]! ): PaymentCard
     unassignCustomer( paymentCardId: ID! ): PaymentCard
     addToTransactions(
-            bookingDate: String!
-            valueDate: String!
-            amount: String!
-            description: String!
+            bookingDate: String
+            valueDate: String
+            amount: String
+            description: String
             Direction:  TransactionDirection
             TransactionType:  TransactionType
             Status:  TransactionStatus
@@ -1657,14 +1657,14 @@ hasMore: Boolean!
 """
 type LoanAccount {
 id: ID!
-        loanNumber: String!
-        principalAmount: String!
-        outstandingPrincipal: String!
-        interestRate: String!
-        originationDate: String!
-        maturityDate: String!
-        paymentDayOfMonth: Int!
-        currency: String!
+        loanNumber: String
+        principalAmount: String
+        outstandingPrincipal: String
+        interestRate: String
+        originationDate: String
+        maturityDate: String
+        paymentDayOfMonth: Int
+        currency: String
         bank: Bank
         branch: Branch
         product: BankingProduct
@@ -1678,73 +1678,73 @@ id: ID!
         compounding:  InterestCompounding
         status:  LoanStatus
     addBank(
-            name: String!
-            legalName: String!
-            swiftBic: String!
-            headquartersCountry: String!
-            website: String!
+            name: String
+            legalName: String
+            swiftBic: String
+            headquartersCountry: String
+            website: String
     ): LoanAccount
     assignBank(  bankId: [ID]! ): LoanAccount
     unassignBank( loanAccountId: ID! ): LoanAccount
     addBranch(
-            name: String!
-            branchCode: String!
-            address: String!
-            phone: String!
-            openingHours: String!
+            name: String
+            branchCode: String
+            address: String
+            phone: String
+            openingHours: String
     ): LoanAccount
     assignBranch(  branchId: [ID]! ): LoanAccount
     unassignBranch( loanAccountId: ID! ): LoanAccount
     addProduct(
-            productCode: String!
-            name: String!
-            description: String!
+            productCode: String
+            name: String
+            description: String
             ProductCategory:  ProductCategory
     ): LoanAccount
     assignProduct(  productId: [ID]! ): LoanAccount
     unassignProduct( loanAccountId: ID! ): LoanAccount
     addToBorrowers(
-            firstName: String!
-            lastName: String!
-            legalName: String!
-            dateOfBirth: String!
-            taxId: String!
-            email: String!
-            phone: String!
-            address: String!
+            firstName: String
+            lastName: String
+            legalName: String
+            dateOfBirth: String
+            taxId: String
+            email: String
+            phone: String
+            address: String
             CustomerType:  CustomerType
             RiskRating:  RiskRating
             KycStatus:  KycStatus
     ): LoanAccount
     assignToBorrowers( borrowersIds: [ID]! ): LoanAccount
     addToRepaymentSchedule(
-            installmentNumber: Int!
-            dueDate: String!
-            principalDue: String!
-            interestDue: String!
-            totalDue: String!
+            installmentNumber: Int
+            dueDate: String
+            principalDue: String
+            interestDue: String
+            totalDue: String
             Status:  InstallmentStatus
     ): LoanAccount
     assignToRepaymentSchedule( repaymentScheduleIds: [ID]! ): LoanAccount
     addToPayments(
-            paymentReference: String!
-            amount: String!
-            paymentDate: String!
+            paymentReference: String
+            amount: String
+            paymentDate: String
             Method:  PaymentMethod
             Status:  PaymentStatus
     ): LoanAccount
     assignToPayments( paymentsIds: [ID]! ): LoanAccount
     addToCollateral(
-            appraisedValue: String!
-            description: String!
-            location: String!
+            appraisedValue: String
+            description: String
+            location: String
             CollateralType:  CollateralType
     ): LoanAccount
     assignToCollateral( collateralIds: [ID]! ): LoanAccount
     addToFeeCharges(
-            feeCode: String!
-            amount: String!
-            appliedOn: String!
+            feeCode: String
+            amount: String
+            appliedOn: String
             FeeType:  FeeType
     ): LoanAccount
     assignToFeeCharges( feeChargesIds: [ID]! ): LoanAccount
@@ -1762,23 +1762,23 @@ hasMore: Boolean!
 """
 type RepaymentSchedule {
 id: ID!
-        installmentNumber: Int!
-        dueDate: String!
-        principalDue: String!
-        interestDue: String!
-        totalDue: String!
+        installmentNumber: Int
+        dueDate: String
+        principalDue: String
+        interestDue: String
+        totalDue: String
         loanAccount: LoanAccount
         payment: LoanPayment
         status:  InstallmentStatus
     addLoanAccount(
-            loanNumber: String!
-            principalAmount: String!
-            outstandingPrincipal: String!
-            interestRate: String!
-            originationDate: String!
-            maturityDate: String!
-            paymentDayOfMonth: Int!
-            currency: String!
+            loanNumber: String
+            principalAmount: String
+            outstandingPrincipal: String
+            interestRate: String
+            originationDate: String
+            maturityDate: String
+            paymentDayOfMonth: Int
+            currency: String
             LoanType:  LoanType
             RateType:  RateType
             Compounding:  InterestCompounding
@@ -1787,9 +1787,9 @@ id: ID!
     assignLoanAccount(  loanAccountId: [ID]! ): RepaymentSchedule
     unassignLoanAccount( repaymentScheduleId: ID! ): RepaymentSchedule
     addPayment(
-            paymentReference: String!
-            amount: String!
-            paymentDate: String!
+            paymentReference: String
+            amount: String
+            paymentDate: String
             Method:  PaymentMethod
             Status:  PaymentStatus
     ): RepaymentSchedule
@@ -1809,22 +1809,22 @@ hasMore: Boolean!
 """
 type LoanPayment {
 id: ID!
-        paymentReference: String!
-        amount: String!
-        paymentDate: String!
+        paymentReference: String
+        amount: String
+        paymentDate: String
         loanAccount: LoanAccount
         transaction: Transaction
         method:  PaymentMethod
         status:  PaymentStatus
     addLoanAccount(
-            loanNumber: String!
-            principalAmount: String!
-            outstandingPrincipal: String!
-            interestRate: String!
-            originationDate: String!
-            maturityDate: String!
-            paymentDayOfMonth: Int!
-            currency: String!
+            loanNumber: String
+            principalAmount: String
+            outstandingPrincipal: String
+            interestRate: String
+            originationDate: String
+            maturityDate: String
+            paymentDayOfMonth: Int
+            currency: String
             LoanType:  LoanType
             RateType:  RateType
             Compounding:  InterestCompounding
@@ -1833,10 +1833,10 @@ id: ID!
     assignLoanAccount(  loanAccountId: [ID]! ): LoanPayment
     unassignLoanAccount( loanPaymentId: ID! ): LoanPayment
     addTransaction(
-            bookingDate: String!
-            valueDate: String!
-            amount: String!
-            description: String!
+            bookingDate: String
+            valueDate: String
+            amount: String
+            description: String
             Direction:  TransactionDirection
             TransactionType:  TransactionType
             Status:  TransactionStatus
@@ -1858,20 +1858,20 @@ hasMore: Boolean!
 """
 type Collateral {
 id: ID!
-        appraisedValue: String!
-        description: String!
-        location: String!
+        appraisedValue: String
+        description: String
+        location: String
         loanAccount: LoanAccount
         collateralType:  CollateralType
     addLoanAccount(
-            loanNumber: String!
-            principalAmount: String!
-            outstandingPrincipal: String!
-            interestRate: String!
-            originationDate: String!
-            maturityDate: String!
-            paymentDayOfMonth: Int!
-            currency: String!
+            loanNumber: String
+            principalAmount: String
+            outstandingPrincipal: String
+            interestRate: String
+            originationDate: String
+            maturityDate: String
+            paymentDayOfMonth: Int
+            currency: String
             LoanType:  LoanType
             RateType:  RateType
             Compounding:  InterestCompounding
@@ -1893,19 +1893,19 @@ hasMore: Boolean!
 """
 type FeeCharge {
 id: ID!
-        feeCode: String!
-        amount: String!
-        appliedOn: String!
+        feeCode: String
+        amount: String
+        appliedOn: String
         account: Account
         loanAccount: LoanAccount
         feeType:  FeeType
     addAccount(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
@@ -1913,14 +1913,14 @@ id: ID!
     assignAccount(  accountId: [ID]! ): FeeCharge
     unassignAccount( feeChargeId: ID! ): FeeCharge
     addLoanAccount(
-            loanNumber: String!
-            principalAmount: String!
-            outstandingPrincipal: String!
-            interestRate: String!
-            originationDate: String!
-            maturityDate: String!
-            paymentDayOfMonth: Int!
-            currency: String!
+            loanNumber: String
+            principalAmount: String
+            outstandingPrincipal: String
+            interestRate: String
+            originationDate: String
+            maturityDate: String
+            paymentDayOfMonth: Int
+            currency: String
             LoanType:  LoanType
             RateType:  RateType
             Compounding:  InterestCompounding
@@ -1942,29 +1942,29 @@ hasMore: Boolean!
 """
 type ExchangeRate {
 id: ID!
-        baseCurrency: String!
-        counterCurrency: String!
-        rate: String!
-        asOf: String!
-        source: String!
+        baseCurrency: String
+        counterCurrency: String
+        rate: String
+        asOf: String
+        source: String
         bank: Bank
         fxTrades:  [FXTrade]
     addBank(
-            name: String!
-            legalName: String!
-            swiftBic: String!
-            headquartersCountry: String!
-            website: String!
+            name: String
+            legalName: String
+            swiftBic: String
+            headquartersCountry: String
+            website: String
     ): ExchangeRate
     assignBank(  bankId: [ID]! ): ExchangeRate
     unassignBank( exchangeRateId: ID! ): ExchangeRate
     addToFxTrades(
-            tradeReference: String!
-            tradeDate: String!
-            settlementDate: String!
-            amountSold: String!
-            amountBought: String!
-            rate: String!
+            tradeReference: String
+            tradeDate: String
+            settlementDate: String
+            amountSold: String
+            amountBought: String
+            rate: String
             Status:  TradeStatus
     ): ExchangeRate
     assignToFxTrades( fxTradesIds: [ID]! ): ExchangeRate
@@ -1982,12 +1982,12 @@ hasMore: Boolean!
 """
 type FXTrade {
 id: ID!
-        tradeReference: String!
-        tradeDate: String!
-        settlementDate: String!
-        amountSold: String!
-        amountBought: String!
-        rate: String!
+        tradeReference: String
+        tradeDate: String
+        settlementDate: String
+        amountSold: String
+        amountBought: String
+        rate: String
         customer: Customer
         bank: Bank
         exchangeRate: ExchangeRate
@@ -1996,14 +1996,14 @@ id: ID!
         transaction: Transaction
         status:  TradeStatus
     addCustomer(
-            firstName: String!
-            lastName: String!
-            legalName: String!
-            dateOfBirth: String!
-            taxId: String!
-            email: String!
-            phone: String!
-            address: String!
+            firstName: String
+            lastName: String
+            legalName: String
+            dateOfBirth: String
+            taxId: String
+            email: String
+            phone: String
+            address: String
             CustomerType:  CustomerType
             RiskRating:  RiskRating
             KycStatus:  KycStatus
@@ -2011,30 +2011,30 @@ id: ID!
     assignCustomer(  customerId: [ID]! ): FXTrade
     unassignCustomer( fXTradeId: ID! ): FXTrade
     addBank(
-            name: String!
-            legalName: String!
-            swiftBic: String!
-            headquartersCountry: String!
-            website: String!
+            name: String
+            legalName: String
+            swiftBic: String
+            headquartersCountry: String
+            website: String
     ): FXTrade
     assignBank(  bankId: [ID]! ): FXTrade
     unassignBank( fXTradeId: ID! ): FXTrade
     addExchangeRate(
-            baseCurrency: String!
-            counterCurrency: String!
-            rate: String!
-            asOf: String!
-            source: String!
+            baseCurrency: String
+            counterCurrency: String
+            rate: String
+            asOf: String
+            source: String
     ): FXTrade
     assignExchangeRate(  exchangeRateId: [ID]! ): FXTrade
     unassignExchangeRate( fXTradeId: ID! ): FXTrade
     addSourceAccount(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
@@ -2042,12 +2042,12 @@ id: ID!
     assignSourceAccount(  sourceAccountId: [ID]! ): FXTrade
     unassignSourceAccount( fXTradeId: ID! ): FXTrade
     addDestinationAccount(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
@@ -2055,10 +2055,10 @@ id: ID!
     assignDestinationAccount(  destinationAccountId: [ID]! ): FXTrade
     unassignDestinationAccount( fXTradeId: ID! ): FXTrade
     addTransaction(
-            bookingDate: String!
-            valueDate: String!
-            amount: String!
-            description: String!
+            bookingDate: String
+            valueDate: String
+            amount: String
+            description: String
             Direction:  TransactionDirection
             TransactionType:  TransactionType
             Status:  TransactionStatus
@@ -2080,19 +2080,19 @@ hasMore: Boolean!
 """
 type Dispute {
 id: ID!
-        disputeReference: String!
-        raisedOn: String!
-        reason: String!
+        disputeReference: String
+        raisedOn: String
+        reason: String
         transaction: Transaction
         customer: Customer
         account: Account
         paymentCard: PaymentCard
         status:  DisputeStatus
     addTransaction(
-            bookingDate: String!
-            valueDate: String!
-            amount: String!
-            description: String!
+            bookingDate: String
+            valueDate: String
+            amount: String
+            description: String
             Direction:  TransactionDirection
             TransactionType:  TransactionType
             Status:  TransactionStatus
@@ -2101,14 +2101,14 @@ id: ID!
     assignTransaction(  transactionId: [ID]! ): Dispute
     unassignTransaction( disputeId: ID! ): Dispute
     addCustomer(
-            firstName: String!
-            lastName: String!
-            legalName: String!
-            dateOfBirth: String!
-            taxId: String!
-            email: String!
-            phone: String!
-            address: String!
+            firstName: String
+            lastName: String
+            legalName: String
+            dateOfBirth: String
+            taxId: String
+            email: String
+            phone: String
+            address: String
             CustomerType:  CustomerType
             RiskRating:  RiskRating
             KycStatus:  KycStatus
@@ -2116,12 +2116,12 @@ id: ID!
     assignCustomer(  customerId: [ID]! ): Dispute
     unassignCustomer( disputeId: ID! ): Dispute
     addAccount(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
@@ -2129,10 +2129,10 @@ id: ID!
     assignAccount(  accountId: [ID]! ): Dispute
     unassignAccount( disputeId: ID! ): Dispute
     addPaymentCard(
-            cardNumber: String!
-            embossedName: String!
-            expiryMonth: Int!
-            expiryYear: Int!
+            cardNumber: String
+            embossedName: String
+            expiryMonth: Int
+            expiryYear: Int
             CardType:  CardType
             CardStatus:  CardStatus
             Network:  CardNetwork
@@ -2153,8 +2153,8 @@ hasMore: Boolean!
 """
 type Consent {
 id: ID!
-        grantedOn: String!
-        expiresOn: String!
+        grantedOn: String
+        expiresOn: String
         customer: Customer
         bank: Bank
         authorizedAccounts:  [Account]
@@ -2162,14 +2162,14 @@ id: ID!
         consentType:  ConsentType
         status:  ConsentStatus
     addCustomer(
-            firstName: String!
-            lastName: String!
-            legalName: String!
-            dateOfBirth: String!
-            taxId: String!
-            email: String!
-            phone: String!
-            address: String!
+            firstName: String
+            lastName: String
+            legalName: String
+            dateOfBirth: String
+            taxId: String
+            email: String
+            phone: String
+            address: String
             CustomerType:  CustomerType
             RiskRating:  RiskRating
             KycStatus:  KycStatus
@@ -2177,28 +2177,28 @@ id: ID!
     assignCustomer(  customerId: [ID]! ): Consent
     unassignCustomer( consentId: ID! ): Consent
     addBank(
-            name: String!
-            legalName: String!
-            swiftBic: String!
-            headquartersCountry: String!
-            website: String!
+            name: String
+            legalName: String
+            swiftBic: String
+            headquartersCountry: String
+            website: String
     ): Consent
     assignBank(  bankId: [ID]! ): Consent
     unassignBank( consentId: ID! ): Consent
     addThirdPartyProvider(
-            name: String!
-            registrationId: String!
-            website: String!
+            name: String
+            registrationId: String
+            website: String
     ): Consent
     assignThirdPartyProvider(  thirdPartyProviderId: [ID]! ): Consent
     unassignThirdPartyProvider( consentId: ID! ): Consent
     addToAuthorizedAccounts(
-            accountNumber: String!
-            iban: String!
-            accountName: String!
-            currency: String!
-            openedOn: String!
-            closedOn: String!
+            accountNumber: String
+            iban: String
+            accountName: String
+            currency: String
+            openedOn: String
+            closedOn: String
             AccountType:  AccountType
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
@@ -2218,23 +2218,23 @@ hasMore: Boolean!
 """
 type ThirdPartyProvider {
 id: ID!
-        name: String!
-        registrationId: String!
-        website: String!
+        name: String
+        registrationId: String
+        website: String
         bank: Bank
         consents:  [Consent]
     addBank(
-            name: String!
-            legalName: String!
-            swiftBic: String!
-            headquartersCountry: String!
-            website: String!
+            name: String
+            legalName: String
+            swiftBic: String
+            headquartersCountry: String
+            website: String
     ): ThirdPartyProvider
     assignBank(  bankId: [ID]! ): ThirdPartyProvider
     unassignBank( thirdPartyProviderId: ID! ): ThirdPartyProvider
     addToConsents(
-            grantedOn: String!
-            expiresOn: String!
+            grantedOn: String
+            expiresOn: String
             ConsentType:  ConsentType
             Status:  ConsentStatus
     ): ThirdPartyProvider
@@ -2609,48 +2609,48 @@ enum CollateralType {
     Money
 """
 type Money {
-                amount: String!
-            currency: String!
+                amount: String
+            currency: String
     }
 """
     Address
 """
 type Address {
-                street: String!
-            city: String!
-            state: String!
-            postalCode: String!
-            country: String!
+                street: String
+            city: String
+            state: String
+            postalCode: String
+            country: String
     }
 """
     AccountNumber
 """
 type AccountNumber {
-                value: String!
+                value: String
     }
 """
     IBAN
 """
 type IBAN {
-                value: String!
+                value: String
     }
 """
     BIC
 """
 type BIC {
-                value: String!
+                value: String
     }
 """
     CardPAN
 """
 type CardPAN {
-                value: String!
+                value: String
     }
 """
     Percentage
 """
 type Percentage {
-                value: String!
+                value: String
     }
 `;
 module.exports = typeDefs;

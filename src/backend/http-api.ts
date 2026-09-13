@@ -112,9 +112,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         products: async (parentId: string,options?: PaginationOptions): Promise<BankingProduct[]> => {
@@ -136,9 +136,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         customers: async (parentId: string,options?: PaginationOptions): Promise<Customer[]> => {
@@ -160,9 +160,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         accounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
@@ -184,9 +184,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         paymentCards: async (parentId: string,options?: PaginationOptions): Promise<PaymentCard[]> => {
@@ -208,9 +208,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         loanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
@@ -232,9 +232,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         exchangeRates: async (parentId: string,options?: PaginationOptions): Promise<ExchangeRate[]> => {
@@ -256,9 +256,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         consents: async (parentId: string,options?: PaginationOptions): Promise<Consent[]> => {
@@ -280,9 +280,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         thirdPartyProviders: async (parentId: string,options?: PaginationOptions): Promise<ThirdPartyProvider[]> => {
@@ -304,9 +304,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };
@@ -384,9 +384,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         loanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
@@ -408,9 +408,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         atms: async (parentId: string,options?: PaginationOptions): Promise<ATM[]> => {
@@ -432,9 +432,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };
@@ -568,9 +568,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         loanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
@@ -592,9 +592,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         paymentCards: async (parentId: string,options?: PaginationOptions): Promise<PaymentCard[]> => {
@@ -616,9 +616,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         externalAccounts: async (parentId: string,options?: PaginationOptions): Promise<ExternalAccount[]> => {
@@ -640,9 +640,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         fundsTransfers: async (parentId: string,options?: PaginationOptions): Promise<FundsTransfer[]> => {
@@ -664,9 +664,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         disputes: async (parentId: string,options?: PaginationOptions): Promise<Dispute[]> => {
@@ -688,9 +688,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         kycProfiles: async (parentId: string,options?: PaginationOptions): Promise<KycProfile[]> => {
@@ -712,9 +712,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         consents: async (parentId: string,options?: PaginationOptions): Promise<Consent[]> => {
@@ -736,9 +736,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };
@@ -816,9 +816,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         riskAssessments: async (parentId: string,options?: PaginationOptions): Promise<RiskAssessment[]> => {
@@ -840,9 +840,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         screenings: async (parentId: string,options?: PaginationOptions): Promise<ScreeningResult[]> => {
@@ -864,9 +864,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };
@@ -1112,9 +1112,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         loanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
@@ -1136,9 +1136,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         paymentCards: async (parentId: string,options?: PaginationOptions): Promise<PaymentCard[]> => {
@@ -1160,9 +1160,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };
@@ -1280,9 +1280,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         transactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
@@ -1304,9 +1304,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         statements: async (parentId: string,options?: PaginationOptions): Promise<AccountStatement[]> => {
@@ -1328,9 +1328,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         standingInstructions: async (parentId: string,options?: PaginationOptions): Promise<StandingInstruction[]> => {
@@ -1352,9 +1352,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         feeCharges: async (parentId: string,options?: PaginationOptions): Promise<FeeCharge[]> => {
@@ -1376,9 +1376,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };
@@ -1668,9 +1668,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };
@@ -1808,9 +1808,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };
@@ -2004,9 +2004,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };
@@ -2124,9 +2124,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         repaymentSchedule: async (parentId: string,options?: PaginationOptions): Promise<RepaymentSchedule[]> => {
@@ -2148,9 +2148,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         payments: async (parentId: string,options?: PaginationOptions): Promise<LoanPayment[]> => {
@@ -2172,9 +2172,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         collateral: async (parentId: string,options?: PaginationOptions): Promise<Collateral[]> => {
@@ -2196,9 +2196,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
         feeCharges: async (parentId: string,options?: PaginationOptions): Promise<FeeCharge[]> => {
@@ -2220,9 +2220,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };
@@ -2584,9 +2584,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };
@@ -2976,9 +2976,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };
@@ -3056,9 +3056,9 @@ export class HttpBackendAPI implements BackendAPI {
                 {
                     ids: childIds
                 }
-        );
-        return response.data;
-    },
+            );
+            return response.data;
+        },
 
 
 };

@@ -1,3 +1,37 @@
+import {
+    BackendAPI,
+    PaginationOptions
+} from "../backend/api";
+
+import {
+    Bank,
+    Branch,
+    ATM,
+    Customer,
+    KycProfile,
+    IdentityDocument,
+    RiskAssessment,
+    ScreeningResult,
+    BankingProduct,
+    Account,
+    AccountStatement,
+    Transaction,
+    ExternalAccount,
+    FundsTransfer,
+    StandingInstruction,
+    PaymentCard,
+    LoanAccount,
+    RepaymentSchedule,
+    LoanPayment,
+    Collateral,
+    FeeCharge,
+    ExchangeRate,
+    FXTrade,
+    Dispute,
+    Consent,
+    ThirdPartyProvider,
+} from "../backend/types";
+
 const { paginateResults } = require('./utils');
 
 interface ResolverContext {

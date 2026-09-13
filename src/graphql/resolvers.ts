@@ -506,6 +506,7 @@ Mutation: {
 //////////////////////////
 // Bank
 //////////////////////////
+Bank: {
     addBank: async (
         _: ResolverParent,
         args : Bank,
@@ -532,6 +533,7 @@ Mutation: {
 //////////////////////////
 // Branch
 //////////////////////////
+Branch: {
     addBranch: async (
         _: ResolverParent,
         args : Branch,
@@ -558,6 +560,7 @@ Mutation: {
 //////////////////////////
 // ATM
 //////////////////////////
+ATM: {
     addATM: async (
         _: ResolverParent,
         args : ATM,
@@ -584,6 +587,7 @@ Mutation: {
 //////////////////////////
 // Customer
 //////////////////////////
+Customer: {
     addCustomer: async (
         _: ResolverParent,
         args : Customer,
@@ -610,6 +614,7 @@ Mutation: {
 //////////////////////////
 // KycProfile
 //////////////////////////
+KycProfile: {
     addKycProfile: async (
         _: ResolverParent,
         args : KycProfile,
@@ -636,6 +641,7 @@ Mutation: {
 //////////////////////////
 // IdentityDocument
 //////////////////////////
+IdentityDocument: {
     addIdentityDocument: async (
         _: ResolverParent,
         args : IdentityDocument,
@@ -662,6 +668,7 @@ Mutation: {
 //////////////////////////
 // RiskAssessment
 //////////////////////////
+RiskAssessment: {
     addRiskAssessment: async (
         _: ResolverParent,
         args : RiskAssessment,
@@ -688,6 +695,7 @@ Mutation: {
 //////////////////////////
 // ScreeningResult
 //////////////////////////
+ScreeningResult: {
     addScreeningResult: async (
         _: ResolverParent,
         args : ScreeningResult,
@@ -714,6 +722,7 @@ Mutation: {
 //////////////////////////
 // BankingProduct
 //////////////////////////
+BankingProduct: {
     addBankingProduct: async (
         _: ResolverParent,
         args : BankingProduct,
@@ -740,6 +749,7 @@ Mutation: {
 //////////////////////////
 // Account
 //////////////////////////
+Account: {
     addAccount: async (
         _: ResolverParent,
         args : Account,
@@ -766,6 +776,7 @@ Mutation: {
 //////////////////////////
 // AccountStatement
 //////////////////////////
+AccountStatement: {
     addAccountStatement: async (
         _: ResolverParent,
         args : AccountStatement,
@@ -792,6 +803,7 @@ Mutation: {
 //////////////////////////
 // Transaction
 //////////////////////////
+Transaction: {
     addTransaction: async (
         _: ResolverParent,
         args : Transaction,
@@ -818,6 +830,7 @@ Mutation: {
 //////////////////////////
 // ExternalAccount
 //////////////////////////
+ExternalAccount: {
     addExternalAccount: async (
         _: ResolverParent,
         args : ExternalAccount,
@@ -844,6 +857,7 @@ Mutation: {
 //////////////////////////
 // FundsTransfer
 //////////////////////////
+FundsTransfer: {
     addFundsTransfer: async (
         _: ResolverParent,
         args : FundsTransfer,
@@ -870,6 +884,7 @@ Mutation: {
 //////////////////////////
 // StandingInstruction
 //////////////////////////
+StandingInstruction: {
     addStandingInstruction: async (
         _: ResolverParent,
         args : StandingInstruction,
@@ -896,6 +911,7 @@ Mutation: {
 //////////////////////////
 // PaymentCard
 //////////////////////////
+PaymentCard: {
     addPaymentCard: async (
         _: ResolverParent,
         args : PaymentCard,
@@ -922,6 +938,7 @@ Mutation: {
 //////////////////////////
 // LoanAccount
 //////////////////////////
+LoanAccount: {
     addLoanAccount: async (
         _: ResolverParent,
         args : LoanAccount,
@@ -948,6 +965,7 @@ Mutation: {
 //////////////////////////
 // RepaymentSchedule
 //////////////////////////
+RepaymentSchedule: {
     addRepaymentSchedule: async (
         _: ResolverParent,
         args : RepaymentSchedule,
@@ -974,6 +992,7 @@ Mutation: {
 //////////////////////////
 // LoanPayment
 //////////////////////////
+LoanPayment: {
     addLoanPayment: async (
         _: ResolverParent,
         args : LoanPayment,
@@ -1000,6 +1019,7 @@ Mutation: {
 //////////////////////////
 // Collateral
 //////////////////////////
+Collateral: {
     addCollateral: async (
         _: ResolverParent,
         args : Collateral,
@@ -1026,6 +1046,7 @@ Mutation: {
 //////////////////////////
 // FeeCharge
 //////////////////////////
+FeeCharge: {
     addFeeCharge: async (
         _: ResolverParent,
         args : FeeCharge,
@@ -1052,6 +1073,7 @@ Mutation: {
 //////////////////////////
 // ExchangeRate
 //////////////////////////
+ExchangeRate: {
     addExchangeRate: async (
         _: ResolverParent,
         args : ExchangeRate,
@@ -1078,6 +1100,7 @@ Mutation: {
 //////////////////////////
 // FXTrade
 //////////////////////////
+FXTrade: {
     addFXTrade: async (
         _: ResolverParent,
         args : FXTrade,
@@ -1104,6 +1127,7 @@ Mutation: {
 //////////////////////////
 // Dispute
 //////////////////////////
+Dispute: {
     addDispute: async (
         _: ResolverParent,
         args : Dispute,
@@ -1130,6 +1154,7 @@ Mutation: {
 //////////////////////////
 // Consent
 //////////////////////////
+Consent: {
     addConsent: async (
         _: ResolverParent,
         args : Consent,
@@ -1156,6 +1181,7 @@ Mutation: {
 //////////////////////////
 // ThirdPartyProvider
 //////////////////////////
+ThirdPartyProvider: {
     addThirdPartyProvider: async (
         _: ResolverParent,
         args : ThirdPartyProvider,
@@ -1179,6 +1205,5 @@ Mutation: {
     {
         return await backend.thirdPartyProvider.remove( { id } );
     },
-},
 
-Bank: {
+

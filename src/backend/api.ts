@@ -92,7 +92,7 @@ export interface BackendAPI {
         addToThirdPartyProviders(parentId: string,input: ThirdPartyProvider): Promise<Bank>;
         removeFromThirdPartyProviders(parentId: string,childIds: string[]): Promise<Bank>;
 
-    }
+    };
     // -----------------------------------------
     // Branch interface
     // -----------------------------------------
@@ -131,7 +131,7 @@ export interface BackendAPI {
         addToAtms(parentId: string,input: ATM): Promise<Branch>;
         removeFromAtms(parentId: string,childIds: string[]): Promise<Branch>;
 
-    }
+    };
     // -----------------------------------------
     // ATM interface
     // -----------------------------------------
@@ -158,7 +158,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // Customer interface
     // -----------------------------------------
@@ -217,7 +217,7 @@ export interface BackendAPI {
         addToConsents(parentId: string,input: Consent): Promise<Customer>;
         removeFromConsents(parentId: string,childIds: string[]): Promise<Customer>;
 
-    }
+    };
     // -----------------------------------------
     // KycProfile interface
     // -----------------------------------------
@@ -256,7 +256,7 @@ export interface BackendAPI {
         addToScreenings(parentId: string,input: ScreeningResult): Promise<KycProfile>;
         removeFromScreenings(parentId: string,childIds: string[]): Promise<KycProfile>;
 
-    }
+    };
     // -----------------------------------------
     // IdentityDocument interface
     // -----------------------------------------
@@ -283,7 +283,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // RiskAssessment interface
     // -----------------------------------------
@@ -310,7 +310,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // ScreeningResult interface
     // -----------------------------------------
@@ -337,7 +337,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // BankingProduct interface
     // -----------------------------------------
@@ -376,7 +376,7 @@ export interface BackendAPI {
         addToPaymentCards(parentId: string,input: PaymentCard): Promise<BankingProduct>;
         removeFromPaymentCards(parentId: string,childIds: string[]): Promise<BankingProduct>;
 
-    }
+    };
     // -----------------------------------------
     // Account interface
     // -----------------------------------------
@@ -429,7 +429,7 @@ export interface BackendAPI {
         addToFeeCharges(parentId: string,input: FeeCharge): Promise<Account>;
         removeFromFeeCharges(parentId: string,childIds: string[]): Promise<Account>;
 
-    }
+    };
     // -----------------------------------------
     // AccountStatement interface
     // -----------------------------------------
@@ -456,7 +456,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // Transaction interface
     // -----------------------------------------
@@ -498,7 +498,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // ExternalAccount interface
     // -----------------------------------------
@@ -529,7 +529,7 @@ export interface BackendAPI {
         addToTransactions(parentId: string,input: Transaction): Promise<ExternalAccount>;
         removeFromTransactions(parentId: string,childIds: string[]): Promise<ExternalAccount>;
 
-    }
+    };
     // -----------------------------------------
     // FundsTransfer interface
     // -----------------------------------------
@@ -569,7 +569,7 @@ export interface BackendAPI {
         addToTransactions(parentId: string,input: Transaction): Promise<FundsTransfer>;
         removeFromTransactions(parentId: string,childIds: string[]): Promise<FundsTransfer>;
 
-    }
+    };
     // -----------------------------------------
     // StandingInstruction interface
     // -----------------------------------------
@@ -599,7 +599,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // PaymentCard interface
     // -----------------------------------------
@@ -636,7 +636,7 @@ export interface BackendAPI {
         addToTransactions(parentId: string,input: Transaction): Promise<PaymentCard>;
         removeFromTransactions(parentId: string,childIds: string[]): Promise<PaymentCard>;
 
-    }
+    };
     // -----------------------------------------
     // LoanAccount interface
     // -----------------------------------------
@@ -689,7 +689,7 @@ export interface BackendAPI {
         addToFeeCharges(parentId: string,input: FeeCharge): Promise<LoanAccount>;
         removeFromFeeCharges(parentId: string,childIds: string[]): Promise<LoanAccount>;
 
-    }
+    };
     // -----------------------------------------
     // RepaymentSchedule interface
     // -----------------------------------------
@@ -719,7 +719,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // LoanPayment interface
     // -----------------------------------------
@@ -749,7 +749,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // Collateral interface
     // -----------------------------------------
@@ -776,7 +776,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // FeeCharge interface
     // -----------------------------------------
@@ -806,7 +806,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // ExchangeRate interface
     // -----------------------------------------
@@ -837,7 +837,7 @@ export interface BackendAPI {
         addToFxTrades(parentId: string,input: FXTrade): Promise<ExchangeRate>;
         removeFromFxTrades(parentId: string,childIds: string[]): Promise<ExchangeRate>;
 
-    }
+    };
     // -----------------------------------------
     // FXTrade interface
     // -----------------------------------------
@@ -879,7 +879,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // Dispute interface
     // -----------------------------------------
@@ -915,7 +915,7 @@ export interface BackendAPI {
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
-    }
+    };
     // -----------------------------------------
     // Consent interface
     // -----------------------------------------
@@ -952,7 +952,7 @@ export interface BackendAPI {
         addToAuthorizedAccounts(parentId: string,input: Account): Promise<Consent>;
         removeFromAuthorizedAccounts(parentId: string,childIds: string[]): Promise<Consent>;
 
-    }
+    };
     // -----------------------------------------
     // ThirdPartyProvider interface
     // -----------------------------------------
@@ -983,5 +983,5 @@ export interface BackendAPI {
         addToConsents(parentId: string,input: Consent): Promise<ThirdPartyProvider>;
         removeFromConsents(parentId: string,childIds: string[]): Promise<ThirdPartyProvider>;
 
-    }
+    };
 }

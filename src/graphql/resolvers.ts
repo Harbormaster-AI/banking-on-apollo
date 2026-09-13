@@ -21,11 +21,11 @@ module.exports = {
     //////////////////////////
     // Bank
     //////////////////////////
-    bank: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    bank: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.bank.find( id );
     },
 
-    banks: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    banks: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.bank.findAll();
 
     const bankPage = paginateResults({
@@ -46,11 +46,11 @@ module.exports = {
     //////////////////////////
     // Branch
     //////////////////////////
-    branch: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    branch: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.branch.find( id );
     },
 
-    branchs: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    branchs: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.branch.findAll();
 
     const branchPage = paginateResults({
@@ -71,11 +71,11 @@ module.exports = {
     //////////////////////////
     // ATM
     //////////////////////////
-    aTM: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    aTM: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.aTM.find( id );
     },
 
-    aTMs: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    aTMs: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.aTM.findAll();
 
     const aTMPage = paginateResults({
@@ -96,11 +96,11 @@ module.exports = {
     //////////////////////////
     // Customer
     //////////////////////////
-    customer: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    customer: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.customer.find( id );
     },
 
-    customers: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    customers: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.customer.findAll();
 
     const customerPage = paginateResults({
@@ -121,11 +121,11 @@ module.exports = {
     //////////////////////////
     // KycProfile
     //////////////////////////
-    kycProfile: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    kycProfile: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.kycProfile.find( id );
     },
 
-    kycProfiles: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    kycProfiles: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.kycProfile.findAll();
 
     const kycProfilePage = paginateResults({
@@ -146,11 +146,11 @@ module.exports = {
     //////////////////////////
     // IdentityDocument
     //////////////////////////
-    identityDocument: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    identityDocument: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.identityDocument.find( id );
     },
 
-    identityDocuments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    identityDocuments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.identityDocument.findAll();
 
     const identityDocumentPage = paginateResults({
@@ -171,11 +171,11 @@ module.exports = {
     //////////////////////////
     // RiskAssessment
     //////////////////////////
-    riskAssessment: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    riskAssessment: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.riskAssessment.find( id );
     },
 
-    riskAssessments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    riskAssessments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.riskAssessment.findAll();
 
     const riskAssessmentPage = paginateResults({
@@ -196,11 +196,11 @@ module.exports = {
     //////////////////////////
     // ScreeningResult
     //////////////////////////
-    screeningResult: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    screeningResult: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.screeningResult.find( id );
     },
 
-    screeningResults: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    screeningResults: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.screeningResult.findAll();
 
     const screeningResultPage = paginateResults({
@@ -221,11 +221,11 @@ module.exports = {
     //////////////////////////
     // BankingProduct
     //////////////////////////
-    bankingProduct: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    bankingProduct: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.bankingProduct.find( id );
     },
 
-    bankingProducts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    bankingProducts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.bankingProduct.findAll();
 
     const bankingProductPage = paginateResults({
@@ -246,11 +246,11 @@ module.exports = {
     //////////////////////////
     // Account
     //////////////////////////
-    account: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    account: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.account.find( id );
     },
 
-    accounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    accounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.account.findAll();
 
     const accountPage = paginateResults({
@@ -271,11 +271,11 @@ module.exports = {
     //////////////////////////
     // AccountStatement
     //////////////////////////
-    accountStatement: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    accountStatement: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.accountStatement.find( id );
     },
 
-    accountStatements: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    accountStatements: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.accountStatement.findAll();
 
     const accountStatementPage = paginateResults({
@@ -296,11 +296,11 @@ module.exports = {
     //////////////////////////
     // Transaction
     //////////////////////////
-    transaction: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    transaction: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.transaction.find( id );
     },
 
-    transactions: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    transactions: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.transaction.findAll();
 
     const transactionPage = paginateResults({
@@ -321,11 +321,11 @@ module.exports = {
     //////////////////////////
     // ExternalAccount
     //////////////////////////
-    externalAccount: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    externalAccount: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.externalAccount.find( id );
     },
 
-    externalAccounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    externalAccounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.externalAccount.findAll();
 
     const externalAccountPage = paginateResults({
@@ -346,11 +346,11 @@ module.exports = {
     //////////////////////////
     // FundsTransfer
     //////////////////////////
-    fundsTransfer: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    fundsTransfer: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.fundsTransfer.find( id );
     },
 
-    fundsTransfers: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    fundsTransfers: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.fundsTransfer.findAll();
 
     const fundsTransferPage = paginateResults({
@@ -371,11 +371,11 @@ module.exports = {
     //////////////////////////
     // StandingInstruction
     //////////////////////////
-    standingInstruction: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    standingInstruction: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.standingInstruction.find( id );
     },
 
-    standingInstructions: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    standingInstructions: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.standingInstruction.findAll();
 
     const standingInstructionPage = paginateResults({
@@ -396,11 +396,11 @@ module.exports = {
     //////////////////////////
     // PaymentCard
     //////////////////////////
-    paymentCard: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    paymentCard: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.paymentCard.find( id );
     },
 
-    paymentCards: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    paymentCards: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.paymentCard.findAll();
 
     const paymentCardPage = paginateResults({
@@ -421,11 +421,11 @@ module.exports = {
     //////////////////////////
     // LoanAccount
     //////////////////////////
-    loanAccount: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    loanAccount: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.loanAccount.find( id );
     },
 
-    loanAccounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    loanAccounts: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.loanAccount.findAll();
 
     const loanAccountPage = paginateResults({
@@ -446,11 +446,11 @@ module.exports = {
     //////////////////////////
     // RepaymentSchedule
     //////////////////////////
-    repaymentSchedule: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    repaymentSchedule: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.repaymentSchedule.find( id );
     },
 
-    repaymentSchedules: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    repaymentSchedules: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.repaymentSchedule.findAll();
 
     const repaymentSchedulePage = paginateResults({
@@ -471,11 +471,11 @@ module.exports = {
     //////////////////////////
     // LoanPayment
     //////////////////////////
-    loanPayment: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    loanPayment: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.loanPayment.find( id );
     },
 
-    loanPayments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    loanPayments: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.loanPayment.findAll();
 
     const loanPaymentPage = paginateResults({
@@ -496,11 +496,11 @@ module.exports = {
     //////////////////////////
     // Collateral
     //////////////////////////
-    collateral: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    collateral: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.collateral.find( id );
     },
 
-    collaterals: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    collaterals: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.collateral.findAll();
 
     const collateralPage = paginateResults({
@@ -521,11 +521,11 @@ module.exports = {
     //////////////////////////
     // FeeCharge
     //////////////////////////
-    feeCharge: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    feeCharge: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.feeCharge.find( id );
     },
 
-    feeCharges: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    feeCharges: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.feeCharge.findAll();
 
     const feeChargePage = paginateResults({
@@ -546,11 +546,11 @@ module.exports = {
     //////////////////////////
     // ExchangeRate
     //////////////////////////
-    exchangeRate: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    exchangeRate: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.exchangeRate.find( id );
     },
 
-    exchangeRates: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    exchangeRates: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.exchangeRate.findAll();
 
     const exchangeRatePage = paginateResults({
@@ -571,11 +571,11 @@ module.exports = {
     //////////////////////////
     // FXTrade
     //////////////////////////
-    fXTrade: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    fXTrade: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.fXTrade.find( id );
     },
 
-    fXTrades: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    fXTrades: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.fXTrade.findAll();
 
     const fXTradePage = paginateResults({
@@ -596,11 +596,11 @@ module.exports = {
     //////////////////////////
     // Dispute
     //////////////////////////
-    dispute: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    dispute: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.dispute.find( id );
     },
 
-    disputes: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    disputes: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.dispute.findAll();
 
     const disputePage = paginateResults({
@@ -621,11 +621,11 @@ module.exports = {
     //////////////////////////
     // Consent
     //////////////////////////
-    consent: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    consent: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.consent.find( id );
     },
 
-    consents: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    consents: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.consent.findAll();
 
     const consentPage = paginateResults({
@@ -646,11 +646,11 @@ module.exports = {
     //////////////////////////
     // ThirdPartyProvider
     //////////////////////////
-    thirdPartyProvider: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext: ResolverContext) => {
+    thirdPartyProvider: async (_ : ResolverParent,  { id: string },  { backend }: ResolverContext) => {
         return await backend.thirdPartyProvider.find( id );
     },
 
-    thirdPartyProviders: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext: ResolverContext)) => {
+    thirdPartyProviders: async (_ : ResolverParent, { pageSize = 25, after }: PaginationOptions, { backend }: ResolverContext)) => {
     const all = await backend.thirdPartyProvider.findAll();
 
     const thirdPartyProviderPage = paginateResults({

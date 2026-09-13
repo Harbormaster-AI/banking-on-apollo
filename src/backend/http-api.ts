@@ -81,16 +81,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, Bank ): Promise<Bank> => {
-            const response = await this.http.put(`/Bank/update/${id}`,input );
-
+        update: async ( args: Bank ): Promise<Bank> => {
+            const response = await this.http.put(`/Bank/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/Bank/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
 
@@ -334,16 +333,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, Branch ): Promise<Branch> => {
-            const response = await this.http.put(`/Branch/update/${id}`,input );
-
+        update: async ( args: Branch ): Promise<Branch> => {
+            const response = await this.http.put(`/Branch/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/Branch/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         bank: async (id: string): Promise<Bank | null> => {
@@ -469,16 +467,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, ATM ): Promise<ATM> => {
-            const response = await this.http.put(`/ATM/update/${id}`,input );
-
+        update: async ( args: ATM ): Promise<ATM> => {
+            const response = await this.http.put(`/ATM/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/ATM/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         branch: async (id: string): Promise<Branch | null> => {
@@ -532,16 +529,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, Customer ): Promise<Customer> => {
-            const response = await this.http.put(`/Customer/update/${id}`,input );
-
+        update: async ( args: Customer ): Promise<Customer> => {
+            const response = await this.http.put(`/Customer/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/Customer/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         bank: async (id: string): Promise<Bank | null> => {
@@ -787,16 +783,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, KycProfile ): Promise<KycProfile> => {
-            const response = await this.http.put(`/KycProfile/update/${id}`,input );
-
+        update: async ( args: KycProfile ): Promise<KycProfile> => {
+            const response = await this.http.put(`/KycProfile/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/KycProfile/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         customer: async (id: string): Promise<Customer | null> => {
@@ -922,16 +917,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, IdentityDocument ): Promise<IdentityDocument> => {
-            const response = await this.http.put(`/IdentityDocument/update/${id}`,input );
-
+        update: async ( args: IdentityDocument ): Promise<IdentityDocument> => {
+            const response = await this.http.put(`/IdentityDocument/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/IdentityDocument/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         kycProfile: async (id: string): Promise<KycProfile | null> => {
@@ -985,16 +979,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, RiskAssessment ): Promise<RiskAssessment> => {
-            const response = await this.http.put(`/RiskAssessment/update/${id}`,input );
-
+        update: async ( args: RiskAssessment ): Promise<RiskAssessment> => {
+            const response = await this.http.put(`/RiskAssessment/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/RiskAssessment/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         kycProfile: async (id: string): Promise<KycProfile | null> => {
@@ -1048,16 +1041,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, ScreeningResult ): Promise<ScreeningResult> => {
-            const response = await this.http.put(`/ScreeningResult/update/${id}`,input );
-
+        update: async ( args: ScreeningResult ): Promise<ScreeningResult> => {
+            const response = await this.http.put(`/ScreeningResult/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/ScreeningResult/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         kycProfile: async (id: string): Promise<KycProfile | null> => {
@@ -1111,16 +1103,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, BankingProduct ): Promise<BankingProduct> => {
-            const response = await this.http.put(`/BankingProduct/update/${id}`,input );
-
+        update: async ( args: BankingProduct ): Promise<BankingProduct> => {
+            const response = await this.http.put(`/BankingProduct/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/BankingProduct/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         bank: async (id: string): Promise<Bank | null> => {
@@ -1246,16 +1237,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, Account ): Promise<Account> => {
-            const response = await this.http.put(`/Account/update/${id}`,input );
-
+        update: async ( args: Account ): Promise<Account> => {
+            const response = await this.http.put(`/Account/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/Account/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         bank: async (id: string): Promise<Bank | null> => {
@@ -1481,16 +1471,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, AccountStatement ): Promise<AccountStatement> => {
-            const response = await this.http.put(`/AccountStatement/update/${id}`,input );
-
+        update: async ( args: AccountStatement ): Promise<AccountStatement> => {
+            const response = await this.http.put(`/AccountStatement/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/AccountStatement/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         account: async (id: string): Promise<Account | null> => {
@@ -1544,16 +1533,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, Transaction ): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/update/${id}`,input );
-
+        update: async ( args: Transaction ): Promise<Transaction> => {
+            const response = await this.http.put(`/Transaction/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/Transaction/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         account: async (id: string): Promise<Account | null> => {
@@ -1737,16 +1725,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, ExternalAccount ): Promise<ExternalAccount> => {
-            const response = await this.http.put(`/ExternalAccount/update/${id}`,input );
-
+        update: async ( args: ExternalAccount ): Promise<ExternalAccount> => {
+            const response = await this.http.put(`/ExternalAccount/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/ExternalAccount/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         customer: async (id: string): Promise<Customer | null> => {
@@ -1824,16 +1811,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, FundsTransfer ): Promise<FundsTransfer> => {
-            const response = await this.http.put(`/FundsTransfer/update/${id}`,input );
-
+        update: async ( args: FundsTransfer ): Promise<FundsTransfer> => {
+            const response = await this.http.put(`/FundsTransfer/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/FundsTransfer/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         sourceAccount: async (id: string): Promise<Account | null> => {
@@ -1989,16 +1975,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, StandingInstruction ): Promise<StandingInstruction> => {
-            const response = await this.http.put(`/StandingInstruction/update/${id}`,input );
-
+        update: async ( args: StandingInstruction ): Promise<StandingInstruction> => {
+            const response = await this.http.put(`/StandingInstruction/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/StandingInstruction/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         account: async (id: string): Promise<Account | null> => {
@@ -2078,16 +2063,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, PaymentCard ): Promise<PaymentCard> => {
-            const response = await this.http.put(`/PaymentCard/update/${id}`,input );
-
+        update: async ( args: PaymentCard ): Promise<PaymentCard> => {
+            const response = await this.http.put(`/PaymentCard/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/PaymentCard/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         bank: async (id: string): Promise<Bank | null> => {
@@ -2217,16 +2201,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, LoanAccount ): Promise<LoanAccount> => {
-            const response = await this.http.put(`/LoanAccount/update/${id}`,input );
-
+        update: async ( args: LoanAccount ): Promise<LoanAccount> => {
+            const response = await this.http.put(`/LoanAccount/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/LoanAccount/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         bank: async (id: string): Promise<Bank | null> => {
@@ -2452,16 +2435,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, RepaymentSchedule ): Promise<RepaymentSchedule> => {
-            const response = await this.http.put(`/RepaymentSchedule/update/${id}`,input );
-
+        update: async ( args: RepaymentSchedule ): Promise<RepaymentSchedule> => {
+            const response = await this.http.put(`/RepaymentSchedule/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/RepaymentSchedule/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         loanAccount: async (id: string): Promise<LoanAccount | null> => {
@@ -2541,16 +2523,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, LoanPayment ): Promise<LoanPayment> => {
-            const response = await this.http.put(`/LoanPayment/update/${id}`,input );
-
+        update: async ( args: LoanPayment ): Promise<LoanPayment> => {
+            const response = await this.http.put(`/LoanPayment/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/LoanPayment/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         loanAccount: async (id: string): Promise<LoanAccount | null> => {
@@ -2630,16 +2611,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, Collateral ): Promise<Collateral> => {
-            const response = await this.http.put(`/Collateral/update/${id}`,input );
-
+        update: async ( args: Collateral ): Promise<Collateral> => {
+            const response = await this.http.put(`/Collateral/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/Collateral/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         loanAccount: async (id: string): Promise<LoanAccount | null> => {
@@ -2693,16 +2673,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, FeeCharge ): Promise<FeeCharge> => {
-            const response = await this.http.put(`/FeeCharge/update/${id}`,input );
-
+        update: async ( args: FeeCharge ): Promise<FeeCharge> => {
+            const response = await this.http.put(`/FeeCharge/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/FeeCharge/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         account: async (id: string): Promise<Account | null> => {
@@ -2782,16 +2761,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, ExchangeRate ): Promise<ExchangeRate> => {
-            const response = await this.http.put(`/ExchangeRate/update/${id}`,input );
-
+        update: async ( args: ExchangeRate ): Promise<ExchangeRate> => {
+            const response = await this.http.put(`/ExchangeRate/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/ExchangeRate/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         bank: async (id: string): Promise<Bank | null> => {
@@ -2869,16 +2847,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, FXTrade ): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/update/${id}`,input );
-
+        update: async ( args: FXTrade ): Promise<FXTrade> => {
+            const response = await this.http.put(`/FXTrade/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/FXTrade/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         customer: async (id: string): Promise<Customer | null> => {
@@ -3062,16 +3039,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, Dispute ): Promise<Dispute> => {
-            const response = await this.http.put(`/Dispute/update/${id}`,input );
-
+        update: async ( args: Dispute ): Promise<Dispute> => {
+            const response = await this.http.put(`/Dispute/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/Dispute/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         transaction: async (id: string): Promise<Transaction | null> => {
@@ -3203,16 +3179,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, Consent ): Promise<Consent> => {
-            const response = await this.http.put(`/Consent/update/${id}`,input );
-
+        update: async ( args: Consent ): Promise<Consent> => {
+            const response = await this.http.put(`/Consent/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/Consent/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         customer: async (id: string): Promise<Customer | null> => {
@@ -3342,16 +3317,15 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        update: async (input: id: string, ThirdPartyProvider ): Promise<ThirdPartyProvider> => {
-            const response = await this.http.put(`/ThirdPartyProvider/update/${id}`,input );
-
+        update: async ( args: ThirdPartyProvider ): Promise<ThirdPartyProvider> => {
+            const response = await this.http.put(`/ThirdPartyProvider/update/`,args );
             return response.data;
         },
 
         remove: async ( id: string ): Promise<boolean> => {
             await this.http.delete( `/ThirdPartyProvider/${id}`);
-        return true;
-    },
+            return true;
+        },
 
 
         bank: async (id: string): Promise<Bank | null> => {

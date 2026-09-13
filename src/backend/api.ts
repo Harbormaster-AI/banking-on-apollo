@@ -57,40 +57,40 @@ export interface BackendAPI {
         // multiple association(s)
         // -----------------------------------------
         getBranches(parentId: string): Promise<Branch[]>;
-        addToBranches(parentId: string,childIds: string[]): Promise<void>;
-        removeFromBranches(parentId: string,childIds: string[]): Promise<void>;
+        addToBranches(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromBranches(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getProducts(parentId: string): Promise<BankingProduct[]>;
-        addToProducts(parentId: string,childIds: string[]): Promise<void>;
-        removeFromProducts(parentId: string,childIds: string[]): Promise<void>;
+        addToProducts(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromProducts(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getCustomers(parentId: string): Promise<Customer[]>;
-        addToCustomers(parentId: string,childIds: string[]): Promise<void>;
-        removeFromCustomers(parentId: string,childIds: string[]): Promise<void>;
+        addToCustomers(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromCustomers(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getAccounts(parentId: string): Promise<Account[]>;
-        addToAccounts(parentId: string,childIds: string[]): Promise<void>;
-        removeFromAccounts(parentId: string,childIds: string[]): Promise<void>;
+        addToAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getPaymentCards(parentId: string): Promise<PaymentCard[]>;
-        addToPaymentCards(parentId: string,childIds: string[]): Promise<void>;
-        removeFromPaymentCards(parentId: string,childIds: string[]): Promise<void>;
+        addToPaymentCards(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromPaymentCards(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getLoanAccounts(parentId: string): Promise<LoanAccount[]>;
-        addToLoanAccounts(parentId: string,childIds: string[]): Promise<void>;
-        removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<void>;
+        addToLoanAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getExchangeRates(parentId: string): Promise<ExchangeRate[]>;
-        addToExchangeRates(parentId: string,childIds: string[]): Promise<void>;
-        removeFromExchangeRates(parentId: string,childIds: string[]): Promise<void>;
+        addToExchangeRates(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromExchangeRates(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getConsents(parentId: string): Promise<Consent[]>;
-        addToConsents(parentId: string,childIds: string[]): Promise<void>;
-        removeFromConsents(parentId: string,childIds: string[]): Promise<void>;
+        addToConsents(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromConsents(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getThirdPartyProviders(parentId: string): Promise<ThirdPartyProvider[]>;
-        addToThirdPartyProviders(parentId: string,childIds: string[]): Promise<void>;
-        removeFromThirdPartyProviders(parentId: string,childIds: string[]): Promise<void>;
+        addToThirdPartyProviders(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromThirdPartyProviders(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
     // -----------------------------------------
@@ -113,23 +113,23 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getBank(parentId: string): Promise<Bank | null>;
-        assignBank(parentId: string,childId: string): Promise<void>;
-        unassignBank(parentId: string,childId: string): Promise<void>;
+        assignBank(parentId: string,childId: string): Promise<Boolean>;
+        unassignBank(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
         getAccounts(parentId: string): Promise<Account[]>;
-        addToAccounts(parentId: string,childIds: string[]): Promise<void>;
-        removeFromAccounts(parentId: string,childIds: string[]): Promise<void>;
+        addToAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getLoanAccounts(parentId: string): Promise<LoanAccount[]>;
-        addToLoanAccounts(parentId: string,childIds: string[]): Promise<void>;
-        removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<void>;
+        addToLoanAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getAtms(parentId: string): Promise<ATM[]>;
-        addToAtms(parentId: string,childIds: string[]): Promise<void>;
-        removeFromAtms(parentId: string,childIds: string[]): Promise<void>;
+        addToAtms(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromAtms(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
     // -----------------------------------------
@@ -152,8 +152,8 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getBranch(parentId: string): Promise<Branch | null>;
-        assignBranch(parentId: string,childId: string): Promise<void>;
-        unassignBranch(parentId: string,childId: string): Promise<void>;
+        assignBranch(parentId: string,childId: string): Promise<Boolean>;
+        unassignBranch(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -179,43 +179,43 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getBank(parentId: string): Promise<Bank | null>;
-        assignBank(parentId: string,childId: string): Promise<void>;
-        unassignBank(parentId: string,childId: string): Promise<void>;
+        assignBank(parentId: string,childId: string): Promise<Boolean>;
+        unassignBank(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
         getAccounts(parentId: string): Promise<Account[]>;
-        addToAccounts(parentId: string,childIds: string[]): Promise<void>;
-        removeFromAccounts(parentId: string,childIds: string[]): Promise<void>;
+        addToAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getLoanAccounts(parentId: string): Promise<LoanAccount[]>;
-        addToLoanAccounts(parentId: string,childIds: string[]): Promise<void>;
-        removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<void>;
+        addToLoanAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getPaymentCards(parentId: string): Promise<PaymentCard[]>;
-        addToPaymentCards(parentId: string,childIds: string[]): Promise<void>;
-        removeFromPaymentCards(parentId: string,childIds: string[]): Promise<void>;
+        addToPaymentCards(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromPaymentCards(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getExternalAccounts(parentId: string): Promise<ExternalAccount[]>;
-        addToExternalAccounts(parentId: string,childIds: string[]): Promise<void>;
-        removeFromExternalAccounts(parentId: string,childIds: string[]): Promise<void>;
+        addToExternalAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromExternalAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getFundsTransfers(parentId: string): Promise<FundsTransfer[]>;
-        addToFundsTransfers(parentId: string,childIds: string[]): Promise<void>;
-        removeFromFundsTransfers(parentId: string,childIds: string[]): Promise<void>;
+        addToFundsTransfers(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromFundsTransfers(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getDisputes(parentId: string): Promise<Dispute[]>;
-        addToDisputes(parentId: string,childIds: string[]): Promise<void>;
-        removeFromDisputes(parentId: string,childIds: string[]): Promise<void>;
+        addToDisputes(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromDisputes(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getKycProfiles(parentId: string): Promise<KycProfile[]>;
-        addToKycProfiles(parentId: string,childIds: string[]): Promise<void>;
-        removeFromKycProfiles(parentId: string,childIds: string[]): Promise<void>;
+        addToKycProfiles(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromKycProfiles(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getConsents(parentId: string): Promise<Consent[]>;
-        addToConsents(parentId: string,childIds: string[]): Promise<void>;
-        removeFromConsents(parentId: string,childIds: string[]): Promise<void>;
+        addToConsents(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromConsents(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
     // -----------------------------------------
@@ -238,23 +238,23 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getCustomer(parentId: string): Promise<Customer | null>;
-        assignCustomer(parentId: string,childId: string): Promise<void>;
-        unassignCustomer(parentId: string,childId: string): Promise<void>;
+        assignCustomer(parentId: string,childId: string): Promise<Boolean>;
+        unassignCustomer(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
         getIdentityDocuments(parentId: string): Promise<IdentityDocument[]>;
-        addToIdentityDocuments(parentId: string,childIds: string[]): Promise<void>;
-        removeFromIdentityDocuments(parentId: string,childIds: string[]): Promise<void>;
+        addToIdentityDocuments(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromIdentityDocuments(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getRiskAssessments(parentId: string): Promise<RiskAssessment[]>;
-        addToRiskAssessments(parentId: string,childIds: string[]): Promise<void>;
-        removeFromRiskAssessments(parentId: string,childIds: string[]): Promise<void>;
+        addToRiskAssessments(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromRiskAssessments(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getScreenings(parentId: string): Promise<ScreeningResult[]>;
-        addToScreenings(parentId: string,childIds: string[]): Promise<void>;
-        removeFromScreenings(parentId: string,childIds: string[]): Promise<void>;
+        addToScreenings(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromScreenings(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
     // -----------------------------------------
@@ -277,8 +277,8 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getKycProfile(parentId: string): Promise<KycProfile | null>;
-        assignKycProfile(parentId: string,childId: string): Promise<void>;
-        unassignKycProfile(parentId: string,childId: string): Promise<void>;
+        assignKycProfile(parentId: string,childId: string): Promise<Boolean>;
+        unassignKycProfile(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -304,8 +304,8 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getKycProfile(parentId: string): Promise<KycProfile | null>;
-        assignKycProfile(parentId: string,childId: string): Promise<void>;
-        unassignKycProfile(parentId: string,childId: string): Promise<void>;
+        assignKycProfile(parentId: string,childId: string): Promise<Boolean>;
+        unassignKycProfile(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -331,8 +331,8 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getKycProfile(parentId: string): Promise<KycProfile | null>;
-        assignKycProfile(parentId: string,childId: string): Promise<void>;
-        unassignKycProfile(parentId: string,childId: string): Promise<void>;
+        assignKycProfile(parentId: string,childId: string): Promise<Boolean>;
+        unassignKycProfile(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -358,23 +358,23 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getBank(parentId: string): Promise<Bank | null>;
-        assignBank(parentId: string,childId: string): Promise<void>;
-        unassignBank(parentId: string,childId: string): Promise<void>;
+        assignBank(parentId: string,childId: string): Promise<Boolean>;
+        unassignBank(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
         getAccounts(parentId: string): Promise<Account[]>;
-        addToAccounts(parentId: string,childIds: string[]): Promise<void>;
-        removeFromAccounts(parentId: string,childIds: string[]): Promise<void>;
+        addToAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getLoanAccounts(parentId: string): Promise<LoanAccount[]>;
-        addToLoanAccounts(parentId: string,childIds: string[]): Promise<void>;
-        removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<void>;
+        addToLoanAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromLoanAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getPaymentCards(parentId: string): Promise<PaymentCard[]>;
-        addToPaymentCards(parentId: string,childIds: string[]): Promise<void>;
-        removeFromPaymentCards(parentId: string,childIds: string[]): Promise<void>;
+        addToPaymentCards(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromPaymentCards(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
     // -----------------------------------------
@@ -397,37 +397,37 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getBank(parentId: string): Promise<Bank | null>;
-        assignBank(parentId: string,childId: string): Promise<void>;
-        unassignBank(parentId: string,childId: string): Promise<void>;
+        assignBank(parentId: string,childId: string): Promise<Boolean>;
+        unassignBank(parentId: string,childId: string): Promise<Boolean>;
         getBranch(parentId: string): Promise<Branch | null>;
-        assignBranch(parentId: string,childId: string): Promise<void>;
-        unassignBranch(parentId: string,childId: string): Promise<void>;
+        assignBranch(parentId: string,childId: string): Promise<Boolean>;
+        unassignBranch(parentId: string,childId: string): Promise<Boolean>;
         getProduct(parentId: string): Promise<BankingProduct | null>;
-        assignProduct(parentId: string,childId: string): Promise<void>;
-        unassignProduct(parentId: string,childId: string): Promise<void>;
+        assignProduct(parentId: string,childId: string): Promise<Boolean>;
+        unassignProduct(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
         getOwners(parentId: string): Promise<Customer[]>;
-        addToOwners(parentId: string,childIds: string[]): Promise<void>;
-        removeFromOwners(parentId: string,childIds: string[]): Promise<void>;
+        addToOwners(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromOwners(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getTransactions(parentId: string): Promise<Transaction[]>;
-        addToTransactions(parentId: string,childIds: string[]): Promise<void>;
-        removeFromTransactions(parentId: string,childIds: string[]): Promise<void>;
+        addToTransactions(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromTransactions(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getStatements(parentId: string): Promise<AccountStatement[]>;
-        addToStatements(parentId: string,childIds: string[]): Promise<void>;
-        removeFromStatements(parentId: string,childIds: string[]): Promise<void>;
+        addToStatements(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromStatements(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getStandingInstructions(parentId: string): Promise<StandingInstruction[]>;
-        addToStandingInstructions(parentId: string,childIds: string[]): Promise<void>;
-        removeFromStandingInstructions(parentId: string,childIds: string[]): Promise<void>;
+        addToStandingInstructions(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromStandingInstructions(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getFeeCharges(parentId: string): Promise<FeeCharge[]>;
-        addToFeeCharges(parentId: string,childIds: string[]): Promise<void>;
-        removeFromFeeCharges(parentId: string,childIds: string[]): Promise<void>;
+        addToFeeCharges(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromFeeCharges(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
     // -----------------------------------------
@@ -450,8 +450,8 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getAccount(parentId: string): Promise<Account | null>;
-        assignAccount(parentId: string,childId: string): Promise<void>;
-        unassignAccount(parentId: string,childId: string): Promise<void>;
+        assignAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignAccount(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -477,23 +477,23 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getAccount(parentId: string): Promise<Account | null>;
-        assignAccount(parentId: string,childId: string): Promise<void>;
-        unassignAccount(parentId: string,childId: string): Promise<void>;
+        assignAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignAccount(parentId: string,childId: string): Promise<Boolean>;
         getExternalCounterparty(parentId: string): Promise<ExternalAccount | null>;
-        assignExternalCounterparty(parentId: string,childId: string): Promise<void>;
-        unassignExternalCounterparty(parentId: string,childId: string): Promise<void>;
+        assignExternalCounterparty(parentId: string,childId: string): Promise<Boolean>;
+        unassignExternalCounterparty(parentId: string,childId: string): Promise<Boolean>;
         getPaymentCard(parentId: string): Promise<PaymentCard | null>;
-        assignPaymentCard(parentId: string,childId: string): Promise<void>;
-        unassignPaymentCard(parentId: string,childId: string): Promise<void>;
+        assignPaymentCard(parentId: string,childId: string): Promise<Boolean>;
+        unassignPaymentCard(parentId: string,childId: string): Promise<Boolean>;
         getFundsTransfer(parentId: string): Promise<FundsTransfer | null>;
-        assignFundsTransfer(parentId: string,childId: string): Promise<void>;
-        unassignFundsTransfer(parentId: string,childId: string): Promise<void>;
+        assignFundsTransfer(parentId: string,childId: string): Promise<Boolean>;
+        unassignFundsTransfer(parentId: string,childId: string): Promise<Boolean>;
         getFxTrade(parentId: string): Promise<FXTrade | null>;
-        assignFxTrade(parentId: string,childId: string): Promise<void>;
-        unassignFxTrade(parentId: string,childId: string): Promise<void>;
+        assignFxTrade(parentId: string,childId: string): Promise<Boolean>;
+        unassignFxTrade(parentId: string,childId: string): Promise<Boolean>;
         getDispute(parentId: string): Promise<Dispute | null>;
-        assignDispute(parentId: string,childId: string): Promise<void>;
-        unassignDispute(parentId: string,childId: string): Promise<void>;
+        assignDispute(parentId: string,childId: string): Promise<Boolean>;
+        unassignDispute(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -519,15 +519,15 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getCustomer(parentId: string): Promise<Customer | null>;
-        assignCustomer(parentId: string,childId: string): Promise<void>;
-        unassignCustomer(parentId: string,childId: string): Promise<void>;
+        assignCustomer(parentId: string,childId: string): Promise<Boolean>;
+        unassignCustomer(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
         getTransactions(parentId: string): Promise<Transaction[]>;
-        addToTransactions(parentId: string,childIds: string[]): Promise<void>;
-        removeFromTransactions(parentId: string,childIds: string[]): Promise<void>;
+        addToTransactions(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromTransactions(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
     // -----------------------------------------
@@ -550,24 +550,24 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getSourceAccount(parentId: string): Promise<Account | null>;
-        assignSourceAccount(parentId: string,childId: string): Promise<void>;
-        unassignSourceAccount(parentId: string,childId: string): Promise<void>;
+        assignSourceAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignSourceAccount(parentId: string,childId: string): Promise<Boolean>;
         getDestinationAccount(parentId: string): Promise<Account | null>;
-        assignDestinationAccount(parentId: string,childId: string): Promise<void>;
-        unassignDestinationAccount(parentId: string,childId: string): Promise<void>;
+        assignDestinationAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignDestinationAccount(parentId: string,childId: string): Promise<Boolean>;
         getExternalBeneficiary(parentId: string): Promise<ExternalAccount | null>;
-        assignExternalBeneficiary(parentId: string,childId: string): Promise<void>;
-        unassignExternalBeneficiary(parentId: string,childId: string): Promise<void>;
+        assignExternalBeneficiary(parentId: string,childId: string): Promise<Boolean>;
+        unassignExternalBeneficiary(parentId: string,childId: string): Promise<Boolean>;
         getInitiatedBy(parentId: string): Promise<Customer | null>;
-        assignInitiatedBy(parentId: string,childId: string): Promise<void>;
-        unassignInitiatedBy(parentId: string,childId: string): Promise<void>;
+        assignInitiatedBy(parentId: string,childId: string): Promise<Boolean>;
+        unassignInitiatedBy(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
         getTransactions(parentId: string): Promise<Transaction[]>;
-        addToTransactions(parentId: string,childIds: string[]): Promise<void>;
-        removeFromTransactions(parentId: string,childIds: string[]): Promise<void>;
+        addToTransactions(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromTransactions(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
     // -----------------------------------------
@@ -590,11 +590,11 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getAccount(parentId: string): Promise<Account | null>;
-        assignAccount(parentId: string,childId: string): Promise<void>;
-        unassignAccount(parentId: string,childId: string): Promise<void>;
+        assignAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignAccount(parentId: string,childId: string): Promise<Boolean>;
         getBeneficiary(parentId: string): Promise<ExternalAccount | null>;
-        assignBeneficiary(parentId: string,childId: string): Promise<void>;
-        unassignBeneficiary(parentId: string,childId: string): Promise<void>;
+        assignBeneficiary(parentId: string,childId: string): Promise<Boolean>;
+        unassignBeneficiary(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -620,21 +620,21 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getBank(parentId: string): Promise<Bank | null>;
-        assignBank(parentId: string,childId: string): Promise<void>;
-        unassignBank(parentId: string,childId: string): Promise<void>;
+        assignBank(parentId: string,childId: string): Promise<Boolean>;
+        unassignBank(parentId: string,childId: string): Promise<Boolean>;
         getAccount(parentId: string): Promise<Account | null>;
-        assignAccount(parentId: string,childId: string): Promise<void>;
-        unassignAccount(parentId: string,childId: string): Promise<void>;
+        assignAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignAccount(parentId: string,childId: string): Promise<Boolean>;
         getCustomer(parentId: string): Promise<Customer | null>;
-        assignCustomer(parentId: string,childId: string): Promise<void>;
-        unassignCustomer(parentId: string,childId: string): Promise<void>;
+        assignCustomer(parentId: string,childId: string): Promise<Boolean>;
+        unassignCustomer(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
         getTransactions(parentId: string): Promise<Transaction[]>;
-        addToTransactions(parentId: string,childIds: string[]): Promise<void>;
-        removeFromTransactions(parentId: string,childIds: string[]): Promise<void>;
+        addToTransactions(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromTransactions(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
     // -----------------------------------------
@@ -657,37 +657,37 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getBank(parentId: string): Promise<Bank | null>;
-        assignBank(parentId: string,childId: string): Promise<void>;
-        unassignBank(parentId: string,childId: string): Promise<void>;
+        assignBank(parentId: string,childId: string): Promise<Boolean>;
+        unassignBank(parentId: string,childId: string): Promise<Boolean>;
         getBranch(parentId: string): Promise<Branch | null>;
-        assignBranch(parentId: string,childId: string): Promise<void>;
-        unassignBranch(parentId: string,childId: string): Promise<void>;
+        assignBranch(parentId: string,childId: string): Promise<Boolean>;
+        unassignBranch(parentId: string,childId: string): Promise<Boolean>;
         getProduct(parentId: string): Promise<BankingProduct | null>;
-        assignProduct(parentId: string,childId: string): Promise<void>;
-        unassignProduct(parentId: string,childId: string): Promise<void>;
+        assignProduct(parentId: string,childId: string): Promise<Boolean>;
+        unassignProduct(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
         getBorrowers(parentId: string): Promise<Customer[]>;
-        addToBorrowers(parentId: string,childIds: string[]): Promise<void>;
-        removeFromBorrowers(parentId: string,childIds: string[]): Promise<void>;
+        addToBorrowers(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromBorrowers(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getRepaymentSchedule(parentId: string): Promise<RepaymentSchedule[]>;
-        addToRepaymentSchedule(parentId: string,childIds: string[]): Promise<void>;
-        removeFromRepaymentSchedule(parentId: string,childIds: string[]): Promise<void>;
+        addToRepaymentSchedule(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromRepaymentSchedule(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getPayments(parentId: string): Promise<LoanPayment[]>;
-        addToPayments(parentId: string,childIds: string[]): Promise<void>;
-        removeFromPayments(parentId: string,childIds: string[]): Promise<void>;
+        addToPayments(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromPayments(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getCollateral(parentId: string): Promise<Collateral[]>;
-        addToCollateral(parentId: string,childIds: string[]): Promise<void>;
-        removeFromCollateral(parentId: string,childIds: string[]): Promise<void>;
+        addToCollateral(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromCollateral(parentId: string,childIds: string[]): Promise<Boolean>;
 
         getFeeCharges(parentId: string): Promise<FeeCharge[]>;
-        addToFeeCharges(parentId: string,childIds: string[]): Promise<void>;
-        removeFromFeeCharges(parentId: string,childIds: string[]): Promise<void>;
+        addToFeeCharges(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromFeeCharges(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
     // -----------------------------------------
@@ -710,11 +710,11 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getLoanAccount(parentId: string): Promise<LoanAccount | null>;
-        assignLoanAccount(parentId: string,childId: string): Promise<void>;
-        unassignLoanAccount(parentId: string,childId: string): Promise<void>;
+        assignLoanAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignLoanAccount(parentId: string,childId: string): Promise<Boolean>;
         getPayment(parentId: string): Promise<LoanPayment | null>;
-        assignPayment(parentId: string,childId: string): Promise<void>;
-        unassignPayment(parentId: string,childId: string): Promise<void>;
+        assignPayment(parentId: string,childId: string): Promise<Boolean>;
+        unassignPayment(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -740,11 +740,11 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getLoanAccount(parentId: string): Promise<LoanAccount | null>;
-        assignLoanAccount(parentId: string,childId: string): Promise<void>;
-        unassignLoanAccount(parentId: string,childId: string): Promise<void>;
+        assignLoanAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignLoanAccount(parentId: string,childId: string): Promise<Boolean>;
         getTransaction(parentId: string): Promise<Transaction | null>;
-        assignTransaction(parentId: string,childId: string): Promise<void>;
-        unassignTransaction(parentId: string,childId: string): Promise<void>;
+        assignTransaction(parentId: string,childId: string): Promise<Boolean>;
+        unassignTransaction(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -770,8 +770,8 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getLoanAccount(parentId: string): Promise<LoanAccount | null>;
-        assignLoanAccount(parentId: string,childId: string): Promise<void>;
-        unassignLoanAccount(parentId: string,childId: string): Promise<void>;
+        assignLoanAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignLoanAccount(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -797,11 +797,11 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getAccount(parentId: string): Promise<Account | null>;
-        assignAccount(parentId: string,childId: string): Promise<void>;
-        unassignAccount(parentId: string,childId: string): Promise<void>;
+        assignAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignAccount(parentId: string,childId: string): Promise<Boolean>;
         getLoanAccount(parentId: string): Promise<LoanAccount | null>;
-        assignLoanAccount(parentId: string,childId: string): Promise<void>;
-        unassignLoanAccount(parentId: string,childId: string): Promise<void>;
+        assignLoanAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignLoanAccount(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -827,15 +827,15 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getBank(parentId: string): Promise<Bank | null>;
-        assignBank(parentId: string,childId: string): Promise<void>;
-        unassignBank(parentId: string,childId: string): Promise<void>;
+        assignBank(parentId: string,childId: string): Promise<Boolean>;
+        unassignBank(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
         getFxTrades(parentId: string): Promise<FXTrade[]>;
-        addToFxTrades(parentId: string,childIds: string[]): Promise<void>;
-        removeFromFxTrades(parentId: string,childIds: string[]): Promise<void>;
+        addToFxTrades(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromFxTrades(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
     // -----------------------------------------
@@ -858,23 +858,23 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getCustomer(parentId: string): Promise<Customer | null>;
-        assignCustomer(parentId: string,childId: string): Promise<void>;
-        unassignCustomer(parentId: string,childId: string): Promise<void>;
+        assignCustomer(parentId: string,childId: string): Promise<Boolean>;
+        unassignCustomer(parentId: string,childId: string): Promise<Boolean>;
         getBank(parentId: string): Promise<Bank | null>;
-        assignBank(parentId: string,childId: string): Promise<void>;
-        unassignBank(parentId: string,childId: string): Promise<void>;
+        assignBank(parentId: string,childId: string): Promise<Boolean>;
+        unassignBank(parentId: string,childId: string): Promise<Boolean>;
         getExchangeRate(parentId: string): Promise<ExchangeRate | null>;
-        assignExchangeRate(parentId: string,childId: string): Promise<void>;
-        unassignExchangeRate(parentId: string,childId: string): Promise<void>;
+        assignExchangeRate(parentId: string,childId: string): Promise<Boolean>;
+        unassignExchangeRate(parentId: string,childId: string): Promise<Boolean>;
         getSourceAccount(parentId: string): Promise<Account | null>;
-        assignSourceAccount(parentId: string,childId: string): Promise<void>;
-        unassignSourceAccount(parentId: string,childId: string): Promise<void>;
+        assignSourceAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignSourceAccount(parentId: string,childId: string): Promise<Boolean>;
         getDestinationAccount(parentId: string): Promise<Account | null>;
-        assignDestinationAccount(parentId: string,childId: string): Promise<void>;
-        unassignDestinationAccount(parentId: string,childId: string): Promise<void>;
+        assignDestinationAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignDestinationAccount(parentId: string,childId: string): Promise<Boolean>;
         getTransaction(parentId: string): Promise<Transaction | null>;
-        assignTransaction(parentId: string,childId: string): Promise<void>;
-        unassignTransaction(parentId: string,childId: string): Promise<void>;
+        assignTransaction(parentId: string,childId: string): Promise<Boolean>;
+        unassignTransaction(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -900,17 +900,17 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getTransaction(parentId: string): Promise<Transaction | null>;
-        assignTransaction(parentId: string,childId: string): Promise<void>;
-        unassignTransaction(parentId: string,childId: string): Promise<void>;
+        assignTransaction(parentId: string,childId: string): Promise<Boolean>;
+        unassignTransaction(parentId: string,childId: string): Promise<Boolean>;
         getCustomer(parentId: string): Promise<Customer | null>;
-        assignCustomer(parentId: string,childId: string): Promise<void>;
-        unassignCustomer(parentId: string,childId: string): Promise<void>;
+        assignCustomer(parentId: string,childId: string): Promise<Boolean>;
+        unassignCustomer(parentId: string,childId: string): Promise<Boolean>;
         getAccount(parentId: string): Promise<Account | null>;
-        assignAccount(parentId: string,childId: string): Promise<void>;
-        unassignAccount(parentId: string,childId: string): Promise<void>;
+        assignAccount(parentId: string,childId: string): Promise<Boolean>;
+        unassignAccount(parentId: string,childId: string): Promise<Boolean>;
         getPaymentCard(parentId: string): Promise<PaymentCard | null>;
-        assignPaymentCard(parentId: string,childId: string): Promise<void>;
-        unassignPaymentCard(parentId: string,childId: string): Promise<void>;
+        assignPaymentCard(parentId: string,childId: string): Promise<Boolean>;
+        unassignPaymentCard(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
@@ -936,21 +936,21 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getCustomer(parentId: string): Promise<Customer | null>;
-        assignCustomer(parentId: string,childId: string): Promise<void>;
-        unassignCustomer(parentId: string,childId: string): Promise<void>;
+        assignCustomer(parentId: string,childId: string): Promise<Boolean>;
+        unassignCustomer(parentId: string,childId: string): Promise<Boolean>;
         getBank(parentId: string): Promise<Bank | null>;
-        assignBank(parentId: string,childId: string): Promise<void>;
-        unassignBank(parentId: string,childId: string): Promise<void>;
+        assignBank(parentId: string,childId: string): Promise<Boolean>;
+        unassignBank(parentId: string,childId: string): Promise<Boolean>;
         getThirdPartyProvider(parentId: string): Promise<ThirdPartyProvider | null>;
-        assignThirdPartyProvider(parentId: string,childId: string): Promise<void>;
-        unassignThirdPartyProvider(parentId: string,childId: string): Promise<void>;
+        assignThirdPartyProvider(parentId: string,childId: string): Promise<Boolean>;
+        unassignThirdPartyProvider(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
         getAuthorizedAccounts(parentId: string): Promise<Account[]>;
-        addToAuthorizedAccounts(parentId: string,childIds: string[]): Promise<void>;
-        removeFromAuthorizedAccounts(parentId: string,childIds: string[]): Promise<void>;
+        addToAuthorizedAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromAuthorizedAccounts(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
     // -----------------------------------------
@@ -973,15 +973,15 @@ export interface BackendAPI {
         // -----------------------------------------
 
         getBank(parentId: string): Promise<Bank | null>;
-        assignBank(parentId: string,childId: string): Promise<void>;
-        unassignBank(parentId: string,childId: string): Promise<void>;
+        assignBank(parentId: string,childId: string): Promise<Boolean>;
+        unassignBank(parentId: string,childId: string): Promise<Boolean>;
 
         // -----------------------------------------
         // multiple association(s)
         // -----------------------------------------
         getConsents(parentId: string): Promise<Consent[]>;
-        addToConsents(parentId: string,childIds: string[]): Promise<void>;
-        removeFromConsents(parentId: string,childIds: string[]): Promise<void>;
+        addToConsents(parentId: string,childIds: string[]): Promise<Boolean>;
+        removeFromConsents(parentId: string,childIds: string[]): Promise<Boolean>;
 
     };
 }

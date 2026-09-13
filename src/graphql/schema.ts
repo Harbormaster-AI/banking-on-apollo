@@ -686,93 +686,33 @@ id: ID!
         exchangeRates:  [ExchangeRate]
         consents:  [Consent]
         thirdPartyProviders:  [ThirdPartyProvider]
-    addToBranches(
-            name: String
-            branchCode: String
-            address: String
-            phone: String
-            openingHours: String
-    ): Bank
-    assignToBranches( branchesIds: [ID]! ): Bank
-    addToProducts(
-            productCode: String
-            name: String
-            description: String
-            ProductCategory:  ProductCategory
-    ): Bank
-    assignToProducts( productsIds: [ID]! ): Bank
-    addToCustomers(
-            firstName: String
-            lastName: String
-            legalName: String
-            dateOfBirth: String
-            taxId: String
-            email: String
-            phone: String
-            address: String
-            CustomerType:  CustomerType
-            RiskRating:  RiskRating
-            KycStatus:  KycStatus
-    ): Bank
-    assignToCustomers( customersIds: [ID]! ): Bank
-    addToAccounts(
-            accountNumber: String
-            iban: String
-            accountName: String
-            currency: String
-            openedOn: String
-            closedOn: String
-            AccountType:  AccountType
-            OwnershipType:  AccountOwnershipType
-            Status:  AccountStatus
-    ): Bank
-    assignToAccounts( accountsIds: [ID]! ): Bank
-    addToPaymentCards(
-            cardNumber: String
-            embossedName: String
-            expiryMonth: Int
-            expiryYear: Int
-            CardType:  CardType
-            CardStatus:  CardStatus
-            Network:  CardNetwork
-    ): Bank
-    assignToPaymentCards( paymentCardsIds: [ID]! ): Bank
-    addToLoanAccounts(
-            loanNumber: String
-            principalAmount: String
-            outstandingPrincipal: String
-            interestRate: String
-            originationDate: String
-            maturityDate: String
-            paymentDayOfMonth: Int
-            currency: String
-            LoanType:  LoanType
-            RateType:  RateType
-            Compounding:  InterestCompounding
-            Status:  LoanStatus
-    ): Bank
-    assignToLoanAccounts( loanAccountsIds: [ID]! ): Bank
-    addToExchangeRates(
-            baseCurrency: String
-            counterCurrency: String
-            rate: String
-            asOf: String
-            source: String
-    ): Bank
-    assignToExchangeRates( exchangeRatesIds: [ID]! ): Bank
-    addToConsents(
-            grantedOn: String
-            expiresOn: String
-            ConsentType:  ConsentType
-            Status:  ConsentStatus
-    ): Bank
-    assignToConsents( consentsIds: [ID]! ): Bank
-    addToThirdPartyProviders(
-            name: String
-            registrationId: String
-            website: String
-    ): Bank
-    assignToThirdPartyProviders( thirdPartyProvidersIds: [ID]! ): Bank
+    getBranches( parentId: ID! ): [Branch]!
+    addToBranches( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromBranches( parentId: ID!, childIds: [ID]! ): Boolean!
+    getProducts( parentId: ID! ): [BankingProduct]!
+    addToProducts( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromProducts( parentId: ID!, childIds: [ID]! ): Boolean!
+    getCustomers( parentId: ID! ): [Customer]!
+    addToCustomers( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromCustomers( parentId: ID!, childIds: [ID]! ): Boolean!
+    getAccounts( parentId: ID! ): [Account]!
+    addToAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    getPaymentCards( parentId: ID! ): [PaymentCard]!
+    addToPaymentCards( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromPaymentCards( parentId: ID!, childIds: [ID]! ): Boolean!
+    getLoanAccounts( parentId: ID! ): [LoanAccount]!
+    addToLoanAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromLoanAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    getExchangeRates( parentId: ID! ): [ExchangeRate]!
+    addToExchangeRates( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromExchangeRates( parentId: ID!, childIds: [ID]! ): Boolean!
+    getConsents( parentId: ID! ): [Consent]!
+    addToConsents( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromConsents( parentId: ID!, childIds: [ID]! ): Boolean!
+    getThirdPartyProviders( parentId: ID! ): [ThirdPartyProvider]!
+    addToThirdPartyProviders( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromThirdPartyProviders( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 
@@ -803,41 +743,17 @@ id: ID!
             headquartersCountry: String
             website: String
     ): Branch
-    assignBank(  bankId: [ID]! ): Branch
-    unassignBank( branchId: ID! ): Branch
-    addToAccounts(
-            accountNumber: String
-            iban: String
-            accountName: String
-            currency: String
-            openedOn: String
-            closedOn: String
-            AccountType:  AccountType
-            OwnershipType:  AccountOwnershipType
-            Status:  AccountStatus
-    ): Branch
-    assignToAccounts( accountsIds: [ID]! ): Branch
-    addToLoanAccounts(
-            loanNumber: String
-            principalAmount: String
-            outstandingPrincipal: String
-            interestRate: String
-            originationDate: String
-            maturityDate: String
-            paymentDayOfMonth: Int
-            currency: String
-            LoanType:  LoanType
-            RateType:  RateType
-            Compounding:  InterestCompounding
-            Status:  LoanStatus
-    ): Branch
-    assignToLoanAccounts( loanAccountsIds: [ID]! ): Branch
-    addToAtms(
-            terminalId: String
-            location: String
-            Status:  ATMStatus
-    ): Branch
-    assignToAtms( atmsIds: [ID]! ): Branch
+    getBank( parentId: ID! ): Branch
+    assignBank( parentId: ID!, childId: ID! ): Boolean!
+    unassignBank( parentId: ID!, childId: ID! ): Boolean!    getAccounts( parentId: ID! ): [Account]!
+    addToAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    getLoanAccounts( parentId: ID! ): [LoanAccount]!
+    addToLoanAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromLoanAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    getAtms( parentId: ID! ): [ATM]!
+    addToAtms( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromAtms( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 
@@ -863,9 +779,9 @@ id: ID!
             phone: String
             openingHours: String
     ): ATM
-    assignBranch(  branchId: [ID]! ): ATM
-    unassignBranch( aTMId: ID! ): ATM
-
+    getBranch( parentId: ID! ): ATM
+    assignBranch( parentId: ID!, childId: ID! ): Boolean!
+    unassignBranch( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type ATMQueryResult {
@@ -906,85 +822,32 @@ id: ID!
             headquartersCountry: String
             website: String
     ): Customer
-    assignBank(  bankId: [ID]! ): Customer
-    unassignBank( customerId: ID! ): Customer
-    addToAccounts(
-            accountNumber: String
-            iban: String
-            accountName: String
-            currency: String
-            openedOn: String
-            closedOn: String
-            AccountType:  AccountType
-            OwnershipType:  AccountOwnershipType
-            Status:  AccountStatus
-    ): Customer
-    assignToAccounts( accountsIds: [ID]! ): Customer
-    addToLoanAccounts(
-            loanNumber: String
-            principalAmount: String
-            outstandingPrincipal: String
-            interestRate: String
-            originationDate: String
-            maturityDate: String
-            paymentDayOfMonth: Int
-            currency: String
-            LoanType:  LoanType
-            RateType:  RateType
-            Compounding:  InterestCompounding
-            Status:  LoanStatus
-    ): Customer
-    assignToLoanAccounts( loanAccountsIds: [ID]! ): Customer
-    addToPaymentCards(
-            cardNumber: String
-            embossedName: String
-            expiryMonth: Int
-            expiryYear: Int
-            CardType:  CardType
-            CardStatus:  CardStatus
-            Network:  CardNetwork
-    ): Customer
-    assignToPaymentCards( paymentCardsIds: [ID]! ): Customer
-    addToExternalAccounts(
-            name: String
-            iban: String
-            accountNumber: String
-            bic: String
-            bankName: String
-            country: String
-    ): Customer
-    assignToExternalAccounts( externalAccountsIds: [ID]! ): Customer
-    addToFundsTransfers(
-            transferReference: String
-            amount: String
-            requestedDate: String
-            executionDate: String
-            purpose: String
-            feeAmount: String
-            Method:  PaymentMethod
-            Status:  PaymentStatus
-    ): Customer
-    assignToFundsTransfers( fundsTransfersIds: [ID]! ): Customer
-    addToDisputes(
-            disputeReference: String
-            raisedOn: String
-            reason: String
-            Status:  DisputeStatus
-    ): Customer
-    assignToDisputes( disputesIds: [ID]! ): Customer
-    addToKycProfiles(
-            profileId: String
-            lastReviewedOn: String
-            Status:  KycStatus
-    ): Customer
-    assignToKycProfiles( kycProfilesIds: [ID]! ): Customer
-    addToConsents(
-            grantedOn: String
-            expiresOn: String
-            ConsentType:  ConsentType
-            Status:  ConsentStatus
-    ): Customer
-    assignToConsents( consentsIds: [ID]! ): Customer
+    getBank( parentId: ID! ): Customer
+    assignBank( parentId: ID!, childId: ID! ): Boolean!
+    unassignBank( parentId: ID!, childId: ID! ): Boolean!    getAccounts( parentId: ID! ): [Account]!
+    addToAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    getLoanAccounts( parentId: ID! ): [LoanAccount]!
+    addToLoanAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromLoanAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    getPaymentCards( parentId: ID! ): [PaymentCard]!
+    addToPaymentCards( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromPaymentCards( parentId: ID!, childIds: [ID]! ): Boolean!
+    getExternalAccounts( parentId: ID! ): [ExternalAccount]!
+    addToExternalAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromExternalAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    getFundsTransfers( parentId: ID! ): [FundsTransfer]!
+    addToFundsTransfers( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromFundsTransfers( parentId: ID!, childIds: [ID]! ): Boolean!
+    getDisputes( parentId: ID! ): [Dispute]!
+    addToDisputes( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromDisputes( parentId: ID!, childIds: [ID]! ): Boolean!
+    getKycProfiles( parentId: ID! ): [KycProfile]!
+    addToKycProfiles( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromKycProfiles( parentId: ID!, childIds: [ID]! ): Boolean!
+    getConsents( parentId: ID! ): [Consent]!
+    addToConsents( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromConsents( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 
@@ -1019,27 +882,17 @@ id: ID!
             RiskRating:  RiskRating
             KycStatus:  KycStatus
     ): KycProfile
-    assignCustomer(  customerId: [ID]! ): KycProfile
-    unassignCustomer( kycProfileId: ID! ): KycProfile
-    addToIdentityDocuments(
-            documentNumber: String
-            issuingCountry: String
-            expirationDate: String
-            DocumentType:  IdentityDocumentType
-    ): KycProfile
-    assignToIdentityDocuments( identityDocumentsIds: [ID]! ): KycProfile
-    addToRiskAssessments(
-            score: Int
-            assessedOn: String
-            Rating:  RiskRating
-    ): KycProfile
-    assignToRiskAssessments( riskAssessmentsIds: [ID]! ): KycProfile
-    addToScreenings(
-            screeningDate: String
-            provider: String
-            Outcome:  ScreeningOutcome
-    ): KycProfile
-    assignToScreenings( screeningsIds: [ID]! ): KycProfile
+    getCustomer( parentId: ID! ): KycProfile
+    assignCustomer( parentId: ID!, childId: ID! ): Boolean!
+    unassignCustomer( parentId: ID!, childId: ID! ): Boolean!    getIdentityDocuments( parentId: ID! ): [IdentityDocument]!
+    addToIdentityDocuments( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromIdentityDocuments( parentId: ID!, childIds: [ID]! ): Boolean!
+    getRiskAssessments( parentId: ID! ): [RiskAssessment]!
+    addToRiskAssessments( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromRiskAssessments( parentId: ID!, childIds: [ID]! ): Boolean!
+    getScreenings( parentId: ID! ): [ScreeningResult]!
+    addToScreenings( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromScreenings( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 
@@ -1064,9 +917,9 @@ id: ID!
             lastReviewedOn: String
             Status:  KycStatus
     ): IdentityDocument
-    assignKycProfile(  kycProfileId: [ID]! ): IdentityDocument
-    unassignKycProfile( identityDocumentId: ID! ): IdentityDocument
-
+    getKycProfile( parentId: ID! ): IdentityDocument
+    assignKycProfile( parentId: ID!, childId: ID! ): Boolean!
+    unassignKycProfile( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type IdentityDocumentQueryResult {
@@ -1089,9 +942,9 @@ id: ID!
             lastReviewedOn: String
             Status:  KycStatus
     ): RiskAssessment
-    assignKycProfile(  kycProfileId: [ID]! ): RiskAssessment
-    unassignKycProfile( riskAssessmentId: ID! ): RiskAssessment
-
+    getKycProfile( parentId: ID! ): RiskAssessment
+    assignKycProfile( parentId: ID!, childId: ID! ): Boolean!
+    unassignKycProfile( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type RiskAssessmentQueryResult {
@@ -1114,9 +967,9 @@ id: ID!
             lastReviewedOn: String
             Status:  KycStatus
     ): ScreeningResult
-    assignKycProfile(  kycProfileId: [ID]! ): ScreeningResult
-    unassignKycProfile( screeningResultId: ID! ): ScreeningResult
-
+    getKycProfile( parentId: ID! ): ScreeningResult
+    assignKycProfile( parentId: ID!, childId: ID! ): Boolean!
+    unassignKycProfile( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type ScreeningResultQueryResult {
@@ -1145,45 +998,17 @@ id: ID!
             headquartersCountry: String
             website: String
     ): BankingProduct
-    assignBank(  bankId: [ID]! ): BankingProduct
-    unassignBank( bankingProductId: ID! ): BankingProduct
-    addToAccounts(
-            accountNumber: String
-            iban: String
-            accountName: String
-            currency: String
-            openedOn: String
-            closedOn: String
-            AccountType:  AccountType
-            OwnershipType:  AccountOwnershipType
-            Status:  AccountStatus
-    ): BankingProduct
-    assignToAccounts( accountsIds: [ID]! ): BankingProduct
-    addToLoanAccounts(
-            loanNumber: String
-            principalAmount: String
-            outstandingPrincipal: String
-            interestRate: String
-            originationDate: String
-            maturityDate: String
-            paymentDayOfMonth: Int
-            currency: String
-            LoanType:  LoanType
-            RateType:  RateType
-            Compounding:  InterestCompounding
-            Status:  LoanStatus
-    ): BankingProduct
-    assignToLoanAccounts( loanAccountsIds: [ID]! ): BankingProduct
-    addToPaymentCards(
-            cardNumber: String
-            embossedName: String
-            expiryMonth: Int
-            expiryYear: Int
-            CardType:  CardType
-            CardStatus:  CardStatus
-            Network:  CardNetwork
-    ): BankingProduct
-    assignToPaymentCards( paymentCardsIds: [ID]! ): BankingProduct
+    getBank( parentId: ID! ): BankingProduct
+    assignBank( parentId: ID!, childId: ID! ): Boolean!
+    unassignBank( parentId: ID!, childId: ID! ): Boolean!    getAccounts( parentId: ID! ): [Account]!
+    addToAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    getLoanAccounts( parentId: ID! ): [LoanAccount]!
+    addToLoanAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromLoanAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    getPaymentCards( parentId: ID! ): [PaymentCard]!
+    addToPaymentCards( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromPaymentCards( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 
@@ -1222,74 +1047,40 @@ id: ID!
             headquartersCountry: String
             website: String
     ): Account
-    assignBank(  bankId: [ID]! ): Account
-    unassignBank( accountId: ID! ): Account
-    addBranch(
+    getBank( parentId: ID! ): Account
+    assignBank( parentId: ID!, childId: ID! ): Boolean!
+    unassignBank( parentId: ID!, childId: ID! ): Boolean!    addBranch(
             name: String
             branchCode: String
             address: String
             phone: String
             openingHours: String
     ): Account
-    assignBranch(  branchId: [ID]! ): Account
-    unassignBranch( accountId: ID! ): Account
-    addProduct(
+    getBranch( parentId: ID! ): Account
+    assignBranch( parentId: ID!, childId: ID! ): Boolean!
+    unassignBranch( parentId: ID!, childId: ID! ): Boolean!    addProduct(
             productCode: String
             name: String
             description: String
             ProductCategory:  ProductCategory
     ): Account
-    assignProduct(  productId: [ID]! ): Account
-    unassignProduct( accountId: ID! ): Account
-    addToOwners(
-            firstName: String
-            lastName: String
-            legalName: String
-            dateOfBirth: String
-            taxId: String
-            email: String
-            phone: String
-            address: String
-            CustomerType:  CustomerType
-            RiskRating:  RiskRating
-            KycStatus:  KycStatus
-    ): Account
-    assignToOwners( ownersIds: [ID]! ): Account
-    addToTransactions(
-            bookingDate: String
-            valueDate: String
-            amount: String
-            description: String
-            Direction:  TransactionDirection
-            TransactionType:  TransactionType
-            Status:  TransactionStatus
-            Channel:  ChannelType
-    ): Account
-    assignToTransactions( transactionsIds: [ID]! ): Account
-    addToStatements(
-            statementNumber: String
-            periodStart: String
-            periodEnd: String
-            openingBalance: String
-            closingBalance: String
-            DeliveryMethod:  StatementDeliveryMethod
-    ): Account
-    assignToStatements( statementsIds: [ID]! ): Account
-    addToStandingInstructions(
-            instructionId: String
-            amount: String
-            nextExecutionDate: String
-            Frequency:  StandingInstructionFrequency
-            Status:  StandingInstructionStatus
-    ): Account
-    assignToStandingInstructions( standingInstructionsIds: [ID]! ): Account
-    addToFeeCharges(
-            feeCode: String
-            amount: String
-            appliedOn: String
-            FeeType:  FeeType
-    ): Account
-    assignToFeeCharges( feeChargesIds: [ID]! ): Account
+    getProduct( parentId: ID! ): Account
+    assignProduct( parentId: ID!, childId: ID! ): Boolean!
+    unassignProduct( parentId: ID!, childId: ID! ): Boolean!    getOwners( parentId: ID! ): [Customer]!
+    addToOwners( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromOwners( parentId: ID!, childIds: [ID]! ): Boolean!
+    getTransactions( parentId: ID! ): [Transaction]!
+    addToTransactions( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromTransactions( parentId: ID!, childIds: [ID]! ): Boolean!
+    getStatements( parentId: ID! ): [AccountStatement]!
+    addToStatements( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromStatements( parentId: ID!, childIds: [ID]! ): Boolean!
+    getStandingInstructions( parentId: ID! ): [StandingInstruction]!
+    addToStandingInstructions( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromStandingInstructions( parentId: ID!, childIds: [ID]! ): Boolean!
+    getFeeCharges( parentId: ID! ): [FeeCharge]!
+    addToFeeCharges( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromFeeCharges( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 
@@ -1322,9 +1113,9 @@ id: ID!
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): AccountStatement
-    assignAccount(  accountId: [ID]! ): AccountStatement
-    unassignAccount( accountStatementId: ID! ): AccountStatement
-
+    getAccount( parentId: ID! ): AccountStatement
+    assignAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignAccount( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type AccountStatementQueryResult {
@@ -1363,9 +1154,9 @@ id: ID!
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): Transaction
-    assignAccount(  accountId: [ID]! ): Transaction
-    unassignAccount( transactionId: ID! ): Transaction
-    addExternalCounterparty(
+    getAccount( parentId: ID! ): Transaction
+    assignAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignAccount( parentId: ID!, childId: ID! ): Boolean!    addExternalCounterparty(
             name: String
             iban: String
             accountNumber: String
@@ -1373,9 +1164,9 @@ id: ID!
             bankName: String
             country: String
     ): Transaction
-    assignExternalCounterparty(  externalCounterpartyId: [ID]! ): Transaction
-    unassignExternalCounterparty( transactionId: ID! ): Transaction
-    addPaymentCard(
+    getExternalCounterparty( parentId: ID! ): Transaction
+    assignExternalCounterparty( parentId: ID!, childId: ID! ): Boolean!
+    unassignExternalCounterparty( parentId: ID!, childId: ID! ): Boolean!    addPaymentCard(
             cardNumber: String
             embossedName: String
             expiryMonth: Int
@@ -1384,9 +1175,9 @@ id: ID!
             CardStatus:  CardStatus
             Network:  CardNetwork
     ): Transaction
-    assignPaymentCard(  paymentCardId: [ID]! ): Transaction
-    unassignPaymentCard( transactionId: ID! ): Transaction
-    addFundsTransfer(
+    getPaymentCard( parentId: ID! ): Transaction
+    assignPaymentCard( parentId: ID!, childId: ID! ): Boolean!
+    unassignPaymentCard( parentId: ID!, childId: ID! ): Boolean!    addFundsTransfer(
             transferReference: String
             amount: String
             requestedDate: String
@@ -1396,9 +1187,9 @@ id: ID!
             Method:  PaymentMethod
             Status:  PaymentStatus
     ): Transaction
-    assignFundsTransfer(  fundsTransferId: [ID]! ): Transaction
-    unassignFundsTransfer( transactionId: ID! ): Transaction
-    addFxTrade(
+    getFundsTransfer( parentId: ID! ): Transaction
+    assignFundsTransfer( parentId: ID!, childId: ID! ): Boolean!
+    unassignFundsTransfer( parentId: ID!, childId: ID! ): Boolean!    addFxTrade(
             tradeReference: String
             tradeDate: String
             settlementDate: String
@@ -1407,17 +1198,17 @@ id: ID!
             rate: String
             Status:  TradeStatus
     ): Transaction
-    assignFxTrade(  fxTradeId: [ID]! ): Transaction
-    unassignFxTrade( transactionId: ID! ): Transaction
-    addDispute(
+    getFxTrade( parentId: ID! ): Transaction
+    assignFxTrade( parentId: ID!, childId: ID! ): Boolean!
+    unassignFxTrade( parentId: ID!, childId: ID! ): Boolean!    addDispute(
             disputeReference: String
             raisedOn: String
             reason: String
             Status:  DisputeStatus
     ): Transaction
-    assignDispute(  disputeId: [ID]! ): Transaction
-    unassignDispute( transactionId: ID! ): Transaction
-
+    getDispute( parentId: ID! ): Transaction
+    assignDispute( parentId: ID!, childId: ID! ): Boolean!
+    unassignDispute( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type TransactionQueryResult {
@@ -1452,19 +1243,11 @@ id: ID!
             RiskRating:  RiskRating
             KycStatus:  KycStatus
     ): ExternalAccount
-    assignCustomer(  customerId: [ID]! ): ExternalAccount
-    unassignCustomer( externalAccountId: ID! ): ExternalAccount
-    addToTransactions(
-            bookingDate: String
-            valueDate: String
-            amount: String
-            description: String
-            Direction:  TransactionDirection
-            TransactionType:  TransactionType
-            Status:  TransactionStatus
-            Channel:  ChannelType
-    ): ExternalAccount
-    assignToTransactions( transactionsIds: [ID]! ): ExternalAccount
+    getCustomer( parentId: ID! ): ExternalAccount
+    assignCustomer( parentId: ID!, childId: ID! ): Boolean!
+    unassignCustomer( parentId: ID!, childId: ID! ): Boolean!    getTransactions( parentId: ID! ): [Transaction]!
+    addToTransactions( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromTransactions( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 
@@ -1503,9 +1286,9 @@ id: ID!
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): FundsTransfer
-    assignSourceAccount(  sourceAccountId: [ID]! ): FundsTransfer
-    unassignSourceAccount( fundsTransferId: ID! ): FundsTransfer
-    addDestinationAccount(
+    getSourceAccount( parentId: ID! ): FundsTransfer
+    assignSourceAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignSourceAccount( parentId: ID!, childId: ID! ): Boolean!    addDestinationAccount(
             accountNumber: String
             iban: String
             accountName: String
@@ -1516,9 +1299,9 @@ id: ID!
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): FundsTransfer
-    assignDestinationAccount(  destinationAccountId: [ID]! ): FundsTransfer
-    unassignDestinationAccount( fundsTransferId: ID! ): FundsTransfer
-    addExternalBeneficiary(
+    getDestinationAccount( parentId: ID! ): FundsTransfer
+    assignDestinationAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignDestinationAccount( parentId: ID!, childId: ID! ): Boolean!    addExternalBeneficiary(
             name: String
             iban: String
             accountNumber: String
@@ -1526,9 +1309,9 @@ id: ID!
             bankName: String
             country: String
     ): FundsTransfer
-    assignExternalBeneficiary(  externalBeneficiaryId: [ID]! ): FundsTransfer
-    unassignExternalBeneficiary( fundsTransferId: ID! ): FundsTransfer
-    addInitiatedBy(
+    getExternalBeneficiary( parentId: ID! ): FundsTransfer
+    assignExternalBeneficiary( parentId: ID!, childId: ID! ): Boolean!
+    unassignExternalBeneficiary( parentId: ID!, childId: ID! ): Boolean!    addInitiatedBy(
             firstName: String
             lastName: String
             legalName: String
@@ -1541,19 +1324,11 @@ id: ID!
             RiskRating:  RiskRating
             KycStatus:  KycStatus
     ): FundsTransfer
-    assignInitiatedBy(  initiatedById: [ID]! ): FundsTransfer
-    unassignInitiatedBy( fundsTransferId: ID! ): FundsTransfer
-    addToTransactions(
-            bookingDate: String
-            valueDate: String
-            amount: String
-            description: String
-            Direction:  TransactionDirection
-            TransactionType:  TransactionType
-            Status:  TransactionStatus
-            Channel:  ChannelType
-    ): FundsTransfer
-    assignToTransactions( transactionsIds: [ID]! ): FundsTransfer
+    getInitiatedBy( parentId: ID! ): FundsTransfer
+    assignInitiatedBy( parentId: ID!, childId: ID! ): Boolean!
+    unassignInitiatedBy( parentId: ID!, childId: ID! ): Boolean!    getTransactions( parentId: ID! ): [Transaction]!
+    addToTransactions( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromTransactions( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 
@@ -1586,9 +1361,9 @@ id: ID!
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): StandingInstruction
-    assignAccount(  accountId: [ID]! ): StandingInstruction
-    unassignAccount( standingInstructionId: ID! ): StandingInstruction
-    addBeneficiary(
+    getAccount( parentId: ID! ): StandingInstruction
+    assignAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignAccount( parentId: ID!, childId: ID! ): Boolean!    addBeneficiary(
             name: String
             iban: String
             accountNumber: String
@@ -1596,9 +1371,9 @@ id: ID!
             bankName: String
             country: String
     ): StandingInstruction
-    assignBeneficiary(  beneficiaryId: [ID]! ): StandingInstruction
-    unassignBeneficiary( standingInstructionId: ID! ): StandingInstruction
-
+    getBeneficiary( parentId: ID! ): StandingInstruction
+    assignBeneficiary( parentId: ID!, childId: ID! ): Boolean!
+    unassignBeneficiary( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type StandingInstructionQueryResult {
@@ -1630,9 +1405,9 @@ id: ID!
             headquartersCountry: String
             website: String
     ): PaymentCard
-    assignBank(  bankId: [ID]! ): PaymentCard
-    unassignBank( paymentCardId: ID! ): PaymentCard
-    addAccount(
+    getBank( parentId: ID! ): PaymentCard
+    assignBank( parentId: ID!, childId: ID! ): Boolean!
+    unassignBank( parentId: ID!, childId: ID! ): Boolean!    addAccount(
             accountNumber: String
             iban: String
             accountName: String
@@ -1643,9 +1418,9 @@ id: ID!
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): PaymentCard
-    assignAccount(  accountId: [ID]! ): PaymentCard
-    unassignAccount( paymentCardId: ID! ): PaymentCard
-    addCustomer(
+    getAccount( parentId: ID! ): PaymentCard
+    assignAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignAccount( parentId: ID!, childId: ID! ): Boolean!    addCustomer(
             firstName: String
             lastName: String
             legalName: String
@@ -1658,19 +1433,11 @@ id: ID!
             RiskRating:  RiskRating
             KycStatus:  KycStatus
     ): PaymentCard
-    assignCustomer(  customerId: [ID]! ): PaymentCard
-    unassignCustomer( paymentCardId: ID! ): PaymentCard
-    addToTransactions(
-            bookingDate: String
-            valueDate: String
-            amount: String
-            description: String
-            Direction:  TransactionDirection
-            TransactionType:  TransactionType
-            Status:  TransactionStatus
-            Channel:  ChannelType
-    ): PaymentCard
-    assignToTransactions( transactionsIds: [ID]! ): PaymentCard
+    getCustomer( parentId: ID! ): PaymentCard
+    assignCustomer( parentId: ID!, childId: ID! ): Boolean!
+    unassignCustomer( parentId: ID!, childId: ID! ): Boolean!    getTransactions( parentId: ID! ): [Transaction]!
+    addToTransactions( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromTransactions( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 
@@ -1712,70 +1479,40 @@ id: ID!
             headquartersCountry: String
             website: String
     ): LoanAccount
-    assignBank(  bankId: [ID]! ): LoanAccount
-    unassignBank( loanAccountId: ID! ): LoanAccount
-    addBranch(
+    getBank( parentId: ID! ): LoanAccount
+    assignBank( parentId: ID!, childId: ID! ): Boolean!
+    unassignBank( parentId: ID!, childId: ID! ): Boolean!    addBranch(
             name: String
             branchCode: String
             address: String
             phone: String
             openingHours: String
     ): LoanAccount
-    assignBranch(  branchId: [ID]! ): LoanAccount
-    unassignBranch( loanAccountId: ID! ): LoanAccount
-    addProduct(
+    getBranch( parentId: ID! ): LoanAccount
+    assignBranch( parentId: ID!, childId: ID! ): Boolean!
+    unassignBranch( parentId: ID!, childId: ID! ): Boolean!    addProduct(
             productCode: String
             name: String
             description: String
             ProductCategory:  ProductCategory
     ): LoanAccount
-    assignProduct(  productId: [ID]! ): LoanAccount
-    unassignProduct( loanAccountId: ID! ): LoanAccount
-    addToBorrowers(
-            firstName: String
-            lastName: String
-            legalName: String
-            dateOfBirth: String
-            taxId: String
-            email: String
-            phone: String
-            address: String
-            CustomerType:  CustomerType
-            RiskRating:  RiskRating
-            KycStatus:  KycStatus
-    ): LoanAccount
-    assignToBorrowers( borrowersIds: [ID]! ): LoanAccount
-    addToRepaymentSchedule(
-            installmentNumber: Int
-            dueDate: String
-            principalDue: String
-            interestDue: String
-            totalDue: String
-            Status:  InstallmentStatus
-    ): LoanAccount
-    assignToRepaymentSchedule( repaymentScheduleIds: [ID]! ): LoanAccount
-    addToPayments(
-            paymentReference: String
-            amount: String
-            paymentDate: String
-            Method:  PaymentMethod
-            Status:  PaymentStatus
-    ): LoanAccount
-    assignToPayments( paymentsIds: [ID]! ): LoanAccount
-    addToCollateral(
-            appraisedValue: String
-            description: String
-            location: String
-            CollateralType:  CollateralType
-    ): LoanAccount
-    assignToCollateral( collateralIds: [ID]! ): LoanAccount
-    addToFeeCharges(
-            feeCode: String
-            amount: String
-            appliedOn: String
-            FeeType:  FeeType
-    ): LoanAccount
-    assignToFeeCharges( feeChargesIds: [ID]! ): LoanAccount
+    getProduct( parentId: ID! ): LoanAccount
+    assignProduct( parentId: ID!, childId: ID! ): Boolean!
+    unassignProduct( parentId: ID!, childId: ID! ): Boolean!    getBorrowers( parentId: ID! ): [Customer]!
+    addToBorrowers( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromBorrowers( parentId: ID!, childIds: [ID]! ): Boolean!
+    getRepaymentSchedule( parentId: ID! ): [RepaymentSchedule]!
+    addToRepaymentSchedule( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromRepaymentSchedule( parentId: ID!, childIds: [ID]! ): Boolean!
+    getPayments( parentId: ID! ): [LoanPayment]!
+    addToPayments( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromPayments( parentId: ID!, childIds: [ID]! ): Boolean!
+    getCollateral( parentId: ID! ): [Collateral]!
+    addToCollateral( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromCollateral( parentId: ID!, childIds: [ID]! ): Boolean!
+    getFeeCharges( parentId: ID! ): [FeeCharge]!
+    addToFeeCharges( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromFeeCharges( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 
@@ -1812,18 +1549,18 @@ id: ID!
             Compounding:  InterestCompounding
             Status:  LoanStatus
     ): RepaymentSchedule
-    assignLoanAccount(  loanAccountId: [ID]! ): RepaymentSchedule
-    unassignLoanAccount( repaymentScheduleId: ID! ): RepaymentSchedule
-    addPayment(
+    getLoanAccount( parentId: ID! ): RepaymentSchedule
+    assignLoanAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignLoanAccount( parentId: ID!, childId: ID! ): Boolean!    addPayment(
             paymentReference: String
             amount: String
             paymentDate: String
             Method:  PaymentMethod
             Status:  PaymentStatus
     ): RepaymentSchedule
-    assignPayment(  paymentId: [ID]! ): RepaymentSchedule
-    unassignPayment( repaymentScheduleId: ID! ): RepaymentSchedule
-
+    getPayment( parentId: ID! ): RepaymentSchedule
+    assignPayment( parentId: ID!, childId: ID! ): Boolean!
+    unassignPayment( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type RepaymentScheduleQueryResult {
@@ -1858,9 +1595,9 @@ id: ID!
             Compounding:  InterestCompounding
             Status:  LoanStatus
     ): LoanPayment
-    assignLoanAccount(  loanAccountId: [ID]! ): LoanPayment
-    unassignLoanAccount( loanPaymentId: ID! ): LoanPayment
-    addTransaction(
+    getLoanAccount( parentId: ID! ): LoanPayment
+    assignLoanAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignLoanAccount( parentId: ID!, childId: ID! ): Boolean!    addTransaction(
             bookingDate: String
             valueDate: String
             amount: String
@@ -1870,9 +1607,9 @@ id: ID!
             Status:  TransactionStatus
             Channel:  ChannelType
     ): LoanPayment
-    assignTransaction(  transactionId: [ID]! ): LoanPayment
-    unassignTransaction( loanPaymentId: ID! ): LoanPayment
-
+    getTransaction( parentId: ID! ): LoanPayment
+    assignTransaction( parentId: ID!, childId: ID! ): Boolean!
+    unassignTransaction( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type LoanPaymentQueryResult {
@@ -1905,9 +1642,9 @@ id: ID!
             Compounding:  InterestCompounding
             Status:  LoanStatus
     ): Collateral
-    assignLoanAccount(  loanAccountId: [ID]! ): Collateral
-    unassignLoanAccount( collateralId: ID! ): Collateral
-
+    getLoanAccount( parentId: ID! ): Collateral
+    assignLoanAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignLoanAccount( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type CollateralQueryResult {
@@ -1938,9 +1675,9 @@ id: ID!
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): FeeCharge
-    assignAccount(  accountId: [ID]! ): FeeCharge
-    unassignAccount( feeChargeId: ID! ): FeeCharge
-    addLoanAccount(
+    getAccount( parentId: ID! ): FeeCharge
+    assignAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignAccount( parentId: ID!, childId: ID! ): Boolean!    addLoanAccount(
             loanNumber: String
             principalAmount: String
             outstandingPrincipal: String
@@ -1954,9 +1691,9 @@ id: ID!
             Compounding:  InterestCompounding
             Status:  LoanStatus
     ): FeeCharge
-    assignLoanAccount(  loanAccountId: [ID]! ): FeeCharge
-    unassignLoanAccount( feeChargeId: ID! ): FeeCharge
-
+    getLoanAccount( parentId: ID! ): FeeCharge
+    assignLoanAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignLoanAccount( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type FeeChargeQueryResult {
@@ -1984,18 +1721,11 @@ id: ID!
             headquartersCountry: String
             website: String
     ): ExchangeRate
-    assignBank(  bankId: [ID]! ): ExchangeRate
-    unassignBank( exchangeRateId: ID! ): ExchangeRate
-    addToFxTrades(
-            tradeReference: String
-            tradeDate: String
-            settlementDate: String
-            amountSold: String
-            amountBought: String
-            rate: String
-            Status:  TradeStatus
-    ): ExchangeRate
-    assignToFxTrades( fxTradesIds: [ID]! ): ExchangeRate
+    getBank( parentId: ID! ): ExchangeRate
+    assignBank( parentId: ID!, childId: ID! ): Boolean!
+    unassignBank( parentId: ID!, childId: ID! ): Boolean!    getFxTrades( parentId: ID! ): [FXTrade]!
+    addToFxTrades( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromFxTrades( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 
@@ -2036,27 +1766,27 @@ id: ID!
             RiskRating:  RiskRating
             KycStatus:  KycStatus
     ): FXTrade
-    assignCustomer(  customerId: [ID]! ): FXTrade
-    unassignCustomer( fXTradeId: ID! ): FXTrade
-    addBank(
+    getCustomer( parentId: ID! ): FXTrade
+    assignCustomer( parentId: ID!, childId: ID! ): Boolean!
+    unassignCustomer( parentId: ID!, childId: ID! ): Boolean!    addBank(
             name: String
             legalName: String
             swiftBic: String
             headquartersCountry: String
             website: String
     ): FXTrade
-    assignBank(  bankId: [ID]! ): FXTrade
-    unassignBank( fXTradeId: ID! ): FXTrade
-    addExchangeRate(
+    getBank( parentId: ID! ): FXTrade
+    assignBank( parentId: ID!, childId: ID! ): Boolean!
+    unassignBank( parentId: ID!, childId: ID! ): Boolean!    addExchangeRate(
             baseCurrency: String
             counterCurrency: String
             rate: String
             asOf: String
             source: String
     ): FXTrade
-    assignExchangeRate(  exchangeRateId: [ID]! ): FXTrade
-    unassignExchangeRate( fXTradeId: ID! ): FXTrade
-    addSourceAccount(
+    getExchangeRate( parentId: ID! ): FXTrade
+    assignExchangeRate( parentId: ID!, childId: ID! ): Boolean!
+    unassignExchangeRate( parentId: ID!, childId: ID! ): Boolean!    addSourceAccount(
             accountNumber: String
             iban: String
             accountName: String
@@ -2067,9 +1797,9 @@ id: ID!
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): FXTrade
-    assignSourceAccount(  sourceAccountId: [ID]! ): FXTrade
-    unassignSourceAccount( fXTradeId: ID! ): FXTrade
-    addDestinationAccount(
+    getSourceAccount( parentId: ID! ): FXTrade
+    assignSourceAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignSourceAccount( parentId: ID!, childId: ID! ): Boolean!    addDestinationAccount(
             accountNumber: String
             iban: String
             accountName: String
@@ -2080,9 +1810,9 @@ id: ID!
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): FXTrade
-    assignDestinationAccount(  destinationAccountId: [ID]! ): FXTrade
-    unassignDestinationAccount( fXTradeId: ID! ): FXTrade
-    addTransaction(
+    getDestinationAccount( parentId: ID! ): FXTrade
+    assignDestinationAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignDestinationAccount( parentId: ID!, childId: ID! ): Boolean!    addTransaction(
             bookingDate: String
             valueDate: String
             amount: String
@@ -2092,9 +1822,9 @@ id: ID!
             Status:  TransactionStatus
             Channel:  ChannelType
     ): FXTrade
-    assignTransaction(  transactionId: [ID]! ): FXTrade
-    unassignTransaction( fXTradeId: ID! ): FXTrade
-
+    getTransaction( parentId: ID! ): FXTrade
+    assignTransaction( parentId: ID!, childId: ID! ): Boolean!
+    unassignTransaction( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type FXTradeQueryResult {
@@ -2126,9 +1856,9 @@ id: ID!
             Status:  TransactionStatus
             Channel:  ChannelType
     ): Dispute
-    assignTransaction(  transactionId: [ID]! ): Dispute
-    unassignTransaction( disputeId: ID! ): Dispute
-    addCustomer(
+    getTransaction( parentId: ID! ): Dispute
+    assignTransaction( parentId: ID!, childId: ID! ): Boolean!
+    unassignTransaction( parentId: ID!, childId: ID! ): Boolean!    addCustomer(
             firstName: String
             lastName: String
             legalName: String
@@ -2141,9 +1871,9 @@ id: ID!
             RiskRating:  RiskRating
             KycStatus:  KycStatus
     ): Dispute
-    assignCustomer(  customerId: [ID]! ): Dispute
-    unassignCustomer( disputeId: ID! ): Dispute
-    addAccount(
+    getCustomer( parentId: ID! ): Dispute
+    assignCustomer( parentId: ID!, childId: ID! ): Boolean!
+    unassignCustomer( parentId: ID!, childId: ID! ): Boolean!    addAccount(
             accountNumber: String
             iban: String
             accountName: String
@@ -2154,9 +1884,9 @@ id: ID!
             OwnershipType:  AccountOwnershipType
             Status:  AccountStatus
     ): Dispute
-    assignAccount(  accountId: [ID]! ): Dispute
-    unassignAccount( disputeId: ID! ): Dispute
-    addPaymentCard(
+    getAccount( parentId: ID! ): Dispute
+    assignAccount( parentId: ID!, childId: ID! ): Boolean!
+    unassignAccount( parentId: ID!, childId: ID! ): Boolean!    addPaymentCard(
             cardNumber: String
             embossedName: String
             expiryMonth: Int
@@ -2165,9 +1895,9 @@ id: ID!
             CardStatus:  CardStatus
             Network:  CardNetwork
     ): Dispute
-    assignPaymentCard(  paymentCardId: [ID]! ): Dispute
-    unassignPaymentCard( disputeId: ID! ): Dispute
-
+    getPaymentCard( parentId: ID! ): Dispute
+    assignPaymentCard( parentId: ID!, childId: ID! ): Boolean!
+    unassignPaymentCard( parentId: ID!, childId: ID! ): Boolean!
 }
 
 type DisputeQueryResult {
@@ -2202,36 +1932,27 @@ id: ID!
             RiskRating:  RiskRating
             KycStatus:  KycStatus
     ): Consent
-    assignCustomer(  customerId: [ID]! ): Consent
-    unassignCustomer( consentId: ID! ): Consent
-    addBank(
+    getCustomer( parentId: ID! ): Consent
+    assignCustomer( parentId: ID!, childId: ID! ): Boolean!
+    unassignCustomer( parentId: ID!, childId: ID! ): Boolean!    addBank(
             name: String
             legalName: String
             swiftBic: String
             headquartersCountry: String
             website: String
     ): Consent
-    assignBank(  bankId: [ID]! ): Consent
-    unassignBank( consentId: ID! ): Consent
-    addThirdPartyProvider(
+    getBank( parentId: ID! ): Consent
+    assignBank( parentId: ID!, childId: ID! ): Boolean!
+    unassignBank( parentId: ID!, childId: ID! ): Boolean!    addThirdPartyProvider(
             name: String
             registrationId: String
             website: String
     ): Consent
-    assignThirdPartyProvider(  thirdPartyProviderId: [ID]! ): Consent
-    unassignThirdPartyProvider( consentId: ID! ): Consent
-    addToAuthorizedAccounts(
-            accountNumber: String
-            iban: String
-            accountName: String
-            currency: String
-            openedOn: String
-            closedOn: String
-            AccountType:  AccountType
-            OwnershipType:  AccountOwnershipType
-            Status:  AccountStatus
-    ): Consent
-    assignToAuthorizedAccounts( authorizedAccountsIds: [ID]! ): Consent
+    getThirdPartyProvider( parentId: ID! ): Consent
+    assignThirdPartyProvider( parentId: ID!, childId: ID! ): Boolean!
+    unassignThirdPartyProvider( parentId: ID!, childId: ID! ): Boolean!    getAuthorizedAccounts( parentId: ID! ): [Account]!
+    addToAuthorizedAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromAuthorizedAccounts( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 
@@ -2258,15 +1979,11 @@ id: ID!
             headquartersCountry: String
             website: String
     ): ThirdPartyProvider
-    assignBank(  bankId: [ID]! ): ThirdPartyProvider
-    unassignBank( thirdPartyProviderId: ID! ): ThirdPartyProvider
-    addToConsents(
-            grantedOn: String
-            expiresOn: String
-            ConsentType:  ConsentType
-            Status:  ConsentStatus
-    ): ThirdPartyProvider
-    assignToConsents( consentsIds: [ID]! ): ThirdPartyProvider
+    getBank( parentId: ID! ): ThirdPartyProvider
+    assignBank( parentId: ID!, childId: ID! ): Boolean!
+    unassignBank( parentId: ID!, childId: ID! ): Boolean!    getConsents( parentId: ID! ): [Consent]!
+    addToConsents( parentId: ID!, childIds: [ID]! ): Boolean!
+    removeFromConsents( parentId: ID!, childIds: [ID]! ): Boolean!
 
 }
 

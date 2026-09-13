@@ -20,7 +20,7 @@ interface ParentChildIdentifiers {
 
 interface ParentChildrenIdentifiers {
     parentId: string;
-    childrenIds: string[];
+    childIds: string[];
 }
 
 type ResolverParent = unknown;

@@ -101,24 +101,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToBranches: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        addToBranches: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/addToBranches/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromBranches: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeFromBranches: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/removeFromBranches/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getProducts: async (parentId: string,options?: PaginationOptions): Promise<BankingProduct[]> => {
@@ -131,24 +129,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToProducts: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        addToProducts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/addToProducts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromProducts: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeFromProducts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/removeFromProducts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getCustomers: async (parentId: string,options?: PaginationOptions): Promise<Customer[]> => {
@@ -161,24 +157,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToCustomers: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        addToCustomers: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/addToCustomers/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromCustomers: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeFromCustomers: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/removeFromCustomers/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getAccounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
@@ -191,24 +185,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToAccounts: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        addToAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/addToAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromAccounts: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeFromAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/removeFromAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getPaymentCards: async (parentId: string,options?: PaginationOptions): Promise<PaymentCard[]> => {
@@ -221,24 +213,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToPaymentCards: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        addToPaymentCards: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/addToPaymentCards/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromPaymentCards: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeFromPaymentCards: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/removeFromPaymentCards/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getLoanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
@@ -251,24 +241,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToLoanAccounts: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        addToLoanAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/addToLoanAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromLoanAccounts: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeFromLoanAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/removeFromLoanAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getExchangeRates: async (parentId: string,options?: PaginationOptions): Promise<ExchangeRate[]> => {
@@ -281,24 +269,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToExchangeRates: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        addToExchangeRates: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/addToExchangeRates/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromExchangeRates: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeFromExchangeRates: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/removeFromExchangeRates/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getConsents: async (parentId: string,options?: PaginationOptions): Promise<Consent[]> => {
@@ -311,24 +297,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToConsents: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        addToConsents: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/addToConsents/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromConsents: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeFromConsents: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/removeFromConsents/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getThirdPartyProviders: async (parentId: string,options?: PaginationOptions): Promise<ThirdPartyProvider[]> => {
@@ -341,24 +325,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToThirdPartyProviders: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        addToThirdPartyProviders: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/addToThirdPartyProviders/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromThirdPartyProviders: async (parentId: string,childIds: string[]): Promise<Bank> => {
+        removeFromThirdPartyProviders: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Bank/removeFromThirdPartyProviders/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 
@@ -402,26 +384,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBank(parentId: string,childId: string): Promise<Branch> => {
-            const response = await this.http.put(`/Branch/assignBank`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBank: async (parentId: string,childId: string): Promise<Branch> => {
+        assignBank(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Branch/assignBank`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBank: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Branch/unassignBank`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getAccounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
@@ -434,24 +415,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToAccounts: async (parentId: string,childIds: string[]): Promise<Branch> => {
+        addToAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Branch/addToAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromAccounts: async (parentId: string,childIds: string[]): Promise<Branch> => {
+        removeFromAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Branch/removeFromAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getLoanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
@@ -464,24 +443,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToLoanAccounts: async (parentId: string,childIds: string[]): Promise<Branch> => {
+        addToLoanAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Branch/addToLoanAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromLoanAccounts: async (parentId: string,childIds: string[]): Promise<Branch> => {
+        removeFromLoanAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Branch/removeFromLoanAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getAtms: async (parentId: string,options?: PaginationOptions): Promise<ATM[]> => {
@@ -494,24 +471,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToAtms: async (parentId: string,childIds: string[]): Promise<Branch> => {
+        addToAtms: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Branch/addToAtms/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromAtms: async (parentId: string,childIds: string[]): Promise<Branch> => {
+        removeFromAtms: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Branch/removeFromAtms/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 
@@ -555,26 +530,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBranch(parentId: string,childId: string): Promise<ATM> => {
-            const response = await this.http.put(`/ATM/assignBranch`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBranch: async (parentId: string,childId: string): Promise<ATM> => {
+        assignBranch(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/ATM/assignBranch`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBranch: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/ATM/unassignBranch`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -618,26 +592,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBank(parentId: string,childId: string): Promise<Customer> => {
-            const response = await this.http.put(`/Customer/assignBank`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBank: async (parentId: string,childId: string): Promise<Customer> => {
+        assignBank(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Customer/assignBank`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBank: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Customer/unassignBank`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getAccounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
@@ -650,24 +623,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToAccounts: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        addToAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/addToAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromAccounts: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeFromAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/removeFromAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getLoanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
@@ -680,24 +651,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToLoanAccounts: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        addToLoanAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/addToLoanAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromLoanAccounts: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeFromLoanAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/removeFromLoanAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getPaymentCards: async (parentId: string,options?: PaginationOptions): Promise<PaymentCard[]> => {
@@ -710,24 +679,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToPaymentCards: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        addToPaymentCards: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/addToPaymentCards/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromPaymentCards: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeFromPaymentCards: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/removeFromPaymentCards/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getExternalAccounts: async (parentId: string,options?: PaginationOptions): Promise<ExternalAccount[]> => {
@@ -740,24 +707,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToExternalAccounts: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        addToExternalAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/addToExternalAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromExternalAccounts: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeFromExternalAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/removeFromExternalAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getFundsTransfers: async (parentId: string,options?: PaginationOptions): Promise<FundsTransfer[]> => {
@@ -770,24 +735,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToFundsTransfers: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        addToFundsTransfers: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/addToFundsTransfers/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromFundsTransfers: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeFromFundsTransfers: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/removeFromFundsTransfers/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getDisputes: async (parentId: string,options?: PaginationOptions): Promise<Dispute[]> => {
@@ -800,24 +763,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToDisputes: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        addToDisputes: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/addToDisputes/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromDisputes: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeFromDisputes: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/removeFromDisputes/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getKycProfiles: async (parentId: string,options?: PaginationOptions): Promise<KycProfile[]> => {
@@ -830,24 +791,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToKycProfiles: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        addToKycProfiles: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/addToKycProfiles/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromKycProfiles: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeFromKycProfiles: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/removeFromKycProfiles/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getConsents: async (parentId: string,options?: PaginationOptions): Promise<Consent[]> => {
@@ -860,24 +819,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToConsents: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        addToConsents: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/addToConsents/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromConsents: async (parentId: string,childIds: string[]): Promise<Customer> => {
+        removeFromConsents: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Customer/removeFromConsents/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 
@@ -921,26 +878,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignCustomer(parentId: string,childId: string): Promise<KycProfile> => {
-            const response = await this.http.put(`/KycProfile/assignCustomer`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignCustomer: async (parentId: string,childId: string): Promise<KycProfile> => {
+        assignCustomer(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/KycProfile/assignCustomer`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignCustomer: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/KycProfile/unassignCustomer`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getIdentityDocuments: async (parentId: string,options?: PaginationOptions): Promise<IdentityDocument[]> => {
@@ -953,24 +909,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToIdentityDocuments: async (parentId: string,childIds: string[]): Promise<KycProfile> => {
+        addToIdentityDocuments: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/KycProfile/addToIdentityDocuments/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromIdentityDocuments: async (parentId: string,childIds: string[]): Promise<KycProfile> => {
+        removeFromIdentityDocuments: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/KycProfile/removeFromIdentityDocuments/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getRiskAssessments: async (parentId: string,options?: PaginationOptions): Promise<RiskAssessment[]> => {
@@ -983,24 +937,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToRiskAssessments: async (parentId: string,childIds: string[]): Promise<KycProfile> => {
+        addToRiskAssessments: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/KycProfile/addToRiskAssessments/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromRiskAssessments: async (parentId: string,childIds: string[]): Promise<KycProfile> => {
+        removeFromRiskAssessments: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/KycProfile/removeFromRiskAssessments/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getScreenings: async (parentId: string,options?: PaginationOptions): Promise<ScreeningResult[]> => {
@@ -1013,24 +965,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToScreenings: async (parentId: string,childIds: string[]): Promise<KycProfile> => {
+        addToScreenings: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/KycProfile/addToScreenings/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromScreenings: async (parentId: string,childIds: string[]): Promise<KycProfile> => {
+        removeFromScreenings: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/KycProfile/removeFromScreenings/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 
@@ -1074,26 +1024,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignKycProfile(parentId: string,childId: string): Promise<IdentityDocument> => {
-            const response = await this.http.put(`/IdentityDocument/assignKycProfile`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignKycProfile: async (parentId: string,childId: string): Promise<IdentityDocument> => {
+        assignKycProfile(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/IdentityDocument/assignKycProfile`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignKycProfile: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/IdentityDocument/unassignKycProfile`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -1137,26 +1086,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignKycProfile(parentId: string,childId: string): Promise<RiskAssessment> => {
-            const response = await this.http.put(`/RiskAssessment/assignKycProfile`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignKycProfile: async (parentId: string,childId: string): Promise<RiskAssessment> => {
+        assignKycProfile(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/RiskAssessment/assignKycProfile`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignKycProfile: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/RiskAssessment/unassignKycProfile`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -1200,26 +1148,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignKycProfile(parentId: string,childId: string): Promise<ScreeningResult> => {
-            const response = await this.http.put(`/ScreeningResult/assignKycProfile`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignKycProfile: async (parentId: string,childId: string): Promise<ScreeningResult> => {
+        assignKycProfile(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/ScreeningResult/assignKycProfile`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignKycProfile: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/ScreeningResult/unassignKycProfile`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -1263,26 +1210,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBank(parentId: string,childId: string): Promise<BankingProduct> => {
-            const response = await this.http.put(`/BankingProduct/assignBank`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBank: async (parentId: string,childId: string): Promise<BankingProduct> => {
+        assignBank(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/BankingProduct/assignBank`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBank: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/BankingProduct/unassignBank`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getAccounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
@@ -1295,24 +1241,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToAccounts: async (parentId: string,childIds: string[]): Promise<BankingProduct> => {
+        addToAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/BankingProduct/addToAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromAccounts: async (parentId: string,childIds: string[]): Promise<BankingProduct> => {
+        removeFromAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/BankingProduct/removeFromAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getLoanAccounts: async (parentId: string,options?: PaginationOptions): Promise<LoanAccount[]> => {
@@ -1325,24 +1269,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToLoanAccounts: async (parentId: string,childIds: string[]): Promise<BankingProduct> => {
+        addToLoanAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/BankingProduct/addToLoanAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromLoanAccounts: async (parentId: string,childIds: string[]): Promise<BankingProduct> => {
+        removeFromLoanAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/BankingProduct/removeFromLoanAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getPaymentCards: async (parentId: string,options?: PaginationOptions): Promise<PaymentCard[]> => {
@@ -1355,24 +1297,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToPaymentCards: async (parentId: string,childIds: string[]): Promise<BankingProduct> => {
+        addToPaymentCards: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/BankingProduct/addToPaymentCards/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromPaymentCards: async (parentId: string,childIds: string[]): Promise<BankingProduct> => {
+        removeFromPaymentCards: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/BankingProduct/removeFromPaymentCards/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 
@@ -1416,26 +1356,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBank(parentId: string,childId: string): Promise<Account> => {
-            const response = await this.http.put(`/Account/assignBank`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBank: async (parentId: string,childId: string): Promise<Account> => {
+        assignBank(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Account/assignBank`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBank: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Account/unassignBank`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getBranch: async (parentId: string): Promise<Branch | null> => {
@@ -1444,26 +1383,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBranch(parentId: string,childId: string): Promise<Account> => {
-            const response = await this.http.put(`/Account/assignBranch`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBranch: async (parentId: string,childId: string): Promise<Account> => {
+        assignBranch(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Account/assignBranch`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBranch: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Account/unassignBranch`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getProduct: async (parentId: string): Promise<BankingProduct | null> => {
@@ -1472,26 +1410,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignProduct(parentId: string,childId: string): Promise<Account> => {
-            const response = await this.http.put(`/Account/assignProduct`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignProduct: async (parentId: string,childId: string): Promise<Account> => {
+        assignProduct(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Account/assignProduct`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignProduct: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Account/unassignProduct`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getOwners: async (parentId: string,options?: PaginationOptions): Promise<Customer[]> => {
@@ -1504,24 +1441,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToOwners: async (parentId: string,childIds: string[]): Promise<Account> => {
+        addToOwners: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Account/addToOwners/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromOwners: async (parentId: string,childIds: string[]): Promise<Account> => {
+        removeFromOwners: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Account/removeFromOwners/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getTransactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
@@ -1534,24 +1469,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToTransactions: async (parentId: string,childIds: string[]): Promise<Account> => {
+        addToTransactions: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Account/addToTransactions/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromTransactions: async (parentId: string,childIds: string[]): Promise<Account> => {
+        removeFromTransactions: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Account/removeFromTransactions/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getStatements: async (parentId: string,options?: PaginationOptions): Promise<AccountStatement[]> => {
@@ -1564,24 +1497,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToStatements: async (parentId: string,childIds: string[]): Promise<Account> => {
+        addToStatements: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Account/addToStatements/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromStatements: async (parentId: string,childIds: string[]): Promise<Account> => {
+        removeFromStatements: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Account/removeFromStatements/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getStandingInstructions: async (parentId: string,options?: PaginationOptions): Promise<StandingInstruction[]> => {
@@ -1594,24 +1525,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToStandingInstructions: async (parentId: string,childIds: string[]): Promise<Account> => {
+        addToStandingInstructions: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Account/addToStandingInstructions/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromStandingInstructions: async (parentId: string,childIds: string[]): Promise<Account> => {
+        removeFromStandingInstructions: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Account/removeFromStandingInstructions/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getFeeCharges: async (parentId: string,options?: PaginationOptions): Promise<FeeCharge[]> => {
@@ -1624,24 +1553,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToFeeCharges: async (parentId: string,childIds: string[]): Promise<Account> => {
+        addToFeeCharges: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Account/addToFeeCharges/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromFeeCharges: async (parentId: string,childIds: string[]): Promise<Account> => {
+        removeFromFeeCharges: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Account/removeFromFeeCharges/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 
@@ -1685,26 +1612,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignAccount(parentId: string,childId: string): Promise<AccountStatement> => {
-            const response = await this.http.put(`/AccountStatement/assignAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignAccount: async (parentId: string,childId: string): Promise<AccountStatement> => {
+        assignAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/AccountStatement/assignAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/AccountStatement/unassignAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -1748,26 +1674,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignAccount(parentId: string,childId: string): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/assignAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignAccount: async (parentId: string,childId: string): Promise<Transaction> => {
+        assignAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Transaction/assignAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Transaction/unassignAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getExternalCounterparty: async (parentId: string): Promise<ExternalAccount | null> => {
@@ -1776,26 +1701,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignExternalCounterparty(parentId: string,childId: string): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/assignExternalCounterparty`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignExternalCounterparty: async (parentId: string,childId: string): Promise<Transaction> => {
+        assignExternalCounterparty(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Transaction/assignExternalCounterparty`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignExternalCounterparty: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Transaction/unassignExternalCounterparty`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getPaymentCard: async (parentId: string): Promise<PaymentCard | null> => {
@@ -1804,26 +1728,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignPaymentCard(parentId: string,childId: string): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/assignPaymentCard`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignPaymentCard: async (parentId: string,childId: string): Promise<Transaction> => {
+        assignPaymentCard(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Transaction/assignPaymentCard`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignPaymentCard: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Transaction/unassignPaymentCard`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getFundsTransfer: async (parentId: string): Promise<FundsTransfer | null> => {
@@ -1832,26 +1755,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignFundsTransfer(parentId: string,childId: string): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/assignFundsTransfer`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignFundsTransfer: async (parentId: string,childId: string): Promise<Transaction> => {
+        assignFundsTransfer(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Transaction/assignFundsTransfer`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignFundsTransfer: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Transaction/unassignFundsTransfer`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getFxTrade: async (parentId: string): Promise<FXTrade | null> => {
@@ -1860,26 +1782,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignFxTrade(parentId: string,childId: string): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/assignFxTrade`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignFxTrade: async (parentId: string,childId: string): Promise<Transaction> => {
+        assignFxTrade(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Transaction/assignFxTrade`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignFxTrade: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Transaction/unassignFxTrade`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getDispute: async (parentId: string): Promise<Dispute | null> => {
@@ -1888,26 +1809,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignDispute(parentId: string,childId: string): Promise<Transaction> => {
-            const response = await this.http.put(`/Transaction/assignDispute`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignDispute: async (parentId: string,childId: string): Promise<Transaction> => {
+        assignDispute(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Transaction/assignDispute`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignDispute: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Transaction/unassignDispute`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -1951,26 +1871,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignCustomer(parentId: string,childId: string): Promise<ExternalAccount> => {
-            const response = await this.http.put(`/ExternalAccount/assignCustomer`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignCustomer: async (parentId: string,childId: string): Promise<ExternalAccount> => {
+        assignCustomer(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/ExternalAccount/assignCustomer`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignCustomer: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/ExternalAccount/unassignCustomer`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getTransactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
@@ -1983,24 +1902,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToTransactions: async (parentId: string,childIds: string[]): Promise<ExternalAccount> => {
+        addToTransactions: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/ExternalAccount/addToTransactions/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromTransactions: async (parentId: string,childIds: string[]): Promise<ExternalAccount> => {
+        removeFromTransactions: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/ExternalAccount/removeFromTransactions/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 
@@ -2044,26 +1961,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignSourceAccount(parentId: string,childId: string): Promise<FundsTransfer> => {
-            const response = await this.http.put(`/FundsTransfer/assignSourceAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignSourceAccount: async (parentId: string,childId: string): Promise<FundsTransfer> => {
+        assignSourceAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/FundsTransfer/assignSourceAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignSourceAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/FundsTransfer/unassignSourceAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getDestinationAccount: async (parentId: string): Promise<Account | null> => {
@@ -2072,26 +1988,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignDestinationAccount(parentId: string,childId: string): Promise<FundsTransfer> => {
-            const response = await this.http.put(`/FundsTransfer/assignDestinationAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignDestinationAccount: async (parentId: string,childId: string): Promise<FundsTransfer> => {
+        assignDestinationAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/FundsTransfer/assignDestinationAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignDestinationAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/FundsTransfer/unassignDestinationAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getExternalBeneficiary: async (parentId: string): Promise<ExternalAccount | null> => {
@@ -2100,26 +2015,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignExternalBeneficiary(parentId: string,childId: string): Promise<FundsTransfer> => {
-            const response = await this.http.put(`/FundsTransfer/assignExternalBeneficiary`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignExternalBeneficiary: async (parentId: string,childId: string): Promise<FundsTransfer> => {
+        assignExternalBeneficiary(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/FundsTransfer/assignExternalBeneficiary`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignExternalBeneficiary: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/FundsTransfer/unassignExternalBeneficiary`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getInitiatedBy: async (parentId: string): Promise<Customer | null> => {
@@ -2128,26 +2042,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignInitiatedBy(parentId: string,childId: string): Promise<FundsTransfer> => {
-            const response = await this.http.put(`/FundsTransfer/assignInitiatedBy`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignInitiatedBy: async (parentId: string,childId: string): Promise<FundsTransfer> => {
+        assignInitiatedBy(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/FundsTransfer/assignInitiatedBy`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignInitiatedBy: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/FundsTransfer/unassignInitiatedBy`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getTransactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
@@ -2160,24 +2073,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToTransactions: async (parentId: string,childIds: string[]): Promise<FundsTransfer> => {
+        addToTransactions: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/FundsTransfer/addToTransactions/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromTransactions: async (parentId: string,childIds: string[]): Promise<FundsTransfer> => {
+        removeFromTransactions: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/FundsTransfer/removeFromTransactions/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 
@@ -2221,26 +2132,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignAccount(parentId: string,childId: string): Promise<StandingInstruction> => {
-            const response = await this.http.put(`/StandingInstruction/assignAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignAccount: async (parentId: string,childId: string): Promise<StandingInstruction> => {
+        assignAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/StandingInstruction/assignAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/StandingInstruction/unassignAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getBeneficiary: async (parentId: string): Promise<ExternalAccount | null> => {
@@ -2249,26 +2159,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBeneficiary(parentId: string,childId: string): Promise<StandingInstruction> => {
-            const response = await this.http.put(`/StandingInstruction/assignBeneficiary`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBeneficiary: async (parentId: string,childId: string): Promise<StandingInstruction> => {
+        assignBeneficiary(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/StandingInstruction/assignBeneficiary`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBeneficiary: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/StandingInstruction/unassignBeneficiary`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -2312,26 +2221,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBank(parentId: string,childId: string): Promise<PaymentCard> => {
-            const response = await this.http.put(`/PaymentCard/assignBank`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBank: async (parentId: string,childId: string): Promise<PaymentCard> => {
+        assignBank(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/PaymentCard/assignBank`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBank: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/PaymentCard/unassignBank`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getAccount: async (parentId: string): Promise<Account | null> => {
@@ -2340,26 +2248,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignAccount(parentId: string,childId: string): Promise<PaymentCard> => {
-            const response = await this.http.put(`/PaymentCard/assignAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignAccount: async (parentId: string,childId: string): Promise<PaymentCard> => {
+        assignAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/PaymentCard/assignAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/PaymentCard/unassignAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getCustomer: async (parentId: string): Promise<Customer | null> => {
@@ -2368,26 +2275,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignCustomer(parentId: string,childId: string): Promise<PaymentCard> => {
-            const response = await this.http.put(`/PaymentCard/assignCustomer`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignCustomer: async (parentId: string,childId: string): Promise<PaymentCard> => {
+        assignCustomer(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/PaymentCard/assignCustomer`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignCustomer: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/PaymentCard/unassignCustomer`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getTransactions: async (parentId: string,options?: PaginationOptions): Promise<Transaction[]> => {
@@ -2400,24 +2306,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToTransactions: async (parentId: string,childIds: string[]): Promise<PaymentCard> => {
+        addToTransactions: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/PaymentCard/addToTransactions/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromTransactions: async (parentId: string,childIds: string[]): Promise<PaymentCard> => {
+        removeFromTransactions: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/PaymentCard/removeFromTransactions/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 
@@ -2461,26 +2365,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBank(parentId: string,childId: string): Promise<LoanAccount> => {
-            const response = await this.http.put(`/LoanAccount/assignBank`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBank: async (parentId: string,childId: string): Promise<LoanAccount> => {
+        assignBank(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/LoanAccount/assignBank`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBank: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/unassignBank`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getBranch: async (parentId: string): Promise<Branch | null> => {
@@ -2489,26 +2392,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBranch(parentId: string,childId: string): Promise<LoanAccount> => {
-            const response = await this.http.put(`/LoanAccount/assignBranch`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBranch: async (parentId: string,childId: string): Promise<LoanAccount> => {
+        assignBranch(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/LoanAccount/assignBranch`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBranch: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/unassignBranch`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getProduct: async (parentId: string): Promise<BankingProduct | null> => {
@@ -2517,26 +2419,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignProduct(parentId: string,childId: string): Promise<LoanAccount> => {
-            const response = await this.http.put(`/LoanAccount/assignProduct`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignProduct: async (parentId: string,childId: string): Promise<LoanAccount> => {
+        assignProduct(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/LoanAccount/assignProduct`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignProduct: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/unassignProduct`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getBorrowers: async (parentId: string,options?: PaginationOptions): Promise<Customer[]> => {
@@ -2549,24 +2450,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToBorrowers: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        addToBorrowers: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/addToBorrowers/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromBorrowers: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        removeFromBorrowers: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/removeFromBorrowers/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getRepaymentSchedule: async (parentId: string,options?: PaginationOptions): Promise<RepaymentSchedule[]> => {
@@ -2579,24 +2478,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToRepaymentSchedule: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        addToRepaymentSchedule: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/addToRepaymentSchedule/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromRepaymentSchedule: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        removeFromRepaymentSchedule: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/removeFromRepaymentSchedule/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getPayments: async (parentId: string,options?: PaginationOptions): Promise<LoanPayment[]> => {
@@ -2609,24 +2506,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToPayments: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        addToPayments: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/addToPayments/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromPayments: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        removeFromPayments: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/removeFromPayments/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getCollateral: async (parentId: string,options?: PaginationOptions): Promise<Collateral[]> => {
@@ -2639,24 +2534,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToCollateral: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        addToCollateral: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/addToCollateral/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromCollateral: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        removeFromCollateral: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/removeFromCollateral/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
         getFeeCharges: async (parentId: string,options?: PaginationOptions): Promise<FeeCharge[]> => {
@@ -2669,24 +2562,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToFeeCharges: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        addToFeeCharges: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/addToFeeCharges/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromFeeCharges: async (parentId: string,childIds: string[]): Promise<LoanAccount> => {
+        removeFromFeeCharges: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/LoanAccount/removeFromFeeCharges/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 
@@ -2730,26 +2621,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignLoanAccount(parentId: string,childId: string): Promise<RepaymentSchedule> => {
-            const response = await this.http.put(`/RepaymentSchedule/assignLoanAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignLoanAccount: async (parentId: string,childId: string): Promise<RepaymentSchedule> => {
+        assignLoanAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/RepaymentSchedule/assignLoanAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignLoanAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/RepaymentSchedule/unassignLoanAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getPayment: async (parentId: string): Promise<LoanPayment | null> => {
@@ -2758,26 +2648,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignPayment(parentId: string,childId: string): Promise<RepaymentSchedule> => {
-            const response = await this.http.put(`/RepaymentSchedule/assignPayment`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignPayment: async (parentId: string,childId: string): Promise<RepaymentSchedule> => {
+        assignPayment(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/RepaymentSchedule/assignPayment`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignPayment: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/RepaymentSchedule/unassignPayment`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -2821,26 +2710,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignLoanAccount(parentId: string,childId: string): Promise<LoanPayment> => {
-            const response = await this.http.put(`/LoanPayment/assignLoanAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignLoanAccount: async (parentId: string,childId: string): Promise<LoanPayment> => {
+        assignLoanAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/LoanPayment/assignLoanAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignLoanAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/LoanPayment/unassignLoanAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getTransaction: async (parentId: string): Promise<Transaction | null> => {
@@ -2849,26 +2737,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignTransaction(parentId: string,childId: string): Promise<LoanPayment> => {
-            const response = await this.http.put(`/LoanPayment/assignTransaction`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignTransaction: async (parentId: string,childId: string): Promise<LoanPayment> => {
+        assignTransaction(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/LoanPayment/assignTransaction`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignTransaction: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/LoanPayment/unassignTransaction`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -2912,26 +2799,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignLoanAccount(parentId: string,childId: string): Promise<Collateral> => {
-            const response = await this.http.put(`/Collateral/assignLoanAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignLoanAccount: async (parentId: string,childId: string): Promise<Collateral> => {
+        assignLoanAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Collateral/assignLoanAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignLoanAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Collateral/unassignLoanAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -2975,26 +2861,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignAccount(parentId: string,childId: string): Promise<FeeCharge> => {
-            const response = await this.http.put(`/FeeCharge/assignAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignAccount: async (parentId: string,childId: string): Promise<FeeCharge> => {
+        assignAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/FeeCharge/assignAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/FeeCharge/unassignAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getLoanAccount: async (parentId: string): Promise<LoanAccount | null> => {
@@ -3003,26 +2888,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignLoanAccount(parentId: string,childId: string): Promise<FeeCharge> => {
-            const response = await this.http.put(`/FeeCharge/assignLoanAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignLoanAccount: async (parentId: string,childId: string): Promise<FeeCharge> => {
+        assignLoanAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/FeeCharge/assignLoanAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignLoanAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/FeeCharge/unassignLoanAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -3066,26 +2950,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBank(parentId: string,childId: string): Promise<ExchangeRate> => {
-            const response = await this.http.put(`/ExchangeRate/assignBank`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBank: async (parentId: string,childId: string): Promise<ExchangeRate> => {
+        assignBank(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/ExchangeRate/assignBank`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBank: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/ExchangeRate/unassignBank`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getFxTrades: async (parentId: string,options?: PaginationOptions): Promise<FXTrade[]> => {
@@ -3098,24 +2981,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToFxTrades: async (parentId: string,childIds: string[]): Promise<ExchangeRate> => {
+        addToFxTrades: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/ExchangeRate/addToFxTrades/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromFxTrades: async (parentId: string,childIds: string[]): Promise<ExchangeRate> => {
+        removeFromFxTrades: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/ExchangeRate/removeFromFxTrades/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 
@@ -3159,26 +3040,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignCustomer(parentId: string,childId: string): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/assignCustomer`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignCustomer: async (parentId: string,childId: string): Promise<FXTrade> => {
+        assignCustomer(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/FXTrade/assignCustomer`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignCustomer: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/FXTrade/unassignCustomer`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getBank: async (parentId: string): Promise<Bank | null> => {
@@ -3187,26 +3067,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBank(parentId: string,childId: string): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/assignBank`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBank: async (parentId: string,childId: string): Promise<FXTrade> => {
+        assignBank(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/FXTrade/assignBank`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBank: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/FXTrade/unassignBank`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getExchangeRate: async (parentId: string): Promise<ExchangeRate | null> => {
@@ -3215,26 +3094,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignExchangeRate(parentId: string,childId: string): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/assignExchangeRate`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignExchangeRate: async (parentId: string,childId: string): Promise<FXTrade> => {
+        assignExchangeRate(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/FXTrade/assignExchangeRate`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignExchangeRate: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/FXTrade/unassignExchangeRate`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getSourceAccount: async (parentId: string): Promise<Account | null> => {
@@ -3243,26 +3121,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignSourceAccount(parentId: string,childId: string): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/assignSourceAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignSourceAccount: async (parentId: string,childId: string): Promise<FXTrade> => {
+        assignSourceAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/FXTrade/assignSourceAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignSourceAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/FXTrade/unassignSourceAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getDestinationAccount: async (parentId: string): Promise<Account | null> => {
@@ -3271,26 +3148,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignDestinationAccount(parentId: string,childId: string): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/assignDestinationAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignDestinationAccount: async (parentId: string,childId: string): Promise<FXTrade> => {
+        assignDestinationAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/FXTrade/assignDestinationAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignDestinationAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/FXTrade/unassignDestinationAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getTransaction: async (parentId: string): Promise<Transaction | null> => {
@@ -3299,26 +3175,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignTransaction(parentId: string,childId: string): Promise<FXTrade> => {
-            const response = await this.http.put(`/FXTrade/assignTransaction`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignTransaction: async (parentId: string,childId: string): Promise<FXTrade> => {
+        assignTransaction(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/FXTrade/assignTransaction`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignTransaction: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/FXTrade/unassignTransaction`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -3362,26 +3237,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignTransaction(parentId: string,childId: string): Promise<Dispute> => {
-            const response = await this.http.put(`/Dispute/assignTransaction`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignTransaction: async (parentId: string,childId: string): Promise<Dispute> => {
+        assignTransaction(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Dispute/assignTransaction`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignTransaction: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Dispute/unassignTransaction`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getCustomer: async (parentId: string): Promise<Customer | null> => {
@@ -3390,26 +3264,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignCustomer(parentId: string,childId: string): Promise<Dispute> => {
-            const response = await this.http.put(`/Dispute/assignCustomer`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignCustomer: async (parentId: string,childId: string): Promise<Dispute> => {
+        assignCustomer(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Dispute/assignCustomer`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignCustomer: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Dispute/unassignCustomer`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getAccount: async (parentId: string): Promise<Account | null> => {
@@ -3418,26 +3291,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignAccount(parentId: string,childId: string): Promise<Dispute> => {
-            const response = await this.http.put(`/Dispute/assignAccount`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignAccount: async (parentId: string,childId: string): Promise<Dispute> => {
+        assignAccount(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Dispute/assignAccount`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignAccount: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Dispute/unassignAccount`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getPaymentCard: async (parentId: string): Promise<PaymentCard | null> => {
@@ -3446,26 +3318,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignPaymentCard(parentId: string,childId: string): Promise<Dispute> => {
-            const response = await this.http.put(`/Dispute/assignPaymentCard`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignPaymentCard: async (parentId: string,childId: string): Promise<Dispute> => {
+        assignPaymentCard(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Dispute/assignPaymentCard`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignPaymentCard: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Dispute/unassignPaymentCard`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
 
@@ -3509,26 +3380,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignCustomer(parentId: string,childId: string): Promise<Consent> => {
-            const response = await this.http.put(`/Consent/assignCustomer`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignCustomer: async (parentId: string,childId: string): Promise<Consent> => {
+        assignCustomer(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Consent/assignCustomer`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignCustomer: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Consent/unassignCustomer`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getBank: async (parentId: string): Promise<Bank | null> => {
@@ -3537,26 +3407,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBank(parentId: string,childId: string): Promise<Consent> => {
-            const response = await this.http.put(`/Consent/assignBank`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBank: async (parentId: string,childId: string): Promise<Consent> => {
+        assignBank(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Consent/assignBank`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBank: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Consent/unassignBank`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getThirdPartyProvider: async (parentId: string): Promise<ThirdPartyProvider | null> => {
@@ -3565,26 +3434,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignThirdPartyProvider(parentId: string,childId: string): Promise<Consent> => {
-            const response = await this.http.put(`/Consent/assignThirdPartyProvider`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignThirdPartyProvider: async (parentId: string,childId: string): Promise<Consent> => {
+        assignThirdPartyProvider(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/Consent/assignThirdPartyProvider`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignThirdPartyProvider: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/Consent/unassignThirdPartyProvider`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getAuthorizedAccounts: async (parentId: string,options?: PaginationOptions): Promise<Account[]> => {
@@ -3597,24 +3465,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToAuthorizedAccounts: async (parentId: string,childIds: string[]): Promise<Consent> => {
+        addToAuthorizedAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Consent/addToAuthorizedAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromAuthorizedAccounts: async (parentId: string,childIds: string[]): Promise<Consent> => {
+        removeFromAuthorizedAccounts: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/Consent/removeFromAuthorizedAccounts/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 
@@ -3658,26 +3524,25 @@ export class HttpBackendAPI implements BackendAPI {
                     parentId: parentId
                 }
             );
-        },
-
-        assignBank(parentId: string,childId: string): Promise<ThirdPartyProvider> => {
-            const response = await this.http.put(`/ThirdPartyProvider/assignBank`,
-                {
-                    parentId: parentId,
-                    childI: childId
-                }
-            );
             return response.data;
         },
 
-        unassignBank: async (parentId: string,childId: string): Promise<ThirdPartyProvider> => {
+        assignBank(parentId: string,childId: string): Promise<void> => {
+            const response = await this.http.put(`/ThirdPartyProvider/assignBank`,
+                {
+                    parentId: parentId,
+                    childId: childId
+                }
+            );
+        },
+
+        unassignBank: async (parentId: string,childId: string): Promise<void> => {
             const response = await this.http.put(`/ThirdPartyProvider/unassignBank`,
                 {
                     parentId: parentId,
                     childI: childId
                 }
             );
-            return response.data;
         },
 
         getConsents: async (parentId: string,options?: PaginationOptions): Promise<Consent[]> => {
@@ -3690,24 +3555,22 @@ export class HttpBackendAPI implements BackendAPI {
             return response.data;
         },
 
-        addToConsents: async (parentId: string,childIds: string[]): Promise<ThirdPartyProvider> => {
+        addToConsents: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/ThirdPartyProvider/addToConsents/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
-        removeFromConsents: async (parentId: string,childIds: string[]): Promise<ThirdPartyProvider> => {
+        removeFromConsents: async (parentId: string,childIds: string[]): Promise<void> => {
             const response = await this.http.put(`/ThirdPartyProvider/removeFromConsents/`,
                 {
                     parentId: parentId,
                     childIds: childIds
                 }
             );
-            return response.data;
         },
 
 

@@ -73,8 +73,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<Bank[]> => {
             const response = await this.http.post(`/Bank/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -356,8 +356,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<Branch[]> => {
             const response = await this.http.post(`/Branch/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -504,8 +504,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<ATM[]> => {
             const response = await this.http.post(`/ATM/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -571,8 +571,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<Customer[]> => {
             const response = await this.http.post(`/Customer/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -854,8 +854,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<KycProfile[]> => {
             const response = await this.http.post(`/KycProfile/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -1002,8 +1002,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<IdentityDocument[]> => {
             const response = await this.http.post(`/IdentityDocument/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -1069,8 +1069,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<RiskAssessment[]> => {
             const response = await this.http.post(`/RiskAssessment/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -1136,8 +1136,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<ScreeningResult[]> => {
             const response = await this.http.post(`/ScreeningResult/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -1203,8 +1203,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<BankingProduct[]> => {
             const response = await this.http.post(`/BankingProduct/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -1351,8 +1351,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<Account[]> => {
             const response = await this.http.post(`/Account/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -1607,8 +1607,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<AccountStatement[]> => {
             const response = await this.http.post(`/AccountStatement/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -1674,8 +1674,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<Transaction[]> => {
             const response = await this.http.post(`/Transaction/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -1876,8 +1876,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<ExternalAccount[]> => {
             const response = await this.http.post(`/ExternalAccount/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -1970,8 +1970,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<FundsTransfer[]> => {
             const response = await this.http.post(`/FundsTransfer/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -2145,8 +2145,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<StandingInstruction[]> => {
             const response = await this.http.post(`/StandingInstruction/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -2239,8 +2239,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<PaymentCard[]> => {
             const response = await this.http.post(`/PaymentCard/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -2387,8 +2387,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<LoanAccount[]> => {
             const response = await this.http.post(`/LoanAccount/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -2643,8 +2643,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<RepaymentSchedule[]> => {
             const response = await this.http.post(`/RepaymentSchedule/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -2737,8 +2737,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<LoanPayment[]> => {
             const response = await this.http.post(`/LoanPayment/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -2831,8 +2831,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<Collateral[]> => {
             const response = await this.http.post(`/Collateral/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -2898,8 +2898,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<FeeCharge[]> => {
             const response = await this.http.post(`/FeeCharge/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -2992,8 +2992,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<ExchangeRate[]> => {
             const response = await this.http.post(`/ExchangeRate/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -3086,8 +3086,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<FXTrade[]> => {
             const response = await this.http.post(`/FXTrade/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -3288,8 +3288,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<Dispute[]> => {
             const response = await this.http.post(`/Dispute/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -3436,8 +3436,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<Consent[]> => {
             const response = await this.http.post(`/Consent/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 
@@ -3584,8 +3584,8 @@ export class HttpBackendAPI implements BackendAPI {
         findAll: async (paginationOptions?: PaginationOptions): Promise<ThirdPartyProvider[]> => {
             const response = await this.http.post(`/ThirdPartyProvider/`,
                 {
-                    pageSize: paginationOptions.pageSize,
-                    after: paginationOptions.after
+                    pageSize: paginationOptions?.pageSize,
+                    after: paginationOptions?.after
                 }
             );
 

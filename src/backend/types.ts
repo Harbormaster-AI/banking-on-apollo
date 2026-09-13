@@ -224,39 +224,39 @@ export enum CollateralType {
 
 export interface Bank {
     id: string;
-    name: String
-    legalName: String
-    swiftBic: String
-    headquartersCountry: String
-    website: String
+    name: string
+    legalName: string
+    swiftBic: string
+    headquartersCountry: string
+    website: string
 }
 
 export interface Branch {
     id: string;
-    name: String
-    branchCode: String
-    address: String
-    phone: String
-    openingHours: String
+    name: string
+    branchCode: string
+    address: string
+    phone: string
+    openingHours: string
 }
 
 export interface ATM {
     id: string;
-    terminalId: String
-    location: String
+    terminalId: string
+    location: string
     Status:  ATMStatus
 }
 
 export interface Customer {
     id: string;
-    firstName: String
-    lastName: String
-    legalName: String
-    dateOfBirth: String
-    taxId: String
-    email: String
-    phone: String
-    address: String
+    firstName: string
+    lastName: string
+    legalName: string
+    dateOfBirth: string
+    taxId: string
+    email: string
+    phone: string
+    address: string
     CustomerType:  CustomerType
     RiskRating:  RiskRating
     KycStatus:  KycStatus
@@ -264,49 +264,49 @@ export interface Customer {
 
 export interface KycProfile {
     id: string;
-    profileId: String
-    lastReviewedOn: String
+    profileId: string
+    lastReviewedOn: string
     Status:  KycStatus
 }
 
 export interface IdentityDocument {
     id: string;
-    documentNumber: String
-    issuingCountry: String
-    expirationDate: String
+    documentNumber: string
+    issuingCountry: string
+    expirationDate: string
     DocumentType:  IdentityDocumentType
 }
 
 export interface RiskAssessment {
     id: string;
-    score: Int
-    assessedOn: String
+    score: number
+    assessedOn: string
     Rating:  RiskRating
 }
 
 export interface ScreeningResult {
     id: string;
-    screeningDate: String
-    provider: String
+    screeningDate: string
+    provider: string
     Outcome:  ScreeningOutcome
 }
 
 export interface BankingProduct {
     id: string;
-    productCode: String
-    name: String
-    description: String
+    productCode: string
+    name: string
+    description: string
     ProductCategory:  ProductCategory
 }
 
 export interface Account {
     id: string;
-    accountNumber: String
-    iban: String
-    accountName: String
-    currency: String
-    openedOn: String
-    closedOn: String
+    accountNumber: string
+    iban: string
+    accountName: string
+    currency: string
+    openedOn: string
+    closedOn: string
     AccountType:  AccountType
     OwnershipType:  AccountOwnershipType
     Status:  AccountStatus
@@ -314,20 +314,20 @@ export interface Account {
 
 export interface AccountStatement {
     id: string;
-    statementNumber: String
-    periodStart: String
-    periodEnd: String
-    openingBalance: String
-    closingBalance: String
+    statementNumber: string
+    periodStart: string
+    periodEnd: string
+    openingBalance: string
+    closingBalance: string
     DeliveryMethod:  StatementDeliveryMethod
 }
 
 export interface Transaction {
     id: string;
-    bookingDate: String
-    valueDate: String
-    amount: String
-    description: String
+    bookingDate: string
+    valueDate: string
+    amount: string
+    description: string
     Direction:  TransactionDirection
     TransactionType:  TransactionType
     Status:  TransactionStatus
@@ -336,41 +336,41 @@ export interface Transaction {
 
 export interface ExternalAccount {
     id: string;
-    name: String
-    iban: String
-    accountNumber: String
-    bic: String
-    bankName: String
-    country: String
+    name: string
+    iban: string
+    accountNumber: string
+    bic: string
+    bankName: string
+    country: string
 }
 
 export interface FundsTransfer {
     id: string;
-    transferReference: String
-    amount: String
-    requestedDate: String
-    executionDate: String
-    purpose: String
-    feeAmount: String
+    transferReference: string
+    amount: string
+    requestedDate: string
+    executionDate: string
+    purpose: string
+    feeAmount: string
     Method:  PaymentMethod
     Status:  PaymentStatus
 }
 
 export interface StandingInstruction {
     id: string;
-    instructionId: String
-    amount: String
-    nextExecutionDate: String
+    instructionId: string
+    amount: string
+    nextExecutionDate: string
     Frequency:  StandingInstructionFrequency
     Status:  StandingInstructionStatus
 }
 
 export interface PaymentCard {
     id: string;
-    cardNumber: String
-    embossedName: String
-    expiryMonth: Int
-    expiryYear: Int
+    cardNumber: string
+    embossedName: string
+    expiryMonth: number
+    expiryYear: number
     CardType:  CardType
     CardStatus:  CardStatus
     Network:  CardNetwork
@@ -378,14 +378,14 @@ export interface PaymentCard {
 
 export interface LoanAccount {
     id: string;
-    loanNumber: String
-    principalAmount: String
-    outstandingPrincipal: String
-    interestRate: String
-    originationDate: String
-    maturityDate: String
-    paymentDayOfMonth: Int
-    currency: String
+    loanNumber: string
+    principalAmount: string
+    outstandingPrincipal: string
+    interestRate: string
+    originationDate: string
+    maturityDate: string
+    paymentDayOfMonth: number
+    currency: string
     LoanType:  LoanType
     RateType:  RateType
     Compounding:  InterestCompounding
@@ -394,79 +394,79 @@ export interface LoanAccount {
 
 export interface RepaymentSchedule {
     id: string;
-    installmentNumber: Int
-    dueDate: String
-    principalDue: String
-    interestDue: String
-    totalDue: String
+    installmentNumber: number
+    dueDate: string
+    principalDue: string
+    interestDue: string
+    totalDue: string
     Status:  InstallmentStatus
 }
 
 export interface LoanPayment {
     id: string;
-    paymentReference: String
-    amount: String
-    paymentDate: String
+    paymentReference: string
+    amount: string
+    paymentDate: string
     Method:  PaymentMethod
     Status:  PaymentStatus
 }
 
 export interface Collateral {
     id: string;
-    appraisedValue: String
-    description: String
-    location: String
+    appraisedValue: string
+    description: string
+    location: string
     CollateralType:  CollateralType
 }
 
 export interface FeeCharge {
     id: string;
-    feeCode: String
-    amount: String
-    appliedOn: String
+    feeCode: string
+    amount: string
+    appliedOn: string
     FeeType:  FeeType
 }
 
 export interface ExchangeRate {
     id: string;
-    baseCurrency: String
-    counterCurrency: String
-    rate: String
-    asOf: String
-    source: String
+    baseCurrency: string
+    counterCurrency: string
+    rate: string
+    asOf: string
+    source: string
 }
 
 export interface FXTrade {
     id: string;
-    tradeReference: String
-    tradeDate: String
-    settlementDate: String
-    amountSold: String
-    amountBought: String
-    rate: String
+    tradeReference: string
+    tradeDate: string
+    settlementDate: string
+    amountSold: string
+    amountBought: string
+    rate: string
     Status:  TradeStatus
 }
 
 export interface Dispute {
     id: string;
-    disputeReference: String
-    raisedOn: String
-    reason: String
+    disputeReference: string
+    raisedOn: string
+    reason: string
     Status:  DisputeStatus
 }
 
 export interface Consent {
     id: string;
-    grantedOn: String
-    expiresOn: String
+    grantedOn: string
+    expiresOn: string
     ConsentType:  ConsentType
     Status:  ConsentStatus
 }
 
 export interface ThirdPartyProvider {
     id: string;
-    name: String
-    registrationId: String
-    website: String
+    name: string
+    registrationId: string
+    website: string
 }
 

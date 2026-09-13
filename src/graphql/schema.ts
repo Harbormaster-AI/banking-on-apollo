@@ -166,7 +166,6 @@ type Query {
 
 # update related functions
 type Mutation {
-
 addBank(
         name: String
         legalName: String

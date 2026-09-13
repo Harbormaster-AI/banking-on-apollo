@@ -2681,4 +2681,4 @@ type Percentage {
                 value: String
     }
 `;
-module.exports = typeDefs;
+

@@ -413,6 +413,7 @@ export interface LoanPayment {
 
 export interface Collateral {
     id: string;
+    collateralIdentifier: string
     appraisedValue: string
     description: string
     location: string
@@ -431,7 +432,7 @@ export interface ExchangeRate {
     id: string;
     baseCurrency: string
     counterCurrency: string
-    rate: string
+    rate: number
     asOf: string
     source: string
 }
@@ -443,7 +444,7 @@ export interface FXTrade {
     settlementDate: string
     amountSold: string
     amountBought: string
-    rate: string
+    rate: number
     Status:  TradeStatus
 }
 

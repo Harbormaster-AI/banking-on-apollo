@@ -20,11 +20,11 @@ resource "kubernetes_replication_controller" "app-master" {
 
             spec {
                 container {
-                    image = "${dbEngine}:latest"
+                    image = "mysql:latest"
                     name  = "db-container"
 
                     port {
-                        container_port = ${dbPort}
+                        container_port = 3306
                     }
 
                     resources {
@@ -35,23 +35,23 @@ resource "kubernetes_replication_controller" "app-master" {
                     }
                 }
                 container {
-                    image = "#DockerComposePlatformImage()"
+                    image = "theharbormaster/banking-on-apollo:latest"
                     name  = "app-container"
 
                     port {
-                        container_port = 4000
+                        container_port = ${appPort}
                     }
                     env {
-                        name  = "MONGO_INITDB_ROOT_USERNAME"
-                        value = "root"
+                        name  = "DATABASE_DIALECT"
+                        value = "com.mysql.cj.jdbc.Driver"
                     }
                     env {
-                        name  = "MONGO_INITDB_ROOT_PASSWORD"
+                        name  = "DATABASE_URL"
+                        value = "jdbc:mysql://db:3306/developmentdb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true"
+                    }
+                    env {
+                        name  = "DATABASE_PASSWORD"
                         value = "letmein2"
-                    }
-                    env {
-                        name  = "MONGOOSE_HOST_NAME"
-                        value = "kubernetes_service.app-master.load_balancer_ingress.0.ip"
                     }
                     resources {
                         requests = {

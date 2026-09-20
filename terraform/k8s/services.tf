@@ -10,13 +10,13 @@ resource "kubernetes_service" "app-master" {
         port {
             name        = "http"
             port        = 80
-            target_port = 4000
+            target_port = ${}appPort}
         }
 
         port {
             name        = "db-port"
-            port        = 
-            target_port = 
+            port        = 3306
+            target_port = 3306
         }
 
         port {
@@ -25,7 +25,7 @@ resource "kubernetes_service" "app-master" {
             name        = "app-port"
         }
 
-        type = ""
+        type = "LoadBalancer"
     }
   
 }

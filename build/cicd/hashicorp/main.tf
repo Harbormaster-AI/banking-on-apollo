@@ -30,7 +30,7 @@ resource "local_file" "private_key_pem" {
 }
 
 resource "aws_key_pair" "generated" {
-  key_name   = "pjsk-sshtest-0.5201534619939697"
+  key_name   = "pjsk-sshtest-0.11176757790354286"
   public_key = tls_private_key.generated.public_key_openssh
 
   lifecycle {

@@ -12,7 +12,7 @@ provider "aws" {
       CreatedBy = "Harbormaster"
       Blueprint = "Apollo GraphQL"
       DomainModel = "Banking Industry Domain Model"
-      CertificationId = "bb5111a9-7690-404f-8e19-a80336bfecd5"
+      CertificationId = "1a392863-8f1f-4ec9-a33e-3ae1b3def6f8"
     }
   }
 }
@@ -39,7 +39,7 @@ resource "local_file" "private_key_pem" {
 }
 
 resource "aws_key_pair" "generated" {
-  key_name   = "pjsk-sshtest-0.625860110586748"
+  key_name   = "pjsk-sshtest-0.3433077863229549"
   public_key = tls_private_key.generated.public_key_openssh
 
   lifecycle {
